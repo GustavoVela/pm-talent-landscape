@@ -1,0 +1,332 @@
+# Technical & Engineering Skills Taxonomy
+
+A structured taxonomy mapping technical skills, cloud architecture, software design, and programming languages required for technical PM roles.
+
+## AI & Machine Learning (Cross-Functional)
+- agents
+- ai
+- ai agents
+- ai/ml
+- claude
+- claude code
+- computer vision
+- cursor
+- generative ai
+- langchain
+- llamaindex
+- llms
+- machine learning
+- ml models
+- mlops
+- model development
+- nlp
+- ocr
+- rag
+- replit
+
+## APIs & Integrations
+- API
+- API design
+- API Gateway
+- API Integration
+- API integration
+- API integrations
+- API Integrations
+- api-driven platforms
+- APIs
+- edi
+- fapi 2.0
+- field mapping
+- GraphQL
+- Integration
+- Integrations
+- ipaas
+- openapi
+- Postman
+- rest
+- REST APIs
+- RESTful APIs
+- sdk
+- sdks
+- sftp
+- Swagger
+- System Integration
+- System Integrations
+- web services
+- Webhooks
+- zapier
+
+## AdTech & Marketing Analytics
+- ad servers
+- dsps
+- mmp
+- seo
+- skan
+
+## Agile, Development & Testing
+- BDD
+- bpm
+- bpmn
+- computer science
+- Confluence
+- Cucumber
+- engineering
+- JIRA
+- Jira
+- no-code
+- prototyping
+- QA
+- SDLC
+- Selenium
+- Software Development
+- software development life cycle
+- Software Engineering
+- technical specifications
+
+## Cloud Computing & Infrastructure
+- ai infrastructure
+- AWS
+- Azure
+- B2B SaaS
+- Cloud
+- cloud architecture
+- Cloud Infrastructure
+- Cloud Platforms
+- Cloud platforms
+- Cloud Technologies
+- cloud-native
+- edge computing
+- Enterprise SaaS
+- GCP
+- Google Cloud
+- Google Cloud Platform
+- IaaS
+- infrastructure
+- linux
+- networking
+- OpenStack
+- PaaS
+- SaaS
+- serverless
+- unix
+- windows
+
+## Cybersecurity & Identity Management
+- ABAC
+- Authentication
+- authentication protocols
+- biometrics
+- Cybersecurity
+- digital risk protection
+- edr
+- fraud detection
+- IAM
+- Identity Management
+- JWT
+- mtls
+- Network Security
+- OAuth
+- OAuth2
+- OpenID Connect
+- pci
+- pci-dss
+- phishing detection
+- pki
+- RBAC
+- SAML
+- sase
+- Security
+- SIEM
+- threat intelligence
+- tokenization
+- Zero Trust
+
+## Data Engineering & Streaming
+- cdp
+- Data Architecture
+- Data Engineering
+- data flows
+- data governance
+- data infrastructure
+- Data Lake
+- data mapping
+- data mesh
+- Data modeling
+- Data Modeling
+- Data Models
+- Data models
+- Data Pipelines
+- data platforms
+- data quality
+- data science
+- Data Warehouse
+- Data Warehousing
+- Databricks
+- dbt
+- ELT
+- ETL
+- etl/elt
+- excel
+- Fivetran
+- informatica
+- Kafka
+- Lakehouse
+- mdm
+- power bi
+- Snowflake
+- Spark
+
+## Databases & Storage
+- bigquery
+- Databases
+- MongoDB
+- MySQL
+- NoSQL
+- oracle
+- Postgres
+- PostgreSQL
+- Relational Databases
+- SQL
+- Storage
+
+## DevOps, CI/CD & SRE
+- automation
+- azure boards
+- Azure DevOps
+- CI/CD
+- Containers
+- Datadog
+- developer experience
+- developer tooling
+- DevOps
+- devsecops
+- Docker
+- feature flags
+- Git
+- GitHub
+- Github
+- Grafana
+- Helm
+- IaC
+- itom
+- Kubernetes
+- Observability
+- Prometheus
+- rancher
+- rpa
+- scalability
+- SRE
+- Terraform
+- virtualization
+
+## Enterprise Systems & ERPs
+- cms
+- CRM
+- ERP
+- headless cms
+- ITIL
+- ITSM
+- oms
+- power automate
+- s/4hana
+- Sales Cloud
+- Salesforce
+- salesforce commerce cloud
+- salesforce marketing cloud
+- SAP
+- sap ecc
+- SAP S/4HANA
+- Service Cloud
+- ServiceNow
+- shopify
+- sis
+- tms
+- wms
+- Workday
+
+## Industry & Domain Tech
+- 3dx
+- adtech
+- algorithmic trading
+- blockchain
+- bom management
+- electrical engineering
+- embedded systems
+- fhir
+- firmware
+- fix protocol
+- hardware
+- hl7
+- iot
+- iso 20022
+- iso 8583
+- ivr
+- mechanical engineering
+- payments
+- plm
+- programmatic advertising
+- teamcenter
+
+## Payments & Financial Tech
+- ach
+- emv
+- gateways de pagamento
+- pci dss
+- pos
+- smart contracts
+- swift
+
+## Programming Languages & Frameworks
+- .NET
+- android
+- Angular
+- backend
+- C#
+- C++
+- coding
+- CSS
+- data structures
+- frontend
+- HTML
+- ios
+- Java
+- JavaScript
+- JS
+- json
+- mobile applications
+- mobile development
+- Node.js
+- NodeJS
+- Python
+- R
+- React
+- React Native
+- TypeScript
+- Vue.js
+- web applications
+- web technologies
+
+## Software Architecture & System Design
+- Architecture
+- Backend Architecture
+- Backend Systems
+- Cloud-native architectures
+- Distributed Systems
+- Enterprise Architecture
+- Event-driven architecture
+- Event-driven patterns
+- integration architecture
+- Microservices
+- Microservicios
+- microserviços
+- middleware
+- Platform Architecture
+- sequence diagrams
+- Software Architecture
+- System Architecture
+- System design
+- System Design
+- system workflows
+- Technical Architecture
+- uml
+

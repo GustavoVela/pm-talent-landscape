@@ -1,0 +1,598 @@
+# Core Product Management Skills Taxonomy
+
+This document maps raw Core Product Management skills found in job descriptions into standardized categories for high-fidelity analytics and reporting.
+
+## 0-to-1 & MVP
+- 0 to 1 Execution
+- 0-1 Product Development
+- 0-to-1 Product Launch
+- 0→1 Product Development
+- Minimum Viable Product
+- Minimum Viable Products
+- MVP
+- MVP Definition
+- MVP definition
+- MVP Launch
+- MVP Requirements
+- MVP Scope
+- MVP thinking
+- MVPs
+- New Product Development
+- New Product Introduction
+- New Product Introduction (NPI)
+- NPI
+- NPI cycles
+- NPI process
+- Product-Market Fit
+- Product-market fit
+
+## Agile Methodologies
+- Agile
+- Agile Delivery
+- Agile product development
+- Agile/Hybrid
+- Agile/SAFe
+- Agile/Scrum
+- Confluence
+- Daily
+- Event Storming
+- JIRA
+- Jira
+- Kanban
+- Lean
+- Lean Methodologies
+- Lean Startup
+- SAFe
+- SAFe Agile
+- Scrum
+- SDLC
+- Sprint execution
+- Sprint Management
+- Waterfall
+
+## Analytics & Data-Driven PM
+- Analytics
+- Cohort Analysis
+- Conversion Rate Optimization
+- Data Analysis
+- Data Analytics
+- Funnel Analysis
+- Funnel Optimization
+- Metrics & Analytics
+- Metrics-driven decisioning
+- Performance Indicators
+- Post-release measurement
+- Product Analytics
+- Product Data Management
+- Product Improvement
+- Product Optimization
+- Product Performance
+- Product performance data
+- Product Performance Monitoring
+- Product Quality
+- Reporting
+- User Behavior Analysis
+
+## Backlog Management
+- Backlog
+- Backlog grooming
+- Backlog Grooming
+- Backlog Leadership
+- Backlog management
+- Backlog Management
+- Backlog Prioritization
+- Backlog Refinement
+- Backlog refinement
+- Feature Ownership
+- Feature Prioritization
+- Feature Scoping
+- Grooming
+- Prioritisation
+- Priorización
+- Product Backlog
+- Product Owner
+- Product Ownership
+- Refinement
+- Sprint Backlog
+- Work Prioritization
+
+## Cross-Functional Leadership
+- Cross-departmental collaboration
+- Cross-functional Alignment
+- Cross-functional alignment
+- Cross-functional Collaboration
+- Cross-functional collaboration
+- Cross-functional Coordination
+- Cross-functional initiatives
+- Cross-functional leadership
+- Cross-functional Leadership
+- Cross-Functional Leadership
+- Cross-functional Program Management
+- Engagement
+- Mentorship
+- Project Coordination
+- Squad Coordination
+- Team Leadership
+
+## Customer Journey & Personas
+- Customer Empathy
+- Customer Experience
+- Customer Journey
+- Customer Journey Mapping
+- Customer segmentation
+- Customer Segmentation
+- Customer-Centric Development
+- ICP Definition
+- Persona building
+- Persona Definition
+- Personas
+- User Acceptance Criteria
+- User Experience
+- User Flows
+- User Journey
+- User Journey Mapping
+- User Journey Maps
+- User Journeys
+- User Personas
+- User Segmentation
+- User Value
+- User-centered design
+- User-Centered Design
+- User-centric thinking
+
+## Delivery & Execution
+- Cross-functional execution
+- Delivery
+- Delivery Tracking
+- End-to-end Product Management
+- Execution
+- Execution Strategy
+- Execution tracking
+- Feature Delivery
+- Feature Deployment
+- Feature development
+- Feature Planning
+- Feature Recommendations
+- Feature Requests
+- Feature Roll-out
+- Feature Rollout
+- Features
+- Iteration
+- Iterative Delivery
+- Iterative Development
+- Iterative Product Development
+- Launch Execution
+- Launch Implementation
+- Product Delivery
+- Product delivery frameworks
+- Product Development
+- Product Execution
+- Product Features
+- Product Implementation
+- Product Increment
+- Product Management
+- Product Processes
+- Product Releases
+- Release Coordination
+- Release Governance
+- Release management
+- Release Management
+- Release Validation
+- Retrospectives
+- Reviews
+- Sprint Retrospectives
+- Sprint Review
+- Sprint Reviews
+
+## Experimentation & A/B Testing
+- A/B Testing
+- Beta Programs
+- Beta programs
+- Defect Management
+- Experiment Plans
+- Experimentation
+- Experimentation Frameworks
+- Experiments
+- Feature Testing
+- Growth Experiments
+- Hypothesis Testing
+- Hypothesis validation
+- Hypothesis Validation
+- Hypothesis-based analytical approach
+- Hypothesis-driven development
+- Hypothesis-driven experimentation
+- Product Testing
+- Project Evaluation
+- QA
+- QA Testing
+- Quality Assurance
+- Test Strategy
+- Testing
+- Testing Plan
+- UAT
+- UAT Testing
+- User Acceptance Testing
+
+## Frameworks & Prioritization
+- Decision Frameworks
+- Design Sprint
+- Design Thinking
+- INVEST
+- Investment Prioritization
+- Jobs to be done
+- Jobs to Be Done
+- Jobs-to-be-done
+- JTBD
+- Lean UX
+- MoSCoW
+- Prioritization
+- Prioritization Frameworks
+- Prioritization frameworks
+- Product Prioritization
+- RICE
+- Story Mapping
+- User Story Mapping
+- Value vs. Effort
+- WSJF
+
+## Go-to-Market (GTM)
+- Commercialization
+- Commercialization Strategy
+- Feature Launch
+- Feature Launch Execution
+- Go-to-Market
+- Go-to-market
+- Go-to-Market Strategy
+- Go-to-market strategy
+- GTM
+- GTM planning
+- GTM Strategy
+- Launch
+- Launch & Rollout
+- Launch & Rollout Planning
+- Launch Coordination
+- Launch Frameworks
+- Launch Management
+- Launch Process
+- Launch Readiness
+- Launch Strategy
+- Market Launch
+- Onboarding
+- Pilot Launches
+- Product Commercialization
+- Product Launch
+- Product launch
+- Product Launch Strategy
+- Product launches
+- Product Launches
+- Product Onboarding
+- Product Rollouts
+- Product Training
+- Release Readiness
+- Técnicas de lanzamiento de producto
+
+## Market & Competitive Intelligence
+- Benchmarking
+- Competitive analysis
+- Competitive Analysis
+- Competitive Assessment
+- Competitive Benchmarking
+- Competitive Intelligence
+- Competitive Landscape Analysis
+- Competitive Research
+- Competitor Analysis
+- Market Analysis
+- Market Assessment
+- Market Insights
+- Market Intelligence
+- Market Penetration
+- Market Trend Analysis
+- Market Trends
+- Market Trends Analysis
+- Marketplace Product Management
+
+## Metrics & OKRs
+- Customer Success Metrics
+- KPI Management
+- KPI Monitoring
+- KPI Tracking
+- KPIs
+- Metric Definition
+- Metrics
+- Metrics & KPIs
+- Metrics Definition
+- Metrics Reviews
+- OKR
+- OKRs
+- Performance Review
+- Performance Tracking
+- Product Metrics
+- Product performance metrics
+- SLAs
+- Success Metrics
+
+## Portfolio & Lifecycle Management
+- Full Product Life-cycle
+- Life Cycle Management
+- Lifecycle Management
+- Lifecycle Ownership
+- Lifecycle Planning
+- NPD Lifecycle
+- PDLC
+- Portfolio Governance
+- Portfolio Management
+- Portfolio Planning
+- Portfolio Prioritization
+- Portfolio Strategy
+- Product Demand Management
+- Product Development Cycle
+- Product Development Life Cycle
+- Product Development Lifecycle
+- Product development lifecycle
+- Product Development Process
+- Product Expansion
+- Product Life Cycle
+- Product life-cycle management
+- Product Lifecycle
+- Product lifecycle management
+- Product Lifecycle Management
+- Product Lifecycle Modeling
+- Product Portfolio
+- Product Portfolio Management
+- Stage Gate
+- Stage-Gate
+- Stage-gate development
+- Stage-gate Governance
+- Stage-gate process
+- Stage-Gate Process
+
+## Product Design & UX
+- Feature Design
+- Product Architecture
+- Product Design
+- Product Solution Design
+- Prototype Testing
+- Prototyping
+- Solution Design
+- Solution Prototyping
+- Wireframing
+
+## Product Discovery
+- Continuous Discovery
+- Customer Discovery
+- Discovery
+- Ideación
+- Ideation
+- Lean Inception
+- Problem Framing
+- Problem framing
+- Problem Solving
+- Product Analysis
+- Product discovery
+- Product Discovery
+- Product Research
+- Requirement Discovery
+- User Discovery
+
+## Product Marketing & Positioning
+- Brand Management
+- Category Creation
+- Category Management
+- Feature Positioning
+- Growth
+- Growth Loops
+- Market Positioning
+- Messaging
+- Monetization
+- Pricing
+- Pricing Strategy
+- Product Adoption
+- Product Catalog
+- Product Evangelism
+- Product Growth
+- Product Marketing
+- Product Positioning
+- Product-Led Growth
+- Product-led growth
+- Retention
+- Retention Strategy
+- Sales Enablement
+- Value Proposition
+- Value Proposition Design
+- Value Propositions
+
+## Product Strategy
+- Build vs Buy
+- Build vs Buy vs Partner Decisions
+- Business Case
+- Business Case Development
+- Business Cases
+- Business Planning
+- Governance
+- Operating Models
+- Outcome-driven product teams
+- Platform Strategy
+- Product Definition
+- Product Evaluation
+- Product Governance
+- Product Growth Plans
+- Product Innovation
+- Product Line Management
+- Product Model
+- Product Operating Model
+- Product Operations
+- Product strategy
+- Product Strategy
+- Product Vision
+- Risk Management
+- Risk Mitigation
+- Strategic Planning
+- Strategic Thinking
+- Strategy
+- System-level decision making
+- Vision
+
+## Requirements & Specifications
+- Acceptance criteria
+- Acceptance Criteria
+- BRDs
+- Business Requirements
+- Criterios de aceptación
+- Documentation
+- Epics
+- Feature Definition
+- Feature Requirements
+- Feature Specification
+- Functional Analysis
+- Functional Requirements
+- Functional Specification
+- Functional Specifications
+- Knowledge Management
+- Market Requirements
+- Market Requirements (MRD)
+- Market Requirements Document
+- MRDs
+- PRDs
+- Product Briefs
+- Product Documentation
+- Product documentation
+- Product requirements
+- Product Requirements
+- Product Specification
+- Product Specifications
+- Product Specs
+- Requirement Collection
+- Requirement Engineering
+- Requirement Gathering
+- Requirement Tracking
+- Requirements
+- Requirements Analysis
+- Requirements definition
+- Requirements Definition
+- Requirements Development
+- Requirements Documentation
+- Requirements documentation
+- Requirements Documents
+- Requirements Engineering
+- Requirements Gathering
+- Requirements gathering
+- Requirements Management
+- Technical Requirements
+- Technical Scoping
+- Technical Specifications
+- Use Case Validation
+- Use Cases
+- User Requirements
+- User stories
+- User Stories
+
+## Roadmapping & Planning
+- Capacity Planning
+- Delivery Cycles
+- Execution Planning
+- Execution Plans
+- Forecasting
+- Launch Planning
+- PI Planning
+- Planning
+- Planning Cycles
+- Planning Sessions
+- Product Forecasting
+- Product Lifecycle Planning
+- Product Planning
+- Product Roadmap
+- Product roadmap
+- Product Scope Definition
+- Project Management
+- Project management
+- Project Planning
+- Release Planning
+- Release Plans
+- Resource Management
+- Resource planning
+- Road mapping
+- Roadmap
+- Roadmap Decisions
+- Roadmap ownership
+- Roadmap Planning
+- Roadmap planning
+- Roadmap prioritization
+- Roadmap Prioritization
+- Roadmapping
+- Roadmaps
+- Scope Definition
+- Scope Refinement
+- Scoping
+- Sprint Planning
+- Sprint planning
+- Task Definition
+
+## Stakeholder Management
+- Customer Engagement
+- Customer Success
+- Stakeholder alignment
+- Stakeholder Alignment
+- Stakeholder Collaboration
+- Stakeholder Communication
+- Stakeholder Engagement
+- Stakeholder Interviews
+- Stakeholder management
+- Stakeholder Management
+
+## User Research & Insights
+- Customer Feedback
+- Customer feedback
+- Customer Insight
+- Customer Insights
+- Customer Interviews
+- Customer needs analysis
+- Customer Requirements Documentation
+- Customer Research
+- Feedback Analysis
+- Feedback Improvement
+- Feedback Loops
+- Market Research
+- Market research
+- Product Feedback
+- User Feedback
+- User feedback
+- User Feedback Analysis
+- User Feedback Collection
+- User Feedback Loops
+- User Interviews
+- User Needs Analysis
+- User Research
+- User Studies
+- User Testing
+- VOC
+- VOC (Voice of Customer)
+- Voice of Customer
+- Voice-of-Customer
+
+## Workflows & Processes
+- Change Management
+- Continuous Improvement
+- Domain Mapping
+- Gap Analysis
+- Incident Management
+- Mejora continua
+- Operational programs
+- Process Analysis
+- Process Definition
+- Process flows
+- Process improvement
+- Process Improvement
+- Process Mapping
+- Process Optimization
+- Process Structuring
+- Productization
+- Project Workflows
+- Root Cause Analysis
+- SOPs
+- Tradeoffs
+- Workflow Analysis
+- Workflow Design
+- Workflow mapping
+- Workflow Optimization
+- Workflows
+
