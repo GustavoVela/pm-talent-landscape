@@ -13,6 +13,16 @@ const navItems: NavItem[] = [
   { id: "hero", label: "Inicio", number: "00" },
   { id: "detonante", label: "El Detonante", number: "01" },
   { id: "marco-mental", label: "Marco Mental", number: "02" },
+  { id: "pipeline", label: "Pipeline", number: "03" },
+  { id: "fase-0", label: "Los Datos", number: "P0" },
+  { id: "fase-1", label: "Demografía", number: "P1" },
+  { id: "fase-2", label: "Estructura", number: "P2" },
+  { id: "fase-3", label: "Brechas", number: "P3" },
+  { id: "fase-4", label: "Cuadrante", number: "P4" },
+  { id: "fase-5", label: "IA", number: "P5" },
+  { id: "audita-tu-perfil", label: "Audita tu Perfil", number: "⚡" },
+  { id: "elefante", label: "Críticas", number: "🐘" },
+  { id: "conclusion", label: "Conclusión", number: "FIN" },
 ]
 
 export function FloatingNav() {
@@ -61,6 +71,7 @@ export function FloatingNav() {
         top: offsetPosition,
         behavior: "smooth"
       })
+      window.history.pushState(null, "", `#${id}`)
     }
   }
 

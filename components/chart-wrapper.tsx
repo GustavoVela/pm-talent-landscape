@@ -1,7 +1,7 @@
 "use client"
 
 import { useRef } from "react"
-import { Download } from "lucide-react"
+import { DownloadSimple } from "@phosphor-icons/react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 
@@ -25,26 +25,28 @@ export function ChartWrapper({
   const downloadChart = async () => {
     if (!chartRef.current) return
 
-    const echartsInstance = (chartRef.current.querySelector("canvas")?.parentElement as any)?.__bindChart
+    // ECharts instance is typically attached to the div
+    const chartDiv = chartRef.current.querySelector("div[echarts]") || chartRef.current.firstElementChild?.firstElementChild
+    if (!chartDiv) return;
 
-    if (echartsInstance) {
-      const url = echartsInstance.getDataURL({
-        type: "png",
-        pixelRatio: 2,
-        backgroundColor: "#fff",
-      })
-      const link = document.createElement("a")
-      link.download = `${id}-chart.png`
-      link.href = url
-      link.click()
-    } else {
-      const canvas = chartRef.current.querySelector("canvas")
-      if (canvas) {
+    try {
+      // Import echarts dynamically to avoid SSR issues
+      const echarts = await import('echarts');
+      const echartsInstance = echarts.getInstanceByDom(chartDiv as HTMLElement);
+      
+      if (echartsInstance) {
+        const url = echartsInstance.getDataURL({
+          type: "png",
+          pixelRatio: 2,
+          backgroundColor: "#fff",
+        })
         const link = document.createElement("a")
         link.download = `${id}-chart.png`
-        link.href = canvas.toDataURL("image/png", 1.0)
+        link.href = url
         link.click()
       }
+    } catch (e) {
+      console.error("Failed to download chart", e)
     }
   }
 
@@ -64,7 +66,7 @@ export function ChartWrapper({
             onClick={downloadChart}
             className="shrink-0"
           >
-            <Download className="mr-2 h-4 w-4" />
+            <DownloadSimple className="mr-2 h-4 w-4" />
             Descargar
           </Button>
         </CardHeader>

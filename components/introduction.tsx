@@ -1,12 +1,12 @@
 "use client"
 
 import { useEffect, useRef, useState } from "react"
-import { Target, Code, BarChart3, Palette, Sparkles } from "lucide-react"
+import { Briefcase, Code, ChartBar, PaintBrush, Brain } from "@phosphor-icons/react"
 import { cn } from "@/lib/utils"
 
 const domains = [
   {
-    icon: Target,
+    icon: Briefcase,
     number: "01",
     title: "Visión de Negocio",
     subtitle: "El foso real",
@@ -19,19 +19,19 @@ const domains = [
     description: "Entender arquitectura de sistemas, debatir trade-offs de escalabilidad y usar herramientas de IA para prototipar."
   },
   {
-    icon: BarChart3,
+    icon: ChartBar,
     number: "03",
     title: "Fluidez en Datos",
     description: "Ser el dueño de la verdad matemática. Encontrar la causalidad real detrás del comportamiento del usuario."
   },
   {
-    icon: Palette,
+    icon: PaintBrush,
     number: "04",
     title: "UX / UI",
     description: "Vivir en los píxeles. Diseñar flujos que reduzcan la carga cognitiva."
   },
   {
-    icon: Sparkles,
+    icon: Brain,
     number: "05",
     title: "Inteligencia Artificial",
     description: "Escribir Evals rigurosos y delegar el trabajo operativo a agentes autónomos."
@@ -94,8 +94,8 @@ export function Introduction() {
       {/* Hero Section */}
       <section id="hero" className="relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-muted/30 to-transparent" />
-        <div className="container relative mx-auto px-4 py-24 md:px-6 md:py-32 lg:py-40">
-          <div className="mx-auto max-w-4xl">
+        <div className="container relative mx-auto px-4 py-16 md:px-6 md:py-20 lg:py-28">
+          <div className="mx-auto max-w-5xl">
             <AnimatedSection>
               <p className="mb-6 text-sm font-medium uppercase tracking-widest text-muted-foreground">
                 Un análisis de datos del mercado laboral
@@ -131,7 +131,7 @@ export function Introduction() {
       {/* Section 1: El Detonante */}
       <section id="detonante" className="border-t border-border/40">
         <div className="container mx-auto px-4 py-20 md:px-6 md:py-28">
-          <div className="mx-auto max-w-4xl">
+          <div className="mx-auto max-w-5xl">
             <AnimatedSection>
               <div className="mb-12">
                 <span className="text-sm font-medium text-muted-foreground">01</span>
@@ -161,7 +161,7 @@ export function Introduction() {
               
               <AnimatedSection delay={200}>
                 <p>
-                  Había un choque brutal entre la narrativa global y la realidad operativa del reclutamiento en Latinoamérica. ¿Estaba yo viviendo en una burbuja? Como profesional de datos, decidí raspar la información y mirar los números.
+                  Había un choque brutal entre la narrativa global y la realidad operativa del reclutamiento en Latinoamérica. ¿Estaba yo viviendo en una burbuja? Como profesional de datos, decidí extraer la información y mirar los números.
                 </p>
               </AnimatedSection>
               
@@ -183,8 +183,8 @@ export function Introduction() {
 
       {/* Section 2: Marco Mental */}
       <section id="marco-mental" className="border-t border-border/40 bg-muted/20">
-        <div className="container mx-auto px-4 py-20 md:px-6 md:py-28">
-          <div className="mx-auto max-w-4xl">
+        <div className="container mx-auto px-4 py-12 md:px-6 md:py-16">
+          <div className="mx-auto max-w-5xl">
             <AnimatedSection>
               <div className="mb-12">
                 <span className="text-sm font-medium text-muted-foreground">02</span>
@@ -198,7 +198,7 @@ export function Introduction() {
             </AnimatedSection>
             
             <AnimatedSection delay={100}>
-              <div className="space-y-6 text-lg text-muted-foreground leading-relaxed mb-16">
+              <div className="space-y-6 text-lg text-muted-foreground leading-relaxed mb-8">
                 <p>
                   Antes de escarbar en los datos, necesitábamos definir el estándar. La premisa central de este estudio es que <span className="font-semibold text-foreground">las fronteras tradicionales entre Ingeniería, Diseño y Producto se están colapsando</span>.
                 </p>

@@ -1,19 +1,17 @@
 import { Header } from "@/components/header"
 import { Introduction } from "@/components/introduction"
-import { TableOfContents, type TocItem } from "@/components/table-of-contents"
-import { ChartsSection } from "@/components/charts-section"
+import { AnalysisPipeline } from "@/components/analysis-pipeline"
+import { PhaseZero } from "@/components/phase-zero"
+import { PhaseOne } from "@/components/phase-one"
+import { PhaseTwo } from "@/components/phase-two"
+import { PhaseThree } from "@/components/phase-three"
+import { PhaseFour } from "@/components/phase-four"
+import { PhaseFive } from "@/components/phase-five"
+import { ProfileAudit } from "@/components/profile-audit"
+import { ElephantInTheRoom } from "@/components/elephant-in-the-room"
+import { Conclusion } from "@/components/conclusion"
 import { Footer } from "@/components/footer"
 import { FloatingNav } from "@/components/floating-nav"
-
-// Esta lista se actualizará conforme se agreguen gráficas
-const tableOfContentsItems: TocItem[] = [
-  // Ejemplo de cómo se agregarán items:
-  // {
-  //   id: "chart-salarios",
-  //   title: "Distribución de Salarios",
-  //   description: "Análisis de rangos salariales por nivel de experiencia"
-  // },
-]
 
 export default function Home() {
   return (
@@ -22,8 +20,16 @@ export default function Home() {
       <FloatingNav />
       <main className="flex-1">
         <Introduction />
-        <TableOfContents items={tableOfContentsItems} />
-        <ChartsSection />
+        <AnalysisPipeline />
+        <PhaseZero />
+        <PhaseOne />
+        <PhaseTwo />
+        <PhaseThree />
+        <PhaseFour />
+        <PhaseFive />
+        <ProfileAudit />
+        <ElephantInTheRoom />
+        <Conclusion />
       </main>
       <Footer />
     </div>

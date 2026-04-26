@@ -1,4 +1,6 @@
-import { Linkedin } from "lucide-react"
+"use client"
+
+import { LinkedinLogo } from "@phosphor-icons/react"
 
 export function Footer() {
   const currentYear = new Date().getFullYear()
@@ -26,7 +28,7 @@ export function Footer() {
             rel="noopener noreferrer"
             className="flex items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-foreground"
           >
-            <Linkedin className="h-4 w-4" />
+            <LinkedinLogo className="h-4 w-4" />
             <span>Conecta en LinkedIn</span>
           </a>
         </div>

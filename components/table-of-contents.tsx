@@ -1,6 +1,6 @@
 "use client"
 
-import { ChartBar } from "lucide-react"
+import { ChartBar } from "@phosphor-icons/react"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 
 export interface TocItem {
@@ -23,8 +23,9 @@ export function TableOfContents({ items }: TableOfContentsProps) {
 
       window.scrollTo({
         top: offsetPosition,
-        behavior: "smooth",
+        behavior: "smooth"
       })
+      window.history.pushState(null, "", `#${id}`)
     }
   }
 
