@@ -142,10 +142,11 @@ export function RolesTaxonomyChart({
         itemStyle: { color: '#0ea5e9', borderRadius: [0, 4, 4, 0] },
         label: {
           show: true,
-          position: 'inside',
+          position: 'right',
           formatter: isPercentage ? '{c}%' : '{c}',
-          color: '#fff',
-          fontSize: 10
+          color: '#0f172a',
+          fontSize: 10,
+          fontWeight: 600
         }
       }
     ]

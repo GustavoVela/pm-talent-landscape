@@ -13,13 +13,15 @@ export function DemographyCountryChart({
 }) {
   const isPercentage = viewMode === 'percentage';
 
+  const grandTotal = demographicsCountryData.reduce((acc, curr) => acc + curr.total, 0);
+
   const chartData = demographicsCountryData.map(d => {
     const label = `${FLAGS[d.country] || ''} ${d.country}`;
     if (isPercentage) {
       return {
         country: label,
-        pm: parseFloat(((d.pm_count / d.total) * 100).toFixed(1)),
-        no_pm: parseFloat(((d.no_pm_count / d.total) * 100).toFixed(1))
+        pm: parseFloat(((d.pm_count / grandTotal) * 100).toFixed(1)),
+        no_pm: parseFloat(((d.no_pm_count / grandTotal) * 100).toFixed(1))
       };
     }
     return {

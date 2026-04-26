@@ -76,9 +76,9 @@ export function CompetencyMacroRadar() {
   };
 
   return (
-    <div className="h-[420px] w-full -mt-12 -mb-8">
+    <div className="h-[420px] w-full -mt-16 -mb-8">
       <ResponsiveContainer width="100%" height="100%">
-        <RadarChart cx="50%" cy="50%" outerRadius="80%" data={macroData} startAngle={90} endAngle={-270} margin={{ top: 0, right: 35, bottom: -5, left: 35 }}>
+        <RadarChart cx="50%" cy="50%" outerRadius="95%" data={macroData} startAngle={90} endAngle={-270} margin={{ top: 0, right: 10, bottom: -10, left: 10 }}>
           <PolarGrid stroke="#e2e8f0" />
           <PolarAngleAxis dataKey="subject" tick={{ fill: '#0f172a', fontSize: 13, fontWeight: 600, fontFamily: 'var(--font-sans), sans-serif' }} />
           <PolarRadiusAxis angle={30} domain={[0, 100]} tick={false} axisLine={false} />

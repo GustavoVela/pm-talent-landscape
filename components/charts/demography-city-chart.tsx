@@ -26,6 +26,8 @@ export function DemographyCityChart({
       ? demographicsCityData
       : demographicsCityData.filter(d => d.country === selectedCountry);
 
+    const grandTotal = data.reduce((acc, curr) => acc + curr.total, 0);
+
     // Sort by pm_count descending, take top 15, then reverse for ECharts so largest is at top
     data = [...data].sort((a, b) => b.pm_count - a.pm_count).slice(0, 15).reverse();
 
@@ -34,8 +36,8 @@ export function DemographyCityChart({
       if (isPercentage) {
         return {
           city: label,
-          pm: parseFloat(((d.pm_count / d.total) * 100).toFixed(1)),
-          no_pm: parseFloat(((d.no_pm_count / d.total) * 100).toFixed(1))
+          pm: parseFloat(((d.pm_count / grandTotal) * 100).toFixed(1)),
+          no_pm: parseFloat(((d.no_pm_count / grandTotal) * 100).toFixed(1))
         };
       }
       return {
