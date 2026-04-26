@@ -6,6 +6,7 @@ import { SectionHeader, NarrativeText, StatCard, AnimatedSection } from "./secti
 import { NoiseFilterChart } from "./charts/noise-filter-chart"
 import { DemographyCountryChart } from "./charts/demography-country-chart"
 import { DemographyCityChart } from "./charts/demography-city-chart"
+import { RolesTaxonomyChart } from "./charts/roles-taxonomy-chart"
 import {
   Carousel,
   CarouselContent,
@@ -127,6 +128,18 @@ function PhaseZeroCarousel() {
                 }
               >
                 <DemographyCityChart viewMode={cityViewMode} selectedCountry={selectedCountry} />
+              </ChartWrapper>
+            </div>
+          </CarouselItem>
+
+          <CarouselItem className="pl-4 md:pl-6 basis-full lg:basis-[60%] xl:basis-[55%]">
+            <div className={cn("transition-all duration-500 h-full", current !== 3 ? "opacity-40 scale-[0.98] blur-[1px]" : "opacity-100 scale-100 shadow-xl ring-1 ring-border/50 rounded-xl")}>
+              <ChartWrapper
+                id="chart-roles-taxonomy"
+                title="Taxonomía de Roles Principales"
+                className="h-full bg-white/50 dark:bg-slate-950/50 backdrop-blur-sm shadow-lg"
+              >
+                <RolesTaxonomyChart />
               </ChartWrapper>
             </div>
           </CarouselItem>

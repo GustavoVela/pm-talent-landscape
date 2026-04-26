@@ -5,14 +5,14 @@ import { ThemeToggle } from "./theme-toggle"
 import { GithubLogo } from "@phosphor-icons/react"
 
 export function Header() {
-  const publishDate = "Abril 2025"
+  const publishDate = "Abril 2026"
   const authorName = "Gustavo Vela Zuñiga"
   const linkedinUrl = "https://www.linkedin.com/in/gustavo-vela/"
   const githubUrl = "https://github.com/GustavoVela/pm-talent-landscape"
   const profileImage = "https://media.licdn.com/dms/image/v2/D4E03AQGX6nV2oMzC8g/profile-displayphoto-crop_800_800/B4EZ0M81ysHUAI-/0/1774038774403?e=1778716800&v=beta&t=Ko07etYOzdTZ_CwgiR6QSZts9CeRL5THeDzTap8MDro"
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/80 backdrop-blur-xl supports-[backdrop-filter]:bg-background/60">
+    <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-muted/80 backdrop-blur-xl supports-[backdrop-filter]:bg-muted/60">
       <div className="container mx-auto flex h-14 items-center justify-between px-4 md:px-6">
         <div className="flex items-center gap-6">
           <span className="text-sm font-semibold tracking-tight text-foreground">
