@@ -10,7 +10,26 @@ export function SkillsSunburstChart() {
   const sunburstPalette = ['#3b82f6', '#10b981', '#f59e0b', '#ef4444', '#8b5cf6', '#06b6d4'];
   const sunburstCategories = treeData.children.map(c => c.name);
   
-  const dummyPieData = sunburstCategories.map(name => ({name: name, value: 0}));
+  const colorMap = useMemo(() => {
+    const map: Record<string, string> = {};
+    treeData.children.forEach((child, index) => {
+      map[child.name] = sunburstPalette[index % sunburstPalette.length];
+    });
+    return map;
+  }, []);
+
+  const dummyPieData = sunburstCategories.map(name => ({
+    name: name, 
+    value: 0,
+    itemStyle: { color: colorMap[name] }
+  }));
+
+  const coloredActiveData = useMemo(() => {
+    return activeData.map(item => ({
+      ...item,
+      itemStyle: { color: colorMap[item.name] }
+    }));
+  }, [activeData, colorMap]);
 
   const option = {
     color: sunburstPalette,
@@ -36,7 +55,7 @@ export function SkillsSunburstChart() {
       {
         id: 'mainSunburst',
         type: 'sunburst',
-        data: activeData,
+        data: coloredActiveData,
         radius: [0, '85%'],
         center: ['50%', '45%'],
         sort: undefined,
