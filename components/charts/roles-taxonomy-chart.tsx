@@ -74,21 +74,35 @@ export function RolesTaxonomyChart({
 
     // 2. Agregar cantidades por rol
     const aggregated: Record<string, number> = {};
-    let totalVacancies = 0;
     
     filtered.forEach(d => {
       aggregated[d.rol] = (aggregated[d.rol] || 0) + d.cantidad;
-      totalVacancies += d.cantidad;
     });
 
-    // 3. Convertir a array, ordenar de mayor a menor y tomar el Top 15
     let result = Object.entries(aggregated)
-      .map(([rol, cantidad]) => ({ 
-        rol, 
-        cantidad: isPercentage ? parseFloat(((cantidad / totalVacancies) * 100).toFixed(1)) : cantidad 
-      }))
+      .map(([rol, cantidad]) => ({ rol, cantidad }))
       .sort((a, b) => b.cantidad - a.cantidad)
       .slice(0, 15);
+
+    let totalVacancies = result.reduce((acc, curr) => acc + curr.cantidad, 0);
+
+    result = result.map(d => ({
+        rol: d.rol,
+        cantidad: isPercentage ? parseFloat(((d.cantidad / totalVacancies) * 100).toFixed(1)) : d.cantidad
+    }));
+
+    if (isPercentage) {
+      let sum = result.reduce((acc, curr) => acc + curr.cantidad, 0);
+      const diff = parseFloat((100 - sum).toFixed(1));
+      if (diff !== 0) {
+        let maxVal = -1;
+        let maxIdx = -1;
+        result.forEach((d, i) => {
+          if (d.cantidad > maxVal) { maxVal = d.cantidad; maxIdx = i; }
+        });
+        result[maxIdx].cantidad = parseFloat((result[maxIdx].cantidad + diff).toFixed(1));
+      }
+    }
 
     // Recharts / ECharts dibuja de abajo hacia arriba en barras horizontales, por lo que invertimos el arreglo final
     return result.reverse();

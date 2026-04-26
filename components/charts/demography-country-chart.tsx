@@ -15,7 +15,7 @@ export function DemographyCountryChart({
 
   const grandTotal = demographicsCountryData.reduce((acc, curr) => acc + curr.total, 0);
 
-  const chartData = demographicsCountryData.map(d => {
+  let chartData = demographicsCountryData.map(d => {
     const label = `${FLAGS[d.country] || ''} ${d.country}`;
     if (isPercentage) {
       return {
@@ -30,6 +30,25 @@ export function DemographyCountryChart({
       no_pm: d.no_pm_count
     };
   });
+
+  if (isPercentage) {
+    let sum = chartData.reduce((acc, curr) => acc + curr.pm + curr.no_pm, 0);
+    const diff = parseFloat((100 - sum).toFixed(1));
+    if (diff !== 0) {
+      let maxVal = -1;
+      let maxIdx = -1;
+      let isPm = true;
+      chartData.forEach((d, i) => {
+        if (d.pm > maxVal) { maxVal = d.pm; maxIdx = i; isPm = true; }
+        if (d.no_pm > maxVal) { maxVal = d.no_pm; maxIdx = i; isPm = false; }
+      });
+      if (isPm) {
+        chartData[maxIdx].pm = parseFloat((chartData[maxIdx].pm + diff).toFixed(1));
+      } else {
+        chartData[maxIdx].no_pm = parseFloat((chartData[maxIdx].no_pm + diff).toFixed(1));
+      }
+    }
+  }
 
   const option = {
     tooltip: {

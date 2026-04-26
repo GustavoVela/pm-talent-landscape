@@ -31,7 +31,7 @@ export function DemographyCityChart({
     // Sort by pm_count descending, take top 15, then reverse for ECharts so largest is at top
     data = [...data].sort((a, b) => b.pm_count - a.pm_count).slice(0, 15).reverse();
 
-    return data.map(d => {
+    let resultData = data.map(d => {
       const label = `${FLAGS[d.country] || ''} ${d.city}`;
       if (isPercentage) {
         return {
@@ -46,6 +46,27 @@ export function DemographyCityChart({
         no_pm: d.no_pm_count
       };
     });
+
+    if (isPercentage) {
+      let sum = resultData.reduce((acc, curr) => acc + curr.pm + curr.no_pm, 0);
+      const diff = parseFloat((100 - sum).toFixed(1));
+      if (diff !== 0) {
+        let maxVal = -1;
+        let maxIdx = -1;
+        let isPm = true;
+        resultData.forEach((d, i) => {
+          if (d.pm > maxVal) { maxVal = d.pm; maxIdx = i; isPm = true; }
+          if (d.no_pm > maxVal) { maxVal = d.no_pm; maxIdx = i; isPm = false; }
+        });
+        if (isPm) {
+          resultData[maxIdx].pm = parseFloat((resultData[maxIdx].pm + diff).toFixed(1));
+        } else {
+          resultData[maxIdx].no_pm = parseFloat((resultData[maxIdx].no_pm + diff).toFixed(1));
+        }
+      }
+    }
+
+    return resultData;
   }, [selectedCountry, viewMode, isPercentage]);
 
   const option = {
