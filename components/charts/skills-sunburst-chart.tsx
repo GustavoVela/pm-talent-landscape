@@ -32,7 +32,7 @@ export function SkillsSunburstChart() {
   }, [activeData, colorMap]);
 
   const option = {
-    color: sunburstPalette,
+    color: activeData.map(d => colorMap[d.name]),
     tooltip: { 
       trigger: 'item', 
       formatter: function(params: any) {
