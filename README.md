@@ -27,7 +27,7 @@ El proyecto fue creado por **[Gustavo Vela Zúñiga](https://www.linkedin.com/in
 - 🌗 **Modo Claro / Oscuro** — Soporte completo de temas con `next-themes`
 - 🧭 **Navegación flotante** — Indicadores de progreso en el lateral derecho (desktop)
 - 📱 **Diseño responsive** — Optimizado para móvil, tablet y desktop
-- 🔍 **SEO optimizado** — Meta tags, HTML semántico y tipografía de Geist (Google Fonts)
+- 🔍 **SEO optimizado** — Meta tags, HTML semántico y tipografía custom (Nunito Sans y Manrope)
 - 📊 **Taxonomía de habilidades** — Dataset curado con 6 dominios y cientos de skills mapeadas
 
 ---
@@ -40,11 +40,10 @@ El proyecto fue creado por **[Gustavo Vela Zúñiga](https://www.linkedin.com/in
 | **UI Library** | [React 19](https://react.dev/) |
 | **Lenguaje** | [TypeScript 5.7](https://www.typescriptlang.org/) |
 | **Estilos** | [Tailwind CSS 4](https://tailwindcss.com/) + CSS Variables (oklch) |
-| **Componentes UI** | [shadcn/ui](https://ui.shadcn.com/) (estilo New York) + [Radix UI](https://www.radix-ui.com/) |
+| **Componentes UI** | [shadcn/ui](https://ui.shadcn.com/) (Preset Nova, Base Stone) + [Radix UI](https://www.radix-ui.com/) |
 | **Gráficas** | [Apache ECharts 6](https://echarts.apache.org/) + [echarts-for-react](https://github.com/hustcc/echarts-for-react) |
-| **Iconos** | [Lucide React](https://lucide.dev/) |
+| **Iconos** | [Phosphor Icons](https://phosphoricons.com/) |
 | **Temas** | [next-themes](https://github.com/pacocoursey/next-themes) |
-| **Analytics** | [Vercel Analytics](https://vercel.com/analytics) |
 | **Parseo de datos** | [PapaParse](https://www.papaparse.com/) (CSV) |
 | **Package Manager** | [pnpm](https://pnpm.io/) |
 
@@ -58,7 +57,7 @@ El proyecto utiliza la arquitectura **App Router** de Next.js con una separació
 pm-talent-landscape/
 ├── app/                        # 🏠 App Router de Next.js
 │   ├── globals.css             #    Sistema de diseño: CSS variables (oklch), temas light/dark
-│   ├── layout.tsx              #    Layout raíz: fuentes Geist, ThemeProvider, Vercel Analytics
+│   ├── layout.tsx              #    Layout raíz: fuentes Nunito Sans/Manrope, ThemeProvider
 │   └── page.tsx                #    Página principal: orquesta Header → Intro → TOC → Charts → Footer
 │
 ├── components/                 # 🧩 Componentes de la aplicación
