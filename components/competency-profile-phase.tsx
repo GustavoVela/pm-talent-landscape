@@ -48,6 +48,7 @@ export function CompetencyProfilePhase() {
               <ChartWrapper
                 id="chart-radar-country"
                 title="Comparativa por Países"
+                description="💡 Tip: Haz clic en los países de la leyenda para encenderlos o apagarlos y aislar tu comparación."
                 interpretation="Brasil es la locomotora técnica y analítica del sur. Colombia sorprende liderando UX/UI y adopción de IA. Chile y Perú muestran un mercado corporativo tradicional hiper-enfocado en Business. México actúa como el puente equilibrado."
                 className="h-full bg-white/50 dark:bg-slate-950/50 backdrop-blur-sm border-slate-200 dark:border-slate-800 shadow-lg"
               >
