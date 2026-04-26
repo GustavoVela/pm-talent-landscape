@@ -30,6 +30,8 @@ function PhaseZeroCarousel() {
   const [countryViewMode, setCountryViewMode] = React.useState<'absolute' | 'percentage'>('absolute')
   const [cityViewMode, setCityViewMode] = React.useState<'absolute' | 'percentage'>('absolute')
   const [selectedCountry, setSelectedCountry] = React.useState<string>('all')
+  const [taxonomyViewMode, setTaxonomyViewMode] = React.useState<'absolute' | 'percentage'>('absolute')
+  const [taxonomySelectedCountry, setTaxonomySelectedCountry] = React.useState<string>('all')
 
   const countries = React.useMemo(() => {
     return [...new Set(demographicsCityData.map(d => d.country))].sort();
@@ -137,11 +139,12 @@ function PhaseZeroCarousel() {
               <ChartWrapper
                 id="chart-roles-taxonomy"
                 title="Taxonomía de Roles Principales"
+                interpretation="Nota temporal: Los títulos 'Product Owner' y 'Product Marketing Manager' tienen una gran participación, pero 'Product Manager' domina abrumadoramente."
                 className="h-full bg-white/50 dark:bg-slate-950/50 backdrop-blur-sm shadow-lg"
                 controls={
-                  <div className="flex w-full justify-start">
+                  <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 w-full justify-between">
                     <div className="w-full sm:w-auto sm:min-w-[280px]">
-                      <Select value={selectedCountry} onValueChange={setSelectedCountry}>
+                      <Select value={taxonomySelectedCountry} onValueChange={setTaxonomySelectedCountry}>
                         <SelectTrigger className="h-8 text-xs">
                           <SelectValue placeholder="Filtrar por país..." />
                         </SelectTrigger>
@@ -157,10 +160,14 @@ function PhaseZeroCarousel() {
                         </SelectContent>
                       </Select>
                     </div>
+                    <ToggleGroup type="single" variant="outline" value={taxonomyViewMode} onValueChange={(v) => v && setTaxonomyViewMode(v as 'absolute' | 'percentage')} size="sm" className="justify-start">
+                      <ToggleGroupItem value="absolute" className="text-xs h-8 px-3">Valores</ToggleGroupItem>
+                      <ToggleGroupItem value="percentage" className="text-xs h-8 px-3">Porcentaje (%)</ToggleGroupItem>
+                    </ToggleGroup>
                   </div>
                 }
               >
-                <RolesTaxonomyChart selectedCountry={selectedCountry} />
+                <RolesTaxonomyChart selectedCountry={taxonomySelectedCountry} viewMode={taxonomyViewMode} />
               </ChartWrapper>
             </div>
           </CarouselItem>

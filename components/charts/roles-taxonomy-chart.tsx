@@ -57,7 +57,15 @@ const rawRolesData = [
   {"country": "United States", "rol": "Chief Product Officer", "cantidad": 24}
 ];
 
-export function RolesTaxonomyChart({ selectedCountry = 'all' }: { selectedCountry?: string }) {
+export function RolesTaxonomyChart({ 
+  selectedCountry = 'all',
+  viewMode = 'absolute'
+}: { 
+  selectedCountry?: string;
+  viewMode?: 'absolute' | 'percentage';
+}) {
+  const isPercentage = viewMode === 'percentage';
+
   const chartData = useMemo(() => {
     // 1. Filtrar por país
     const filtered = selectedCountry === 'all' 
@@ -66,24 +74,38 @@ export function RolesTaxonomyChart({ selectedCountry = 'all' }: { selectedCountr
 
     // 2. Agregar cantidades por rol
     const aggregated: Record<string, number> = {};
+    let totalVacancies = 0;
+    
     filtered.forEach(d => {
       aggregated[d.rol] = (aggregated[d.rol] || 0) + d.cantidad;
+      totalVacancies += d.cantidad;
     });
 
     // 3. Convertir a array, ordenar de mayor a menor y tomar el Top 15
     let result = Object.entries(aggregated)
-      .map(([rol, cantidad]) => ({ rol, cantidad }))
+      .map(([rol, cantidad]) => ({ 
+        rol, 
+        cantidad: isPercentage ? parseFloat(((cantidad / totalVacancies) * 100).toFixed(1)) : cantidad 
+      }))
       .sort((a, b) => b.cantidad - a.cantidad)
       .slice(0, 15);
 
-    // Recharts / ECharts dibuja de abajo hacia arriba en barras horizontales
+    // Recharts / ECharts dibuja de abajo hacia arriba en barras horizontales, por lo que invertimos el arreglo final
     return result.reverse();
-  }, [selectedCountry]);
+  }, [selectedCountry, isPercentage]);
 
   const option = {
     tooltip: {
       trigger: 'axis',
-      axisPointer: { type: 'shadow' }
+      axisPointer: { type: 'shadow' },
+      formatter: function (params: any) {
+        let res = `${params[0].axisValue}<br/>`;
+        params.forEach((p: any) => {
+          const val = isPercentage ? `${p.value}%` : p.value.toLocaleString();
+          res += `${p.marker} ${p.seriesName}: ${val}<br/>`;
+        });
+        return res;
+      }
     },
     grid: {
       left: '3%',
@@ -94,10 +116,14 @@ export function RolesTaxonomyChart({ selectedCountry = 'all' }: { selectedCountr
     },
     xAxis: {
       type: 'value',
-      name: 'Cantidad de vacantes',
+      name: isPercentage ? 'Porcentaje (%)' : 'Cantidad de vacantes',
       nameLocation: 'middle',
       nameGap: 30,
       nameTextStyle: { fontSize: 12, color: '#64748b' },
+      max: isPercentage ? 100 : undefined,
+      axisLabel: {
+        formatter: isPercentage ? '{value}%' : '{value}'
+      },
       splitLine: {
         lineStyle: { type: 'dashed', color: 'rgba(0,0,0,0.1)' }
       }
@@ -117,7 +143,7 @@ export function RolesTaxonomyChart({ selectedCountry = 'all' }: { selectedCountr
         label: {
           show: true,
           position: 'inside',
-          formatter: '{c}',
+          formatter: isPercentage ? '{c}%' : '{c}',
           color: '#fff',
           fontSize: 10
         }
@@ -133,9 +159,6 @@ export function RolesTaxonomyChart({ selectedCountry = 'all' }: { selectedCountr
           style={{ height: '100%', width: '100%' }} 
           opts={{ renderer: 'svg' }}
         />
-      </div>
-      <div className="text-center mt-2 text-xs text-amber-600 bg-amber-50 p-2 rounded-md">
-        Nota temporal: Los títulos "Product Owner" y "Product Marketing Manager" tienen una gran participación, pero "Product Manager" domina abrumadoramente.
       </div>
     </div>
   );
