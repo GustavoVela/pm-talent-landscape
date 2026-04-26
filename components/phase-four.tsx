@@ -5,11 +5,11 @@ import { SectionHeader, NarrativeText, Blockquote, ChartPlaceholder, AnimatedSec
 
 export function PhaseFour() {
   return (
-    <section id="fase-4" className="border-t border-border/40">
+    <section id="fase-4" className="border-t border-border/40 bg-slate-50/50 dark:bg-slate-900/20">
       <div className="container mx-auto px-4 py-20 md:px-6 md:py-28">
         <div className="mx-auto max-w-5xl">
           <SectionHeader
-            number="P4"
+            number="08"
             title="Desenredando la Complejidad"
             subtitle="Tienes 5 horas libres este fin de semana. ¿En qué inviertes tu tiempo? Separemos el commodity del foso competitivo."
           />

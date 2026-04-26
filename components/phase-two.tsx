@@ -5,11 +5,11 @@ import { SectionHeader, NarrativeText, Blockquote, ChartPlaceholder, AnimatedSec
 
 export function PhaseTwo() {
   return (
-    <section id="fase-2" className="border-t border-border/40">
+    <section id="fase-2" className="border-t border-border/40 bg-slate-50/50 dark:bg-slate-900/20">
       <div className="container mx-auto px-4 py-20 md:px-6 md:py-28">
         <div className="mx-auto max-w-5xl">
           <SectionHeader
-            number="P2"
+            number="06"
             title="Entendiendo la Estructura"
             subtitle="El cuello de botella del PM: ¿dónde se atasca la carrera y vale la pena especializarse técnicamente?"
           />

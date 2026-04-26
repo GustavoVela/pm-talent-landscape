@@ -6,11 +6,11 @@ import { Lightning, Cpu, Brain } from "@phosphor-icons/react"
 
 export function PhaseFive() {
   return (
-    <section id="fase-5" className="border-t border-border/40 bg-muted/20">
+    <section id="fase-5" className="border-t border-border/40">
       <div className="container mx-auto px-4 py-20 md:px-6 md:py-28">
         <div className="mx-auto max-w-5xl">
           <SectionHeader
-            number="P5"
+            number="09"
             title="La Lupa en la Adopción"
             subtitle="Hype vs. Deep Tech — ¿quién pide IA por FOMO y quién está literalmente construyendo el futuro del software?"
           />

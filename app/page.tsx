@@ -7,7 +7,6 @@ import { PhaseTwo } from "@/components/phase-two"
 import { PhaseThree } from "@/components/phase-three"
 import { PhaseFour } from "@/components/phase-four"
 import { PhaseFive } from "@/components/phase-five"
-import { ProfileAudit } from "@/components/profile-audit"
 import { ElephantInTheRoom } from "@/components/elephant-in-the-room"
 import { Conclusion } from "@/components/conclusion"
 import { Footer } from "@/components/footer"
@@ -27,7 +26,6 @@ export default function Home() {
         <PhaseThree />
         <PhaseFour />
         <PhaseFive />
-        <ProfileAudit />
         <ElephantInTheRoom />
         <Conclusion />
       </main>

@@ -62,21 +62,26 @@ pm-talent-landscape/
 │
 ├── components/                 # 🧩 Componentes de la aplicación
 │   ├── header.tsx              #    Barra superior sticky con autor, fecha y toggle de tema
-│   ├── introduction.tsx        #    Sección Hero + narrativa editorial con animaciones scroll-driven
-│   ├── floating-nav.tsx        #    Navegación lateral flotante con indicadores de sección activa
-│   ├── table-of-contents.tsx   #    Tabla de contenidos dinámica para las visualizaciones
-│   ├── charts-section.tsx      #    Contenedor de todas las visualizaciones de datos
-│   ├── chart-wrapper.tsx       #    Wrapper reutilizable: título + gráfica + interpretación + descarga
-│   ├── footer.tsx              #    Pie de página con créditos y enlace a LinkedIn
-│   ├── theme-provider.tsx      #    Proveedor de tema (next-themes wrapper)
-│   ├── theme-toggle.tsx        #    Botón de cambio claro/oscuro con animación de iconos
-│   └── ui/                     #    ⚙️ Componentes shadcn/ui (57 componentes Radix-based)
+│   ├── introduction.tsx        #    (00, 01, 02) Sección Hero + Detonante + Marco Mental
+│   ├── analysis-pipeline.tsx   #    (03) Metodología de análisis
+│   ├── phase-zero.tsx          #    (04) Los Datos y Demografía (Carrusel interactivo)
+│   ├── phase-one.tsx           #    (05) Modalidad de Trabajo
+│   ├── phase-two.tsx           #    (06) Estructura y Cuello de Botella
+│   ├── phase-three.tsx         #    (07) Brechas y Herramienta Interactiva
+│   ├── phase-four.tsx          #    (08) Cuadrante Mágico de Skills
+│   ├── phase-five.tsx          #    (09) Adopción IA
+│   ├── elephant-in-the-room.tsx#    (10) Críticas (Acordeón de objeciones)
+│   ├── conclusion.tsx          #    (11) Conclusión y cierre
+│   ├── floating-nav.tsx        #    Navegación lateral flotante (Índice continuo 00-11)
+│   ├── section-primitives.tsx  #    Bloques reutilizables: títulos, blockquotes, contenedores
+│   ├── chart-wrapper.tsx       #    Wrapper unificado de UX: controles (Select/Toggle) + descarga
+│   ├── charts/                 #    Implementaciones de visualización en Recharts / ECharts
+│   ├── ui/                     #    ⚙️ Componentes shadcn/ui
+│       ├── accordion.tsx
 │       ├── button.tsx
-│       ├── card.tsx
-│       ├── chart.tsx
-│       ├── dialog.tsx
-│       ├── toast.tsx
-│       └── ...                 #    + 52 componentes más (accordion, tabs, sidebar, etc.)
+│       ├── select.tsx
+│       ├── toggle-group.tsx
+│       └── ...                 #    + primitivos Radix-based
 │
 ├── analysis/                   # 📊 Datos crudos, taxonomías y prompts del pipeline de IA
 │   ├── databases/              #    Listados base extraídos (industrias, roles, locations, seniorities)

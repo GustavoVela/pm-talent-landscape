@@ -2,8 +2,12 @@
 
 import { AnimatedSection } from "./section-primitives"
 import { cn } from "@/lib/utils"
-import { useState } from "react"
-import { CaretDown } from "@phosphor-icons/react"
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion"
 
 const criticisms = [
   {
@@ -24,46 +28,14 @@ const criticisms = [
   },
 ]
 
-function CriticismItem({ item, index }: { item: typeof criticisms[number]; index: number }) {
-  const [isOpen, setIsOpen] = useState(false)
-
-  return (
-    <AnimatedSection delay={index * 80}>
-      <div className="border-b border-border/40 last:border-b-0">
-        <button
-          onClick={() => setIsOpen(!isOpen)}
-          className="w-full flex items-start gap-4 py-5 text-left group"
-        >
-          <span className="flex-1 text-base font-medium text-foreground leading-snug group-hover:text-foreground/80 transition-colors">
-            {item.quote}
-          </span>
-          <CaretDown className={cn(
-            "h-4 w-4 shrink-0 text-muted-foreground transition-transform duration-200 mt-1",
-            isOpen && "rotate-180"
-          )} />
-        </button>
-        <div className={cn(
-          "overflow-hidden transition-all duration-300 ease-out",
-          isOpen ? "max-h-96 opacity-100 pb-5" : "max-h-0 opacity-0"
-        )}>
-          <p className="text-muted-foreground leading-relaxed pr-8">
-            {item.response}
-          </p>
-        </div>
-      </div>
-    </AnimatedSection>
-  )
-}
-
 export function ElephantInTheRoom() {
   return (
-    <section id="elefante" className="border-t border-border/40 bg-muted/20">
+    <section id="elefante" className="border-t border-border/40 bg-slate-50/50 dark:bg-slate-900/20">
       <div className="container mx-auto px-4 py-20 md:px-6 md:py-28">
         <div className="mx-auto max-w-5xl">
-          {/* Section Header — matching style */}
           <AnimatedSection>
             <div className="mb-12">
-              <span className="text-sm font-medium text-muted-foreground">🐘</span>
+              <span className="text-sm font-medium text-muted-foreground">10</span>
               <h2 className="mt-2 text-3xl font-bold tracking-tight text-foreground md:text-4xl">
                 El Elefante en la Habitación
               </h2>
@@ -73,11 +45,20 @@ export function ElephantInTheRoom() {
             </div>
           </AnimatedSection>
 
-          <div className="rounded-xl border border-border/50 bg-background overflow-hidden px-6 md:px-8">
-            {criticisms.map((item, index) => (
-              <CriticismItem key={index} item={item} index={index} />
-            ))}
-          </div>
+          <AnimatedSection delay={150}>
+            <Accordion type="single" collapsible className="w-full rounded-xl border border-border/50 bg-background px-6 md:px-8">
+              {criticisms.map((item, index) => (
+                <AccordionItem value={`criticism-${index}`} key={index} className="border-b-border/40 last:border-b-0">
+                  <AccordionTrigger className="text-left text-base font-medium text-foreground hover:no-underline hover:text-foreground/80 py-5">
+                    {item.quote}
+                  </AccordionTrigger>
+                  <AccordionContent className="text-muted-foreground leading-relaxed pr-8 pb-5 text-base">
+                    {item.response}
+                  </AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
+          </AnimatedSection>
         </div>
       </div>
     </section>

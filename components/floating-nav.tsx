@@ -10,30 +10,26 @@ interface NavItem {
 }
 
 const navItems: NavItem[] = [
-  { id: "hero", label: "Inicio", number: "00" },
+  { id: "intro", label: "Inicio", number: "00" },
   { id: "detonante", label: "El Detonante", number: "01" },
   { id: "marco-mental", label: "Marco Mental", number: "02" },
-  { id: "pipeline", label: "Pipeline", number: "03" },
-  { id: "fase-0", label: "Los Datos", number: "P0" },
-  { id: "fase-1", label: "Demografía", number: "P1" },
-  { id: "fase-2", label: "Estructura", number: "P2" },
-  { id: "fase-3", label: "Brechas", number: "P3" },
-  { id: "fase-4", label: "Cuadrante", number: "P4" },
-  { id: "fase-5", label: "IA", number: "P5" },
-  { id: "audita-tu-perfil", label: "Audita tu Perfil", number: "⚡" },
-  { id: "elefante", label: "Críticas", number: "🐘" },
-  { id: "conclusion", label: "Conclusión", number: "FIN" },
+  { id: "pipeline", label: "Metodología", number: "03" },
+  { id: "fase-0", label: "Los Datos", number: "04" },
+  { id: "fase-1", label: "Modalidad", number: "05" },
+  { id: "fase-2", label: "Estructura", number: "06" },
+  { id: "fase-3", label: "Brechas", number: "07" },
+  { id: "fase-4", label: "Cuadrante", number: "08" },
+  { id: "fase-5", label: "Adopción IA", number: "09" },
+  { id: "elefante", label: "Críticas", number: "10" },
+  { id: "conclusion", label: "Conclusión", number: "11" },
 ]
 
 export function FloatingNav() {
-  const [activeSection, setActiveSection] = useState("hero")
-  const [isVisible, setIsVisible] = useState(false)
+  const [activeSection, setActiveSection] = useState("intro")
+  const [isVisible, setIsVisible] = useState(true)
 
   useEffect(() => {
     const handleScroll = () => {
-      // Show nav after scrolling past hero
-      setIsVisible(window.scrollY > 300)
-
       // Determine active section
       const sections = navItems.map(item => ({
         id: item.id,

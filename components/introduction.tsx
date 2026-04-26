@@ -3,6 +3,12 @@
 import { useEffect, useRef, useState } from "react"
 import { Briefcase, Code, ChartBar, PaintBrush, Brain } from "@phosphor-icons/react"
 import { cn } from "@/lib/utils"
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion"
 
 const domains = [
   {
@@ -92,9 +98,9 @@ export function Introduction() {
   return (
     <div className="relative">
       {/* Hero Section */}
-      <section id="hero" className="relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-muted/30 to-transparent" />
-        <div className="container relative mx-auto px-4 py-16 md:px-6 md:py-20 lg:py-28">
+      <section id="intro" className="relative flex min-h-[90vh] flex-col items-center justify-center overflow-hidden bg-background">
+        <div className="absolute inset-0 z-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-slate-100 via-background to-background dark:from-slate-900"></div>
+        <div className="container relative z-10 mx-auto px-4 text-center md:px-6 md:py-20 lg:py-28">
           <div className="mx-auto max-w-5xl">
             <AnimatedSection>
               <p className="mb-6 text-sm font-medium uppercase tracking-widest text-muted-foreground">
@@ -213,35 +219,39 @@ export function Introduction() {
               </div>
             </AnimatedSection>
             
-            {/* Domain Cards */}
-            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-              {domains.map((domain, index) => {
-                const Icon = domain.icon
-                return (
-                  <AnimatedSection key={domain.title} delay={200 + index * 100}>
-                    <div className="group relative h-full rounded-xl border border-border/50 bg-background p-6 transition-all duration-300 hover:border-border hover:shadow-lg hover:shadow-foreground/5 hover:-translate-y-1">
-                      <div className="mb-4 flex items-center justify-between">
-                        <span className="text-xs font-medium text-muted-foreground/60">
-                          {domain.number}
-                        </span>
-                        <Icon className="h-5 w-5 text-muted-foreground/60 transition-colors duration-300 group-hover:text-foreground" />
-                      </div>
-                      <h3 className="mb-1 font-semibold text-foreground">
-                        {domain.title}
-                      </h3>
-                      {domain.subtitle && (
-                        <p className="mb-2 text-xs font-medium text-muted-foreground">
-                          {domain.subtitle}
-                        </p>
-                      )}
-                      <p className="text-sm text-muted-foreground leading-relaxed">
+            {/* Accordion Domains */}
+            <AnimatedSection delay={200}>
+              <Accordion type="single" collapsible defaultValue="domain-0" className="w-full">
+                {domains.map((domain, index) => {
+                  const Icon = domain.icon
+                  return (
+                    <AccordionItem value={`domain-${index}`} key={index} className="border-border/50">
+                      <AccordionTrigger className="hover:no-underline hover:text-primary transition-colors">
+                        <div className="flex items-center gap-4 text-left">
+                          <span className="text-xs font-medium text-muted-foreground/60 w-5">
+                            {domain.number}
+                          </span>
+                          <div className="p-2 bg-muted/50 rounded-md">
+                            <Icon className="h-5 w-5 text-foreground/80" />
+                          </div>
+                          <div>
+                            <span className="font-semibold text-lg">{domain.title}</span>
+                            {domain.subtitle && (
+                              <span className="block text-sm text-muted-foreground mt-0.5">
+                                {domain.subtitle}
+                              </span>
+                            )}
+                          </div>
+                        </div>
+                      </AccordionTrigger>
+                      <AccordionContent className="text-base text-muted-foreground leading-relaxed pl-[4.5rem]">
                         {domain.description}
-                      </p>
-                    </div>
-                  </AnimatedSection>
-                )
-              })}
-            </div>
+                      </AccordionContent>
+                    </AccordionItem>
+                  )
+                })}
+              </Accordion>
+            </AnimatedSection>
           </div>
         </div>
       </section>

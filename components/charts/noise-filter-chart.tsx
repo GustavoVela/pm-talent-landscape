@@ -15,7 +15,7 @@ export function NoiseFilterChart() {
       formatter: '{b}: {c} vacantes ({d}%)'
     },
     legend: {
-      bottom: '5%',
+      bottom: '0%',
       left: 'center',
       icon: 'circle'
     },
@@ -24,16 +24,21 @@ export function NoiseFilterChart() {
       {
         name: 'Filtro de Ruido',
         type: 'pie',
-        radius: ['50%', '80%'],
+        radius: ['45%', '75%'],
+        center: ['50%', '45%'],
         avoidLabelOverlap: false,
         itemStyle: {
-          borderRadius: 10,
+          borderRadius: 8,
           borderColor: '#fff',
           borderWidth: 2
         },
         label: {
-          show: false,
-          position: 'center'
+          show: true,
+          position: 'inside',
+          formatter: '{d}%',
+          color: '#fff',
+          fontSize: 14,
+          fontWeight: 'bold'
         },
         emphasis: {
           label: {
@@ -51,7 +56,7 @@ export function NoiseFilterChart() {
   };
 
   return (
-    <div className="h-[400px] w-full">
+    <div className="h-[350px] w-full">
       <ReactECharts 
         option={option} 
         style={{ height: '100%', width: '100%' }} 

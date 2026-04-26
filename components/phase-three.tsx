@@ -4,11 +4,11 @@ import { SectionHeader, NarrativeText, ChartPlaceholder, AnimatedSection } from 
 
 export function PhaseThree() {
   return (
-    <section id="fase-3" className="border-t border-border/40 bg-muted/20">
+    <section id="fase-3" className="border-t border-border/40">
       <div className="container mx-auto px-4 py-20 md:px-6 md:py-28">
         <div className="mx-auto max-w-5xl">
           <SectionHeader
-            number="P3"
+            number="07"
             title="El Choque de Realidades"
             subtitle="La gente está harta de promedios. Una herramienta hiper-personalizada que audite tu skill-set contra el mercado real."
           />
