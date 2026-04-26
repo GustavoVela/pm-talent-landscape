@@ -37,7 +37,7 @@ export function CompetencyCountryRadar() {
             formatter={(value: number) => [`${value}%`, '']}
             contentStyle={{ borderRadius: '8px', border: 'none', boxShadow: '0 4px 6px -1px rgb(0 0 0 / 0.1)' }}
           />
-          <Legend wrapperStyle={{ paddingTop: '10px' }} iconType="circle" />
+          <Legend wrapperStyle={{ paddingTop: '20px' }} iconType="circle" />
           <Radar name="Brasil" dataKey="Brasil" stroke={COLORS.yellow} fill={COLORS.yellow} fillOpacity={0.1} strokeWidth={2} dot={{ r: 3, fill: '#fff', strokeWidth: 2 }} />
           <Radar name="Chile" dataKey="Chile" stroke={COLORS.orange} fill={COLORS.orange} fillOpacity={0.1} strokeWidth={2} dot={{ r: 3, fill: '#fff', strokeWidth: 2 }} />
           <Radar name="Colombia" dataKey="Colombia" stroke={COLORS.blue} fill={COLORS.blue} fillOpacity={0.1} strokeWidth={2} dot={{ r: 3, fill: '#fff', strokeWidth: 2 }} />

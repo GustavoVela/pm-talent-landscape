@@ -3,6 +3,7 @@
 import { ChartWrapper } from "./chart-wrapper"
 import { SectionHeader, NarrativeText, ChartPlaceholder, AnimatedSection } from "./section-primitives"
 import { Lightning, Cpu, Brain } from "@phosphor-icons/react"
+import { SkillsSunburstChart } from "./charts/skills-sunburst-chart"
 
 export function AiAdoptionPhase() {
   return (
@@ -27,13 +28,13 @@ export function AiAdoptionPhase() {
               <ChartWrapper
                 id="chart-adopcion-ia"
                 title="Nivel de Adopción de IA por Región"
-                
+
                 interpretation="[Insight sobre la brecha de adopción de IA entre US y LatAm]"
               >
-                <ChartPlaceholder 
-                  title="Adopción de IA: EE.UU. vs LatAm" 
+                <ChartPlaceholder
+                  title="Adopción de IA: EE.UU. vs LatAm"
                   height="450px"
-                  
+
                 />
               </ChartWrapper>
             </div>
@@ -94,16 +95,12 @@ export function AiAdoptionPhase() {
           {/* Sunburst / Treemap */}
           <AnimatedSection delay={400}>
             <ChartWrapper
-              id="chart-taxonomia-ia"
-              title="Taxonomía de Skills de IA"
-              
-              interpretation="[Insight sobre cuáles subcategorías de IA son las más demandadas]"
+              id="chart-taxonomia-competencias"
+              title="Taxonomía de Competencias (Sunburst)"
+              interpretation="Alternativa visual en anillos concéntricos. El grosor de cada arco es proporcional a la frecuencia absoluta de la habilidad, permitiendo comparar visualmente qué áreas tienen más peso global."
+              className="w-full bg-white/50 dark:bg-slate-950/50 backdrop-blur-sm border-slate-200 dark:border-slate-800 shadow-lg"
             >
-              <ChartPlaceholder 
-                title="Sunburst o Treemap de Skills de IA" 
-                height="500px"
-                
-              />
+              <SkillsSunburstChart />
             </ChartWrapper>
           </AnimatedSection>
         </div>

@@ -5,6 +5,7 @@ import { SectionHeader, NarrativeText, Blockquote, AnimatedSection } from "./sec
 import { ChartWrapper } from "./chart-wrapper"
 import { CompetencyMacroRadar } from "./charts/competency-macro-radar"
 import { CompetencyCountryInteractive } from "./charts/competency-country-interactive"
+import { SkillsSunburstChart } from "./charts/skills-sunburst-chart"
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group"
 import { FLAGS } from "@/lib/data"
 
@@ -76,6 +77,20 @@ export function CompetencyProfilePhase() {
               <Blockquote>
                 <p>💡 <strong>El Insight Final:</strong> Los datos confirman que no existe un solo perfil de PM. Los requerimientos de contratación varían objetivamente dependiendo del mercado geográfico. Para los profesionales que buscan oportunidades remotas en Estados Unidos o aplicar en mercados de alto volumen como Brasil, los números indican que es necesario nivelar y priorizar las competencias en Análisis de Datos e Inteligencia Artificial.</p>
               </Blockquote>
+            </div>
+          </AnimatedSection>
+
+          {/* Sunburst Chart */}
+          <AnimatedSection delay={250}>
+            <div className="mt-16">
+              <ChartWrapper
+                id="chart-taxonomia-competencias"
+                title="Taxonomía de Competencias (Sunburst)"
+                interpretation="Alternativa visual en anillos concéntricos. El grosor de cada arco es proporcional a la frecuencia absoluta de la habilidad, permitiendo comparar visualmente qué áreas tienen más peso global."
+                className="w-full bg-white/50 dark:bg-slate-950/50 backdrop-blur-sm border-slate-200 dark:border-slate-800 shadow-lg"
+              >
+                <SkillsSunburstChart />
+              </ChartWrapper>
             </div>
           </AnimatedSection>
 
