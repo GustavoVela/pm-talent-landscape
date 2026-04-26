@@ -54,7 +54,7 @@ export function CompetencyMacroRadar() {
 
   const CustomLegend = ({ payload }: any) => {
     return (
-      <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 mt-0">
+      <div className="flex flex-wrap justify-center gap-x-4 gap-y-2 mt-0">
         {payload.map((entry: any, index: number) => {
           const isHidden = hiddenSeries[entry.value];
           return (

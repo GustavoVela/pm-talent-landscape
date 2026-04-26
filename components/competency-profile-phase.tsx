@@ -38,7 +38,7 @@ export function CompetencyProfilePhase() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 my-16">
               <ChartWrapper
                 id="chart-radar-macro"
-                title="Global vs LatAm vs Estados Unidos"
+                title="Comparativa por regiones"
                 description="💡 Tip: Haz clic en las zonas geográficas de la leyenda para encenderlas o apagarlas y aislar tu comparación."
                 interpretation="El abismo de la Inteligencia Artificial (36.2% vs 23.7%) y la Fluidez Analítica (56.2% vs 47.6%) son las fracturas más violentas. Allá exigen autonomía técnica para interrogar el Data Warehouse por ti mismo."
                 className="h-full bg-white/50 dark:bg-slate-950/50 backdrop-blur-sm border-slate-200 dark:border-slate-800 shadow-lg"
@@ -48,7 +48,7 @@ export function CompetencyProfilePhase() {
 
               <ChartWrapper
                 id="chart-radar-country"
-                title="Comparativa por Países"
+                title="Comparativa por países"
                 description="💡 Tip: Haz clic en los países de la leyenda para encenderlos o apagarlos y aislar tu comparación."
                 interpretation="Brasil es la locomotora técnica y analítica del sur. Colombia sorprende liderando UX/UI y adopción de IA. Chile y Perú muestran un mercado corporativo tradicional hiper-enfocado en Business. México actúa como el puente equilibrado."
                 className="h-full bg-white/50 dark:bg-slate-950/50 backdrop-blur-sm border-slate-200 dark:border-slate-800 shadow-lg"
