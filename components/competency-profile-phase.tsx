@@ -39,6 +39,7 @@ export function CompetencyProfilePhase() {
               <ChartWrapper
                 id="chart-radar-macro"
                 title="Global vs LatAm vs Estados Unidos"
+                description="💡 Tip: Haz clic en las zonas geográficas de la leyenda para encenderlas o apagarlas y aislar tu comparación."
                 interpretation="El abismo de la Inteligencia Artificial (36.2% vs 23.7%) y la Fluidez Analítica (56.2% vs 47.6%) son las fracturas más violentas. Allá exigen autonomía técnica para interrogar el Data Warehouse por ti mismo."
                 className="h-full bg-white/50 dark:bg-slate-950/50 backdrop-blur-sm border-slate-200 dark:border-slate-800 shadow-lg"
               >
