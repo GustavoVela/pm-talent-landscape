@@ -4,13 +4,13 @@ import { ChartWrapper } from "./chart-wrapper"
 import { SectionHeader, NarrativeText, ChartPlaceholder, AnimatedSection } from "./section-primitives"
 import { Lightning, Cpu, Brain } from "@phosphor-icons/react"
 
-export function PhaseFive() {
+export function AiAdoptionPhase() {
   return (
-    <section id="fase-5" className="border-t border-border/40">
+    <section id="phase-ai-adoption" className="border-t border-border/40">
       <div className="container mx-auto px-4 py-20 md:px-6 md:py-28">
         <div className="mx-auto max-w-5xl">
           <SectionHeader
-            number="09"
+            number="07"
             title="La Lupa en la Adopción"
             subtitle="Hype vs. Deep Tech — ¿quién pide IA por FOMO y quién está literalmente construyendo el futuro del software?"
           />
@@ -27,13 +27,13 @@ export function PhaseFive() {
               <ChartWrapper
                 id="chart-adopcion-ia"
                 title="Nivel de Adopción de IA por Región"
-                description="¿Qué tan profundo llega el requerimiento de IA en cada mercado?"
+                
                 interpretation="[Insight sobre la brecha de adopción de IA entre US y LatAm]"
               >
                 <ChartPlaceholder 
                   title="Adopción de IA: EE.UU. vs LatAm" 
                   height="450px"
-                  description="Barras agrupadas mostrando profundidad de adopción"
+                  
                 />
               </ChartWrapper>
             </div>
@@ -96,13 +96,13 @@ export function PhaseFive() {
             <ChartWrapper
               id="chart-taxonomia-ia"
               title="Taxonomía de Skills de IA"
-              description="Desglose de las ~30 categorías de competencias de IA demandadas"
+              
               interpretation="[Insight sobre cuáles subcategorías de IA son las más demandadas]"
             >
               <ChartPlaceholder 
                 title="Sunburst o Treemap de Skills de IA" 
                 height="500px"
-                description="Visualización jerárquica de las 30 categorías de AI skills"
+                
               />
             </ChartWrapper>
           </AnimatedSection>

@@ -14,14 +14,12 @@ const navItems: NavItem[] = [
   { id: "detonante", label: "El Detonante", number: "01" },
   { id: "marco-mental", label: "Marco Mental", number: "02" },
   { id: "pipeline", label: "Metodología", number: "03" },
-  { id: "fase-0", label: "Los Datos", number: "04" },
-  { id: "fase-1", label: "Modalidad", number: "05" },
-  { id: "fase-2", label: "Estructura", number: "06" },
-  { id: "fase-3", label: "Brechas", number: "07" },
-  { id: "fase-4", label: "Cuadrante", number: "08" },
-  { id: "fase-5", label: "Adopción IA", number: "09" },
-  { id: "elefante", label: "Críticas", number: "10" },
-  { id: "conclusion", label: "Conclusión", number: "11" },
+  { id: "phase-demographics", label: "Los Datos", number: "04" },
+  { id: "phase-competency", label: "Brechas", number: "05" },
+  { id: "phase-quadrant", label: "Cuadrante", number: "06" },
+  { id: "phase-ai-adoption", label: "Adopción IA", number: "07" },
+  { id: "elefante", label: "Críticas", number: "08" },
+  { id: "conclusion", label: "Conclusión", number: "09" },
 ]
 
 export function FloatingNav() {

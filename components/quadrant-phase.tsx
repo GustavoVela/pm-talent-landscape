@@ -3,13 +3,13 @@
 import { ChartWrapper } from "./chart-wrapper"
 import { SectionHeader, NarrativeText, Blockquote, ChartPlaceholder, AnimatedSection } from "./section-primitives"
 
-export function PhaseFour() {
+export function QuadrantPhase() {
   return (
-    <section id="fase-4" className="border-t border-border/40 bg-slate-50/50 dark:bg-slate-900/20">
+    <section id="phase-quadrant" className="border-t border-border/40 bg-slate-50/50 dark:bg-slate-900/20">
       <div className="container mx-auto px-4 py-20 md:px-6 md:py-28">
         <div className="mx-auto max-w-5xl">
           <SectionHeader
-            number="08"
+            number="06"
             title="Desenredando la Complejidad"
             subtitle="Tienes 5 horas libres este fin de semana. ¿En qué inviertes tu tiempo? Separemos el commodity del foso competitivo."
           />
@@ -42,13 +42,13 @@ export function PhaseFour() {
             <ChartWrapper
               id="chart-cuadrante-magico"
               title="El Cuadrante Mágico de Skills PM"
-              description="Frecuencia de aparición × Exclusividad por nivel de seniority"
+              
               interpretation="[Insight principal del cuadrante — ¿Qué skills son commodity y cuáles construyen foso competitivo?]"
             >
               <ChartPlaceholder 
                 title="Scatter Plot 2×2: Cuadrante Mágico" 
                 height="500px"
-                description="Cada punto es una skill, coloreada por dominio, posicionada por frecuencia y exclusividad"
+                
               />
             </ChartWrapper>
           </AnimatedSection>

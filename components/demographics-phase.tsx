@@ -15,7 +15,9 @@ import {
   type CarouselApi
 } from "@/components/ui/carousel"
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group"
+
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
+
 import { cn } from "@/lib/utils"
 import { demographicsCityData, FLAGS } from "@/lib/data"
 
@@ -59,7 +61,7 @@ function PhaseZeroCarousel() {
               <ChartWrapper
                 id="chart-filtro-ruido"
                 title="Filtro de Ruido Total: Posiciones Core vs Otras Áreas"
-                description="Clasificación por IA para separar vacantes reales de producto de 'falsos positivos'."
+                
                 interpretation="De las 3,471 vacantes recolectadas buscando el término 'Product Manager', el 18.2% (635 roles) resultaron ser de construcción, ventas, marketing o finanzas que usan un título engañoso. Solo las 2,836 vacantes 'Core' pasaron a nuestro análisis."
                 className="h-full"
               >
@@ -73,14 +75,16 @@ function PhaseZeroCarousel() {
               <ChartWrapper
                 id="chart-demografia-pais"
                 title="Distribución Demográfica por País y Filtro de Ruido"
-                description="Volumen total de vacantes recolectadas y la proporción de 'ruido' por país."
+                
                 interpretation="Estados Unidos es el mercado dominante y el más maduro (~90% de sus vacantes de PM son reales). En contraste, México aporta mucho volumen pero con la mayor tasa de 'ruido' (~40% son de otras áreas). Colombia muestra una madurez prometedora al publicar roles de producto mucho más precisos."
                 className="h-full"
                 controls={
-                  <ToggleGroup type="single" variant="outline" value={countryViewMode} onValueChange={(v) => v && setCountryViewMode(v as 'absolute' | 'percentage')} size="sm" className="justify-start">
-                    <ToggleGroupItem value="absolute" className="text-xs h-8 px-3">Valores</ToggleGroupItem>
-                    <ToggleGroupItem value="percentage" className="text-xs h-8 px-3">Porcentaje (%)</ToggleGroupItem>
-                  </ToggleGroup>
+                  <div className="flex w-full justify-end">
+                    <ToggleGroup type="single" variant="outline" value={countryViewMode} onValueChange={(v) => v && setCountryViewMode(v as 'absolute' | 'percentage')} size="sm" className="justify-end">
+                      <ToggleGroupItem value="absolute" className="text-xs h-8 px-3">Valores</ToggleGroupItem>
+                      <ToggleGroupItem value="percentage" className="text-xs h-8 px-3">Porcentaje (%)</ToggleGroupItem>
+                    </ToggleGroup>
+                  </div>
                 }
               >
                 <DemographyCountryChart viewMode={countryViewMode} />
@@ -93,22 +97,28 @@ function PhaseZeroCarousel() {
               <ChartWrapper
                 id="chart-demografia-ciudad"
                 title="Desglose de Vacantes y Filtro de Ruido por Ciudad"
-                description="Distribución de ofertas y ruido de títulos por clúster urbano (Top 15)."
+                
                 interpretation="São Paulo y Ciudad de México actúan como los verdaderos polos de LatAm. Curiosamente, la categoría 'Otra ciudad' lidera en muchos países y tiene una alta concentración de ruido en México, lo que indica que el talento fuera de los hubs principales aplica a roles de PM que terminan siendo operativos o comerciales."
                 className="h-full"
                 controls={
-                  <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3">
-                    <Select value={selectedCountry} onValueChange={setSelectedCountry}>
-                      <SelectTrigger className="w-[160px] h-8 text-xs bg-background">
-                        <SelectValue placeholder="Filtrar por país" />
-                      </SelectTrigger>
-                      <SelectContent>
-                        <SelectItem value="all">Todos los países</SelectItem>
-                        {countries.map(c => (
-                          <SelectItem key={c} value={c}>{FLAGS[c] || ''} {c}</SelectItem>
-                        ))}
-                      </SelectContent>
-                    </Select>
+                  <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 w-full justify-between">
+                    <div className="w-full sm:w-auto sm:min-w-[280px]">
+                      <Select value={selectedCountry} onValueChange={setSelectedCountry}>
+                        <SelectTrigger className="h-8 text-xs">
+                          <SelectValue placeholder="Filtrar por país..." />
+                        </SelectTrigger>
+                        <SelectContent>
+                          <SelectItem value="all">
+                            Todos los países
+                          </SelectItem>
+                          {countries.map(c => (
+                            <SelectItem key={c} value={c}>
+                              {FLAGS[c] || ''} <span className="ml-1">{c}</span>
+                            </SelectItem>
+                          ))}
+                        </SelectContent>
+                      </Select>
+                    </div>
                     <ToggleGroup type="single" variant="outline" value={cityViewMode} onValueChange={(v) => v && setCityViewMode(v as 'absolute' | 'percentage')} size="sm" className="justify-start">
                       <ToggleGroupItem value="absolute" className="text-xs h-8 px-3">Valores</ToggleGroupItem>
                       <ToggleGroupItem value="percentage" className="text-xs h-8 px-3">Porcentaje (%)</ToggleGroupItem>
@@ -146,9 +156,9 @@ function PhaseZeroCarousel() {
   )
 }
 
-export function PhaseZero() {
+export function DemographicsPhase() {
   return (
-    <section id="fase-0" className="border-t border-border/40 bg-slate-50/50 dark:bg-slate-900/20">
+    <section id="phase-demographics" className="border-t border-border/40 bg-slate-50/50 dark:bg-slate-900/20">
       <div className="container mx-auto px-4 py-12 md:px-6 md:py-16">
         <div className="mx-auto max-w-5xl">
           <SectionHeader

@@ -61,7 +61,10 @@ export function DemographyCityChart({
     },
     legend: {
       bottom: 0,
-      icon: 'circle'
+      icon: 'circle',
+      selected: {
+        'Cargos en otra área': false
+      }
     },
     grid: {
       left: '3%',
@@ -86,9 +89,6 @@ export function DemographyCityChart({
     },
     yAxis: {
       type: 'category',
-      name: 'Ciudad',
-      nameLocation: 'end',
-      nameTextStyle: { fontSize: 12, color: '#64748b', align: 'right' },
       data: filteredData.map(item => item.city),
       axisLine: { show: false },
       axisTick: { show: false }
@@ -127,7 +127,7 @@ export function DemographyCityChart({
 
   return (
     <div className="flex flex-col h-full w-full">
-      <div className="h-[400px] w-full">
+      <div className="h-[400px] w-full -mt-4">
         <ReactECharts 
           option={option} 
           style={{ height: '100%', width: '100%' }} 

@@ -35,10 +35,21 @@ export function NoiseFilterChart() {
         label: {
           show: true,
           position: 'inside',
-          formatter: '{d}%',
-          color: '#fff',
-          fontSize: 14,
-          fontWeight: 'bold'
+          formatter: '{percent|{d}%}\n{value|({c} vacantes)}',
+          rich: {
+            percent: {
+              fontSize: 14,
+              fontWeight: 'bold',
+              color: '#fff',
+              align: 'center'
+            },
+            value: {
+              fontSize: 11,
+              color: 'rgba(255, 255, 255, 0.9)',
+              align: 'center',
+              padding: [2, 0, 0, 0]
+            }
+          }
         },
         emphasis: {
           label: {

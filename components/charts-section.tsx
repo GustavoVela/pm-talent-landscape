@@ -23,7 +23,7 @@ export function ChartsSection() {
           <ChartWrapper
             id="chart-1"
             title="Título de la Gráfica"
-            description="Descripción breve de qué muestra esta gráfica"
+            
             interpretation="Aquí irá la interpretación detallada de los datos mostrados en la gráfica, explicando las tendencias y puntos clave que se pueden observar."
           >
             <ComponenteDeGrafica />

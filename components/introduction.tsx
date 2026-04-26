@@ -12,35 +12,75 @@ import {
 
 const domains = [
   {
-    icon: Briefcase,
-    number: "01",
-    title: "Visión de Negocio",
-    subtitle: "El foso real",
-    description: "El diseño vela por la usabilidad, la ingeniería por la factibilidad, pero tú eres el único responsable de la viabilidad financiera."
+    icon: Brain,
+    title: "Inteligencia Artificial",
+    description: (
+      <div className="space-y-4 mt-2 text-foreground/80">
+        <p className="font-semibold text-foreground">De Uso Superficial a Integración Estructural:</p>
+        <p>La exigencia del mercado trasciende el uso básico de interfaces conversacionales; requiere comprender e integrar modelos algorítmicos.</p>
+        <ul className="space-y-3 list-disc pl-5">
+          <li><strong>Las Evaluaciones (Evals) reemplazan a los PRDs:</strong> Los Modelos de Lenguaje (LLMs) operan por probabilidad, no de forma determinista. Escribir requisitos estáticos es insuficiente. La nueva competencia técnica del PM es diseñar &quot;Evals&quot;: crear conjuntos de pruebas rigurosas y automatizadas para cuantificar el éxito, medir el progreso y acotar el comportamiento del modelo.</li>
+          <li><strong>Automatización y Apalancamiento:</strong> Delegar sistemáticamente las tareas administrativas y repetitivas a agentes de IA. En niveles avanzados, el PM transita de gestionar proyectos a &quot;gestionar flotas de agentes&quot;, lo que requiere precisión en la delegación y proveer contexto de negocio innegociable a los sistemas.</li>
+          <li><strong>Maximalismo de Modelos:</strong> Construir productos anticipando la evolución de la tecnología, evitando invertir recursos en arquitecturas pesadas para solucionar limitaciones temporales que las futuras actualizaciones de los modelos resolverán inherentemente.</li>
+        </ul>
+      </div>
+    )
   },
   {
     icon: Code,
-    number: "02",
     title: "Conocimiento Técnico",
-    description: "Entender arquitectura de sistemas, debatir trade-offs de escalabilidad y usar herramientas de IA para prototipar."
+    description: (
+      <div className="space-y-4 mt-2 text-foreground/80">
+        <p className="font-semibold text-foreground">Arquitectura y Prototipado:</p>
+        <p>No se requiere escribir código de producción, pero sí fluidez estructural para maximizar los recursos del equipo de ingeniería.</p>
+        <ul className="space-y-3 list-disc pl-5">
+          <li><strong>Pensamiento Sistémico y Trade-offs:</strong> Comprender el diseño de bases de datos, APIs y arquitecturas cloud para debatir objetivamente las compensaciones técnicas (ventajas y desventajas) de escalabilidad. Un PM que no entiende las limitaciones técnicas actúa como un intermediario ineficiente.</li>
+          <li><strong>Prototipado Radical (Vibe Coding):</strong> Utilizar herramientas de generación de código impulsadas por IA para traducir documentos de requisitos en prototipos funcionales rápidos, validando lógicas y reduciendo la ambigüedad antes de la fase formal de ingeniería.</li>
+        </ul>
+      </div>
+    )
   },
   {
     icon: ChartBar,
-    number: "03",
-    title: "Fluidez en Datos",
-    description: "Ser el dueño de la verdad matemática. Encontrar la causalidad real detrás del comportamiento del usuario."
+    title: "Análisis de Datos",
+    description: (
+      <div className="space-y-4 mt-2 text-foreground/80">
+        <p className="font-semibold text-foreground">Causalidad sobre Correlación:</p>
+        <p>El PM es la máxima autoridad sobre el comportamiento del producto. La exigencia se centra en el rigor analítico.</p>
+        <ul className="space-y-3 list-disc pl-5">
+          <li><strong>Métricas Causales y de Proxy:</strong> Superar el monitoreo de promedios globales. Se exige identificar indicadores predictivos a corto plazo y establecer relaciones causales para responder operativamente a la pregunta: &quot;¿Y ahora qué hacemos al respecto?&quot;.</li>
+          <li><strong>Análisis de Casos Límite:</strong> Complementar la información cuantitativa con retroalimentación cualitativa, buscando anomalías y estados de fallo (ej. tasas de error ocultas) aplicando un escepticismo estadístico estructurado (Ley de Twyman).</li>
+        </ul>
+      </div>
+    )
+  },
+  {
+    icon: Briefcase,
+    title: "Visión de Negocio",
+    description: (
+      <div className="space-y-4 mt-2 text-foreground/80">
+        <p className="font-semibold text-foreground">Viabilidad y Foso Estratégico:</p>
+        <p>Ingeniería garantiza la factibilidad; diseño la usabilidad; el PM es responsable de la viabilidad financiera y legal del modelo comercial.</p>
+        <ul className="space-y-3 list-disc pl-5">
+          <li><strong>Monetización y Estrategia Competitiva:</strong> Comprender la &quot;disposición a pagar&quot; del mercado desde el día uno y dominar los modelos de precios (pricing). Conocer las ventajas competitivas de la industria (economías de red, regulaciones, barreras de entrada).</li>
+          <li><strong>Alineación Comercial (Go-To-Market):</strong> Conectar el roadmap técnico con las proyecciones de ingresos y la estrategia de comercialización (GTM), asegurando que el producto resuelva el problema y se posicione efectivamente frente al cliente.</li>
+        </ul>
+      </div>
+    )
   },
   {
     icon: PaintBrush,
-    number: "04",
-    title: "UX / UI",
-    description: "Vivir en los píxeles. Diseñar flujos que reduzcan la carga cognitiva."
-  },
-  {
-    icon: Brain,
-    number: "05",
-    title: "Inteligencia Artificial",
-    description: "Escribir Evals rigurosos y delegar el trabajo operativo a agentes autónomos."
+    title: "Diseño y UX/UI",
+    description: (
+      <div className="space-y-4 mt-2 text-foreground/80">
+        <p className="font-semibold text-foreground">Restricciones y Product Taste:</p>
+        <p>Con la reducción del costo de ejecución técnica, la decisión crítica recae en la jerarquía y la calidad de la experiencia.</p>
+        <ul className="space-y-3 list-disc pl-5">
+          <li><strong>Dibujar el perímetro del problema:</strong> El PM no debe imponer soluciones predefinidas; su rol es definir restricciones funcionales claras mediante esquemas visuales (wireframes), permitiendo al equipo de diseño ejecutar soluciones innovadoras dentro de esos límites.</li>
+          <li><strong>Criterio de Producto e Intuición Calibrada:</strong> Desarrollar un criterio agudo basado en el uso extensivo de software para simplificar interfaces, establecer configuraciones predeterminadas óptimas y reducir la carga cognitiva del usuario final.</li>
+        </ul>
+      </div>
+    )
   }
 ]
 
@@ -221,30 +261,22 @@ export function Introduction() {
             
             {/* Accordion Domains */}
             <AnimatedSection delay={200}>
-              <Accordion type="single" collapsible defaultValue="domain-0" className="w-full">
+              <Accordion type="single" collapsible className="w-full">
                 {domains.map((domain, index) => {
                   const Icon = domain.icon
                   return (
                     <AccordionItem value={`domain-${index}`} key={index} className="border-border/50">
                       <AccordionTrigger className="hover:no-underline hover:text-primary transition-colors">
                         <div className="flex items-center gap-4 text-left">
-                          <span className="text-xs font-medium text-muted-foreground/60 w-5">
-                            {domain.number}
-                          </span>
                           <div className="p-2 bg-muted/50 rounded-md">
                             <Icon className="h-5 w-5 text-foreground/80" />
                           </div>
                           <div>
                             <span className="font-semibold text-lg">{domain.title}</span>
-                            {domain.subtitle && (
-                              <span className="block text-sm text-muted-foreground mt-0.5">
-                                {domain.subtitle}
-                              </span>
-                            )}
                           </div>
                         </div>
                       </AccordionTrigger>
-                      <AccordionContent className="text-base text-muted-foreground leading-relaxed pl-[4.5rem]">
+                      <AccordionContent className="text-base text-muted-foreground leading-relaxed pl-[3.25rem]">
                         {domain.description}
                       </AccordionContent>
                     </AccordionItem>

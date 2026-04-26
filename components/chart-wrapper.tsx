@@ -1,7 +1,5 @@
 "use client"
 
-import { useRef } from "react"
-import { DownloadSimple } from "@phosphor-icons/react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Separator } from "@/components/ui/separator"
@@ -27,37 +25,10 @@ export function ChartWrapper({
   footer,
   children,
 }: ChartWrapperProps) {
-  const chartRef = useRef<HTMLDivElement>(null)
-
-  const downloadChart = async () => {
-    if (!chartRef.current) return
-
-    const chartDiv = chartRef.current.querySelector("div[echarts]") || chartRef.current.firstElementChild?.firstElementChild
-    if (!chartDiv) return;
-
-    try {
-      const echarts = await import('echarts');
-      const echartsInstance = echarts.getInstanceByDom(chartDiv as HTMLElement);
-      
-      if (echartsInstance) {
-        const url = echartsInstance.getDataURL({
-          type: "png",
-          pixelRatio: 2,
-          backgroundColor: "#ffffff",
-        })
-        const link = document.createElement("a")
-        link.download = `${id}-chart.png`
-        link.href = url
-        link.click()
-      }
-    } catch (e) {
-      console.error("Failed to download chart", e)
-    }
-  }
 
   return (
-    <div id={id} className={`scroll-mt-20 ${className || ''}`}>
-      <Card className="mx-auto overflow-hidden h-full flex flex-col">
+    <div id={id} className="scroll-mt-20 h-full">
+      <Card className={`mx-auto overflow-hidden h-full flex flex-col ${className || ''}`}>
         <CardHeader>
           <CardTitle className="text-xl md:text-2xl">{title}</CardTitle>
           {description && (
@@ -65,20 +36,13 @@ export function ChartWrapper({
           )}
         </CardHeader>
         <CardContent className="space-y-4 flex-1 flex flex-col">
-          <div className="flex flex-row items-center justify-between gap-4">
-            <div>{controls}</div>
-            <Button
-              variant="outline"
-              size="icon"
-              onClick={downloadChart}
-              title="Descargar gráfica"
-              className="shrink-0 h-8 w-8"
-            >
-              <DownloadSimple className="h-4 w-4" />
-            </Button>
-          </div>
+          {controls && (
+            <div className="w-full">
+              {controls}
+            </div>
+          )}
           
-          <div ref={chartRef} className="w-full flex-1">
+          <div className="w-full flex-1 p-4 bg-white rounded-md">
             {children}
           </div>
 

@@ -44,7 +44,10 @@ export function DemographyCountryChart({
     },
     legend: {
       bottom: 0,
-      icon: 'circle'
+      icon: 'circle',
+      selected: {
+        'Cargos en otra área': false
+      }
     },
     grid: {
       left: '3%',
@@ -69,9 +72,6 @@ export function DemographyCountryChart({
     },
     yAxis: {
       type: 'category',
-      name: 'País',
-      nameLocation: 'end',
-      nameTextStyle: { fontSize: 12, color: '#64748b', align: 'right' },
       data: chartData.map(item => item.country),
       axisLine: { show: false },
       axisTick: { show: false }
@@ -110,7 +110,7 @@ export function DemographyCountryChart({
 
   return (
     <div className="flex flex-col h-full w-full">
-      <div className="h-[350px] w-full mt-2">
+      <div className="h-[350px] w-full -mt-4">
         <ReactECharts 
           option={option} 
           style={{ height: '100%', width: '100%' }} 
