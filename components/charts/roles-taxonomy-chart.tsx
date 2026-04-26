@@ -1,12 +1,8 @@
 "use client";
 
-import React, { useState, useMemo } from 'react';
-import {
-  BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Cell
-} from 'recharts';
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import React, { useMemo } from 'react';
+import ReactECharts from 'echarts-for-react';
 
-// Datos crudos extraídos de BigQuery / Python Script
 const rawRolesData = [
   {"country": "Brasil", "rol": "Product Manager", "cantidad": 323}, 
   {"country": "Brasil", "rol": "Product Owner", "cantidad": 199}, 
@@ -61,32 +57,7 @@ const rawRolesData = [
   {"country": "United States", "rol": "Chief Product Officer", "cantidad": 24}
 ];
 
-const FLAGS: Record<string, string> = {
-  'Brasil': '🇧🇷', 'México': '🇲🇽', 'Colombia': '🇨🇴',
-  'Chile': '🇨🇱', 'Perú': '🇵🇪', 'United States': '🇺🇸'
-};
-
-const CustomTooltip = ({ active, payload }: any) => {
-  if (active && payload && payload.length) {
-    return (
-      <div className="bg-white/95 backdrop-blur-sm p-3 border border-slate-200 shadow-lg rounded-lg text-sm font-sans">
-        <p className="font-semibold text-slate-800 mb-1">{payload[0].payload.rol}</p>
-        <div className="flex items-center justify-between gap-4">
-          <div className="flex items-center gap-2">
-            <div className="w-3 h-3 rounded-sm bg-blue-500" />
-            <span className="text-slate-600 font-medium">Empleos</span>
-          </div>
-          <span className="font-bold text-slate-800">{payload[0].value}</span>
-        </div>
-      </div>
-    );
-  }
-  return null;
-};
-
-export function RolesTaxonomyChart() {
-  const [selectedCountry, setSelectedCountry] = useState<string>('all');
-
+export function RolesTaxonomyChart({ selectedCountry = 'all' }: { selectedCountry?: string }) {
   const chartData = useMemo(() => {
     // 1. Filtrar por país
     const filtered = selectedCountry === 'all' 
@@ -99,91 +70,72 @@ export function RolesTaxonomyChart() {
       aggregated[d.rol] = (aggregated[d.rol] || 0) + d.cantidad;
     });
 
-    // 3. Convertir a array, ordenar y tomar el Top 15
-    const result = Object.entries(aggregated)
+    // 3. Convertir a array, ordenar de mayor a menor y tomar el Top 15
+    let result = Object.entries(aggregated)
       .map(([rol, cantidad]) => ({ rol, cantidad }))
       .sort((a, b) => b.cantidad - a.cantidad)
       .slice(0, 15);
 
-    // Recharts dibuja de abajo hacia arriba en barras horizontales, así que invertimos el arreglo
+    // Recharts / ECharts dibuja de abajo hacia arriba en barras horizontales
     return result.reverse();
   }, [selectedCountry]);
 
-  // Extraer lista única de países para el select
-  const countries = useMemo(() => {
-    const list = Array.from(new Set(rawRolesData.map(d => d.country))).sort();
-    return list;
-  }, []);
+  const option = {
+    tooltip: {
+      trigger: 'axis',
+      axisPointer: { type: 'shadow' }
+    },
+    grid: {
+      left: '3%',
+      right: '4%',
+      bottom: '15%',
+      top: '5%',
+      containLabel: true
+    },
+    xAxis: {
+      type: 'value',
+      name: 'Cantidad de vacantes',
+      nameLocation: 'middle',
+      nameGap: 30,
+      nameTextStyle: { fontSize: 12, color: '#64748b' },
+      splitLine: {
+        lineStyle: { type: 'dashed', color: 'rgba(0,0,0,0.1)' }
+      }
+    },
+    yAxis: {
+      type: 'category',
+      data: chartData.map(item => item.rol),
+      axisLine: { show: false },
+      axisTick: { show: false }
+    },
+    series: [
+      {
+        name: 'Vacantes',
+        type: 'bar',
+        data: chartData.map(item => item.cantidad),
+        itemStyle: { color: '#0ea5e9', borderRadius: [0, 4, 4, 0] },
+        label: {
+          show: true,
+          position: 'inside',
+          formatter: '{c}',
+          color: '#fff',
+          fontSize: 10
+        }
+      }
+    ]
+  };
 
   return (
-    <div className="w-full flex flex-col gap-6">
-      {/* Control Superior */}
-      <div className="flex flex-col sm:flex-row justify-end items-center">
-        <div className="flex items-center gap-3">
-          <span className="text-sm font-medium text-slate-600">Filtrar por País:</span>
-          <Select value={selectedCountry} onValueChange={setSelectedCountry}>
-            <SelectTrigger className="w-[180px] bg-white border-slate-200 shadow-sm focus:ring-0">
-              <SelectValue placeholder="Todos los Países" />
-            </SelectTrigger>
-            <SelectContent className="bg-white/95 backdrop-blur-sm border-slate-200">
-              <SelectItem value="all" className="cursor-pointer font-medium hover:bg-slate-50">
-                🌎 Todos los Países
-              </SelectItem>
-              {countries.map(c => (
-                <SelectItem key={c} value={c} className="cursor-pointer hover:bg-slate-50">
-                  {FLAGS[c] || '🏳️'} {c}
-                </SelectItem>
-              ))}
-            </SelectContent>
-          </Select>
-        </div>
+    <div className="flex flex-col h-full w-full">
+      <div className="h-[400px] w-full -mt-4">
+        <ReactECharts 
+          option={option} 
+          style={{ height: '100%', width: '100%' }} 
+          opts={{ renderer: 'svg' }}
+        />
       </div>
-
-      {/* Gráfica */}
-      <div className="h-[450px] w-full">
-        <ResponsiveContainer width="100%" height="100%">
-          <BarChart
-            data={chartData}
-            layout="vertical"
-            margin={{ top: 5, right: 30, left: 10, bottom: 20 }}
-          >
-            <CartesianGrid strokeDasharray="3 3" horizontal={true} vertical={false} stroke="#e2e8f0" opacity={0.5} />
-            
-            <XAxis 
-              type="number" 
-              hide={false}
-              tick={{ fill: '#64748b', fontSize: 12 }}
-              axisLine={{ stroke: '#e2e8f0' }}
-              tickLine={false}
-              label={{ 
-                value: 'Número de Empleos', 
-                position: 'insideBottom', 
-                offset: -15,
-                fill: '#475569',
-                fontSize: 13,
-                fontWeight: 600,
-                fontFamily: 'var(--font-sans), sans-serif'
-              }}
-            />
-            
-            <YAxis 
-              dataKey="rol" 
-              type="category" 
-              axisLine={false} 
-              tickLine={false} 
-              width={180}
-              tick={{ fill: '#1e293b', fontSize: 13, fontWeight: 600, fontFamily: 'var(--font-sans), sans-serif' }}
-            />
-            
-            <Tooltip content={<CustomTooltip />} cursor={{ fill: '#f1f5f9', opacity: 0.6 }} />
-            
-            <Bar dataKey="cantidad" radius={[0, 4, 4, 0]} maxBarSize={40}>
-              {chartData.map((entry, index) => (
-                <Cell key={`cell-${index}`} fill="#3b82f6" className="transition-all duration-300 hover:opacity-80 hover:fill-blue-600" />
-              ))}
-            </Bar>
-          </BarChart>
-        </ResponsiveContainer>
+      <div className="text-center mt-2 text-xs text-amber-600 bg-amber-50 p-2 rounded-md">
+        Nota temporal: Los títulos "Product Owner" y "Product Marketing Manager" tienen una gran participación, pero "Product Manager" domina abrumadoramente.
       </div>
     </div>
   );

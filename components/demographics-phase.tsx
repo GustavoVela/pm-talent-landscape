@@ -138,8 +138,29 @@ function PhaseZeroCarousel() {
                 id="chart-roles-taxonomy"
                 title="Taxonomía de Roles Principales"
                 className="h-full bg-white/50 dark:bg-slate-950/50 backdrop-blur-sm shadow-lg"
+                controls={
+                  <div className="flex w-full justify-start">
+                    <div className="w-full sm:w-auto sm:min-w-[280px]">
+                      <Select value={selectedCountry} onValueChange={setSelectedCountry}>
+                        <SelectTrigger className="h-8 text-xs">
+                          <SelectValue placeholder="Filtrar por país..." />
+                        </SelectTrigger>
+                        <SelectContent>
+                          <SelectItem value="all">
+                            Todos los países
+                          </SelectItem>
+                          {countries.map(c => (
+                            <SelectItem key={c} value={c}>
+                              {FLAGS[c] || ''} <span className="ml-1">{c}</span>
+                            </SelectItem>
+                          ))}
+                        </SelectContent>
+                      </Select>
+                    </div>
+                  </div>
+                }
               >
-                <RolesTaxonomyChart />
+                <RolesTaxonomyChart selectedCountry={selectedCountry} />
               </ChartWrapper>
             </div>
           </CarouselItem>
