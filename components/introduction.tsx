@@ -290,7 +290,7 @@ export function Introduction() {
                 <Alert className="w-full border-primary/20 bg-background shadow-sm">
                   <Lightbulb className="h-4 w-4 text-primary" />
                   <AlertDescription className="text-muted-foreground text-[15px] leading-relaxed">
-                    <span className="text-foreground font-semibold mr-1">¿Quieres explorar esto a detalle?</span> Si te interesa profundizar en cómo el PM puede liderar esta adopción táctica, puedes descargar la presentación de Product-LatAm: <a href="https://www.linkedin.com/feed/update/urn:li:activity:7401464764436254720/" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary hover:underline">aquí</a>.
+                    <p><span className="text-foreground font-semibold mr-1">¿Quieres explorar esto a detalle?</span> Si te interesa profundizar en cómo el PM puede liderar esta adopción táctica, puedes descargar la presentación de Product-LatAm: <a href="https://www.linkedin.com/feed/update/urn:li:activity:7401464764436254720/" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary hover:underline">aquí</a>.</p>
                   </AlertDescription>
                 </Alert>
               </div>
