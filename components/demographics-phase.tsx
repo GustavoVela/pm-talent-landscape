@@ -218,7 +218,7 @@ export function DemographicsPhase() {
           <SectionHeader
             number="04"
             title="Anatomía de los Datos"
-            subtitle="3,471 vacantes evaluadas en torno a Product Management"
+            subtitle="¿Con qué información contamos?"
           />
 
           <NarrativeText>
