@@ -9,7 +9,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion"
-import { CheckCircle2Icon } from "lucide-react"
+import { Lightbulb } from "lucide-react"
 import {
   Alert,
   AlertDescription,
@@ -286,20 +286,20 @@ export function Introduction() {
             </AnimatedSection>
             
             <AnimatedSection delay={300}>
-              <div className="mt-12 flex justify-center">
-                <Alert className="max-w-3xl border-primary/20 bg-primary/5">
-                  <CheckCircle2Icon className="h-5 w-5 text-primary" />
+              <div className="mt-12 w-full">
+                <Alert className="w-full border-primary/20 bg-background shadow-sm">
+                  <Lightbulb className="h-5 w-5 text-primary" />
                   <AlertTitle className="text-foreground font-semibold">¿Quieres explorar esto a detalle?</AlertTitle>
                   <AlertDescription className="text-muted-foreground mt-2">
-                    Si te interesa profundizar en cómo el PM puede liderar esta adopción táctica, puedes descargar la presentación completa de Product-LatAm aquí:{' '}
+                    Si te interesa profundizar en cómo el PM puede liderar esta adopción táctica, puedes descargar la presentación completa de Product-LatAm{' '}
                     <a 
                       href="https://www.linkedin.com/feed/update/urn:li:activity:7401464764436254720/" 
                       target="_blank" 
                       rel="noopener noreferrer"
                       className="font-semibold text-primary hover:underline"
                     >
-                      Ver presentación en LinkedIn
-                    </a>
+                      aquí
+                    </a>.
                   </AlertDescription>
                 </Alert>
               </div>
