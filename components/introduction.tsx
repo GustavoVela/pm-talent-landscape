@@ -193,7 +193,7 @@ export function Introduction() {
             <div className="space-y-8 text-lg text-muted-foreground leading-relaxed">
               <AnimatedSection delay={100}>
                 <p>
-                  Hace unas semanas conversaba con una amiga que buscaba trabajo como Product Manager en México. Le di un consejo basado en lo que aplico a diario y lo que predican las empresas de frontera: <em className="text-foreground">&quot;Hoy, entender y saber construir con Inteligencia Artificial ya no es un plus, es tu barrera de entrada&quot;</em>.
+                  Este análisis nació de un choque directo entre la teoría y la práctica. Hace unas semanas, conversaba con una colega que buscaba activamente integrarse como Product Manager en el ecosistema tecnológico de México. Mi recomendación fue categórica: hoy, entender y saber construir con Inteligencia Artificial ya no es un valor agregado, es la barrera de entrada para competir al más alto nivel. Sin embargo, su respuesta fue el primer golpe de realidad:
                 </p>
               </AnimatedSection>
               
@@ -207,19 +207,13 @@ export function Introduction() {
               
               <AnimatedSection delay={200}>
                 <p>
-                  Había un choque brutal entre la narrativa global y la realidad operativa del reclutamiento en Latinoamérica. ¿Estaba yo viviendo en una burbuja? Como profesional de datos, decidí extraer la información y mirar los números.
+                  Existía una discrepancia brutal entre la narrativa de las empresas de frontera y la realidad operativa de los departamentos de reclutamiento en Latinoamérica. Ante la duda de si mi visión como profesional de datos estaba sesgada por una &quot;burbuja&quot; de industria, decidí dejar de lado las impresiones personales y procesar los números.
                 </p>
               </AnimatedSection>
               
               <AnimatedSection delay={250}>
                 <p>
-                  Extraje miles de ofertas de trabajo desde Estados Unidos hasta el sur del continente. El objetivo no era establecer un censo inamovible, sino usar esta data como un <span className="font-semibold text-foreground">&quot;proxy&quot; direccional</span>: un faro para anticipar hacia dónde va a volar el disco en nuestra profesión.
-                </p>
-              </AnimatedSection>
-              
-              <AnimatedSection delay={300}>
-                <p className="text-foreground">
-                  Miramos a Estados Unidos no para medir un &quot;rezago&quot;, sino como una máquina del tiempo que nos muestra el estándar que nos exigirán en 12 a 24 meses.
+                  Para sustituir las anécdotas por evidencia, extraje y analicé miles de ofertas de trabajo reales desde Estados Unidos hasta el sur del continente. Este análisis sirve como un faro basado en datos para anticipar hacia dónde se mueve el estándar de nuestra profesión. Miramos el mercado de Estados Unidos no para medir un &quot;rezago&quot;, sino como una máquina del tiempo que nos permite identificar las competencias que se convertirán en el estándar de nuestros mercados en los próximos 12 a 24 meses. <span className="font-semibold text-foreground">Si sigues leyendo, podrás descubrir las habilidades que más están pidiendo actualmente y cómo se están transformando las expectativas del mercado.</span>
                 </p>
               </AnimatedSection>
             </div>
