@@ -23,8 +23,7 @@ const domains = [
     description: (
       <div className="space-y-4 mt-2 text-foreground/80">
         <p>
-          <span className="font-semibold text-foreground">De Uso Superficial a Integración Estructural: </span>
-          La IA no es solo un chat que escribe textos (GenAI); la exigencia del mercado trasciende el uso básico de interfaces conversacionales, requiere comprender e integrar modelos algorítmicos.
+          De Uso Superficial a Integración Estructural: La IA no es solo un chat que escribe textos (GenAI); la exigencia del mercado trasciende el uso básico de interfaces conversacionales, requiere comprender e integrar modelos algorítmicos.
         </p>
         <ul className="space-y-3 list-disc pl-5">
           <li><strong>Modelos Predictivos:</strong> El PM debe entender cómo usar el ML para predecir comportamientos (ej. riesgo de crédito o abandono). Aquí es donde la IA impacta directamente en el balance financiero del negocio.</li>
@@ -41,8 +40,7 @@ const domains = [
     title: "Conocimiento Técnico: Entender las Tuberías",
     description: (
       <div className="space-y-4 mt-2 text-foreground/80">
-        <p className="font-semibold text-foreground">Arquitectura y Prototipado:</p>
-        <p>No se requiere escribir código de producción, pero sí fluidez estructural para maximizar los recursos del equipo de ingeniería.</p>
+        <p>No necesitas programar el producto final, pero sí entender cómo se conectan las piezas, tener fluidez estructural y conocer las restricciones técnicas para maximizar los recursos del equipo de ingeniería.</p>
         <ul className="space-y-3 list-disc pl-5">
           <li><strong>Pensamiento Sistémico y Trade-offs:</strong> Comprender el diseño de bases de datos, APIs y arquitecturas cloud para debatir objetivamente las compensaciones técnicas (ventajas y desventajas) de escalabilidad. Un PM que no entiende las limitaciones técnicas actúa como un intermediario ineficiente.</li>
           <li><strong>Prototipado Radical:</strong> Utilizar herramientas de generación de código impulsadas por IA para traducir documentos de requisitos en prototipos funcionales rápidos, validando lógicas y reduciendo la ambigüedad antes de la fase formal de ingeniería.</li>
@@ -53,14 +51,17 @@ const domains = [
   },
   {
     icon: ChartBar,
-    title: "Análisis de Datos",
+    title: "Análisis de Datos: Autonomía Radical",
     description: (
       <div className="space-y-4 mt-2 text-foreground/80">
-        <p className="font-semibold text-foreground">Causalidad sobre Correlación:</p>
-        <p>El PM es la máxima autoridad sobre el comportamiento del producto. La exigencia se centra en el rigor analítico.</p>
+        <p>
+          <span className="font-semibold text-foreground">Causalidad sobre Correlación: </span>
+          El PM es la máxima autoridad sobre el comportamiento del producto. La exigencia se centra en el rigor analítico.
+        </p>
         <ul className="space-y-3 list-disc pl-5">
-          <li><strong>Métricas Causales y de Proxy:</strong> Superar el monitoreo de promedios globales. Se exige identificar indicadores predictivos a corto plazo y establecer relaciones causales para responder operativamente a la pregunta: &quot;¿Y ahora qué hacemos al respecto?&quot;.</li>
-          <li><strong>Análisis de Casos Límite:</strong> Complementar la información cuantitativa con retroalimentación cualitativa, buscando anomalías y estados de fallo (ej. tasas de error ocultas) aplicando un escepticismo estadístico estructurado (Ley de Twyman).</li>
+          <li><strong>SQL:</strong> No esperes dos semanas a que un analista te libre un reporte. Aprende a tirar tus propias consultas para tomar decisiones el mismo día.</li>
+          <li><strong>Causalidad Real:</strong> No te conformes con ver que un número subió. Tienes que entender por qué ocurrió y si tu producto fue la causa real o solo una coincidencia.</li>
+          <li><strong>Escepticismo de Datos:</strong> Si un gráfico se ve demasiado bien, probablemente está mal. Cuestiona la fuente y busca el error antes de celebrar.</li>
         </ul>
       </div>
     )
