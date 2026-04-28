@@ -38,14 +38,15 @@ const domains = [
   },
   {
     icon: Code,
-    title: "Conocimiento Técnico",
+    title: "Conocimiento Técnico: Entender las Tuberías",
     description: (
       <div className="space-y-4 mt-2 text-foreground/80">
         <p className="font-semibold text-foreground">Arquitectura y Prototipado:</p>
         <p>No se requiere escribir código de producción, pero sí fluidez estructural para maximizar los recursos del equipo de ingeniería.</p>
         <ul className="space-y-3 list-disc pl-5">
           <li><strong>Pensamiento Sistémico y Trade-offs:</strong> Comprender el diseño de bases de datos, APIs y arquitecturas cloud para debatir objetivamente las compensaciones técnicas (ventajas y desventajas) de escalabilidad. Un PM que no entiende las limitaciones técnicas actúa como un intermediario ineficiente.</li>
-          <li><strong>Prototipado Radical (Vibe Coding):</strong> Utilizar herramientas de generación de código impulsadas por IA para traducir documentos de requisitos en prototipos funcionales rápidos, validando lógicas y reduciendo la ambigüedad antes de la fase formal de ingeniería.</li>
+          <li><strong>Prototipado Radical:</strong> Utilizar herramientas de generación de código impulsadas por IA para traducir documentos de requisitos en prototipos funcionales rápidos, validando lógicas y reduciendo la ambigüedad antes de la fase formal de ingeniería.</li>
+          <li><strong>Cálculo de Trade-offs:</strong> Tienes que saber si lo que pides toma dos horas o dos meses. Esa intuición técnica te permite priorizar con realismo.</li>
         </ul>
       </div>
     )
