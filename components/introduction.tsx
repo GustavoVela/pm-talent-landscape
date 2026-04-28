@@ -287,10 +287,11 @@ export function Introduction() {
             
             <AnimatedSection delay={300}>
               <div className="mt-12 w-full">
-                <Alert className="w-full border-primary/20 bg-background shadow-sm flex items-center gap-2 py-3 px-4">
-                  <Lightbulb className="h-5 w-5 text-primary shrink-0" />
-                  <AlertDescription className="text-muted-foreground text-sm flex-1 leading-relaxed m-0">
-                    <strong className="text-foreground font-semibold">¿Quieres explorar esto a detalle?</strong> Si te interesa profundizar en cómo el PM puede liderar esta adopción táctica, puedes descargar la presentación completa de Product-LatAm{' '}
+                <Alert className="w-full border-primary/20 bg-background shadow-sm">
+                  <Lightbulb className="h-4 w-4 text-primary" />
+                  <AlertDescription className="text-muted-foreground text-[15px] leading-relaxed">
+                    <span className="text-foreground font-semibold mr-1">¿Quieres explorar esto a detalle?</span> 
+                    Si te interesa profundizar en cómo el PM puede liderar esta adopción táctica, puedes descargar la presentación completa de Product-LatAm{' '}
                     <a 
                       href="https://www.linkedin.com/feed/update/urn:li:activity:7401464764436254720/" 
                       target="_blank" 
