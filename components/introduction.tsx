@@ -68,13 +68,14 @@ const domains = [
   },
   {
     icon: Briefcase,
-    title: "Visión de Negocio",
+    title: "Visión de Negocio: Rentabilidad y Viabilidad",
     description: (
       <div className="space-y-4 mt-2 text-foreground/80">
-        <p className="font-semibold text-foreground">Viabilidad y Foso Estratégico:</p>
-        <p>Ingeniería garantiza la factibilidad; diseño la usabilidad; el PM es responsable de la viabilidad financiera y legal del modelo comercial.</p>
+        <p>Ingeniería hace que funcione; tú haces que el negocio sobreviva y gane dinero.</p>
         <ul className="space-y-3 list-disc pl-5">
-          <li><strong>Monetización y Estrategia Competitiva:</strong> Comprender la &quot;disposición a pagar&quot; del mercado desde el día uno y dominar los modelos de precios (pricing). Conocer las ventajas competitivas de la industria (economías de red, regulaciones, barreras de entrada).</li>
+          <li><strong>Pricing es Producto:</strong> El precio no lo pone finanzas al final. Tú diseñas el producto sabiendo cuánto está dispuesto a pagar el cliente.</li>
+          <li><strong>Fosos Estratégicos:</strong> Pregúntate: &quot;¿Por qué no nos pueden copiar esto mañana?&quot;. Construye ventajas difíciles de replicar, como datos exclusivos o barreras legales.</li>
+          <li><strong>Contexto de Industria:</strong> Debes dominar la regulación y el lenguaje del sector para ver oportunidades donde otros ven problemas técnicos.</li>
           <li><strong>Alineación Comercial (Go-To-Market):</strong> Conectar el roadmap técnico con las proyecciones de ingresos y la estrategia de comercialización (GTM), asegurando que el producto resuelva el problema y se posicione efectivamente frente al cliente.</li>
         </ul>
       </div>
