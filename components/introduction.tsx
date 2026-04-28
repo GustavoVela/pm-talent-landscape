@@ -22,10 +22,14 @@ const domains = [
     title: "Inteligencia Artificial",
     description: (
       <div className="space-y-4 mt-2 text-foreground/80">
-        <p className="font-semibold text-foreground">De Uso Superficial a Integración Estructural:</p>
-        <p>La exigencia del mercado trasciende el uso básico de interfaces conversacionales; requiere comprender e integrar modelos algorítmicos.</p>
+        <p>
+          <span className="font-semibold text-foreground">De Uso Superficial a Integración Estructural: </span>
+          La IA no es solo un chat que escribe textos (GenAI); la exigencia del mercado trasciende el uso básico de interfaces conversacionales, requiere comprender e integrar modelos algorítmicos.
+        </p>
         <ul className="space-y-3 list-disc pl-5">
-          <li><strong>Las Evaluaciones (Evals) reemplazan a los PRDs:</strong> Los Modelos de Lenguaje (LLMs) operan por probabilidad, no de forma determinista. Escribir requisitos estáticos es insuficiente. La nueva competencia técnica del PM es diseñar &quot;Evals&quot;: crear conjuntos de pruebas rigurosas y automatizadas para cuantificar el éxito, medir el progreso y acotar el comportamiento del modelo.</li>
+          <li><strong>Modelos Predictivos:</strong> El PM debe entender cómo usar el ML para predecir comportamientos (ej. riesgo de crédito o abandono). Aquí es donde la IA impacta directamente en el balance financiero del negocio.</li>
+          <li><strong>Diseño de Evals:</strong> Como los modelos son probabilísticos, tienes que crear tus propios &quot;exámenes&quot; (evaluaciones) para medir si las respuestas son precisas y seguras.</li>
+          <li><strong>Gestión de Agentes:</strong> Dejas de gestionar solo personas para orquestar agentes de IA. Esto exige dar instrucciones (prompts) perfectas y contexto de negocio que la máquina no tiene.</li>
           <li><strong>Automatización y Apalancamiento:</strong> Delegar sistemáticamente las tareas administrativas y repetitivas a agentes de IA. En niveles avanzados, el PM transita de gestionar proyectos a &quot;gestionar flotas de agentes&quot;, lo que requiere precisión en la delegación y proveer contexto de negocio innegociable a los sistemas.</li>
           <li><strong>Maximalismo de Modelos:</strong> Construir productos anticipando la evolución de la tecnología, evitando invertir recursos en arquitecturas pesadas para solucionar limitaciones temporales que las futuras actualizaciones de los modelos resolverán inherentemente.</li>
         </ul>
