@@ -240,15 +240,15 @@ export function Introduction() {
             <AnimatedSection delay={100}>
               <div className="space-y-6 text-lg text-muted-foreground leading-relaxed mb-8">
                 <p>
-                  Antes de escarbar en los datos, necesitábamos definir el estándar. La premisa central de este estudio es que <span className="font-semibold text-foreground">las fronteras tradicionales entre Ingeniería, Diseño y Producto se están colapsando</span>.
+                  El origen de este marco de referencia no nació en la ejecución operativa. En septiembre de 2019, durante un proyecto en Barcelona, asistí por casualidad a un webinar impartido por el CEO de la compañía: &apos;Deployment of Strategic AI in the Enterprise: Crossing the Chasm&apos;. El mensaje central fue definitivo: la adopción de Inteligencia Artificial no es una carrera tecnológica de velocidad, sino una maratón de transformación estructural y cultural.
                 </p>
                 
                 <p>
-                  A medida que la IA reduce drásticamente el costo de escribir código o diseñar un wireframe, la ejecución pura deja de ser el cuello de botella. El PM que solo operaba como &quot;coordinador&quot; de metodologías ágiles o administrador de tickets en Jira está desapareciendo.
+                  Avanzando al presente, el mayor riesgo que observo en el ecosistema de Latinoamérica —desde Colombia hasta México— es la parálisis. Las empresas, especialmente las medianas, se estancan buscando &quot;la guía definitiva&quot; o &quot;la verdad absoluta&quot; para implementar IA, arriesgándose a perder competitividad de forma acelerada.
                 </p>
                 
                 <p>
-                  Hoy, la habilidad que cobra un valor incalculable es el <span className="font-semibold text-foreground">&quot;Criterio de Producto&quot; (Product Taste)</span>. El mercado empuja hacia lo que llamo el <span className="font-semibold text-foreground">&quot;Full-Stack Builder&quot;</span>, un perfil orquestador que debe dominar 5 dominios:
+                  Hace unos meses, tuve la oportunidad de exponer esta problemática en el foro de Product Management de <a href="https://www.product-latam.com/summit" target="_blank" rel="noopener noreferrer" className="font-semibold text-foreground underline hover:text-primary transition-colors">Product-LatAm</a> (impulsado por Capital One). Mi argumento fue: el Product Manager, por su naturaleza polivalente, debe ser el catalizador que inicie esta transformación desde adentro. Para lograrlo, las fronteras tradicionales entre Ingeniería, Diseño y Producto deben colapsar. La ejecución pura ha dejado de ser el cuello de botella; la ventaja competitiva ahora reside en el <span className="font-semibold text-foreground">Criterio de Producto (Product Taste)</span> y en la evolución hacia el <span className="font-semibold text-foreground">&quot;Full-Stack Builder&quot;</span>, un perfil que domina cinco ejes estratégicos:
                 </p>
               </div>
             </AnimatedSection>
