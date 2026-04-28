@@ -1,6 +1,6 @@
 import { Header } from "@/components/header"
 import { Introduction } from "@/components/introduction"
-import { AnalysisPipeline } from "@/components/analysis-pipeline"
+
 import { DemographicsPhase } from "@/components/demographics-phase"
 import { CompetencyProfilePhase } from "@/components/competency-profile-phase"
 import { QuadrantPhase } from "@/components/quadrant-phase"
@@ -17,7 +17,6 @@ export default function Home() {
       <FloatingNav />
       <main className="flex-1">
         <Introduction />
-        <AnalysisPipeline />
         <DemographicsPhase />
         <CompetencyProfilePhase />
         <QuadrantPhase />

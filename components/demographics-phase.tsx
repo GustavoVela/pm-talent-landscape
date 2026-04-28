@@ -37,6 +37,11 @@ function PhaseZeroCarousel() {
     return [...new Set(demographicsCityData.map(d => d.country))].sort();
   }, []);
 
+  const [mounted, setMounted] = React.useState(false);
+  React.useEffect(() => {
+    setMounted(true);
+  }, []);
+
   React.useEffect(() => {
     if (!api) return
 
@@ -106,21 +111,25 @@ function PhaseZeroCarousel() {
                 controls={
                   <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 w-full justify-between">
                     <div className="w-full sm:w-auto sm:min-w-[280px]">
-                      <Select value={selectedCountry} onValueChange={setSelectedCountry}>
-                        <SelectTrigger className="h-8 text-xs">
-                          <SelectValue placeholder="Filtrar por país..." />
-                        </SelectTrigger>
-                        <SelectContent>
-                          <SelectItem value="all">
-                            Todos los países
-                          </SelectItem>
-                          {countries.map(c => (
-                            <SelectItem key={c} value={c}>
-                              {FLAGS[c] || ''} <span className="ml-1">{c}</span>
+                      {mounted ? (
+                        <Select value={selectedCountry} onValueChange={setSelectedCountry}>
+                          <SelectTrigger className="h-8 text-xs">
+                            <SelectValue placeholder="Filtrar por país..." />
+                          </SelectTrigger>
+                          <SelectContent>
+                            <SelectItem value="all">
+                              Todos los países
                             </SelectItem>
-                          ))}
-                        </SelectContent>
-                      </Select>
+                            {countries.map(c => (
+                              <SelectItem key={c} value={c}>
+                                {FLAGS[c] || ''} <span className="ml-1">{c}</span>
+                              </SelectItem>
+                            ))}
+                          </SelectContent>
+                        </Select>
+                      ) : (
+                        <div className="h-8 w-full border rounded-md" />
+                      )}
                     </div>
                     <ToggleGroup type="single" variant="outline" value={cityViewMode} onValueChange={(v) => v && setCityViewMode(v as 'absolute' | 'percentage')} size="sm" className="justify-start">
                       <ToggleGroupItem value="absolute" className="text-xs h-8 px-3">Valores</ToggleGroupItem>
@@ -144,21 +153,25 @@ function PhaseZeroCarousel() {
                 controls={
                   <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 w-full justify-between">
                     <div className="w-full sm:w-auto sm:min-w-[280px]">
-                      <Select value={taxonomySelectedCountry} onValueChange={setTaxonomySelectedCountry}>
-                        <SelectTrigger className="h-8 text-xs">
-                          <SelectValue placeholder="Filtrar por país..." />
-                        </SelectTrigger>
-                        <SelectContent>
-                          <SelectItem value="all">
-                            Todos los países
-                          </SelectItem>
-                          {countries.map(c => (
-                            <SelectItem key={c} value={c}>
-                              {FLAGS[c] || ''} <span className="ml-1">{c}</span>
+                      {mounted ? (
+                        <Select value={taxonomySelectedCountry} onValueChange={setTaxonomySelectedCountry}>
+                          <SelectTrigger className="h-8 text-xs">
+                            <SelectValue placeholder="Filtrar por país..." />
+                          </SelectTrigger>
+                          <SelectContent>
+                            <SelectItem value="all">
+                              Todos los países
                             </SelectItem>
-                          ))}
-                        </SelectContent>
-                      </Select>
+                            {countries.map(c => (
+                              <SelectItem key={c} value={c}>
+                                {FLAGS[c] || ''} <span className="ml-1">{c}</span>
+                              </SelectItem>
+                            ))}
+                          </SelectContent>
+                        </Select>
+                      ) : (
+                        <div className="h-8 w-full border rounded-md" />
+                      )}
                     </div>
                     <ToggleGroup type="single" variant="outline" value={taxonomyViewMode} onValueChange={(v) => v && setTaxonomyViewMode(v as 'absolute' | 'percentage')} size="sm" className="justify-start">
                       <ToggleGroupItem value="absolute" className="text-xs h-8 px-3">Valores</ToggleGroupItem>

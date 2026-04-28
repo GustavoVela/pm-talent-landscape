@@ -16,7 +16,7 @@ export function Header() {
       <div className="container mx-auto flex h-14 items-center justify-between px-4 md:px-6">
         <div className="flex items-center gap-6">
           <span className="text-sm font-semibold tracking-tight text-foreground">
-            PM Talent Landscape
+            Product Management Talent Landscape
           </span>
           <span className="hidden h-4 w-px bg-border md:block" />
           <span className="hidden text-xs text-muted-foreground md:block">
