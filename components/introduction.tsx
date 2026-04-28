@@ -112,14 +112,14 @@ function useInView(options?: IntersectionObserverInit) {
   return { ref, isInView }
 }
 
-function AnimatedSection({ 
-  children, 
+function AnimatedSection({
+  children,
   className,
-  delay = 0 
-}: { 
+  delay = 0
+}: {
   children: React.ReactNode
   className?: string
-  delay?: number 
+  delay?: number
 }) {
   const { ref, isInView } = useInView()
 
@@ -128,8 +128,8 @@ function AnimatedSection({
       ref={ref}
       className={cn(
         "transition-all duration-700 ease-out",
-        isInView 
-          ? "opacity-100 translate-y-0" 
+        isInView
+          ? "opacity-100 translate-y-0"
           : "opacity-0 translate-y-8",
         className
       )}
@@ -153,24 +153,24 @@ export function Introduction() {
                 Un análisis de datos del mercado laboral
               </p>
             </AnimatedSection>
-            
+
             <AnimatedSection delay={100}>
               <h1 className="text-4xl font-bold tracking-tight text-foreground md:text-5xl lg:text-6xl text-balance leading-[1.1]">
                 El PM en la Era de la IA
                 <span className="block text-muted-foreground">Datos Reales, Menos Hype</span>
               </h1>
             </AnimatedSection>
-            
+
             <AnimatedSection delay={200}>
               <div className="mt-12 space-y-6 text-lg text-muted-foreground md:text-xl leading-relaxed">
                 <p>
                   Hola, soy <span className="font-semibold text-foreground">Gustavo Vela Zúñiga</span>. Llevo 18 años construyendo y escalando productos digitales, operando siempre en la misma intersección: donde la complejidad técnica y el análisis de datos se cruzan con la rentabilidad del negocio. Encantado de saludarles y, sobre todo, de abrir el debate sobre los hallazgos de este análisis.
                 </p>
-                
+
                 <p>
                   Hoy, el Product Management atraviesa una mutación acelerada. Lo que encontrarán en las siguientes secciones no pretende ser una guía definitiva ni una verdad absoluta sobre la industria; es, más bien, un <span className="font-semibold text-foreground">proxy pragmático</span> —sustentado en la extracción de unos cuantos de miles de ofertas de trabajo reales— diseñado para ayudarles a entender mejor los movimientos actuales del mercado laboral.
                 </p>
-                
+
                 <p>
                   <span className="font-semibold text-foreground">El objetivo es traducir datos en respuestas útiles</span>: ¿Qué competencias están exigiendo activamente las empresas hoy en día? ¿Qué habilidades están perdiendo peso? Y, el punto más crítico en la actualidad: si antes nos interesaba la Inteligencia Artificial como un complemento, ¿es este el momento en el que debemos correr a capacitarnos porque el mercado ya lo exige como una barrera de entrada?
                 </p>
@@ -195,14 +195,14 @@ export function Introduction() {
                 </p>
               </div>
             </AnimatedSection>
-            
+
             <div className="space-y-8 text-lg text-muted-foreground leading-relaxed">
               <AnimatedSection delay={100}>
                 <p>
                   Este análisis nació de un choque directo entre la teoría y la práctica. Hace unas semanas, conversaba con una colega que buscaba activamente integrarse como Product Manager en el ecosistema tecnológico de México. Mi recomendación fue categórica: hoy, entender y saber construir con Inteligencia Artificial ya no es un valor agregado, es la barrera de entrada para competir al más alto nivel. Sin embargo, su respuesta fue el primer golpe de realidad:
                 </p>
               </AnimatedSection>
-              
+
               <AnimatedSection delay={150}>
                 <div className="relative border-l-2 border-foreground/20 pl-6 py-2">
                   <p className="text-xl font-medium text-foreground">
@@ -210,13 +210,13 @@ export function Introduction() {
                   </p>
                 </div>
               </AnimatedSection>
-              
+
               <AnimatedSection delay={200}>
                 <p>
                   Existía una discrepancia brutal entre la narrativa de las empresas de frontera y la realidad operativa de los departamentos de reclutamiento en Latinoamérica. Ante la duda de si mi visión como profesional de datos estaba sesgada por una &quot;burbuja&quot; de industria, decidí dejar de lado las impresiones personales y procesar los números.
                 </p>
               </AnimatedSection>
-              
+
               <AnimatedSection delay={250}>
                 <p>
                   Para sustituir las anécdotas por evidencia, extraje y analicé 3,471 ofertas de trabajo reales de las últimas semanas (todas las que pude conseguir) desde Estados Unidos hasta el sur del continente. Este análisis sirve como un faro basado en datos para anticipar hacia dónde se mueve el estándar de nuestra profesión. Miramos el mercado de Estados Unidos no para medir un &quot;rezago&quot;, sino como una máquina del tiempo que nos permite identificar las competencias que se convertirán en el estándar de nuestros mercados en los próximos 12 a 24 meses. <span className="font-semibold text-foreground">Si sigues leyendo, podrás descubrir las habilidades que más están pidiendo actualmente y cómo se están transformando las expectativas del mercado.</span>
@@ -242,23 +242,23 @@ export function Introduction() {
                 </p>
               </div>
             </AnimatedSection>
-            
+
             <AnimatedSection delay={100}>
               <div className="space-y-6 text-lg text-muted-foreground leading-relaxed mb-8">
                 <p>
                   El origen de este marco de referencia no nació en la ejecución operativa. En septiembre de 2019, durante un proyecto en Barcelona, asistí por casualidad a un webinar impartido por el CEO de la compañía: &apos;Deployment of Strategic AI in the Enterprise: Crossing the Chasm&apos;. El mensaje central fue definitivo: la adopción de Inteligencia Artificial no es una carrera tecnológica de velocidad, sino una maratón de transformación estructural y cultural.
                 </p>
-                
+
                 <p>
                   Avanzando al presente, el mayor riesgo que observo en el ecosistema de Latinoamérica —desde Colombia hasta México— es la parálisis. Las empresas, especialmente las medianas, se estancan buscando &quot;la guía definitiva&quot; o &quot;la verdad absoluta&quot; para implementar IA, arriesgándose a perder competitividad de forma acelerada.
                 </p>
-                
+
                 <p>
                   Hace unos meses, tuve la oportunidad de exponer esta problemática en el foro de Product Management de <a href="https://www.product-latam.com/summit" target="_blank" rel="noopener noreferrer" className="font-semibold text-foreground underline hover:text-primary transition-colors">Product-LatAm</a> (impulsado por Capital One). Mi argumento fue: el Product Manager, por su naturaleza polivalente, debe ser el catalizador que inicie esta transformación desde adentro. Para lograrlo, las fronteras tradicionales entre Ingeniería, Diseño y Producto deben colapsar. La ejecución pura ha dejado de ser el cuello de botella; la ventaja competitiva ahora reside en el <span className="font-semibold text-foreground">Criterio de Producto (Product Taste)</span> y en la evolución hacia el <span className="font-semibold text-foreground">&quot;Full-Stack Builder&quot;</span>, un perfil que domina cinco ejes estratégicos:
                 </p>
               </div>
             </AnimatedSection>
-            
+
             {/* Accordion Domains */}
             <AnimatedSection delay={200}>
               <Accordion type="single" collapsible className="w-full">
@@ -284,17 +284,17 @@ export function Introduction() {
                 })}
               </Accordion>
             </AnimatedSection>
-            
+
             <AnimatedSection delay={300}>
               <div className="mt-12 w-full">
                 <Alert className="w-full border-primary/20 bg-background shadow-sm">
                   <Lightbulb className="h-4 w-4 text-primary" />
                   <AlertDescription className="text-muted-foreground text-[15px] leading-relaxed">
-                    <span className="text-foreground font-semibold mr-1">¿Quieres explorar esto a detalle?</span> 
-                    Si te interesa profundizar en cómo el PM puede liderar esta adopción táctica, puedes descargar la presentación completa de Product-LatAm{' '}
-                    <a 
-                      href="https://www.linkedin.com/feed/update/urn:li:activity:7401464764436254720/" 
-                      target="_blank" 
+                    <span className="text-foreground font-semibold mr-1">¿Quieres explorar esto a detalle?</span>
+                    Si te interesa profundizar en cómo el PM puede liderar esta adopción táctica, puedes descargar la presentación de Product-LatAm:{' '}
+                    <a
+                      href="https://www.linkedin.com/feed/update/urn:li:activity:7401464764436254720/"
+                      target="_blank"
                       rel="noopener noreferrer"
                       className="font-semibold text-primary hover:underline"
                     >
