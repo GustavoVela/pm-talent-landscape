@@ -292,6 +292,14 @@ export function Introduction() {
               </Accordion>
             </AnimatedSection>
 
+            <AnimatedSection delay={250}>
+              <div className="space-y-6 text-lg text-muted-foreground leading-relaxed mt-12">
+                <p>
+                  Como adelanto de los resultados: la demanda real por este perfil integral 🦄 —que domine los cinco ejes transversales además del conocimiento fundacional de producto— <span className="font-medium italic text-foreground">choca con el hype actual y con mi marco mental</span>, representando solo el 6.45% de las ofertas. Su concentración es ligeramente mayor en Estados Unidos (8.8%), marcando la pauta hacia la que evolucionará la industria.
+                </p>
+              </div>
+            </AnimatedSection>
+
             <AnimatedSection delay={300}>
               <div className="mt-12 w-full">
                 <Alert className="w-full border-primary/20 bg-background shadow-sm">
