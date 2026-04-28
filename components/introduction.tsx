@@ -213,7 +213,7 @@ export function Introduction() {
               
               <AnimatedSection delay={250}>
                 <p>
-                  Para sustituir las anécdotas por evidencia, extraje y analicé miles de ofertas de trabajo reales desde Estados Unidos hasta el sur del continente. Este análisis sirve como un faro basado en datos para anticipar hacia dónde se mueve el estándar de nuestra profesión. Miramos el mercado de Estados Unidos no para medir un &quot;rezago&quot;, sino como una máquina del tiempo que nos permite identificar las competencias que se convertirán en el estándar de nuestros mercados en los próximos 12 a 24 meses. <span className="font-semibold text-foreground">Si sigues leyendo, podrás descubrir las habilidades que más están pidiendo actualmente y cómo se están transformando las expectativas del mercado.</span>
+                  Para sustituir las anécdotas por evidencia, extraje y analicé 3,471 ofertas de trabajo reales de las últimas semanas (todas las que pude conseguir) desde Estados Unidos hasta el sur del continente. Este análisis sirve como un faro basado en datos para anticipar hacia dónde se mueve el estándar de nuestra profesión. Miramos el mercado de Estados Unidos no para medir un &quot;rezago&quot;, sino como una máquina del tiempo que nos permite identificar las competencias que se convertirán en el estándar de nuestros mercados en los próximos 12 a 24 meses. <span className="font-semibold text-foreground">Si sigues leyendo, podrás descubrir las habilidades que más están pidiendo actualmente y cómo se están transformando las expectativas del mercado.</span>
                 </p>
               </AnimatedSection>
             </div>
