@@ -158,15 +158,15 @@ export function Introduction() {
             <AnimatedSection delay={200}>
               <div className="mt-12 space-y-6 text-lg text-muted-foreground md:text-xl leading-relaxed">
                 <p>
-                  Hola, soy <span className="font-semibold text-foreground">Gustavo Vela Zúñiga</span>. Durante más de 18 años me he dedicado a construir y escalar productos digitales operando siempre en la misma intersección: donde la complejidad técnica y los datos se cruzan con la rentabilidad del negocio.
+                  Hola, soy <span className="font-semibold text-foreground">Gustavo Vela Zúñiga</span>. Llevo 18 años construyendo y escalando productos digitales, operando siempre en la misma intersección: donde la complejidad técnica y el análisis de datos se cruzan con la rentabilidad del negocio. Encantado de saludarles y, sobre todo, de abrir el debate sobre los hallazgos de este análisis.
                 </p>
                 
                 <p>
-                  He pasado por el despliegue masivo en telecomunicaciones, la optimización logística de última milla como VP de Producto en Frubana, y actualmente lidero la estrategia como Head of Products en Bkaya, construyendo ecosistemas Bank-as-a-Service.
+                  Hoy, el Product Management atraviesa una mutación acelerada. Lo que encontrarán en las siguientes secciones no pretende ser una guía definitiva ni una verdad absoluta sobre la industria; es, más bien, un <span className="font-semibold text-foreground">proxy pragmático</span> —sustentado en la extracción de unos cuantos de miles de ofertas de trabajo reales— diseñado para ayudarles a entender mejor los movimientos actuales del mercado laboral.
                 </p>
                 
-                <p className="text-foreground font-medium">
-                  Hoy, el Product Management atraviesa una mutación acelerada. Para entenderla, decidí dejar de adivinar y empezar a medir.
+                <p>
+                  <span className="font-semibold text-foreground">El objetivo es traducir datos en respuestas útiles</span>: ¿Qué competencias están exigiendo activamente las empresas hoy en día? ¿Qué habilidades están perdiendo peso? Y, el punto más crítico en la actualidad: si antes nos interesaba la Inteligencia Artificial como un complemento, ¿es este el momento en el que debemos correr a capacitarnos porque el mercado ya lo exige como una barrera de entrada?
                 </p>
               </div>
             </AnimatedSection>
