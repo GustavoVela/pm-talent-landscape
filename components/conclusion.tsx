@@ -16,7 +16,7 @@ export function Conclusion() {
           {/* Section Header — matching style */}
           <AnimatedSection>
             <div className="mb-12">
-              <span className="text-sm font-medium text-muted-foreground">11</span>
+              <span className="text-sm font-medium text-muted-foreground">08</span>
               <h2 className="mt-2 text-3xl font-bold tracking-tight text-foreground md:text-4xl">
                 Construye tu foso competitivo
               </h2>

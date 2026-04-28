@@ -9,7 +9,7 @@ export function QuadrantPhase() {
       <div className="container mx-auto px-4 py-20 md:px-6 md:py-28">
         <div className="mx-auto max-w-5xl">
           <SectionHeader
-            number="06"
+            number="05"
             title="Desenredando la Complejidad"
             subtitle="Tienes 5 horas libres este fin de semana. ¿En qué inviertes tu tiempo? Separemos el commodity del foso competitivo."
           />

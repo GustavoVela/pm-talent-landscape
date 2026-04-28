@@ -216,7 +216,7 @@ export function DemographicsPhase() {
       <div className="container mx-auto px-4 py-12 md:px-6 md:py-16">
         <div className="mx-auto max-w-5xl">
           <SectionHeader
-            number="04"
+            number="03"
             title="Anatomía de los Datos"
             subtitle="¿Con qué información contamos?"
           />

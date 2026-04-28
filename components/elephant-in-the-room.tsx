@@ -35,7 +35,7 @@ export function ElephantInTheRoom() {
         <div className="mx-auto max-w-5xl">
           <AnimatedSection>
             <div className="mb-12">
-              <span className="text-sm font-medium text-muted-foreground">10</span>
+              <span className="text-sm font-medium text-muted-foreground">07</span>
               <h2 className="mt-2 text-3xl font-bold tracking-tight text-foreground md:text-4xl">
                 El Elefante en la Habitación
               </h2>

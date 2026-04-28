@@ -11,7 +11,7 @@ export function AiAdoptionPhase() {
       <div className="container mx-auto px-4 py-20 md:px-6 md:py-28">
         <div className="mx-auto max-w-5xl">
           <SectionHeader
-            number="07"
+            number="06"
             title="La Lupa en la Adopción"
             subtitle="Hype vs. Deep Tech — ¿quién pide IA por FOMO y quién está literalmente construyendo el futuro del software?"
           />
