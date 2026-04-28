@@ -19,7 +19,7 @@ import {
 const domains = [
   {
     icon: Brain,
-    title: "Inteligencia Artificial",
+    title: "Inteligencia Artificial: De la Generación al Valor Real",
     description: (
       <div className="space-y-4 mt-2 text-foreground/80">
         <p>
