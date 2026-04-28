@@ -217,26 +217,23 @@ export function DemographicsPhase() {
         <div className="mx-auto max-w-5xl">
           <SectionHeader
             number="04"
-            title="¿Con qué información contamos?"
-            subtitle="El punto de partida: mapear el universo de vacantes antes de analizarlo."
+            title="Anatomía de los Datos"
+            subtitle="3,471 vacantes evaluadas en torno a Product Management"
           />
 
           <NarrativeText>
             <p>
-              Antes de hablar de skills, salarios o brechas, necesitamos responder la pregunta más básica: <span className="font-semibold text-foreground">¿Cuántas vacantes se recolectaron y de dónde vienen?</span>
-            </p>
-            <p>
-              El dataset fue construido a partir de una extracción masiva (fuente LinkedIn), cubriendo ofertas activas en <span className="font-medium text-foreground">Estados Unidos</span>, <span className="font-medium text-foreground">Brasil</span>, <span className="font-medium text-foreground">México</span>, <span className="font-medium text-foreground">Colombia</span>, <span className="font-medium text-foreground">Chile</span> y <span className="font-medium text-foreground">Perú</span>.
+              Este apartado detalla la estructura de la muestra procesada para informar sobre el origen y la segmentación del análisis. Los datos provienen de ofertas de empleo en LinkedIn, cubriendo vacantes activas de las ultimas semanas en Estados Unidos, Brasil, México, Colombia, Chile y Perú. A través de las siguientes gráficas, se analiza la proporción de roles válidos, la distribución demográfica por país, los polos tecnológicos urbanos mapeados, la concentración de roles específicos de Product Management y los niveles de seniority exigidos, entre otros.
             </p>
           </NarrativeText>
 
           {/* Stat Cards */}
           <AnimatedSection delay={150}>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 my-8">
-              <StatCard value="3,471" label="Vacantes evaluadas" sublabel="fuente LinkedIn" />
-              <StatCard value="2,836" label="Roles válidos" sublabel="post-filtro IA" />
-              <StatCard value="4,629" label="Skills únicas" sublabel="extraídas por IA" />
-              <StatCard value="6" label="Países" sublabel="Américas" />
+              <StatCard value="3,471" label="Vacantes evaluadas" sublabel="(Fuente: LinkedIn)." />
+              <StatCard value="2,836" label="Roles válidos de Product Management" sublabel="(Post-filtro IA)." />
+              <StatCard value="4,629" label="Skills únicas" sublabel="extraídas y procesadas." />
+              <StatCard value="6" label="Mercados analizados" sublabel="(EE. UU., BR, MX, CO, CL, PE)." />
             </div>
           </AnimatedSection>
 
