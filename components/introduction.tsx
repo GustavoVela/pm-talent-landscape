@@ -83,14 +83,14 @@ const domains = [
   },
   {
     icon: PaintBrush,
-    title: "Diseño y UX/UI",
+    title: "Diseño y UX/UI: El Criterio es el Filtro",
     description: (
       <div className="space-y-4 mt-2 text-foreground/80">
-        <p className="font-semibold text-foreground">Restricciones y Product Taste:</p>
         <p>Con la reducción del costo de ejecución técnica, la decisión crítica recae en la jerarquía y la calidad de la experiencia.</p>
         <ul className="space-y-3 list-disc pl-5">
-          <li><strong>Dibujar el perímetro del problema:</strong> El PM no debe imponer soluciones predefinidas; su rol es definir restricciones funcionales claras mediante esquemas visuales (wireframes), permitiendo al equipo de diseño ejecutar soluciones innovadoras dentro de esos límites.</li>
+          <li><strong>Definir el Perímetro:</strong> No le digas al diseñador qué color usar. Dile qué problema tiene que resolver y cuáles son los límites.</li>
           <li><strong>Criterio de Producto e Intuición Calibrada:</strong> Desarrollar un criterio agudo basado en el uso extensivo de software para simplificar interfaces, establecer configuraciones predeterminadas óptimas y reducir la carga cognitiva del usuario final.</li>
+          <li><strong>Wireframes de Claridad:</strong> Usa esquemas visuales para que todo el equipo vea lo mismo y evitar interpretaciones erróneas de documentos de texto.</li>
         </ul>
       </div>
     )
