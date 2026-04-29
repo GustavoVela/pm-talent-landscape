@@ -207,11 +207,16 @@ export function DemographyEmploymentChart({
           }
         },
         color: [
-          '#0ea5e9', // Primary blue
-          '#3b82f6', 
-          '#8b5cf6', 
-          '#cbd5e1', 
-          '#94a3b8'
+          "#0ea5e9", 
+          "#91cc75", 
+          "#fac858", 
+          "#ee6666", 
+          "#73c0de", 
+          "#3ba272", 
+          "#fc8452", 
+          "#5470c6", 
+          "#9a60b4", 
+          "#ea7ccc"
         ],
         data: filteredData
       }
