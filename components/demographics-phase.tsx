@@ -253,44 +253,6 @@ function PhaseZeroCarousel() {
           <CarouselItem className="pl-4 md:pl-6 basis-full lg:basis-[60%] xl:basis-[55%]">
             <div className={cn("transition-all duration-500 h-full", current !== 6 ? "opacity-40 scale-[0.98] blur-[1px]" : "opacity-100 scale-100 shadow-xl ring-1 ring-border/50 rounded-xl")}>
               <ChartWrapper
-                id="chart-demografia-employment"
-                title="Distribución por Modalidad de Contrato"
-                interpretation="La abrumadora mayoría de los roles son Full-time (2,539), desmitificando la tendencia al trabajo freelance puro en producto. Esto indica que el Product Manager sigue siendo considerado una pieza core interna dentro de la organización."
-                className="h-full bg-white/50 dark:bg-slate-950/50 backdrop-blur-sm shadow-lg"
-                controls={
-                  <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 w-full justify-between">
-                    <div className="w-full sm:w-auto sm:min-w-[280px]">
-                      {mounted ? (
-                        <Select value={employmentSelectedCountry} onValueChange={setEmploymentSelectedCountry}>
-                          <SelectTrigger className="h-8 text-xs">
-                            <SelectValue placeholder="Filtrar por país..." />
-                          </SelectTrigger>
-                          <SelectContent>
-                            <SelectItem value="all">
-                              Todos los países
-                            </SelectItem>
-                            {countries.map(c => (
-                              <SelectItem key={c} value={c}>
-                                {FLAGS[c] || ''} <span className="ml-1">{c}</span>
-                              </SelectItem>
-                            ))}
-                          </SelectContent>
-                        </Select>
-                      ) : (
-                        <div className="h-8 w-full border rounded-md" />
-                      )}
-                    </div>
-                  </div>
-                }
-              >
-                <DemographyEmploymentChart selectedCountry={employmentSelectedCountry} />
-              </ChartWrapper>
-            </div>
-          </CarouselItem>
-
-          <CarouselItem className="pl-4 md:pl-6 basis-full lg:basis-[60%] xl:basis-[55%]">
-            <div className={cn("transition-all duration-500 h-full", current !== 7 ? "opacity-40 scale-[0.98] blur-[1px]" : "opacity-100 scale-100 shadow-xl ring-1 ring-border/50 rounded-xl")}>
-              <ChartWrapper
                 id="chart-demografia-industry"
                 title="Top 10 Industrias Contratando"
                 interpretation="El sector de Servicios IT y Consultoría (422), junto con Software (355) y Fintech/Banca (381 consolidado), dominan la captura de talento. Además, gigantes como TikTok, Meta, Amazon y corporativos tradicionales (Mastercard, JPMorgan) se disputan el talento contra scale-ups locales (Nubank, MercadoLibre)."
@@ -326,6 +288,44 @@ function PhaseZeroCarousel() {
                 }
               >
                 <DemographyIndustryChart viewMode={industryViewMode} selectedCountry={industrySelectedCountry} />
+              </ChartWrapper>
+            </div>
+          </CarouselItem>
+
+          <CarouselItem className="pl-4 md:pl-6 basis-full lg:basis-[60%] xl:basis-[55%]">
+            <div className={cn("transition-all duration-500 h-full", current !== 7 ? "opacity-40 scale-[0.98] blur-[1px]" : "opacity-100 scale-100 shadow-xl ring-1 ring-border/50 rounded-xl")}>
+              <ChartWrapper
+                id="chart-demografia-employment"
+                title="Distribución por Modalidad de Contrato"
+                interpretation="La abrumadora mayoría de los roles son Full-time (2,539), desmitificando la tendencia al trabajo freelance puro en producto. Esto indica que el Product Manager sigue siendo considerado una pieza core interna dentro de la organización."
+                className="h-full bg-white/50 dark:bg-slate-950/50 backdrop-blur-sm shadow-lg"
+                controls={
+                  <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 w-full justify-between">
+                    <div className="w-full sm:w-auto sm:min-w-[280px]">
+                      {mounted ? (
+                        <Select value={employmentSelectedCountry} onValueChange={setEmploymentSelectedCountry}>
+                          <SelectTrigger className="h-8 text-xs">
+                            <SelectValue placeholder="Filtrar por país..." />
+                          </SelectTrigger>
+                          <SelectContent>
+                            <SelectItem value="all">
+                              Todos los países
+                            </SelectItem>
+                            {countries.map(c => (
+                              <SelectItem key={c} value={c}>
+                                {FLAGS[c] || ''} <span className="ml-1">{c}</span>
+                              </SelectItem>
+                            ))}
+                          </SelectContent>
+                        </Select>
+                      ) : (
+                        <div className="h-8 w-full border rounded-md" />
+                      )}
+                    </div>
+                  </div>
+                }
+              >
+                <DemographyEmploymentChart selectedCountry={employmentSelectedCountry} />
               </ChartWrapper>
             </div>
           </CarouselItem>
