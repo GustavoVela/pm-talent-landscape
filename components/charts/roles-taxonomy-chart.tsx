@@ -153,7 +153,13 @@ export function RolesTaxonomyChart({
         name: 'Vacantes',
         type: 'bar',
         data: chartData.map(item => item.cantidad),
-        itemStyle: { color: '#0ea5e9', borderRadius: [0, 4, 4, 0] },
+        itemStyle: { 
+          color: {
+            type: 'linear', x: 0, y: 0, x2: 1, y2: 0,
+            colorStops: [{ offset: 0, color: '#38bdf8' }, { offset: 1, color: '#0ea5e9' }]
+          },
+          borderRadius: [0, 4, 4, 0] 
+        },
         label: {
           show: true,
           position: 'right',

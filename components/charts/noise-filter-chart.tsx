@@ -19,7 +19,10 @@ export function NoiseFilterChart() {
       left: 'center',
       icon: 'circle'
     },
-    color: ['#0ea5e9', '#f43f5e'],
+    color: [
+      { type: 'linear', x: 0, y: 0, x2: 0, y2: 1, colorStops: [{ offset: 0, color: '#38bdf8' }, { offset: 1, color: '#0ea5e9' }] },
+      { type: 'linear', x: 0, y: 0, x2: 0, y2: 1, colorStops: [{ offset: 0, color: '#fb7185' }, { offset: 1, color: '#e11d48' }] }
+    ],
     series: [
       {
         name: 'Filtro de Ruido',

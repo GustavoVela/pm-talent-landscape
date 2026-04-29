@@ -3242,7 +3242,13 @@ export function DemographyIndustryChart({
         data: filteredData.map(d => ({
           value: isPercentage && totalFiltered > 0 ? parseFloat(((d.count / totalFiltered) * 100).toFixed(1)) : d.count,
           raw: d.count,
-          itemStyle: { color: '#0ea5e9', borderRadius: [0, 4, 4, 0] }
+          itemStyle: { 
+            color: {
+              type: 'linear', x: 0, y: 0, x2: 1, y2: 0,
+              colorStops: [{ offset: 0, color: '#38bdf8' }, { offset: 1, color: '#0ea5e9' }]
+            },
+            borderRadius: [0, 4, 4, 0] 
+          }
         })),
         label: {
           show: true,
