@@ -188,7 +188,7 @@ const columns: ColumnDef<CompetencyData>[] = [
   },
 ]
 
-export function CompetencyDataTable() {
+function TableView({ data, title }: { data: CompetencyData[], title: string }) {
   const table = useReactTable({
     data,
     columns,
@@ -196,7 +196,8 @@ export function CompetencyDataTable() {
   })
 
   return (
-    <div className="w-full mt-10">
+    <div className="w-full mt-6">
+      <h4 className="text-base font-semibold text-slate-700 mb-3">{title}</h4>
       <div className="rounded-xl border border-slate-200 bg-white overflow-hidden shadow-sm">
         <Table>
           <TableHeader className="bg-slate-50 border-b border-slate-200">
@@ -233,15 +234,36 @@ export function CompetencyDataTable() {
                 </TableRow>
               ))
             ) : (
-              <TableRow>
-                <TableCell colSpan={columns.length} className="h-24 text-center">
-                  Sin datos.
-                </TableCell>
-              </TableRow>
-            )}
+               <TableRow>
+                 <TableCell colSpan={columns.length} className="h-24 text-center">
+                   Sin datos.
+                 </TableCell>
+               </TableRow>
+             )}
           </TableBody>
         </Table>
       </div>
+    </div>
+  )
+}
+
+export function CompetencyDataTable() {
+  const regionalData = React.useMemo(() => {
+    return data
+      .filter(d => d.type === "Global" || d.type === "Region")
+      .sort((a, b) => b.total - a.total)
+  }, [])
+
+  const countryData = React.useMemo(() => {
+    return data
+      .filter(d => d.type === "Country")
+      .sort((a, b) => b.total - a.total)
+  }, [])
+
+  return (
+    <div className="w-full mt-10 space-y-8">
+      <TableView data={regionalData} title="Comparativa Regional" />
+      <TableView data={countryData} title="Comparativa por Países" />
     </div>
   )
 }
