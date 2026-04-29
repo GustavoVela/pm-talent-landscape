@@ -83,7 +83,7 @@ function PhaseZeroCarousel() {
             <div className={cn("transition-all duration-500 h-full", current !== 1 ? "opacity-40 scale-[0.98] blur-[1px]" : "opacity-100 scale-100 shadow-xl ring-1 ring-border/50 rounded-xl")}>
               <ChartWrapper
                 id="chart-freshness"
-                title="Antigüedad de los Datos: Vacantes Validadas por Semana"
+                title="Frescura del Dataset: ¿Qué tan recientes son los datos?"
                 interpretation="El 64% de las vacantes (1,818 de 2,836) fueron publicadas en la semana del 13 de abril de 2026. Más del 98% de los datos tienen menos de 4 semanas de antigüedad, lo que confirma que el análisis refleja el estado actual del mercado de talento en producto."
                 className="h-full"
               >

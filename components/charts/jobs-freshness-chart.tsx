@@ -39,6 +39,10 @@ export function JobsFreshnessChart() {
     xAxis: {
       type: 'category',
       data: weeklyData.map(d => d.week),
+      name: 'Semana de publicación (lunes)',
+      nameLocation: 'middle',
+      nameGap: 36,
+      nameTextStyle: { fontSize: 11, color: '#94a3b8' },
       axisLabel: {
         fontSize: 12,
         color: '#64748b',
@@ -67,7 +71,7 @@ export function JobsFreshnessChart() {
             color: i === 4
               ? { type: 'linear', x: 0, y: 0, x2: 0, y2: 1, colorStops: [{ offset: 0, color: '#0ea5e9' }, { offset: 1, color: '#38bdf8' }] }
               : { type: 'linear', x: 0, y: 0, x2: 0, y2: 1, colorStops: [{ offset: 0, color: '#334155' }, { offset: 1, color: '#475569' }] },
-            borderRadius: [6, 6, 0, 0],
+            borderRadius: [4, 4, 0, 0],
           },
           label: {
             show: true,
