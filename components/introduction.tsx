@@ -16,8 +16,8 @@ import {
   AlertTitle,
 } from "@/components/ui/alert"
 import { Badge } from "@/components/ui/badge"
-import { Button } from "@/components/ui/button"
-import { Linkedin, ArrowRight } from "lucide-react"
+import { ArrowButton } from "@/components/ui/arrow-button"
+import { Linkedin } from "lucide-react"
 
 const domains = [
   {
@@ -198,25 +198,27 @@ export function Introduction() {
 
             <AnimatedSection delay={250}>
               <div className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-4">
-                <Button 
-                  size="lg" 
+                <ArrowButton 
+                  direction="right"
+                  position="right"
+                  showArrow={false}
                   className="w-full sm:w-auto bg-[#0077b5] hover:bg-[#006396] text-white"
                   onClick={() => window.open('https://www.linkedin.com/in/gustavo-vela/', '_blank')}
                 >
                   <Linkedin className="mr-2 h-5 w-5" />
                   Conectar en LinkedIn
-                </Button>
-                <Button 
-                  size="lg" 
-                  variant="outline" 
-                  className="w-full sm:w-auto"
+                </ArrowButton>
+                <ArrowButton 
+                  direction="right"
+                  position="right"
+                  showArrow={true}
+                  className="w-full sm:w-auto bg-transparent text-foreground border border-input hover:bg-accent hover:text-accent-foreground"
                   onClick={() => {
                     document.getElementById('phase-demographics')?.scrollIntoView({ behavior: 'smooth' })
                   }}
                 >
                   Vamos a los datos
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </Button>
+                </ArrowButton>
               </div>
             </AnimatedSection>
           </div>
