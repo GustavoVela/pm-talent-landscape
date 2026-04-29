@@ -3,7 +3,6 @@ import { Introduction } from "@/components/introduction"
 
 import { DemographicsPhase } from "@/components/demographics-phase"
 import { CompetencyProfilePhase } from "@/components/competency-profile-phase"
-import { QuadrantPhase } from "@/components/quadrant-phase"
 import { AiAdoptionPhase } from "@/components/ai-adoption-phase"
 import { ElephantInTheRoom } from "@/components/elephant-in-the-room"
 import { Conclusion } from "@/components/conclusion"
@@ -19,7 +18,6 @@ export default function Home() {
         <Introduction />
         <DemographicsPhase />
         <CompetencyProfilePhase />
-        <QuadrantPhase />
         <AiAdoptionPhase />
         <ElephantInTheRoom />
         <Conclusion />
