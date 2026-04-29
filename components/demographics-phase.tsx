@@ -22,7 +22,9 @@ import {
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group"
 
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-
+import { Separator } from "@/components/ui/separator"
+import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
+import { InfoIcon } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { demographicsCityData, FLAGS } from "@/lib/data"
 
@@ -385,6 +387,22 @@ export function DemographicsPhase() {
           {/* Charts Carousel */}
           <AnimatedSection delay={200}>
             <PhaseZeroCarousel />
+          </AnimatedSection>
+
+          {/* End of Section Note */}
+          <AnimatedSection delay={250}>
+            <Separator className="my-10" />
+            <Alert className="bg-blue-50/50 border-blue-200/60 dark:bg-blue-950/20 dark:border-blue-900/40">
+              <InfoIcon className="h-4 w-4 text-blue-600 dark:text-blue-400" />
+              <AlertTitle className="text-blue-800 dark:text-blue-300 font-semibold">Nota metodológica sobre la taxonomía de roles</AlertTitle>
+              <AlertDescription className="text-blue-700/80 dark:text-blue-300/80 mt-2">
+                <ul className="list-disc pl-4 space-y-1">
+                  <li>La abundancia de etiquetas en la gráfica de <em>Taxonomía de Roles</em> se debe a la extracción directa de descripciones originales en tres idiomas (inglés, español y portugués).</li>
+                  <li>Esta duplicidad semántica natural (ej. "Product Manager" vs "Gerente de Producto") se mantuvo intacta en la base de datos para evitar sesgos de agrupación temprana.</li>
+                  <li>El "ruido" se resuelve analíticamente en fases posteriores mediante la consolidación semántica de habilidades, asegurando precisión sin alterar la evidencia cruda.</li>
+                </ul>
+              </AlertDescription>
+            </Alert>
           </AnimatedSection>
         </div>
       </div>
