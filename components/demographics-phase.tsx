@@ -4,6 +4,7 @@ import React from "react"
 import { ChartWrapper } from "./chart-wrapper"
 import { SectionHeader, NarrativeText, StatCard, AnimatedSection } from "./section-primitives"
 import { NoiseFilterChart } from "./charts/noise-filter-chart"
+import { JobsFreshnessChart } from "./charts/jobs-freshness-chart"
 import { DemographyCountryChart } from "./charts/demography-country-chart"
 import { DemographyCityChart } from "./charts/demography-city-chart"
 import { RolesTaxonomyChart } from "./charts/roles-taxonomy-chart"
@@ -81,6 +82,19 @@ function PhaseZeroCarousel() {
           <CarouselItem className="pl-4 md:pl-6 basis-full lg:basis-[60%] xl:basis-[55%]">
             <div className={cn("transition-all duration-500 h-full", current !== 1 ? "opacity-40 scale-[0.98] blur-[1px]" : "opacity-100 scale-100 shadow-xl ring-1 ring-border/50 rounded-xl")}>
               <ChartWrapper
+                id="chart-freshness"
+                title="Antigüedad de los Datos: Vacantes Validadas por Semana"
+                interpretation="El 64% de las vacantes (1,818 de 2,836) fueron publicadas en la semana del 13 de abril de 2026. Más del 98% de los datos tienen menos de 4 semanas de antigüedad, lo que confirma que el análisis refleja el estado actual del mercado de talento en producto."
+                className="h-full"
+              >
+                <JobsFreshnessChart />
+              </ChartWrapper>
+            </div>
+          </CarouselItem>
+
+          <CarouselItem className="pl-4 md:pl-6 basis-full lg:basis-[60%] xl:basis-[55%]">
+            <div className={cn("transition-all duration-500 h-full", current !== 2 ? "opacity-40 scale-[0.98] blur-[1px]" : "opacity-100 scale-100 shadow-xl ring-1 ring-border/50 rounded-xl")}>
+              <ChartWrapper
                 id="chart-demografia-pais"
                 title="Distribución Demográfica por País y Filtro de Ruido"
                 
@@ -101,7 +115,7 @@ function PhaseZeroCarousel() {
           </CarouselItem>
 
           <CarouselItem className="pl-4 md:pl-6 basis-full lg:basis-[60%] xl:basis-[55%]">
-            <div className={cn("transition-all duration-500 h-full", current !== 2 ? "opacity-40 scale-[0.98] blur-[1px]" : "opacity-100 scale-100 shadow-xl ring-1 ring-border/50 rounded-xl")}>
+            <div className={cn("transition-all duration-500 h-full", current !== 3 ? "opacity-40 scale-[0.98] blur-[1px]" : "opacity-100 scale-100 shadow-xl ring-1 ring-border/50 rounded-xl")}>
               <ChartWrapper
                 id="chart-demografia-ciudad"
                 title="Desglose de Vacantes y Filtro de Ruido por Ciudad"
@@ -144,7 +158,7 @@ function PhaseZeroCarousel() {
           </CarouselItem>
 
           <CarouselItem className="pl-4 md:pl-6 basis-full lg:basis-[60%] xl:basis-[55%]">
-            <div className={cn("transition-all duration-500 h-full", current !== 3 ? "opacity-40 scale-[0.98] blur-[1px]" : "opacity-100 scale-100 shadow-xl ring-1 ring-border/50 rounded-xl")}>
+            <div className={cn("transition-all duration-500 h-full", current !== 4 ? "opacity-40 scale-[0.98] blur-[1px]" : "opacity-100 scale-100 shadow-xl ring-1 ring-border/50 rounded-xl")}>
               <ChartWrapper
                 id="chart-roles-taxonomy"
                 title="Taxonomía de Roles Principales"
