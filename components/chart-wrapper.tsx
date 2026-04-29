@@ -35,7 +35,7 @@ export function ChartWrapper({
             <CardDescription className="mt-1">{description}</CardDescription>
           )}
         </CardHeader>
-        <CardContent className="space-y-4 flex-1 flex flex-col">
+        <CardContent className="space-y-2 flex-1 flex flex-col">
           {controls && (
             <div className="w-full">
               {controls}
@@ -48,7 +48,7 @@ export function ChartWrapper({
 
           {interpretation && (
             <>
-              <Separator className="my-2" />
+              <Separator className="my-1" />
               <p className="text-sm font-medium leading-relaxed text-foreground">
                 {interpretation}
               </p>
