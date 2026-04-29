@@ -21,16 +21,18 @@ export function CompetencyProfilePhase() {
           />
 
           <NarrativeText>
+            <div className="mb-8 p-4 rounded-lg border border-border bg-muted/30 text-sm text-muted-foreground">
+              <span className="font-semibold text-foreground">Nota de lectura: </span>
+              Los datos de esta sección provienen de 2,836 descripciones de empleo publicadas en LinkedIn. Lo que se mide es la frecuencia con la que los anunciantes solicitan una habilidad, no el nivel real de competencia de los PMs en cada mercado. Son señales de demanda de contratación, no calificaciones de desempeño.
+            </div>
             <p>
-              A partir de las 2,836 vacantes de Product Management analizadas, el primer indicador claro es que las habilidades base de producto (Core PM: metodologías ágiles, roadmapping, discovery) son un estándar global, exigiéndose en más del 92% de los casos. Las variaciones reales que definen el perfil se encuentran en la adopción tecnológica y el análisis de datos.
+              El primer dato relevante es el más consistente: las habilidades base de gestión de producto —metodologías ágiles, roadmapping, discovery— aparecen como requisito en más del <strong>92% de las publicaciones</strong> en todos los mercados analizados. Las variaciones que diferencian los perfiles solicitados se concentran en la adopción de tecnología y la profundidad analítica.
             </p>
-            <h3 className="text-xl font-bold text-foreground mb-4 mt-8">¿El perfil varía entre Estados Unidos y Latinoamérica?</h3>
-            <p>
-              Sí, los datos evidencian que el mercado estadounidense exige una mayor profundidad técnica y analítica, distanciándose de Latinoamérica principalmente en dos frentes:
-            </p>
+            <h3 className="text-xl font-bold text-foreground mb-4 mt-8">Comparativa Regional: lo que solicitan los anunciantes en EE. UU. vs. Latinoamérica</h3>
             <ul className="space-y-4 my-6">
-              <li><strong>Inteligencia Artificial:</strong> Es el área con la mayor brecha porcentual del estudio. Estados Unidos requiere habilidades de IA en el 36.2% de sus vacantes, mientras que el promedio en Latinoamérica es del 23.7% (una diferencia de 12.5 puntos). Esto indica que la integración de IA es un requerimiento más consolidado en EE. UU.</li>
-              <li><strong>Análisis de Datos (Data):</strong> En EE. UU. el 56.2% de las posiciones exigen competencias analíticas, superando el 47.6% de LatAm. El mercado maduro espera mayor autonomía del PM para interactuar con bases de datos y procesar métricas sin depender exclusivamente de un área de soporte.</li>
+              <li><strong>La brecha más amplia está en IA y Datos.</strong> Las publicaciones de empleo en EE. UU. incluyen requerimientos de IA en el <strong>36.2%</strong> de los casos, frente al <strong>26.1%</strong> en Latinoamérica — una diferencia de 10.1 puntos. En Datos, la brecha es de 6.3 puntos (56.2% vs. 49.9%). Esto refleja que las empresas que contratan en EE. UU. ya incorporaron estas competencias como criterio de filtro con mayor frecuencia. Si ese criterio indica que los PMs allí son más hábiles en IA, o simplemente que el mercado lo pide más por presión competitiva o tendencia, es una pregunta que esta base de datos no puede responder.</li>
+              <li><strong>La paridad técnica es el dato contraintuitivo.</strong> La diferencia en competencias Técnicas entre EE. UU. (39.7%) y Latinoamérica (38.0%) es de apenas 1.7 puntos — estadísticamente irrelevante a estas escalas. Ambos mercados solicitan competencias técnicas con frecuencia casi idéntica. Lo que sí varía es el tipo de habilidad: SQL aparece como requisito en el <strong>8.9%</strong> de las vacantes en LATAM frente al <strong>4.6%</strong> en EE. UU. Esto sugiere que los anunciantes en la región orientan la demanda técnica hacia la extracción y consulta directa de datos, mientras que en EE. UU. puede concentrarse en otras áreas. Un análisis granular de etiquetas técnicas confirmaría esta hipótesis.</li>
+              <li><strong>El perfil Unicornio es minoritario en ambos mercados.</strong> Solo el <strong>8.8%</strong> de las publicaciones en EE. UU. y el <strong>5.3%</strong> en Latinoamérica incluyen simultáneamente los cinco dominios (Business + Technical + Data + AI + UX/UI). No es el perfil estándar que el mercado contrata; es lo que solicita una fracción de las empresas que buscan la mayor cobertura posible en un solo rol. La columna 🦄 en la tabla a continuación cuantifica esto por país.</li>
             </ul>
           </NarrativeText>
 
@@ -41,7 +43,6 @@ export function CompetencyProfilePhase() {
                 id="chart-radar-macro"
                 title="Comparativa por regiones"
                 description="💡 Tip: Haz clic en las zonas geográficas de la leyenda para encenderlas o apagarlas y aislar tu comparación."
-                interpretation="El abismo de la Inteligencia Artificial (36.2% vs 23.7%) y la Fluidez Analítica (56.2% vs 47.6%) son las fracturas más violentas. Allá exigen autonomía técnica para interrogar el Data Warehouse por ti mismo."
                 className="h-full bg-white/50 dark:bg-slate-950/50 backdrop-blur-sm border-slate-200 dark:border-slate-800 shadow-lg"
               >
                 <CompetencyMacroRadar />
@@ -51,7 +52,6 @@ export function CompetencyProfilePhase() {
                 id="chart-radar-country"
                 title="Comparativa por países"
                 description="💡 Tip: Haz clic en los países de la leyenda para encenderlos o apagarlos y aislar tu comparación."
-                interpretation="Brasil es la locomotora técnica y analítica del sur. Colombia sorprende liderando UX/UI y adopción de IA. Chile y Perú muestran un mercado corporativo tradicional hiper-enfocado en Business. México actúa como el puente equilibrado."
                 className="h-full bg-white/50 dark:bg-slate-950/50 backdrop-blur-sm border-slate-200 dark:border-slate-800 shadow-lg"
               >
                 <CompetencyCountryInteractive />
@@ -64,22 +64,39 @@ export function CompetencyProfilePhase() {
           </AnimatedSection>
 
           <NarrativeText>
-            <h3 className="text-xl font-bold text-foreground mb-4 mt-8">Comparativa interna: Diagnóstico por países en Latinoamérica</h3>
+            <h3 className="text-xl font-bold text-foreground mb-4 mt-8">Desglose por países: lo que pide cada mercado</h3>
             <p className="mb-6">
-              Al desglosar la región, los datos demuestran que las necesidades de contratación no son uniformes y cambian según el país:
+              Al desagregar la región, las señales de demanda no son uniformes. Cada mercado muestra un perfil de solicitudes distinto:
             </p>
-            <ul className="space-y-4 mb-8">
-              <li><strong>Brasil (Muestra: 626 vacantes):</strong> Es el mercado con mayor volumen en la región y el que presenta mayor exigencia analítica. Su requerimiento en Datos alcanza el 53.2% (el porcentaje más cercano a Estados Unidos) y lidera los requisitos Técnicos en la región con un 39.1%.</li>
-              <li><strong>Colombia (Muestra: 201 vacantes):</strong> Destaca por estar orientado hacia la adopción tecnológica y el diseño. Lidera la tabla regional en requerimientos de IA (27.9%) y presenta la exigencia más alta en temas de UX/UI (38.8%).</li>
-              <li><strong>México (Muestra: 415 vacantes):</strong> Presenta un perfil equilibrado. Mantiene un requerimiento estable tanto en habilidades de Negocio (66.3%) como Técnicas (38.8%), alineándose con los promedios de la región. Sin embargo, su exigencia en IA (23.1%) y Datos (43.1%) es menor al compararlo con Colombia y Brasil, respectivamente.</li>
-              <li><strong>Chile (Muestra: 182 vacantes) y Perú (Muestra: 73 vacantes):</strong> <span className="text-muted-foreground text-sm flex items-center gap-1 my-1"><span className="inline-block" title="Muestra menor a 200 vacantes. Los porcentajes pueden reflejar un comportamiento concentrado en las industrias predominantes de la región.">ℹ️</span> <em>Nota estadística: Muestra menor a 200 vacantes.</em></span> Ambos países muestran una fuerte inclinación hacia la gestión comercial. Tienen las exigencias más altas en habilidades de Business (Chile con 70.9% y Perú con 69.9%), pero registran los requerimientos más bajos en rubros tecnológicos. Perú es el país que menos exige IA (16.4%) y competencias Técnicas (26.0%).</li>
+            <ul className="space-y-5 mb-8">
+              <li>
+                <strong>Brasil (N=626)</strong> — Los anunciantes brasileños solicitan competencias analíticas con mayor frecuencia que el resto de la región: Datos al 53.2% y Técnico al 39.1%, ambos los más cercanos a EE. UU. en la tabla. En Business (64.9%) y UX/UI (37.4%) converge con Colombia, formando un patrón similar entre los dos mercados de mayor volumen.
+              </li>
+              <li>
+                <strong>Colombia (N=201)</strong> — La anomalía más llamativa de la tabla: los anunciantes locales incluyen UX/UI en el <strong>38.8%</strong> de sus publicaciones — el valor más alto de toda la tabla, por encima de EE. UU. (36.0%). Al mismo tiempo, es el país hispanohablante donde los avisos solicitan IA con mayor frecuencia (27.9%). La diferencia de <strong>8.4 puntos</strong> entre Colombia y México en UX/UI es la mayor brecha entre países con muestras comparables. Una hipótesis plausible: la composición de industrias que publica en Colombia —con presencia relevante de fintech y empresas de producto digital— puede presionar hacia este perfil, pero los datos de industria no permiten confirmarlo.
+              </li>
+              <li>
+                <strong>México (N=415)</strong> — El mercado con el perfil de solicitudes más equilibrado: Business (66.3%), Técnico (38.8%), sin anomalías marcadas. El rezago relativo aparece en IA (23.1%) y Datos (43.1%), por debajo de Brasil y Colombia en ambos ejes. Tasa de Unicornio: 2.4% — la segunda más baja de la región.
+              </li>
+              <li>
+                <strong>Chile (N=182)</strong> — Los anunciantes chilenos solicitan Business en el <strong>70.9%</strong> de sus publicaciones, el segundo valor más alto de toda la tabla después de EE. UU. (73.6%). Su tasa de Unicornio (6.0%) supera el promedio regional (5.3%) y es comparable a Brasil (6.1%). La muestra de 182 vacantes está en el límite estadístico recomendable; los patrones son descriptivos, no proyectables con alta confianza.
+              </li>
+              <li>
+                <strong>Perú (N=73)</strong> — <span className="inline-flex items-center gap-1 text-muted-foreground text-sm">⚠️ <em>Con 73 publicaciones, el margen de error implícito supera los 10 puntos en la mayoría de los ejes. Los valores de Perú se incluyen para completar el mapa regional, pero no se usan como base comparativa en los análisis de esta sección.</em></span>
+              </li>
+            </ul>
+            <h3 className="text-xl font-bold text-foreground mb-4 mt-10">Contexto detrás de los números</h3>
+            <ul className="space-y-4 mb-4">
+              <li><strong>La demanda técnica en LATAM y EE. UU. no es la misma, aunque tenga el mismo porcentaje.</strong> La paridad en el eje Técnico no implica que los anunciantes soliciten lo mismo. La mayor frecuencia de SQL en LATAM (8.9% vs. 4.6% en EE. UU.) sugiere que las empresas de la región esperan que el PM acceda directamente a los datos. En EE. UU., el mismo eje puede concentrarse en habilidades distintas. Esta hipótesis está parcialmente sustentada, pero requiere un análisis de etiquetas más exhaustivo para ser concluyente.</li>
+              <li><strong>Business más alto en EE. UU. que en LATAM.</strong> EE. UU. solicita habilidades de negocio en el 73.6% de sus publicaciones frente al 67.7% de Latinoamérica. Esto no dice nada sobre la orientación de negocio real de los PMs en cada región; dice que los anunciantes en EE. UU. lo explicitan más en sus job descriptions. En mercados con mayor formalización de los procesos de contratación, la descripción de criterios suele ser más detallada.</li>
+              <li><strong>La brecha en IA es la señal con mayor relevancia práctica.</strong> De todas las diferencias observadas, los 10.1 puntos en IA entre EE. UU. y Latinoamérica tienen la mayor implicación para quienes toman decisiones de desarrollo profesional o diseño de equipos. No porque los PMs latinoamericanos sean menos capaces en este dominio, sino porque las empresas que contratan ya lo están incorporando como criterio con notablemente mayor frecuencia en un mercado que históricamente anticipa los estándares de la región.</li>
             </ul>
           </NarrativeText>
 
           <AnimatedSection delay={200}>
             <div className="mt-16">
               <Blockquote>
-                <p>💡 <strong>El Insight Final:</strong> Los datos confirman que no existe un solo perfil de PM. Los requerimientos de contratación varían objetivamente dependiendo del mercado geográfico. Para los profesionales que buscan oportunidades remotas en Estados Unidos o aplicar en mercados de alto volumen como Brasil, los números indican que es necesario nivelar y priorizar las competencias en Análisis de Datos e Inteligencia Artificial.</p>
+                <p>Los datos de esta sección son señales de demanda, no evaluaciones de talento. Muestran qué están pidiendo las empresas en sus publicaciones, no qué tan buenos son los PMs en cada mercado. Lo que sí es concluyente: no existe un perfil único de PM en las Américas. Los anunciantes en Brasil y EE. UU. solicitan autonomía analítica con mayor frecuencia; los de Colombia incorporan más diseño; los de Chile y EE. UU. son quienes más frecuentemente buscan el perfil completo. Para quienes toman decisiones de contratación o de desarrollo de carrera, la tabla adjunta ofrece el diagnóstico por mercado.</p>
               </Blockquote>
             </div>
           </AnimatedSection>
