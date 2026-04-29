@@ -225,7 +225,7 @@ export function DemographyEmploymentChart({
 
   return (
     <div className="flex flex-col h-full w-full">
-      <div className="h-[350px] w-full -mt-2">
+      <div className="h-[280px] w-full -mt-2">
         <ReactECharts
           option={option}
           style={{ height: '100%', width: '100%' }}

@@ -92,7 +92,7 @@ export function JobsFreshnessChart() {
   }
 
   return (
-    <div className="h-[350px] w-full">
+    <div className="h-[280px] w-full">
       <ReactECharts
         option={option}
         style={{ height: '100%', width: '100%' }}
