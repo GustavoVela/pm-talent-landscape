@@ -1,152 +1,137 @@
 "use client"
 
-import React, { useState, useMemo } from 'react';
+import React, { useMemo } from 'react';
 import ReactECharts from 'echarts-for-react';
-import { Button } from "@/components/ui/button";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 
-import { demographicsCityData, FLAGS } from "@/lib/data";
+// Source: BigQuery — v3l4-493018.jobs.product_management_consolidated
+// WHERE is_pm_role = true, top cities consolidated (variants merged)
+// Consolidation: grouped by metropolitan area / country name
+const rawCityData = [
+  // United States
+  { country: "US", label: "🇺🇸 New York (US)",         pm_count: 240 }, // NY + NY Metro + New York US
+  { country: "US", label: "🇺🇸 San Francisco (US)",     pm_count: 173 }, // SF + San Jose + SF Bay Area
+  { country: "US", label: "🇺🇸 Otros (US)",             pm_count: 926 }, // United States + others
+  // Brazil
+  { country: "BR", label: "🇧🇷 São Paulo (BR)",         pm_count: 290 }, // SP + Greater SP + SP Brazil
+  { country: "BR", label: "🇧🇷 Belo Horizonte (BR)",    pm_count: 17  },
+  { country: "BR", label: "🇧🇷 Campinas (BR)",          pm_count: 16  },
+  { country: "BR", label: "🇧🇷 Otros (BR)",             pm_count: 303 }, // Brazil + others
+  // Mexico
+  { country: "MX", label: "🇲🇽 Ciudad de México (MX)", pm_count: 273 }, // Mexico City + CDMX Metro + Mexico
+  { country: "MX", label: "🇲🇽 Monterrey (MX)",        pm_count: 17  },
+  { country: "MX", label: "🇲🇽 Guadalajara (MX)",       pm_count: 17  },
+  { country: "MX", label: "🇲🇽 Otros (MX)",             pm_count: 108 },
+  // Colombia
+  { country: "CO", label: "🇨🇴 Bogotá (CO)",            pm_count: 99  },
+  { country: "CO", label: "🇨🇴 Otros (CO)",             pm_count: 102 }, // Colombia + others
+  // Chile
+  { country: "CL", label: "🇨🇱 Santiago (CL)",          pm_count: 142 }, // Santiago + Las Condes + Santiago Metro
+  { country: "CL", label: "🇨🇱 Otros (CL)",             pm_count: 40  },
+  // Peru
+  { country: "PE", label: "🇵🇪 Lima (PE)",              pm_count: 46  },
+  { country: "PE", label: "🇵🇪 Otros (PE)",             pm_count: 27  },
+];
 
-export function DemographyCityChart({ 
-  viewMode = 'absolute', 
-  selectedCountry = 'all' 
-}: { 
-  viewMode?: 'absolute' | 'percentage', 
-  selectedCountry?: string 
+const TOTAL = 2836;
+
+export function DemographyCityChart({
+  viewMode = 'absolute',
+  selectedCountry = 'all'
+}: {
+  viewMode?: 'absolute' | 'percentage',
+  selectedCountry?: string
 }) {
-
-  const countries = useMemo(() => {
-    return [...new Set(demographicsCityData.map(d => d.country))].sort();
-  }, []);
-
   const isPercentage = viewMode === 'percentage';
 
+  const countryCodeMap: Record<string, string> = {
+    'United States': 'US',
+    'Brasil': 'BR',
+    'México': 'MX',
+    'Colombia': 'CO',
+    'Chile': 'CL',
+    'Perú': 'PE',
+  };
+
   const filteredData = useMemo(() => {
-    let data = selectedCountry === 'all'
-      ? demographicsCityData
-      : demographicsCityData.filter(d => d.country === selectedCountry);
+    let data = rawCityData;
 
-    const grandTotal = data.reduce((acc, curr) => acc + curr.total, 0);
-
-    // Sort by pm_count descending, take top 15, then reverse for ECharts so largest is at top
-    data = [...data].sort((a, b) => b.pm_count - a.pm_count).slice(0, 15).reverse();
-
-    let resultData = data.map(d => {
-      const label = `${FLAGS[d.country] || ''} ${d.city}`;
-      if (isPercentage) {
-        return {
-          city: label,
-          pm: parseFloat(((d.pm_count / grandTotal) * 100).toFixed(1)),
-          no_pm: parseFloat(((d.no_pm_count / grandTotal) * 100).toFixed(1))
-        };
-      }
-      return {
-        city: label,
-        pm: d.pm_count,
-        no_pm: d.no_pm_count
-      };
-    });
-
-    if (isPercentage) {
-      let sum = resultData.reduce((acc, curr) => acc + curr.pm + curr.no_pm, 0);
-      const diff = parseFloat((100 - sum).toFixed(1));
-      if (diff !== 0) {
-        let maxVal = -1;
-        let maxIdx = -1;
-        let isPm = true;
-        resultData.forEach((d, i) => {
-          if (d.pm > maxVal) { maxVal = d.pm; maxIdx = i; isPm = true; }
-          if (d.no_pm > maxVal) { maxVal = d.no_pm; maxIdx = i; isPm = false; }
-        });
-        if (isPm) {
-          resultData[maxIdx].pm = parseFloat((resultData[maxIdx].pm + diff).toFixed(1));
-        } else {
-          resultData[maxIdx].no_pm = parseFloat((resultData[maxIdx].no_pm + diff).toFixed(1));
-        }
-      }
+    if (selectedCountry !== 'all') {
+      const code = countryCodeMap[selectedCountry] || selectedCountry;
+      data = rawCityData.filter(d => d.country === code);
     }
 
-    return resultData;
-  }, [selectedCountry, viewMode, isPercentage]);
+    // Sort desc, take top 15, reverse for ECharts (so largest is at top)
+    return [...data]
+      .sort((a, b) => b.pm_count - a.pm_count)
+      .slice(0, 15)
+      .reverse();
+  }, [selectedCountry, viewMode]);
 
   const option = {
     tooltip: {
       trigger: 'axis',
       axisPointer: { type: 'shadow' },
-      formatter: function (params: any) {
-        let res = `${params[0].axisValue}<br/>`;
-        params.forEach((p: any) => {
-          const val = isPercentage ? `${p.value}%` : p.value.toLocaleString();
-          res += `${p.marker} ${p.seriesName}: ${val}<br/>`;
-        });
-        return res;
-      }
-    },
-    legend: {
-      bottom: 0,
-      icon: 'circle',
-      selected: {
-        'Cargos en otra área': false
+      formatter: (params: any) => {
+        const p = params[0];
+        const pct = ((p.data.rawCount / TOTAL) * 100).toFixed(1);
+        return `<strong>${p.axisValue}</strong><br/>
+          ${p.data.rawCount.toLocaleString('es-MX')} roles de PM<br/>
+          <span style="color:#94a3b8">${pct}% del total</span>`;
       }
     },
     grid: {
       left: '3%',
-      right: '4%',
-      bottom: '15%',
+      right: '10%',
+      bottom: '3%',
       top: '5%',
       containLabel: true
     },
     xAxis: {
       type: 'value',
-      name: isPercentage ? 'Porcentaje (%)' : 'Cantidad de Vacantes',
+      name: isPercentage ? 'Porcentaje del total (%)' : 'Roles válidos de PM',
       nameLocation: 'middle',
       nameGap: 30,
-      nameTextStyle: { fontSize: 12, color: '#64748b' },
-      max: isPercentage ? 100 : undefined,
+      nameTextStyle: { fontSize: 11, color: '#94a3b8' },
       axisLabel: {
-        formatter: isPercentage ? '{value}%' : '{value}'
+        formatter: isPercentage ? '{value}%' : '{value}',
+        fontSize: 11,
+        color: '#64748b',
       },
-      splitLine: {
-        lineStyle: { type: 'dashed', color: 'rgba(0,0,0,0.1)' }
-      }
+      splitLine: { lineStyle: { type: 'dashed', color: 'rgba(0,0,0,0.08)' } }
     },
     yAxis: {
       type: 'category',
-      data: filteredData.map(item => item.city),
+      data: filteredData.map(d => d.label),
       axisLine: { show: false },
-      axisTick: { show: false }
+      axisTick: { show: false },
+      axisLabel: { fontSize: 11, color: '#374151' }
     },
     series: [
       {
-        name: 'Cargo de Producto',
+        name: 'Roles de PM',
         type: 'bar',
-        stack: 'total',
-        data: filteredData.map(item => ({
-          value: item.pm,
-          itemStyle: { color: '#0ea5e9', borderRadius: item.no_pm === 0 ? [0, 4, 4, 0] : [0, 0, 0, 0] }
+        barMaxWidth: 36,
+        data: filteredData.map(d => ({
+          value: isPercentage
+            ? parseFloat(((d.pm_count / TOTAL) * 100).toFixed(1))
+            : d.pm_count,
+          rawCount: d.pm_count,
+          itemStyle: {
+            color: '#0ea5e9',
+            borderRadius: [0, 4, 4, 0],
+          }
         })),
         label: {
           show: true,
-          position: 'inside',
-          formatter: (p: any) => isPercentage ? `${p.value}%` : (p.value >= 1000 ? p.value.toLocaleString('es-MX') : String(p.value)),
-          color: '#fff',
-          fontSize: 10
-        }
-      },
-      {
-        name: 'Cargos en otra área',
-        type: 'bar',
-        stack: 'total',
-        data: filteredData.map(item => ({
-          value: item.no_pm,
-          itemStyle: { color: '#f43f5e', borderRadius: item.no_pm > 0 ? [0, 4, 4, 0] : [0, 0, 0, 0] }
-        })),
-        label: {
-          show: true,
-          position: 'inside',
-          formatter: (p: any) => isPercentage ? `${p.value}%` : (p.value >= 1000 ? p.value.toLocaleString('es-MX') : String(p.value)),
-          color: '#fff',
-          fontSize: 10
+          position: 'right',
+          formatter: (p: any) => isPercentage
+            ? `${p.value}%`
+            : p.data.rawCount >= 1000
+              ? p.data.rawCount.toLocaleString('es-MX')
+              : String(p.data.rawCount),
+          color: '#374151',
+          fontSize: 10,
+          fontWeight: 600,
         }
       }
     ]
@@ -155,9 +140,9 @@ export function DemographyCityChart({
   return (
     <div className="flex flex-col h-full w-full">
       <div className="h-[400px] w-full -mt-4">
-        <ReactECharts 
-          option={option} 
-          style={{ height: '100%', width: '100%' }} 
+        <ReactECharts
+          option={option}
+          style={{ height: '100%', width: '100%' }}
           opts={{ renderer: 'svg' }}
         />
       </div>

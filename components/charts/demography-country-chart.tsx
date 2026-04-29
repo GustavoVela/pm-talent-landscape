@@ -1,135 +1,99 @@
 "use client"
 
-import React, { useState } from 'react';
+import React from 'react';
 import ReactECharts from 'echarts-for-react';
-import { Button } from "@/components/ui/button";
 
-import { demographicsCountryData, FLAGS } from "@/lib/data";
+// Source: BigQuery — v3l4-493018.jobs.product_management_consolidated
+// WHERE is_pm_role = true, GROUP BY country ORDER BY pm_count DESC
+// Total PM roles: 2,836
+const data = [
+  { country: "🇺🇸 Estados Unidos", pm_count: 1339 },
+  { country: "🇧🇷 Brasil",         pm_count: 626  },
+  { country: "🇲🇽 México",          pm_count: 415  },
+  { country: "🇨🇴 Colombia",        pm_count: 201  },
+  { country: "🇨🇱 Chile",           pm_count: 182  },
+  { country: "🇵🇪 Perú",            pm_count: 73   },
+];
 
-export function DemographyCountryChart({ 
+const TOTAL = 2836;
+
+export function DemographyCountryChart({
   viewMode = 'absolute'
-}: { 
+}: {
   viewMode?: 'absolute' | 'percentage'
 }) {
   const isPercentage = viewMode === 'percentage';
 
-  const grandTotal = demographicsCountryData.reduce((acc, curr) => acc + curr.total, 0);
-
-  let chartData = demographicsCountryData.map(d => {
-    const label = `${FLAGS[d.country] || ''} ${d.country}`;
-    if (isPercentage) {
-      return {
-        country: label,
-        pm: parseFloat(((d.pm_count / grandTotal) * 100).toFixed(1)),
-        no_pm: parseFloat(((d.no_pm_count / grandTotal) * 100).toFixed(1))
-      };
-    }
-    return {
-      country: label,
-      pm: d.pm_count,
-      no_pm: d.no_pm_count
-    };
-  });
-
-  if (isPercentage) {
-    let sum = chartData.reduce((acc, curr) => acc + curr.pm + curr.no_pm, 0);
-    const diff = parseFloat((100 - sum).toFixed(1));
-    if (diff !== 0) {
-      let maxVal = -1;
-      let maxIdx = -1;
-      let isPm = true;
-      chartData.forEach((d, i) => {
-        if (d.pm > maxVal) { maxVal = d.pm; maxIdx = i; isPm = true; }
-        if (d.no_pm > maxVal) { maxVal = d.no_pm; maxIdx = i; isPm = false; }
-      });
-      if (isPm) {
-        chartData[maxIdx].pm = parseFloat((chartData[maxIdx].pm + diff).toFixed(1));
-      } else {
-        chartData[maxIdx].no_pm = parseFloat((chartData[maxIdx].no_pm + diff).toFixed(1));
-      }
-    }
-  }
+  const chartData = data.map(d => ({
+    country: d.country,
+    value: isPercentage
+      ? parseFloat(((d.pm_count / TOTAL) * 100).toFixed(1))
+      : d.pm_count,
+    rawCount: d.pm_count,
+  }));
 
   const option = {
     tooltip: {
       trigger: 'axis',
       axisPointer: { type: 'shadow' },
-      formatter: function (params: any) {
-        let res = `${params[0].axisValue}<br/>`;
-        params.forEach((p: any) => {
-          const val = isPercentage ? `${p.value}%` : p.value.toLocaleString();
-          res += `${p.marker} ${p.seriesName}: ${val}<br/>`;
-        });
-        return res;
-      }
-    },
-    legend: {
-      bottom: 0,
-      icon: 'circle',
-      selected: {
-        'Cargos en otra área': false
+      formatter: (params: any) => {
+        const p = params[0];
+        const pct = ((p.data.rawCount / TOTAL) * 100).toFixed(1);
+        return `<strong>${p.axisValue}</strong><br/>
+          ${p.data.rawCount.toLocaleString('es-MX')} roles de PM<br/>
+          <span style="color:#94a3b8">${pct}% del total</span>`;
       }
     },
     grid: {
       left: '3%',
-      right: '4%',
-      bottom: '15%',
+      right: '10%',
+      bottom: '3%',
       top: '5%',
       containLabel: true
     },
     xAxis: {
       type: 'value',
-      name: isPercentage ? 'Porcentaje (%)' : 'Cantidad de Vacantes',
+      name: isPercentage ? 'Porcentaje del total (%)' : 'Roles válidos de PM',
       nameLocation: 'middle',
       nameGap: 30,
-      nameTextStyle: { fontSize: 12, color: '#64748b' },
-      max: isPercentage ? 100 : undefined,
+      nameTextStyle: { fontSize: 11, color: '#94a3b8' },
+      max: isPercentage ? 50 : undefined,
       axisLabel: {
-        formatter: isPercentage ? '{value}%' : '{value}'
+        formatter: isPercentage ? '{value}%' : '{value}',
+        fontSize: 11,
+        color: '#64748b',
       },
-      splitLine: {
-        lineStyle: { type: 'dashed', color: 'rgba(0,0,0,0.1)' }
-      }
+      splitLine: { lineStyle: { type: 'dashed', color: 'rgba(0,0,0,0.08)' } }
     },
     yAxis: {
       type: 'category',
-      data: chartData.map(item => item.country),
+      data: chartData.map(d => d.country),
       axisLine: { show: false },
-      axisTick: { show: false }
+      axisTick: { show: false },
+      axisLabel: { fontSize: 12, color: '#374151' }
     },
     series: [
       {
-        name: 'Cargo de Producto',
+        name: 'Roles de PM',
         type: 'bar',
-        stack: 'total',
-        data: chartData.map(item => ({
-          value: item.pm,
-          // If no_pm is 0, this bar is the outermost — round its tip
-          itemStyle: { color: '#0ea5e9', borderRadius: item.no_pm === 0 ? [0, 4, 4, 0] : [0, 0, 0, 0] }
+        barMaxWidth: 40,
+        data: chartData.map(d => ({
+          value: d.value,
+          rawCount: d.rawCount,
+          itemStyle: {
+            color: '#0ea5e9',
+            borderRadius: [0, 4, 4, 0],
+          }
         })),
         label: {
           show: true,
-          position: 'inside',
-          formatter: (p: any) => isPercentage ? `${p.value}%` : (p.value >= 1000 ? p.value.toLocaleString('es-MX') : String(p.value)),
-          color: '#fff',
-          fontSize: 11
-        }
-      },
-      {
-        name: 'Cargos en otra área',
-        type: 'bar',
-        stack: 'total',
-        data: chartData.map(item => ({
-          value: item.no_pm,
-          // This is always the outermost visible segment when > 0
-          itemStyle: { color: '#f43f5e', borderRadius: item.no_pm > 0 ? [0, 4, 4, 0] : [0, 0, 0, 0] }
-        })),
-        label: {
-          show: true,
-          position: 'inside',
-          formatter: (p: any) => isPercentage ? `${p.value}%` : (p.value >= 1000 ? p.value.toLocaleString('es-MX') : String(p.value)),
-          color: '#fff',
-          fontSize: 11
+          position: 'right',
+          formatter: (p: any) => isPercentage
+            ? `${p.value}%`
+            : p.data.rawCount.toLocaleString('es-MX'),
+          color: '#374151',
+          fontSize: 11,
+          fontWeight: 600,
         }
       }
     ]
@@ -138,9 +102,9 @@ export function DemographyCountryChart({
   return (
     <div className="flex flex-col h-full w-full">
       <div className="h-[350px] w-full -mt-4">
-        <ReactECharts 
-          option={option} 
-          style={{ height: '100%', width: '100%' }} 
+        <ReactECharts
+          option={option}
+          style={{ height: '100%', width: '100%' }}
           opts={{ renderer: 'svg' }}
         />
       </div>

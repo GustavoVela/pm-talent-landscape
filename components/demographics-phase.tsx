@@ -96,9 +96,9 @@ function PhaseZeroCarousel() {
             <div className={cn("transition-all duration-500 h-full", current !== 2 ? "opacity-40 scale-[0.98] blur-[1px]" : "opacity-100 scale-100 shadow-xl ring-1 ring-border/50 rounded-xl")}>
               <ChartWrapper
                 id="chart-demografia-pais"
-                title="Distribución Demográfica por País y Filtro de Ruido"
+                title="Distribución de Roles de PM por País"
                 
-                interpretation="Estados Unidos es el mercado dominante y el más maduro (~90% de sus vacantes de PM son reales). En contraste, México aporta mucho volumen pero con la mayor tasa de 'ruido' (~40% son de otras áreas). Colombia muestra una madurez prometedora al publicar roles de producto mucho más precisos."
+                interpretation="Estados Unidos concentra el 47.2% de todas las vacantes validadas (1,339 roles), reflejando la madurez de su mercado tecnológico. En Latinoamérica, Brasil lidera con 626 roles seguido de México (415). La distribución confirma que el análisis tiene representación real en los 6 mercados."
                 className="h-full"
                 controls={
                   <div className="flex w-full justify-end">
@@ -118,9 +118,9 @@ function PhaseZeroCarousel() {
             <div className={cn("transition-all duration-500 h-full", current !== 3 ? "opacity-40 scale-[0.98] blur-[1px]" : "opacity-100 scale-100 shadow-xl ring-1 ring-border/50 rounded-xl")}>
               <ChartWrapper
                 id="chart-demografia-ciudad"
-                title="Desglose de Vacantes y Filtro de Ruido por Ciudad"
+                title="Roles de PM por Ciudad: Los Polos Tecnológicos"
                 
-                interpretation="São Paulo y Ciudad de México actúan como los verdaderos polos de LatAm. Curiosamente, la categoría 'Otra ciudad' lidera en muchos países y tiene una alta concentración de ruido en México, lo que indica que el talento fuera de los hubs principales aplica a roles de PM que terminan siendo operativos o comerciales."
+                interpretation="São Paulo (290 roles consolidados) y Ciudad de México (273) son los hubs de LatAm. En EE. UU., Nueva York lidera con 240 roles y San Francisco con 173. Santiago concentra el talento en producto de Chile con 142 roles, mientras Bogotá posiciona a Colombia con 99 roles core en el mercado."
                 className="h-full"
                 controls={
                   <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 w-full justify-between">
