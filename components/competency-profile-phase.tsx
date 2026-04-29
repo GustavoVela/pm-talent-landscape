@@ -26,7 +26,7 @@ export function CompetencyProfilePhase() {
               Los datos de esta sección provienen de 2,836 descripciones de empleo publicadas en LinkedIn. Lo que se mide es la frecuencia con la que los anunciantes solicitan una habilidad, no el nivel real de competencia de los PMs en cada mercado. Son señales de demanda de contratación, no calificaciones de desempeño.
             </div>
             <p>
-              El primer dato relevante es el más consistente: las habilidades base de gestión de producto —metodologías ágiles, roadmapping, discovery— aparecen como requisito en más del <strong>92% de las publicaciones</strong> en todos los mercados analizados. Las variaciones que diferencian los perfiles solicitados se concentran en la adopción de tecnología y la profundidad analítica.
+              Las habilidades base de gestión de producto —metodologías ágiles, roadmapping, discovery— son el punto de partida definitorio: todos los roles de esta muestra son roles de PM por definición, por lo que la presencia de estas competencias debería ser del 100%. El 92% que refleja el dato es un artefacto de extracción: algunas publicaciones no contenían el suficiente detalle textual para que el pipeline identificara estas etiquetas de forma explícita, no una excepción real al perfil. Las variaciones relevantes que diferencian los mercados se concentran en los cinco dominios adicionales: adopción tecnológica, análisis de datos, negocio, diseño e inteligencia artificial.
             </p>
             <h3 className="text-xl font-bold text-foreground mb-4 mt-8">Comparativa Regional: lo que solicitan los anunciantes en EE. UU. vs. Latinoamérica</h3>
             <ul className="space-y-4 my-6">
