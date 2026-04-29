@@ -6,6 +6,7 @@ import { ChartWrapper } from "./chart-wrapper"
 import { CompetencyMacroRadar } from "./charts/competency-macro-radar"
 import { CompetencyCountryInteractive } from "./charts/competency-country-interactive"
 import { SkillsSunburstChart } from "./charts/skills-sunburst-chart"
+import { CompetencyDataTable } from "./competency-data-table"
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group"
 import { FLAGS } from "@/lib/data"
 
@@ -57,6 +58,10 @@ export function CompetencyProfilePhase() {
                 <CompetencyCountryInteractive />
               </ChartWrapper>
             </div>
+          </AnimatedSection>
+
+          <AnimatedSection delay={150}>
+            <CompetencyDataTable />
           </AnimatedSection>
 
           <NarrativeText>
