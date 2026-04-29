@@ -7,12 +7,12 @@ import ReactECharts from 'echarts-for-react';
 // WHERE is_pm_role = true, GROUP BY country ORDER BY pm_count DESC
 // Total PM roles: 2,836
 const data = [
-  { country: "🇺🇸 Estados Unidos", pm_count: 1339 },
-  { country: "🇧🇷 Brasil",         pm_count: 626  },
-  { country: "🇲🇽 México",          pm_count: 415  },
-  { country: "🇨🇴 Colombia",        pm_count: 201  },
-  { country: "🇨🇱 Chile",           pm_count: 182  },
   { country: "🇵🇪 Perú",            pm_count: 73   },
+  { country: "🇨🇱 Chile",           pm_count: 182  },
+  { country: "🇨🇴 Colombia",        pm_count: 201  },
+  { country: "🇲🇽 México",          pm_count: 415  },
+  { country: "🇧🇷 Brasil",         pm_count: 626  },
+  { country: "🇺🇸 Estados Unidos", pm_count: 1339 },
 ];
 
 const TOTAL = 2836;
