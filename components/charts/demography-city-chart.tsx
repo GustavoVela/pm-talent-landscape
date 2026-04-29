@@ -121,12 +121,14 @@ export function DemographyCityChart({
         name: 'Cargo de Producto',
         type: 'bar',
         stack: 'total',
-        data: filteredData.map(item => item.pm),
-        itemStyle: { color: '#0ea5e9' },
+        data: filteredData.map(item => ({
+          value: item.pm,
+          itemStyle: { color: '#0ea5e9', borderRadius: item.no_pm === 0 ? [0, 4, 4, 0] : [0, 0, 0, 0] }
+        })),
         label: {
           show: true,
           position: 'inside',
-          formatter: isPercentage ? '{c}%' : '{c}',
+          formatter: (p: any) => isPercentage ? `${p.value}%` : (p.value >= 1000 ? p.value.toLocaleString('es-MX') : String(p.value)),
           color: '#fff',
           fontSize: 10
         }
@@ -135,12 +137,14 @@ export function DemographyCityChart({
         name: 'Cargos en otra área',
         type: 'bar',
         stack: 'total',
-        data: filteredData.map(item => item.no_pm),
-        itemStyle: { color: '#f43f5e', borderRadius: [0, 4, 4, 0] },
+        data: filteredData.map(item => ({
+          value: item.no_pm,
+          itemStyle: { color: '#f43f5e', borderRadius: item.no_pm > 0 ? [0, 4, 4, 0] : [0, 0, 0, 0] }
+        })),
         label: {
           show: true,
           position: 'inside',
-          formatter: isPercentage ? '{c}%' : '{c}',
+          formatter: (p: any) => isPercentage ? `${p.value}%` : (p.value >= 1000 ? p.value.toLocaleString('es-MX') : String(p.value)),
           color: '#fff',
           fontSize: 10
         }

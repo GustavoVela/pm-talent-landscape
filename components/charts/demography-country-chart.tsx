@@ -102,12 +102,15 @@ export function DemographyCountryChart({
         name: 'Cargo de Producto',
         type: 'bar',
         stack: 'total',
-        data: chartData.map(item => item.pm),
-        itemStyle: { color: '#0ea5e9' },
+        data: chartData.map(item => ({
+          value: item.pm,
+          // If no_pm is 0, this bar is the outermost — round its tip
+          itemStyle: { color: '#0ea5e9', borderRadius: item.no_pm === 0 ? [0, 4, 4, 0] : [0, 0, 0, 0] }
+        })),
         label: {
           show: true,
           position: 'inside',
-          formatter: isPercentage ? '{c}%' : '{c}',
+          formatter: (p: any) => isPercentage ? `${p.value}%` : (p.value >= 1000 ? p.value.toLocaleString('es-MX') : String(p.value)),
           color: '#fff',
           fontSize: 11
         }
@@ -116,12 +119,15 @@ export function DemographyCountryChart({
         name: 'Cargos en otra área',
         type: 'bar',
         stack: 'total',
-        data: chartData.map(item => item.no_pm),
-        itemStyle: { color: '#f43f5e', borderRadius: [0, 4, 4, 0] },
+        data: chartData.map(item => ({
+          value: item.no_pm,
+          // This is always the outermost visible segment when > 0
+          itemStyle: { color: '#f43f5e', borderRadius: item.no_pm > 0 ? [0, 4, 4, 0] : [0, 0, 0, 0] }
+        })),
         label: {
           show: true,
           position: 'inside',
-          formatter: isPercentage ? '{c}%' : '{c}',
+          formatter: (p: any) => isPercentage ? `${p.value}%` : (p.value >= 1000 ? p.value.toLocaleString('es-MX') : String(p.value)),
           color: '#fff',
           fontSize: 11
         }

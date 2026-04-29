@@ -157,7 +157,7 @@ export function RolesTaxonomyChart({
         label: {
           show: true,
           position: 'right',
-          formatter: isPercentage ? '{c}%' : '{c}',
+          formatter: (p: any) => isPercentage ? `${p.value}%` : (p.value >= 1000 ? p.value.toLocaleString('es-MX') : String(p.value)),
           color: '#0f172a',
           fontSize: 10,
           fontWeight: 600
