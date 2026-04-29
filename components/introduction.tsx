@@ -205,8 +205,10 @@ export function Introduction() {
                   className="w-full sm:w-auto bg-[#0077b5] hover:bg-[#006396] text-white"
                   onClick={() => window.open('https://www.linkedin.com/in/gustavo-vela/', '_blank')}
                 >
-                  <Linkedin className="mr-2 h-5 w-5" />
-                  Conectar en LinkedIn
+                  <span className="flex items-center justify-center">
+                    <Linkedin className="mr-2 h-5 w-5" />
+                    Conectar en LinkedIn
+                  </span>
                 </ArrowButton>
                 <ArrowButton 
                   direction="right"
