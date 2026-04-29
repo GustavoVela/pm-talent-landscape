@@ -17,7 +17,7 @@ export function CompetencyProfilePhase() {
         <div className="mx-auto max-w-5xl">
           <SectionHeader
             number="04"
-            title="Perfil Competencial (Estados Unidos vs. Latinoamérica)"
+            title="Perfil de competencias"
             subtitle="¿Existe un perfil de habilidades estandarizado, o los requisitos varían de forma medible entre mercados?"
           />
 
