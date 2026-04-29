@@ -118,7 +118,7 @@ function PhaseZeroCarousel() {
             <div className={cn("transition-all duration-500 h-full", current !== 3 ? "opacity-40 scale-[0.98] blur-[1px]" : "opacity-100 scale-100 shadow-xl ring-1 ring-border/50 rounded-xl")}>
               <ChartWrapper
                 id="chart-demografia-ciudad"
-                title="Roles de PM por Ciudad: Los Polos Tecnológicos"
+                title="Top 10: Roles de PM por Ciudad"
                 
                 interpretation="São Paulo (290 roles consolidados) y Ciudad de México (273) son los hubs de LatAm. En EE. UU., Nueva York lidera con 240 roles y San Francisco con 173. Santiago concentra el talento en producto de Chile con 142 roles, mientras Bogotá posiciona a Colombia con 99 roles core en el mercado."
                 className="h-full"
