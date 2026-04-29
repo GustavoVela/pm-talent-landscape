@@ -193,7 +193,7 @@ export function DemographyEmploymentChart({
         label: { 
           show: true,
           position: 'outside',
-          formatter: '{b}\\n{c} ({d}%)',
+          formatter: '{b}\n{c} ({d}%)',
           color: '#374151',
           fontSize: 12,
           fontWeight: 600
@@ -206,18 +206,6 @@ export function DemographyEmploymentChart({
             color: '#cbd5e1'
           }
         },
-        color: [
-          "#3c82f6", 
-          "#91cc75", 
-          "#fac858", 
-          "#ee6666", 
-          "#73c0de", 
-          "#3ba272", 
-          "#fc8452", 
-          "#5470c6", 
-          "#9a60b4", 
-          "#ea7ccc"
-        ],
         data: filteredData
       }
     ]
