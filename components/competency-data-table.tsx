@@ -28,6 +28,7 @@ export type CompetencyData = {
   data: number
   ai: number
   ux_ui: number
+  unicorn: number
 }
 
 const data: CompetencyData[] = [
@@ -41,17 +42,19 @@ const data: CompetencyData[] = [
     data: 51.6,
     ai: 29.6,
     ux_ui: 35.2,
+    unicorn: 6.5,
   },
   {
     type: "Region",
     name: "Latinoamérica",
     total: 1497,
-    core_pm: 92.8,
-    business: 66.1,
-    technical: 37.1,
-    data: 47.6,
-    ai: 23.7,
-    ux_ui: 34.4,
+    core_pm: 93.3,
+    business: 67.7,
+    technical: 38.0,
+    data: 49.9,
+    ai: 26.1,
+    ux_ui: 34.7,
+    unicorn: 5.3,
   },
   {
     type: "Region",
@@ -63,6 +66,19 @@ const data: CompetencyData[] = [
     data: 56.2,
     ai: 36.2,
     ux_ui: 36.0,
+    unicorn: 8.8,
+  },
+  {
+    type: "Country",
+    name: "United States",
+    total: 1339,
+    core_pm: 96.0,
+    business: 73.6,
+    technical: 39.7,
+    data: 56.2,
+    ai: 36.2,
+    ux_ui: 36.0,
+    unicorn: 8.8,
   },
   {
     type: "Country",
@@ -74,28 +90,7 @@ const data: CompetencyData[] = [
     data: 53.2,
     ai: 24.6,
     ux_ui: 37.4,
-  },
-  {
-    type: "Country",
-    name: "Chile",
-    total: 182,
-    core_pm: 86.8,
-    business: 70.9,
-    technical: 31.9,
-    data: 48.9,
-    ai: 20.3,
-    ux_ui: 32.4,
-  },
-  {
-    type: "Country",
-    name: "Colombia",
-    total: 201,
-    core_pm: 94.0,
-    business: 64.2,
-    technical: 36.3,
-    data: 41.3,
-    ai: 27.9,
-    ux_ui: 38.8,
+    unicorn: 6.1,
   },
   {
     type: "Country",
@@ -107,6 +102,31 @@ const data: CompetencyData[] = [
     data: 43.1,
     ai: 23.1,
     ux_ui: 30.4,
+    unicorn: 2.4,
+  },
+  {
+    type: "Country",
+    name: "Colombia",
+    total: 201,
+    core_pm: 94.0,
+    business: 64.2,
+    technical: 36.3,
+    data: 41.3,
+    ai: 27.9,
+    ux_ui: 38.8,
+    unicorn: 2.5,
+  },
+  {
+    type: "Country",
+    name: "Chile",
+    total: 182,
+    core_pm: 86.8,
+    business: 70.9,
+    technical: 31.9,
+    data: 48.9,
+    ai: 20.3,
+    ux_ui: 32.4,
+    unicorn: 6.0,
   },
   {
     type: "Country",
@@ -118,17 +138,7 @@ const data: CompetencyData[] = [
     data: 38.4,
     ai: 16.4,
     ux_ui: 24.7,
-  },
-  {
-    type: "Country",
-    name: "United States",
-    total: 1339,
-    core_pm: 96.0,
-    business: 73.6,
-    technical: 39.7,
-    data: 56.2,
-    ai: 36.2,
-    ux_ui: 36.0,
+    unicorn: 1.4,
   },
 ]
 
@@ -185,6 +195,20 @@ const columns: ColumnDef<CompetencyData>[] = [
     accessorKey: "ux_ui",
     header: () => <div className="text-center">UX/UI</div>,
     cell: ({ row }) => <div className="text-slate-600 text-center">{(row.getValue("ux_ui") as number).toFixed(1)}%</div>,
+  },
+  {
+    accessorKey: "unicorn",
+    header: () => <div className="text-center">🦄 Unicornio</div>,
+    cell: ({ row }) => {
+      const val = (row.getValue("unicorn") as number).toFixed(1);
+      return (
+        <div className="text-center">
+          <span className="inline-block bg-amber-50 text-amber-700 font-semibold px-2 py-0.5 rounded-md text-xs border border-amber-200">
+            {val}%
+          </span>
+        </div>
+      );
+    },
   },
 ]
 
