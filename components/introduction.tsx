@@ -213,7 +213,7 @@ export function Introduction() {
                 <ArrowButton 
                   direction="right"
                   position="right"
-                  showArrow={true}
+                  showArrow={false}
                   className="w-full sm:w-auto bg-transparent text-foreground border border-input hover:bg-accent hover:text-accent-foreground"
                   onClick={() => {
                     document.getElementById('phase-demographics')?.scrollIntoView({ behavior: 'smooth' })
