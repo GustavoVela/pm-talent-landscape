@@ -46,6 +46,17 @@ npm run build
 
 Sube el contenido completo de la carpeta `out/` al directorio `public_html/` de tu hosting.
 
+## 📝 Registro de Cambios y Evolución de Arquitectura
+
+### Últimos Ajustes de UX/UI y Estructuración de Datos
+* **Navegación Flotante (`Floating Nav`):** Se resolvió un conflicto de superposición (z-index) que bloqueaba la interacción con el carrusel mediante la implementación estricta de `pointer-events`. Además, se sincronizaron las etiquetas del menú con los títulos finales de cada sección (ej. "Perfil de competencias").
+* **Estandarización de Gráficos (ECharts):**
+  * Estandarización de tooltips y métricas utilizando exclusivamente el término "vacantes".
+  * Incremento estratégico de los márgenes inferiores (`grid.bottom = '15%'`) en todos los gráficos de barras para garantizar la legibilidad del título de los ejes sin superposición de layouts.
+  * Uniformidad de alturas de los contenedores (`280px` a `320px`) en los gráficos de la Sección 03 para eliminar "espacios muertos" en las tarjetas del carrusel, logrando un diseño más compacto.
+* **Refactorización de Tabla de Competencias (`CompetencyDataTable`):** La lógica de visualización se dividió en dos componentes de visualización dinámica (`TableView`). Esto permite mostrar separadamente la *Comparativa Regional* y la *Comparativa por Países*, ambas ordenadas automáticamente por volumen (N) de mayor a menor sin mezclar las dimensiones del dataset original.
+* **Módulo de Contexto Metodológico:** Implementación de un bloque modular (basado en `Alert` de *shadcn/ui* estandarizado a colores neutrales) para documentar y justificar técnicamente el procesamiento de lenguaje natural aplicado a la multiplicidad de títulos (inglés, español, portugués) sin afectar la limpieza visual de la sección Demográfica.
+
 ---
 
 <p align="center">
