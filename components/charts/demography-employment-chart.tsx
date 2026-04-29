@@ -168,7 +168,7 @@ export function DemographyEmploymentChart({
   const option = {
     tooltip: {
       trigger: 'item',
-      formatter: '{b}: <strong>{c}</strong> roles ({d}%)'
+      formatter: (p: any) => `${p.name}: <strong>${p.value.toLocaleString('en-US')}</strong> roles (${p.percent}%)`
     },
     legend: {
       bottom: '0%',
@@ -193,7 +193,7 @@ export function DemographyEmploymentChart({
         label: { 
           show: true,
           position: 'outside',
-          formatter: '{b}\n{c} ({d}%)',
+          formatter: (p: any) => `${p.name}\n${p.value.toLocaleString('en-US')} (${p.percent}%)`,
           color: '#374151',
           fontSize: 12,
           fontWeight: 600

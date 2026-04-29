@@ -40,7 +40,7 @@ export function DemographyCountryChart({
         const p = params[0];
         const pct = ((p.data.rawCount / TOTAL) * 100).toFixed(1);
         return `<strong>${p.axisValue}</strong><br/>
-          ${p.data.rawCount.toLocaleString('es-MX')} roles de PM<br/>
+          ${p.data.rawCount.toLocaleString('en-US')} roles de PM<br/>
           <span style="color:#94a3b8">${pct}% del total</span>`;
       }
     },
@@ -93,7 +93,7 @@ export function DemographyCountryChart({
           position: 'right',
           formatter: (p: any) => isPercentage
             ? `${p.value}%`
-            : p.data.rawCount.toLocaleString('es-MX'),
+            : p.data.rawCount.toLocaleString('en-US'),
           color: '#374151',
           fontSize: 11,
           fontWeight: 600,

@@ -115,7 +115,7 @@ export function RolesTaxonomyChart({
       formatter: function (params: any) {
         let res = `${params[0].axisValue}<br/>`;
         params.forEach((p: any) => {
-          const val = isPercentage ? `${p.value}%` : p.value.toLocaleString();
+          const val = isPercentage ? `${p.value}%` : p.value.toLocaleString('en-US');
           res += `${p.marker} ${p.seriesName}: ${val}<br/>`;
         });
         return res;
@@ -163,7 +163,7 @@ export function RolesTaxonomyChart({
         label: {
           show: true,
           position: 'right',
-          formatter: (p: any) => isPercentage ? `${p.value}%` : (p.value >= 1000 ? p.value.toLocaleString('es-MX') : String(p.value)),
+          formatter: (p: any) => isPercentage ? `${p.value}%` : p.value.toLocaleString('en-US'),
           color: '#0f172a',
           fontSize: 10,
           fontWeight: 600

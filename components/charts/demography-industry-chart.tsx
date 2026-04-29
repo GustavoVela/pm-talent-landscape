@@ -3203,7 +3203,7 @@ export function DemographyIndustryChart({
         const p = params[0];
         const pct = totalFiltered > 0 ? ((p.data.raw / totalFiltered) * 100).toFixed(1) : 0;
         return `<strong>${p.axisValue}</strong><br/>
-          ${p.data.raw.toLocaleString('es-MX')} roles de PM<br/>
+          ${p.data.raw.toLocaleString('en-US')} roles de PM<br/>
           <span style="color:#94a3b8">${pct}% del Top 10</span>`;
       }
     },
@@ -3253,11 +3253,7 @@ export function DemographyIndustryChart({
         label: {
           show: true,
           position: 'right',
-          formatter: (p: any) => isPercentage
-            ? `${p.value}%`
-            : p.data.raw >= 1000
-              ? p.data.raw.toLocaleString('es-MX')
-              : String(p.data.raw),
+          formatter: (p: any) => isPercentage ? `${p.value}%` : p.data.raw.toLocaleString('en-US'),
           color: '#374151',
           fontSize: 11,
           fontWeight: 600,

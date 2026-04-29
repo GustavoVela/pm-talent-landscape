@@ -150,40 +150,41 @@ const columns: ColumnDef<CompetencyData>[] = [
   },
   {
     accessorKey: "total",
-    header: "Volumen (N)",
+    header: () => <div className="text-right">Volumen (N)</div>,
     cell: ({ row }) => {
-      return <div className="text-slate-600">{row.getValue("total")}</div>
+      const val = row.getValue("total") as number;
+      return <div className="text-slate-600 text-right">{val.toLocaleString('en-US')}</div>
     },
   },
   {
     accessorKey: "core_pm",
     header: "Core PM",
-    cell: ({ row }) => <div className="text-slate-600 font-medium">{row.getValue("core_pm")}%</div>,
+    cell: ({ row }) => <div className="text-slate-600 font-medium">{(row.getValue("core_pm") as number).toFixed(1)}%</div>,
   },
   {
     accessorKey: "business",
     header: "Business",
-    cell: ({ row }) => <div className="text-slate-600">{row.getValue("business")}%</div>,
+    cell: ({ row }) => <div className="text-slate-600">{(row.getValue("business") as number).toFixed(1)}%</div>,
   },
   {
     accessorKey: "technical",
     header: "Technical",
-    cell: ({ row }) => <div className="text-slate-600">{row.getValue("technical")}%</div>,
+    cell: ({ row }) => <div className="text-slate-600">{(row.getValue("technical") as number).toFixed(1)}%</div>,
   },
   {
     accessorKey: "data",
     header: "Data",
-    cell: ({ row }) => <div className="text-slate-600">{row.getValue("data")}%</div>,
+    cell: ({ row }) => <div className="text-slate-600">{(row.getValue("data") as number).toFixed(1)}%</div>,
   },
   {
     accessorKey: "ai",
     header: "AI",
-    cell: ({ row }) => <div className="text-slate-600">{row.getValue("ai")}%</div>,
+    cell: ({ row }) => <div className="text-slate-600">{(row.getValue("ai") as number).toFixed(1)}%</div>,
   },
   {
     accessorKey: "ux_ui",
     header: "UX/UI",
-    cell: ({ row }) => <div className="text-slate-600">{row.getValue("ux_ui")}%</div>,
+    cell: ({ row }) => <div className="text-slate-600">{(row.getValue("ux_ui") as number).toFixed(1)}%</div>,
   },
 ]
 
