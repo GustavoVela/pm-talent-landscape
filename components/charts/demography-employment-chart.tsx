@@ -182,16 +182,42 @@ export function DemographyEmploymentChart({
       {
         name: 'Tipo de Contrato',
         type: 'pie',
-        radius: ['50%', '75%'],
-        center: ['50%', '42%'],
-        avoidLabelOverlap: false,
+        radius: ['45%', '75%'],
+        center: ['50%', '45%'],
+        avoidLabelOverlap: true,
         itemStyle: {
           borderRadius: 4,
           borderColor: '#fff',
           borderWidth: 2
         },
-        label: { show: false },
-        color: ['#0ea5e9', '#3b82f6', '#8b5cf6', '#cbd5e1', '#94a3b8'],
+        label: { 
+          show: true,
+          position: 'outside',
+          formatter: '{b}\\n{c} ({d}%)',
+          color: '#374151',
+          fontSize: 12,
+          fontWeight: 600
+        },
+        labelLine: {
+          show: true,
+          length: 15,
+          length2: 10,
+          lineStyle: {
+            color: '#cbd5e1'
+          }
+        },
+        color: [
+          "#3c82f6", 
+          "#91cc75", 
+          "#fac858", 
+          "#ee6666", 
+          "#73c0de", 
+          "#3ba272", 
+          "#fc8452", 
+          "#5470c6", 
+          "#9a60b4", 
+          "#ea7ccc"
+        ],
         data: filteredData
       }
     ]
@@ -199,7 +225,7 @@ export function DemographyEmploymentChart({
 
   return (
     <div className="flex flex-col h-full w-full">
-      <div className="h-[280px] w-full -mt-4">
+      <div className="h-[350px] w-full -mt-2">
         <ReactECharts
           option={option}
           style={{ height: '100%', width: '100%' }}
