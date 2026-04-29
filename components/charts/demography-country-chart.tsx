@@ -47,7 +47,7 @@ export function DemographyCountryChart({
     grid: {
       left: '3%',
       right: '10%',
-      bottom: '3%',
+      bottom: '15%',
       top: '5%',
       containLabel: true
     },
