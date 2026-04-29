@@ -1,0 +1,211 @@
+"use client"
+
+import React, { useMemo } from 'react';
+import ReactECharts from 'echarts-for-react';
+
+const rawData = [
+  {
+    "country": "BR",
+    "employment": "Full-time",
+    "count": 586
+  },
+  {
+    "country": "BR",
+    "employment": "Contract / Externo",
+    "count": 35
+  },
+  {
+    "country": "BR",
+    "employment": "Internship",
+    "count": 4
+  },
+  {
+    "country": "BR",
+    "employment": "Part-time / Otros",
+    "count": 1
+  },
+  {
+    "country": "CL",
+    "employment": "Full-time",
+    "count": 177
+  },
+  {
+    "country": "CL",
+    "employment": "Contract / Externo",
+    "count": 5
+  },
+  {
+    "country": "CO",
+    "employment": "Full-time",
+    "count": 190
+  },
+  {
+    "country": "CO",
+    "employment": "Contract / Externo",
+    "count": 7
+  },
+  {
+    "country": "CO",
+    "employment": "Part-time / Otros",
+    "count": 2
+  },
+  {
+    "country": "CO",
+    "employment": "Part-time / Otros",
+    "count": 2
+  },
+  {
+    "country": "MX",
+    "employment": "Full-time",
+    "count": 389
+  },
+  {
+    "country": "MX",
+    "employment": "Part-time / Otros",
+    "count": 6
+  },
+  {
+    "country": "MX",
+    "employment": "Contract / Externo",
+    "count": 15
+  },
+  {
+    "country": "MX",
+    "employment": "Part-time / Otros",
+    "count": 1
+  },
+  {
+    "country": "MX",
+    "employment": "Part-time / Otros",
+    "count": 1
+  },
+  {
+    "country": "MX",
+    "employment": "Internship",
+    "count": 3
+  },
+  {
+    "country": "PE",
+    "employment": "Full-time",
+    "count": 70
+  },
+  {
+    "country": "PE",
+    "employment": "Contract / Externo",
+    "count": 3
+  },
+  {
+    "country": "US",
+    "employment": "Full-time",
+    "count": 1127
+  },
+  {
+    "country": "US",
+    "employment": "Contract / Externo",
+    "count": 81
+  },
+  {
+    "country": "US",
+    "employment": "Part-time / Otros",
+    "count": 5
+  },
+  {
+    "country": "US",
+    "employment": "Internship",
+    "count": 94
+  },
+  {
+    "country": "US",
+    "employment": "Part-time / Otros",
+    "count": 22
+  },
+  {
+    "country": "US",
+    "employment": "Part-time / Otros",
+    "count": 6
+  },
+  {
+    "country": "US",
+    "employment": "Part-time / Otros",
+    "count": 4
+  }
+];
+
+export function DemographyEmploymentChart({
+  viewMode = 'absolute',
+  selectedCountry = 'all'
+}: {
+  viewMode?: 'absolute' | 'percentage',
+  selectedCountry?: string
+}) {
+  const isPercentage = viewMode === 'percentage';
+
+  const countryCodeMap: Record<string, string> = {
+    'United States': 'US',
+    'Brasil': 'BR',
+    'México': 'MX',
+    'Colombia': 'CO',
+    'Chile': 'CL',
+    'Perú': 'PE',
+  };
+
+  const filteredData = useMemo(() => {
+    let data = rawData;
+    const code = countryCodeMap[selectedCountry] || selectedCountry;
+    
+    if (selectedCountry !== 'all') {
+      data = rawData.filter(d => d.country === code);
+    }
+
+    const agg: Record<string, number> = {};
+    data.forEach(d => {
+      agg[d.employment] = (agg[d.employment] || 0) + d.count;
+    });
+
+    return Object.keys(agg).map(k => ({ name: k, value: agg[k] })).sort((a, b) => b.value - a.value);
+  }, [selectedCountry]);
+
+  const option = {
+    tooltip: {
+      trigger: 'item',
+      formatter: '{b}: <strong>{c}</strong> roles ({d}%)'
+    },
+    legend: {
+      bottom: '0%',
+      left: 'center',
+      icon: 'circle',
+      itemWidth: 10,
+      itemHeight: 10,
+      textStyle: { fontSize: 11, color: '#64748b' }
+    },
+    series: [
+      {
+        name: 'Tipo de Contrato',
+        type: 'pie',
+        radius: ['50%', '75%'],
+        center: ['50%', '42%'],
+        avoidLabelOverlap: false,
+        itemStyle: {
+          borderRadius: 4,
+          borderColor: '#fff',
+          borderWidth: 2
+        },
+        label: { show: false },
+        color: ['#0ea5e9', '#3b82f6', '#8b5cf6', '#cbd5e1', '#94a3b8'],
+        data: filteredData
+      }
+    ]
+  };
+
+  return (
+    <div className="flex flex-col h-full w-full">
+      <div className="h-[280px] w-full -mt-4">
+        <ReactECharts
+          option={option}
+          style={{ height: '100%', width: '100%' }}
+          opts={{ renderer: 'svg' }}
+        />
+      </div>
+    </div>
+  );
+}
