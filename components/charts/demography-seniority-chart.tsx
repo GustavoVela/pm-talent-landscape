@@ -1,42 +1,119 @@
 "use client"
 
-import React from 'react';
+import React, { useMemo } from 'react';
 import ReactECharts from 'echarts-for-react';
 
 // Source: BigQuery — v3l4-493018.jobs.product_management_consolidated
-// WHERE is_pm_role = true, GROUP BY seniority
-// Total PM roles: 2,836
-const data = [
-  { seniority: "Junior", value: 356 },
-  { seniority: "Mid-Level", value: 923 },
-  { seniority: "Senior", value: 878 },
-  { seniority: "Lead", value: 135 },
-  { seniority: "Director", value: 318 },
-  { seniority: "Executive", value: 226 },
+// WHERE is_pm_role = true, GROUP BY country, seniority
+const rawData = [
+  // BR
+  { country: "BR", seniority: "Mid-Level", count: 274 },
+  { country: "BR", seniority: "Senior", count: 248 },
+  { country: "BR", seniority: "Junior", count: 38 },
+  { country: "BR", seniority: "Lead", count: 39 },
+  { country: "BR", seniority: "Director", count: 24 },
+  { country: "BR", seniority: "Executive", count: 3 },
+  // CL
+  { country: "CL", seniority: "Mid-Level", count: 111 },
+  { country: "CL", seniority: "Senior", count: 34 },
+  { country: "CL", seniority: "Junior", count: 27 },
+  { country: "CL", seniority: "Lead", count: 6 },
+  { country: "CL", seniority: "Director", count: 4 },
+  // CO
+  { country: "CO", seniority: "Senior", count: 88 },
+  { country: "CO", seniority: "Mid-Level", count: 86 },
+  { country: "CO", seniority: "Lead", count: 9 },
+  { country: "CO", seniority: "Junior", count: 8 },
+  { country: "CO", seniority: "Director", count: 10 },
+  // MX
+  { country: "MX", seniority: "Mid-Level", count: 150 },
+  { country: "MX", seniority: "Senior", count: 195 },
+  { country: "MX", seniority: "Director", count: 19 },
+  { country: "MX", seniority: "Lead", count: 19 },
+  { country: "MX", seniority: "Junior", count: 28 },
+  { country: "MX", seniority: "Executive", count: 4 },
+  // PE
+  { country: "PE", seniority: "Mid-Level", count: 29 },
+  { country: "PE", seniority: "Senior", count: 16 },
+  { country: "PE", seniority: "Lead", count: 9 },
+  { country: "PE", seniority: "Junior", count: 15 },
+  { country: "PE", seniority: "Director", count: 4 },
+  // US
+  { country: "US", seniority: "Executive", count: 219 },
+  { country: "US", seniority: "Junior", count: 240 },
+  { country: "US", seniority: "Director", count: 257 },
+  { country: "US", seniority: "Lead", count: 53 },
+  { country: "US", seniority: "Senior", count: 297 },
+  { country: "US", seniority: "Mid-Level", count: 273 }
 ];
 
-const TOTAL = 2836;
-
 export function DemographySeniorityChart({
-  viewMode = 'absolute'
+  viewMode = 'absolute',
+  selectedCountry = 'all'
 }: {
-  viewMode?: 'absolute' | 'percentage'
+  viewMode?: 'absolute' | 'percentage',
+  selectedCountry?: string
 }) {
   const isPercentage = viewMode === 'percentage';
 
-  // Sort descending by typical hierarchy or by volume? 
-  // Let's sort by hierarchy logic, but Echarts draws from bottom to top in horizontal bars
-  // The array from bottom (first) to top (last)
+  const countryCodeMap: Record<string, string> = {
+    'United States': 'US',
+    'Brasil': 'BR',
+    'México': 'MX',
+    'Colombia': 'CO',
+    'Chile': 'CL',
+    'Perú': 'PE',
+  };
+
+  const filteredData = useMemo(() => {
+    let data = rawData;
+    const code = countryCodeMap[selectedCountry] || selectedCountry;
+    
+    if (selectedCountry !== 'all') {
+      data = rawData.filter(d => d.country === code);
+    }
+
+    // Aggregate by seniority
+    const agg: Record<string, number> = {
+      "Executive": 0,
+      "Director": 0,
+      "Lead": 0,
+      "Senior": 0,
+      "Mid-Level": 0,
+      "Junior": 0
+    };
+
+    data.forEach(d => {
+      if (agg[d.seniority] !== undefined) {
+        agg[d.seniority] += d.count;
+      }
+    });
+
+    return {
+      "Ejecutivo (VP, C-Level)": agg["Executive"],
+      "Director": agg["Director"],
+      "Lead / Principal": agg["Lead"],
+      "Senior": agg["Senior"],
+      "Mid-Level": agg["Mid-Level"],
+      "Junior / Entry": agg["Junior"]
+    };
+  }, [selectedCountry]);
+
+  const totalFiltered = useMemo(() => {
+    return Object.values(filteredData).reduce((a, b) => a + b, 0);
+  }, [filteredData]);
+
+  // Order from bottom to top for ECharts
   const chartData = [
-    { label: "Ejecutivo (VP, C-Level)", value: 226, raw: 226 },
-    { label: "Director", value: 318, raw: 318 },
-    { label: "Lead / Principal", value: 135, raw: 135 },
-    { label: "Senior", value: 878, raw: 878 },
-    { label: "Mid-Level", value: 923, raw: 923 },
-    { label: "Junior / Entry", value: 356, raw: 356 },
+    { label: "Ejecutivo (VP, C-Level)", raw: filteredData["Ejecutivo (VP, C-Level)"] },
+    { label: "Director", raw: filteredData["Director"] },
+    { label: "Lead / Principal", raw: filteredData["Lead / Principal"] },
+    { label: "Senior", raw: filteredData["Senior"] },
+    { label: "Mid-Level", raw: filteredData["Mid-Level"] },
+    { label: "Junior / Entry", raw: filteredData["Junior / Entry"] },
   ].map(d => ({
     ...d,
-    value: isPercentage ? parseFloat(((d.raw / TOTAL) * 100).toFixed(1)) : d.raw
+    value: isPercentage && totalFiltered > 0 ? parseFloat(((d.raw / totalFiltered) * 100).toFixed(1)) : d.raw
   }));
 
   const option = {
@@ -45,10 +122,10 @@ export function DemographySeniorityChart({
       axisPointer: { type: 'shadow' },
       formatter: (params: any) => {
         const p = params[0];
-        const pct = ((p.data.raw / TOTAL) * 100).toFixed(1);
+        const pct = totalFiltered > 0 ? ((p.data.raw / totalFiltered) * 100).toFixed(1) : 0;
         return `<strong>${p.axisValue}</strong><br/>
           ${p.data.raw.toLocaleString('es-MX')} roles de PM<br/>
-          <span style="color:#94a3b8">${pct}% del total</span>`;
+          <span style="color:#94a3b8">${pct}% del total seleccionado</span>`;
       }
     },
     grid: {
@@ -87,7 +164,7 @@ export function DemographySeniorityChart({
           value: d.value,
           raw: d.raw,
           itemStyle: {
-            color: '#0ea5e9', // Base color
+            color: '#0ea5e9',
             borderRadius: [0, 4, 4, 0],
           }
         })),
