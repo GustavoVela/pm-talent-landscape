@@ -7,6 +7,7 @@ import { NoiseFilterChart } from "./charts/noise-filter-chart"
 import { JobsFreshnessChart } from "./charts/jobs-freshness-chart"
 import { DemographyCountryChart } from "./charts/demography-country-chart"
 import { DemographyCityChart } from "./charts/demography-city-chart"
+import { DemographySeniorityChart } from "./charts/demography-seniority-chart"
 import { RolesTaxonomyChart } from "./charts/roles-taxonomy-chart"
 import {
   Carousel,
@@ -30,6 +31,7 @@ function PhaseZeroCarousel() {
   
   const [countryViewMode, setCountryViewMode] = React.useState<'absolute' | 'percentage'>('absolute')
   const [cityViewMode, setCityViewMode] = React.useState<'absolute' | 'percentage'>('absolute')
+  const [seniorityViewMode, setSeniorityViewMode] = React.useState<'absolute' | 'percentage'>('absolute')
   const [selectedCountry, setSelectedCountry] = React.useState<string>('all')
   const [taxonomyViewMode, setTaxonomyViewMode] = React.useState<'absolute' | 'percentage'>('absolute')
   const [taxonomySelectedCountry, setTaxonomySelectedCountry] = React.useState<string>('all')
@@ -195,6 +197,27 @@ function PhaseZeroCarousel() {
                 }
               >
                 <RolesTaxonomyChart selectedCountry={taxonomySelectedCountry} viewMode={taxonomyViewMode} />
+              </ChartWrapper>
+            </div>
+          </CarouselItem>
+
+          <CarouselItem className="pl-4 md:pl-6 basis-full lg:basis-[60%] xl:basis-[55%]">
+            <div className={cn("transition-all duration-500 h-full", current !== 5 ? "opacity-40 scale-[0.98] blur-[1px]" : "opacity-100 scale-100 shadow-xl ring-1 ring-border/50 rounded-xl")}>
+              <ChartWrapper
+                id="chart-demografia-seniority"
+                title="Distribución por Nivel de Seniority"
+                interpretation="El mercado está dominado por roles Mid-Level (923) y Senior (878), conformando el 63.5% de todas las vacantes de PM validas. Las posiciones Junior o Entry-level son considerablemente menores (12.5%), lo que refleja la alta barrera de entrada a la disciplina."
+                className="h-full bg-white/50 dark:bg-slate-950/50 backdrop-blur-sm shadow-lg"
+                controls={
+                  <div className="flex w-full justify-end">
+                    <ToggleGroup type="single" variant="outline" value={seniorityViewMode} onValueChange={(v) => v && setSeniorityViewMode(v as 'absolute' | 'percentage')} size="sm" className="justify-end">
+                      <ToggleGroupItem value="absolute" className="text-xs h-8 px-3">Valores</ToggleGroupItem>
+                      <ToggleGroupItem value="percentage" className="text-xs h-8 px-3">Porcentaje (%)</ToggleGroupItem>
+                    </ToggleGroup>
+                  </div>
+                }
+              >
+                <DemographySeniorityChart viewMode={seniorityViewMode} />
               </ChartWrapper>
             </div>
           </CarouselItem>
