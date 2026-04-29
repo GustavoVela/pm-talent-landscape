@@ -158,33 +158,33 @@ const columns: ColumnDef<CompetencyData>[] = [
   },
   {
     accessorKey: "core_pm",
-    header: "Core PM",
-    cell: ({ row }) => <div className="text-slate-600 font-medium">{(row.getValue("core_pm") as number).toFixed(1)}%</div>,
+    header: () => <div className="text-center">Core PM</div>,
+    cell: ({ row }) => <div className="text-slate-600 font-medium text-center">{(row.getValue("core_pm") as number).toFixed(1)}%</div>,
   },
   {
     accessorKey: "business",
-    header: "Business",
-    cell: ({ row }) => <div className="text-slate-600">{(row.getValue("business") as number).toFixed(1)}%</div>,
+    header: () => <div className="text-center">Business</div>,
+    cell: ({ row }) => <div className="text-slate-600 text-center">{(row.getValue("business") as number).toFixed(1)}%</div>,
   },
   {
     accessorKey: "technical",
-    header: "Technical",
-    cell: ({ row }) => <div className="text-slate-600">{(row.getValue("technical") as number).toFixed(1)}%</div>,
+    header: () => <div className="text-center">Technical</div>,
+    cell: ({ row }) => <div className="text-slate-600 text-center">{(row.getValue("technical") as number).toFixed(1)}%</div>,
   },
   {
     accessorKey: "data",
-    header: "Data",
-    cell: ({ row }) => <div className="text-slate-600">{(row.getValue("data") as number).toFixed(1)}%</div>,
+    header: () => <div className="text-center">Data</div>,
+    cell: ({ row }) => <div className="text-slate-600 text-center">{(row.getValue("data") as number).toFixed(1)}%</div>,
   },
   {
     accessorKey: "ai",
-    header: "AI",
-    cell: ({ row }) => <div className="text-slate-600">{(row.getValue("ai") as number).toFixed(1)}%</div>,
+    header: () => <div className="text-center">AI</div>,
+    cell: ({ row }) => <div className="text-slate-600 text-center">{(row.getValue("ai") as number).toFixed(1)}%</div>,
   },
   {
     accessorKey: "ux_ui",
-    header: "UX/UI",
-    cell: ({ row }) => <div className="text-slate-600">{(row.getValue("ux_ui") as number).toFixed(1)}%</div>,
+    header: () => <div className="text-center">UX/UI</div>,
+    cell: ({ row }) => <div className="text-slate-600 text-center">{(row.getValue("ux_ui") as number).toFixed(1)}%</div>,
   },
 ]
 

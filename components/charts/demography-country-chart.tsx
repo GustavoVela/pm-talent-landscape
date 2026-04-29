@@ -40,7 +40,7 @@ export function DemographyCountryChart({
         const p = params[0];
         const pct = ((p.data.rawCount / TOTAL) * 100).toFixed(1);
         return `<strong>${p.axisValue}</strong><br/>
-          ${p.data.rawCount.toLocaleString('en-US')} roles de PM<br/>
+          ${p.data.rawCount.toLocaleString('en-US')} vacantes de PM<br/>
           <span style="color:#94a3b8">${pct}% del total</span>`;
       }
     },
@@ -53,7 +53,7 @@ export function DemographyCountryChart({
     },
     xAxis: {
       type: 'value',
-      name: isPercentage ? 'Porcentaje del total (%)' : 'Roles válidos de PM',
+      name: isPercentage ? 'Porcentaje del total (%)' : 'Cantidad de vacantes',
       nameLocation: 'middle',
       nameGap: 30,
       nameTextStyle: { fontSize: 11, color: '#94a3b8' },
@@ -74,7 +74,7 @@ export function DemographyCountryChart({
     },
     series: [
       {
-        name: 'Roles de PM',
+        name: 'Vacantes de PM',
         type: 'bar',
         barMaxWidth: 40,
         data: chartData.map(d => ({

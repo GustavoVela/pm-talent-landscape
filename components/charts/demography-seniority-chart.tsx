@@ -124,7 +124,7 @@ export function DemographySeniorityChart({
         const p = params[0];
         const pct = totalFiltered > 0 ? ((p.data.raw / totalFiltered) * 100).toFixed(1) : 0;
         return `<strong>${p.axisValue}</strong><br/>
-          ${p.data.raw.toLocaleString('en-US')} roles de PM<br/>
+          ${p.data.raw.toLocaleString('en-US')} vacantes de PM<br/>
           <span style="color:#94a3b8">${pct}% del total seleccionado</span>`;
       }
     },
@@ -157,7 +157,7 @@ export function DemographySeniorityChart({
     },
     series: [
       {
-        name: 'Roles de PM',
+        name: 'Vacantes de PM',
         type: 'bar',
         barMaxWidth: 36,
         data: chartData.map((d, i) => ({

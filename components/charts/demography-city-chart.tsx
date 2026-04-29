@@ -88,7 +88,7 @@ export function DemographyCityChart({
     },
     xAxis: {
       type: 'value',
-      name: isPercentage ? 'Porcentaje del total (%)' : 'Roles válidos de PM',
+      name: isPercentage ? 'Porcentaje del total (%)' : 'Cantidad de vacantes',
       nameLocation: 'middle',
       nameGap: 30,
       nameTextStyle: { fontSize: 11, color: '#94a3b8' },
@@ -108,7 +108,7 @@ export function DemographyCityChart({
     },
     series: [
       {
-        name: 'Roles de PM',
+        name: 'Vacantes de PM',
         type: 'bar',
         barMaxWidth: 36,
         data: filteredData.map(d => ({

@@ -12,7 +12,7 @@ export function NoiseFilterChart() {
   const option = {
     tooltip: {
       trigger: 'item',
-      formatter: '{b}: {c} vacantes ({d}%)'
+      formatter: (p: any) => `${p.name}: <strong>${p.value.toLocaleString('en-US')}</strong> vacantes (${p.percent}%)`
     },
     legend: {
       bottom: '0%',
@@ -38,7 +38,7 @@ export function NoiseFilterChart() {
         label: {
           show: true,
           position: 'inside',
-          formatter: '{percent|{d}%}\n{value|({c} vacantes)}',
+          formatter: (p: any) => `{percent|${p.percent}%}\n{value|(${p.value.toLocaleString('en-US')} vacantes)}`,
           rich: {
             percent: {
               fontSize: 14,

@@ -52,6 +52,8 @@ export function JobsFreshnessChart() {
     },
     yAxis: {
       type: 'value',
+      name: 'Cantidad de vacantes',
+      nameTextStyle: { fontSize: 11, color: '#94a3b8', padding: [0, 0, 0, 20] },
       axisLabel: {
         fontSize: 11,
         color: '#94a3b8',

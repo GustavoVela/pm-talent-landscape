@@ -168,7 +168,7 @@ export function DemographyEmploymentChart({
   const option = {
     tooltip: {
       trigger: 'item',
-      formatter: (p: any) => `${p.name}: <strong>${p.value.toLocaleString('en-US')}</strong> roles (${p.percent}%)`
+      formatter: (p: any) => `${p.name}: <strong>${p.value.toLocaleString('en-US')}</strong> vacantes (${p.percent}%)`
     },
     legend: {
       bottom: '0%',

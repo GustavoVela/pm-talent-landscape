@@ -71,9 +71,9 @@ export function FloatingNav() {
   return (
     <nav 
       className={cn(
-        "fixed right-6 top-1/2 z-40 -translate-y-1/2 transition-all duration-300",
+        "fixed right-6 top-1/2 z-40 -translate-y-1/2 transition-all duration-300 pointer-events-none",
         "hidden lg:block",
-        isVisible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-4 pointer-events-none"
+        isVisible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-4"
       )}
     >
       <div className="flex flex-col items-end gap-3">
@@ -82,7 +82,7 @@ export function FloatingNav() {
             key={item.id}
             onClick={() => scrollToSection(item.id)}
             className={cn(
-              "group flex items-center gap-3 transition-all duration-200",
+              "group flex items-center gap-3 transition-all duration-200 pointer-events-auto",
             )}
           >
             <span 

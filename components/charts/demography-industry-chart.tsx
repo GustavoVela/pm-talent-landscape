@@ -3203,7 +3203,7 @@ export function DemographyIndustryChart({
         const p = params[0];
         const pct = totalFiltered > 0 ? ((p.data.raw / totalFiltered) * 100).toFixed(1) : 0;
         return `<strong>${p.axisValue}</strong><br/>
-          ${p.data.raw.toLocaleString('en-US')} roles de PM<br/>
+          ${p.data.raw.toLocaleString('en-US')} vacantes de PM<br/>
           <span style="color:#94a3b8">${pct}% del Top 10</span>`;
       }
     },
@@ -3236,7 +3236,7 @@ export function DemographyIndustryChart({
     },
     series: [
       {
-        name: 'Roles de PM',
+        name: 'Vacantes de PM',
         type: 'bar',
         barMaxWidth: 24,
         data: filteredData.map(d => ({
