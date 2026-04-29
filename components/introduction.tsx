@@ -9,12 +9,13 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion"
-import { Lightbulb } from "lucide-react"
+import { Lightbulb, Monitor } from "lucide-react"
 import {
   Alert,
   AlertDescription,
   AlertTitle,
 } from "@/components/ui/alert"
+import { Badge } from "@/components/ui/badge"
 
 const domains = [
   {
@@ -155,6 +156,15 @@ export function Introduction() {
         <div className="absolute inset-0 z-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-slate-100 via-background to-background dark:from-slate-900"></div>
         <div className="container relative z-10 mx-auto px-4 text-center md:px-6 md:py-20 lg:py-28">
           <div className="mx-auto max-w-5xl">
+            <AnimatedSection>
+              <div className="flex justify-center mb-8">
+                <Badge variant="outline" className="gap-2 px-4 py-2 text-xs font-medium text-muted-foreground border-border/60 bg-background/80 backdrop-blur-sm rounded-full shadow-sm">
+                  <Monitor className="h-3.5 w-3.5" />
+                  Las gráficas interactivas se disfrutan mejor desde un ordenador
+                </Badge>
+              </div>
+            </AnimatedSection>
+
             <AnimatedSection>
               <p className="mb-6 text-sm font-medium uppercase tracking-widest text-muted-foreground">
                 Un análisis de datos del mercado laboral
