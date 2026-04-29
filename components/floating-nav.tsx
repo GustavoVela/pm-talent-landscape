@@ -11,13 +11,13 @@ interface NavItem {
 
 const navItems: NavItem[] = [
   { id: "intro", label: "Inicio", number: "00" },
-  { id: "detonante", label: "El detonante", number: "01" },
-  { id: "marco-mental", label: "Marco mental", number: "02" },
-  { id: "phase-demographics", label: "Anatomía de los Datos", number: "03" },
-  { id: "phase-competency", label: "Perfil de competencias", number: "04" },
-  { id: "phase-quadrant", label: "Desenredando la Complejidad", number: "05" },
-  { id: "phase-ai-adoption", label: "La Lupa en la Adopción", number: "06" },
-  { id: "elefante", label: "El Elefante", number: "07" },
+  { id: "detonante", label: "Detonante", number: "01" },
+  { id: "marco-mental", label: "Contexto", number: "02" },
+  { id: "phase-demographics", label: "Datos", number: "03" },
+  { id: "phase-competency", label: "Competencias", number: "04" },
+  { id: "phase-quadrant", label: "Comparativa", number: "05" },
+  { id: "phase-ai-adoption", label: "Adopción", number: "06" },
+  { id: "elefante", label: "Elefante", number: "07" },
   { id: "conclusion", label: "Conclusión", number: "08" },
 ]
 
