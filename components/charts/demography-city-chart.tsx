@@ -122,7 +122,7 @@ export function DemographyCityChart({
         type: 'bar',
         stack: 'total',
         data: filteredData.map(item => item.pm),
-        itemStyle: { color: '#0ea5e9', borderRadius: [4, 0, 0, 4] },
+        itemStyle: { color: '#0ea5e9' },
         label: {
           show: true,
           position: 'inside',

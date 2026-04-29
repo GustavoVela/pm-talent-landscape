@@ -103,7 +103,7 @@ export function DemographyCountryChart({
         type: 'bar',
         stack: 'total',
         data: chartData.map(item => item.pm),
-        itemStyle: { color: '#0ea5e9', borderRadius: [4, 0, 0, 4] },
+        itemStyle: { color: '#0ea5e9' },
         label: {
           show: true,
           position: 'inside',
