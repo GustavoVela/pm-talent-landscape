@@ -5,6 +5,7 @@ import { SectionHeader, NarrativeText, Blockquote, AnimatedSection } from "./sec
 import { ChartWrapper } from "./chart-wrapper"
 import { CompetencyMacroRadar } from "./charts/competency-macro-radar"
 import { CompetencyCountryInteractive } from "./charts/competency-country-interactive"
+import { SkillsSunburstChart } from "./charts/skills-sunburst-chart"
 import { CompetencyDataTable } from "./competency-data-table"
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group"
 import { FLAGS } from "@/lib/data"
@@ -85,11 +86,6 @@ export function CompetencyProfilePhase() {
                 <strong>Perú (N=73)</strong> — ⚠️ Con 73 publicaciones, el margen de error implícito supera los 10 puntos en la mayoría de los ejes. Los valores de Perú se incluyen para completar el mapa regional, pero no se usan como base comparativa en los análisis de esta sección.
               </li>
             </ul>
-            <h3 className="text-xl font-bold text-foreground mb-4 mt-10">Contexto detrás de los números</h3>
-            <ul className="space-y-4 mb-4">
-              <li><strong>La demanda técnica en LATAM y EE. UU. no es la misma, aunque tenga el mismo porcentaje.</strong> La paridad en el eje Técnico no implica que los anunciantes soliciten lo mismo. La mayor frecuencia de SQL en LATAM (8.9% vs. 4.6% en EE. UU.) sugiere que las empresas de la región esperan que el PM acceda directamente a los datos. En EE. UU., el mismo eje puede concentrarse en habilidades distintas. Esta hipótesis está parcialmente sustentada, pero requiere un análisis de etiquetas más exhaustivo para ser concluyente.</li>
-              <li><strong>La brecha en IA es la señal con mayor relevancia práctica.</strong> De todas las diferencias observadas, los 10.1 puntos en IA entre EE. UU. y Latinoamérica tienen la mayor implicación para quienes toman decisiones de desarrollo profesional o diseño de equipos. No porque los PMs latinoamericanos sean menos capaces en este dominio, sino porque las empresas que contratan ya lo están incorporando como criterio con notablemente mayor frecuencia en un mercado que históricamente anticipa los estándares de la región.</li>
-            </ul>
           </NarrativeText>
 
           <AnimatedSection delay={200}>
@@ -97,6 +93,19 @@ export function CompetencyProfilePhase() {
               <Blockquote>
                 <p>Los datos de esta sección son señales de demanda, no evaluaciones de talento. Muestran qué están pidiendo las empresas en sus publicaciones, no qué tan buenos son los PMs en cada mercado. Lo que sí es concluyente: no existe un perfil único de PM en las Américas. Los anunciantes en Brasil y EE. UU. solicitan autonomía analítica con mayor frecuencia; los de Colombia incorporan más diseño; los de Chile y EE. UU. son quienes más frecuentemente buscan el perfil completo. Para quienes toman decisiones de contratación o de desarrollo de carrera, la tabla adjunta ofrece el diagnóstico por mercado.</p>
               </Blockquote>
+            </div>
+          </AnimatedSection>
+
+          <AnimatedSection delay={250}>
+            <div className="mt-16">
+              <ChartWrapper
+                id="chart-taxonomia-competencias"
+                title="Taxonomía de Competencias (Sunburst)"
+                description="Visualización en anillos concéntricos. El grosor de cada arco es proporcional a la frecuencia absoluta de la habilidad en las publicaciones de empleo analizadas."
+                className="w-full bg-white/50 dark:bg-slate-950/50 backdrop-blur-sm border-slate-200 dark:border-slate-800 shadow-lg"
+              >
+                <SkillsSunburstChart />
+              </ChartWrapper>
             </div>
           </AnimatedSection>
 

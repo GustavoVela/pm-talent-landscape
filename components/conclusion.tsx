@@ -26,6 +26,12 @@ export function Conclusion() {
           <AnimatedSection delay={100}>
             <div className="space-y-6 text-lg text-muted-foreground leading-relaxed mb-16">
               <p>
+                La demanda técnica en LATAM y EE. UU. no es la misma, aunque tenga el mismo porcentaje. La paridad en el eje Técnico no implica que los anunciantes soliciten lo mismo. La mayor frecuencia de SQL en LATAM (8.9% vs. 4.6% en EE. UU.) sugiere que las empresas de la región esperan que el PM acceda directamente a los datos. En EE. UU., el mismo eje puede concentrarse en habilidades distintas. Esta hipótesis está parcialmente sustentada, pero requiere un análisis de etiquetas más exhaustivo para ser concluyente.
+              </p>
+              <p>
+                La brecha en IA es la señal con mayor relevancia práctica. De todas las diferencias observadas, los 10.1 puntos en IA entre EE. UU. y Latinoamérica tienen la mayor implicación para quienes toman decisiones de desarrollo profesional o diseño de equipos. No porque los PMs latinoamericanos sean menos capaces en este dominio, sino porque las empresas que contratan ya lo están incorporando como criterio con notablemente mayor frecuencia en un mercado que históricamente anticipa los estándares de la región.
+              </p>
+              <p>
                 Mi amiga tenía razón en su contexto geográfico inmediato. Pero la visión panorámica es irrefutable: <span className="font-semibold text-foreground">El futuro del Product Management ya llegó, simplemente está mal distribuido.</span>
               </p>
               <p>
