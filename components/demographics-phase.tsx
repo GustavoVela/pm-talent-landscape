@@ -394,7 +394,7 @@ export function DemographicsPhase() {
             <Separator className="my-10" />
             <Alert className="bg-background border-border">
               <InfoIcon className="h-4 w-4 text-foreground" />
-              <AlertTitle className="text-foreground font-medium">Notas relevantes sobre el procesamiento de los datos</AlertTitle>
+              <AlertTitle className="text-foreground font-medium">Nota de lectura: Procesamiento de los datos</AlertTitle>
               <AlertDescription className="text-muted-foreground mt-2">
                 <ul className="list-disc pl-4 space-y-1.5 text-xs md:text-[13px] leading-relaxed">
                   <li><strong>Variantes lingüísticas:</strong> La multiplicidad de títulos y requerimientos se debe a la extracción cruda de descripciones originales en tres idiomas simultáneos (inglés, español y portugués).</li>

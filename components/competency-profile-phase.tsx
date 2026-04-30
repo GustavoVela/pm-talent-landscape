@@ -26,7 +26,7 @@ export function CompetencyProfilePhase() {
           <AnimatedSection>
             <Alert className="bg-background border-border mb-8">
               <InfoIcon className="h-4 w-4 text-foreground" />
-              <AlertTitle className="text-foreground font-medium">Nota de lectura</AlertTitle>
+              <AlertTitle className="text-foreground font-medium">Nota de lectura: Señales de demanda</AlertTitle>
               <AlertDescription className="text-muted-foreground mt-2">
                 Los datos de esta sección provienen de 2,836 descripciones de empleo publicadas en LinkedIn. Lo que se mide es la frecuencia con la que los anunciantes solicitan una habilidad, no el nivel real de competencia de los PMs en cada mercado. Son señales de demanda de contratación, no calificaciones de desempeño.
               </AlertDescription>
@@ -131,7 +131,7 @@ export function CompetencyProfilePhase() {
           <AnimatedSection>
             <Alert className="bg-background border-border">
               <InfoIcon className="h-4 w-4 text-foreground" />
-              <AlertTitle className="text-foreground font-medium">Nota de lectura</AlertTitle>
+              <AlertTitle className="text-foreground font-medium">Nota de lectura: Clasificación de habilidades</AlertTitle>
               <AlertDescription className="text-muted-foreground mt-2 space-y-2">
                 <p>Las habilidades en este gráfico están clasificadas en el eje donde tienen mayor presencia, pero algunas aparecen de forma natural en más de un dominio. Esto no es un error de clasificación: refleja que ciertas habilidades son genuinamente transversales.</p>
                 <p>Ejemplos concretos: <strong>SQL</strong> está en el eje de Datos (donde lidera como lenguaje de consulta), pero también aparece en el eje Técnico como habilidad de ingeniería. <strong>Python</strong> figura en Técnico como lenguaje de programación y en Datos como herramienta de análisis. <strong>Machine Learning</strong> vive en IA como disciplina central, en Datos como capacidad predictiva y en Técnico como conocimiento de infraestructura. <strong>Databricks y Snowflake</strong> aparecen tanto en la capa de ingeniería técnica como en los ecosistemas de datos.</p>
