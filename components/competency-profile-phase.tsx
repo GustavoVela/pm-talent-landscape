@@ -145,7 +145,7 @@ export function CompetencyProfilePhase() {
                       rel="noopener noreferrer"
                       className="inline-flex items-center gap-1.5 rounded-md border border-border/60 bg-background px-3 py-1 text-xs font-medium text-foreground hover:border-foreground/40 hover:bg-muted transition-all duration-150"
                     >
-                      <span className="opacity-60">↪</u0073pan>
+                      <span className="opacity-60">↪</span>
                       {label}
                     </a>
                   ))}
