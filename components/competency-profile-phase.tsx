@@ -23,8 +23,8 @@ export function CompetencyProfilePhase() {
 
           <NarrativeText>
             <div className="mb-8 p-4 rounded-lg border border-border bg-muted/30 text-sm text-muted-foreground">
-              <span className="font-semibold text-foreground">Nota de lectura: </span>
-              Los datos de esta sección provienen de 2,836 descripciones de empleo publicadas en LinkedIn. Lo que se mide es la frecuencia con la que los anunciantes solicitan una habilidad, no el nivel real de competencia de los PMs en cada mercado. Son señales de demanda de contratación, no calificaciones de desempeño.
+              <p className="font-semibold text-foreground mb-1">📌 Nota de lectura</p>
+              Las datos de esta sección provienen de 2,836 descripciones de empleo publicadas en LinkedIn. Lo que se mide es la frecuencia con la que los anunciantes solicitan una habilidad, no el nivel real de competencia de los PMs en cada mercado. Son señales de demanda de contratación, no calificaciones de desempeño.
             </div>
             <p>
               Las habilidades base de gestión de producto —metodologías ágiles, roadmapping, discovery— son el punto de partida definitorio: todos los registros de esta muestra son roles en Product Management. El 92% que aparece en la tabla refleja que el 8% restante corresponde a publicaciones con descripciones demasiado genéricas o incompletas para que el análisis extrajera estas etiquetas; no son excepciones al perfil. Las variaciones relevantes entre mercados se expresan en los conocimientos y habilidades solicitados en cinco ejes adicionales: negocio, tecnología, datos, diseño (UX/UI) e inteligencia artificial.
@@ -122,11 +122,35 @@ export function CompetencyProfilePhase() {
           </NarrativeText>
 
           <NarrativeText>
-            <div className="rounded-lg border border-border/50 bg-muted/30 px-6 py-5 text-sm text-muted-foreground leading-relaxed space-y-2">
+            <div className="rounded-lg border border-border/50 bg-muted/30 px-6 py-5 text-sm text-muted-foreground leading-relaxed space-y-3">
               <p className="font-semibold text-foreground text-base">📌 Nota de lectura</p>
               <p>Las habilidades en este gráfico están clasificadas en el eje donde tienen mayor presencia, pero algunas aparecen de forma natural en más de un dominio. Esto no es un error de clasificación: refleja que ciertas habilidades son genuinamente transversales.</p>
               <p>Ejemplos concretos: <strong>SQL</strong> está en el eje de Datos (donde lidera como lenguaje de consulta), pero también aparece en el eje Técnico como habilidad de ingeniería. <strong>Python</strong> figura en Técnico como lenguaje de programación y en Datos como herramienta de análisis. <strong>Machine Learning</strong> vive en IA como disciplina central, en Datos como capacidad predictiva y en Técnico como conocimiento de infraestructura. <strong>Databricks y Snowflake</strong> aparecen tanto en la capa de ingeniería técnica como en los ecosistemas de datos.</p>
               <p>Para este gráfico, cada habilidad fue asignada al eje donde el contexto de uso era más frecuente en las publicaciones analizadas. Los porcentajes en la tabla comparativa reflejan si la habilidad fue mencionada en alguno de los ejes, no si fue asignada a uno exclusivamente.</p>
+              <div className="pt-2 border-t border-border/40">
+                <p className="text-xs text-muted-foreground mb-2 font-medium">Ver clasificación completa por eje →</p>
+                <div className="flex flex-wrap gap-2">
+                  {[
+                    { label: 'IA', url: 'https://github.com/GustavoVela/pm-talent-landscape/blob/main/data/skills/ai_skills_grouping.md' },
+                    { label: 'Datos', url: 'https://github.com/GustavoVela/pm-talent-landscape/blob/main/data/skills/data_skills_grouping.md' },
+                    { label: 'Técnico', url: 'https://github.com/GustavoVela/pm-talent-landscape/blob/main/data/skills/technical_skills_grouping.md' },
+                    { label: 'Negocio', url: 'https://github.com/GustavoVela/pm-talent-landscape/blob/main/data/skills/business_skills_grouping.md' },
+                    { label: 'UX/UI', url: 'https://github.com/GustavoVela/pm-talent-landscape/blob/main/data/skills/ux_ui_skills_grouping.md' },
+                    { label: 'Core PM', url: 'https://github.com/GustavoVela/pm-talent-landscape/blob/main/data/skills/core_pm_skills_grouping.md' },
+                  ].map(({ label, url }) => (
+                    <a
+                      key={label}
+                      href={url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 rounded-md border border-border/60 bg-background px-3 py-1 text-xs font-medium text-foreground hover:border-foreground/40 hover:bg-muted transition-all duration-150"
+                    >
+                      <span className="opacity-60">↪</u0073pan>
+                      {label}
+                    </a>
+                  ))}
+                </div>
+              </div>
             </div>
           </NarrativeText>
 
