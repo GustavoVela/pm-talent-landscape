@@ -101,7 +101,7 @@ export function CompetencyProfilePhase() {
           <NarrativeText>
             <h3 className="text-xl font-bold text-foreground mb-4 mt-8">Detalle y taxonomía de competencias solicitadas</h3>
             <p className="mb-6">
-              Para quienes toman decisiones de contratación, o para quienes están en Product Management y quieren orientar su desarrollo hacia los ejes con mayor demanda en su mercado, el siguiente gráfico desglosa la taxonomía completa de habilidades solicitadas.
+              Para quienes toman decisiones de contratación, este gráfico desglosa la taxonomía completa de habilidades que el mercado exige hoy. Pero si eres Product Manager, <strong>esta visualización es una brújula para tu desarrollo profesional</strong>. Te recomiendo sumergirte en cada categoría y hacer un <em>checklist</em> honesto de las áreas que necesitas reforzar. Por ejemplo, si tienes un perfil enfocado en negocio pero te falta base técnica, empezar por entender <em>APIs & Integrations</em> o <em>Databases & Storage</em> puede multiplicar tu valor exponencialmente en el mercado actual.
             </p>
           </NarrativeText>
 
