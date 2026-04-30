@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import { Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 
-export const competencyCountryData = [
+export const competencyCountryRadarData = [
   { subject: "Core Product", "Brasil": 96.3, "Chile": 86.8, "Colombia": 94.0, "México": 91.8, "Perú": 79.5, "United States": 96.0 },
   { subject: "UX / UI", "Brasil": 37.4, "Chile": 32.4, "Colombia": 38.8, "México": 30.4, "Perú": 24.7, "United States": 36.0 },
   { subject: "AI / GenAI", "Brasil": 24.6, "Chile": 20.3, "Colombia": 27.9, "México": 23.1, "Perú": 16.4, "United States": 36.2 },
@@ -45,7 +45,7 @@ const CustomTooltip = ({ active, payload, label }: any) => {
   return null;
 };
 
-export function CompetencyCountryInteractive() {
+export function CompetencyCountryRadar() {
   const [hiddenSeries, setHiddenSeries] = useState<Record<string, boolean>>({});
 
   const toggleSeries = (dataKey: string) => {
@@ -81,7 +81,7 @@ export function CompetencyCountryInteractive() {
   return (
     <div className="h-[420px] w-full -mt-12 -mb-8">
       <ResponsiveContainer width="100%" height="100%">
-        <RadarChart cx="50%" cy="50%" outerRadius="85%" data={competencyCountryData} startAngle={90} endAngle={-270} margin={{ top: 10, right: 35, bottom: 5, left: 35 }}>
+        <RadarChart cx="50%" cy="50%" outerRadius="85%" data={competencyCountryRadarData} startAngle={90} endAngle={-270} margin={{ top: 10, right: 35, bottom: 5, left: 35 }}>
           <PolarGrid stroke="#e2e8f0" />
           <PolarAngleAxis dataKey="subject" tick={{ fill: '#0f172a', fontSize: 13, fontWeight: 600, fontFamily: 'var(--font-sans), sans-serif' }} />
           <PolarRadiusAxis angle={30} domain={[0, 100]} tick={false} axisLine={false} />

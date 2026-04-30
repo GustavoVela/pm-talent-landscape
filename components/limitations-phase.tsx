@@ -28,7 +28,7 @@ const criticisms = [
   },
 ]
 
-export function ElephantInTheRoom() {
+export function LimitationsPhase() {
   return (
     <section id="elefante" className="border-t border-border/40 bg-slate-50/50 dark:bg-slate-900/20">
       <div className="container mx-auto px-4 py-20 md:px-6 md:py-28">

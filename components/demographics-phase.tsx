@@ -3,14 +3,14 @@
 import React from "react"
 import { ChartWrapper } from "./chart-wrapper"
 import { SectionHeader, NarrativeText, StatCard, AnimatedSection } from "./section-primitives"
-import { NoiseFilterChart } from "./charts/noise-filter-chart"
-import { JobsFreshnessChart } from "./charts/jobs-freshness-chart"
-import { DemographyCountryChart } from "./charts/demography-country-chart"
-import { DemographyCityChart } from "./charts/demography-city-chart"
-import { DemographySeniorityChart } from "./charts/demography-seniority-chart"
-import { DemographyEmploymentChart } from "./charts/demography-employment-chart"
-import { DemographyIndustryChart } from "./charts/demography-industry-chart"
-import { RolesTaxonomyChart } from "./charts/roles-taxonomy-chart"
+import { SampleQualityChart } from "./charts/sample-quality-chart"
+import { SampleRecencyChart } from "./charts/sample-recency-chart"
+import { MarketCountryChart } from "./charts/market-country-chart"
+import { MarketCityChart } from "./charts/market-city-chart"
+import { MarketSeniorityChart } from "./charts/market-seniority-chart"
+import { MarketEmploymentChart } from "./charts/market-employment-chart"
+import { MarketIndustryChart } from "./charts/market-industry-chart"
+import { JobTitlesChart } from "./charts/job-titles-chart"
 import {
   Carousel,
   CarouselContent,
@@ -85,7 +85,7 @@ function PhaseZeroCarousel() {
                 interpretation="De las 3,471 vacantes recolectadas buscando el término 'Product Manager', el 18.2% (635 roles) resultaron ser de construcción, ventas, marketing o finanzas que usan un título engañoso. Solo las 2,836 vacantes 'Core' pasaron a nuestro análisis."
                 className="h-full"
               >
-                <NoiseFilterChart />
+                <SampleQualityChart />
               </ChartWrapper>
             </div>
           </CarouselItem>
@@ -98,7 +98,7 @@ function PhaseZeroCarousel() {
                 interpretation="El 64% de las vacantes (1,818 de 2,836) fueron publicadas en la semana del 13 de abril de 2026. Más del 98% de los datos tienen menos de 4 semanas de antigüedad, lo que confirma que el análisis refleja el estado actual del mercado de talento en producto."
                 className="h-full"
               >
-                <JobsFreshnessChart />
+                <SampleRecencyChart />
               </ChartWrapper>
             </div>
           </CarouselItem>
@@ -120,7 +120,7 @@ function PhaseZeroCarousel() {
                   </div>
                 }
               >
-                <DemographyCountryChart viewMode={countryViewMode} />
+                <MarketCountryChart viewMode={countryViewMode} />
               </ChartWrapper>
             </div>
           </CarouselItem>
@@ -163,7 +163,7 @@ function PhaseZeroCarousel() {
                   </div>
                 }
               >
-                <DemographyCityChart viewMode={cityViewMode} selectedCountry={selectedCountry} />
+                <MarketCityChart viewMode={cityViewMode} selectedCountry={selectedCountry} />
               </ChartWrapper>
             </div>
           </CarouselItem>
@@ -205,7 +205,7 @@ function PhaseZeroCarousel() {
                   </div>
                 }
               >
-                <RolesTaxonomyChart selectedCountry={taxonomySelectedCountry} viewMode={taxonomyViewMode} />
+                <JobTitlesChart selectedCountry={taxonomySelectedCountry} viewMode={taxonomyViewMode} />
               </ChartWrapper>
             </div>
           </CarouselItem>
@@ -247,7 +247,7 @@ function PhaseZeroCarousel() {
                   </div>
                 }
               >
-                <DemographySeniorityChart viewMode={seniorityViewMode} selectedCountry={senioritySelectedCountry} />
+                <MarketSeniorityChart viewMode={seniorityViewMode} selectedCountry={senioritySelectedCountry} />
               </ChartWrapper>
             </div>
           </CarouselItem>
@@ -289,7 +289,7 @@ function PhaseZeroCarousel() {
                   </div>
                 }
               >
-                <DemographyIndustryChart viewMode={industryViewMode} selectedCountry={industrySelectedCountry} />
+                <MarketIndustryChart viewMode={industryViewMode} selectedCountry={industrySelectedCountry} />
               </ChartWrapper>
             </div>
           </CarouselItem>
@@ -327,7 +327,7 @@ function PhaseZeroCarousel() {
                   </div>
                 }
               >
-                <DemographyEmploymentChart selectedCountry={employmentSelectedCountry} />
+                <MarketEmploymentChart selectedCountry={employmentSelectedCountry} />
               </ChartWrapper>
             </div>
           </CarouselItem>

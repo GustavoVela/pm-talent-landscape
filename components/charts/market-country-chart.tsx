@@ -17,7 +17,7 @@ const data = [
 
 const TOTAL = 2836;
 
-export function DemographyCountryChart({
+export function MarketCountryChart({
   viewMode = 'absolute'
 }: {
   viewMode?: 'absolute' | 'percentage'

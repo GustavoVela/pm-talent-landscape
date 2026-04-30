@@ -3,8 +3,8 @@ import { Introduction } from "@/components/introduction"
 
 import { DemographicsPhase } from "@/components/demographics-phase"
 import { CompetencyProfilePhase } from "@/components/competency-profile-phase"
-import { ElephantInTheRoom } from "@/components/elephant-in-the-room"
-import { Conclusion } from "@/components/conclusion"
+import { LimitationsPhase } from "@/components/limitations-phase"
+import { ClosingPhase } from "@/components/closing-phase"
 import { Footer } from "@/components/footer"
 import { FloatingNav } from "@/components/floating-nav"
 
@@ -17,8 +17,8 @@ export default function Home() {
         <Introduction />
         <DemographicsPhase />
         <CompetencyProfilePhase />
-        <ElephantInTheRoom />
-        <Conclusion />
+        <LimitationsPhase />
+        <ClosingPhase />
       </main>
       <Footer />
     </div>

@@ -34,7 +34,7 @@ const rawCityData = [
 
 const TOTAL = 2836;
 
-export function DemographyCityChart({
+export function MarketCityChart({
   viewMode = 'absolute',
   selectedCountry = 'all'
 }: {

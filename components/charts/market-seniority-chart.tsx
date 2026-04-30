@@ -47,7 +47,7 @@ const rawData = [
   { country: "US", seniority: "Mid-Level", count: 273 }
 ];
 
-export function DemographySeniorityChart({
+export function MarketSeniorityChart({
   viewMode = 'absolute',
   selectedCountry = 'all'
 }: {

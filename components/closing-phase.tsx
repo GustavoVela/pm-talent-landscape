@@ -4,7 +4,7 @@ import { AnimatedSection } from "./section-primitives"
 import Image from "next/image"
 import { GithubLogo, LinkedinLogo, ArrowSquareOut } from "@phosphor-icons/react"
 
-export function Conclusion() {
+export function ClosingPhase() {
   const linkedinUrl = "https://www.linkedin.com/in/gustavo-vela/"
   const githubUrl = "https://github.com/GustavoVela/pm-talent-landscape"
   const profileImage = "https://media.licdn.com/dms/image/v2/D4E03AQGX6nV2oMzC8g/profile-displayphoto-crop_800_800/B4EZ0M81ysHUAI-/0/1774038774403?e=1778716800&v=beta&t=Ko07etYOzdTZ_CwgiR6QSZts9CeRL5THeDzTap8MDro"

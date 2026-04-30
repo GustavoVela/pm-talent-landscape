@@ -131,7 +131,7 @@ const rawData = [
   }
 ];
 
-export function DemographyEmploymentChart({
+export function MarketEmploymentChart({
   viewMode = 'absolute',
   selectedCountry = 'all'
 }: {

@@ -8,7 +8,7 @@ const data = [
   { value: 635, name: "Cargos en otra área" }
 ];
 
-export function NoiseFilterChart() {
+export function SampleQualityChart() {
   const option = {
     tooltip: {
       trigger: 'item',

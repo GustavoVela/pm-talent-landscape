@@ -3156,7 +3156,7 @@ const rawData = [
   }
 ];
 
-export function DemographyIndustryChart({
+export function MarketIndustryChart({
   viewMode = 'absolute',
   selectedCountry = 'all'
 }: {

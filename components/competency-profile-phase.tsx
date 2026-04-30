@@ -5,9 +5,9 @@ import { SectionHeader, NarrativeText, Blockquote, AnimatedSection } from "./sec
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
 import { InfoIcon } from "lucide-react"
 import { ChartWrapper } from "./chart-wrapper"
-import { CompetencyMacroRadar } from "./charts/competency-macro-radar"
-import { CompetencyCountryInteractive } from "./charts/competency-country-interactive"
-import { SkillsSunburstChart } from "./charts/skills-sunburst-chart"
+import { CompetencyRegionRadar } from "./charts/competency-region-radar"
+import { CompetencyCountryRadar } from "./charts/competency-country-radar"
+import { CompetencySunburstChart } from "./charts/competency-sunburst-chart"
 import { CompetencyDataTable } from "./competency-data-table"
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group"
 import { FLAGS } from "@/lib/data"
@@ -53,7 +53,7 @@ export function CompetencyProfilePhase() {
                 description="💡 Tip: Haz clic en las zonas geográficas de la leyenda para encenderlas o apagarlas y aislar tu comparación."
                 className="h-full bg-white/50 dark:bg-slate-950/50 backdrop-blur-sm border-slate-200 dark:border-slate-800 shadow-lg"
               >
-                <CompetencyMacroRadar />
+                <CompetencyRegionRadar />
               </ChartWrapper>
 
               <ChartWrapper
@@ -62,7 +62,7 @@ export function CompetencyProfilePhase() {
                 description="💡 Tip: Haz clic en los países de la leyenda para encenderlos o apagarlos y aislar tu comparación."
                 className="h-full bg-white/50 dark:bg-slate-950/50 backdrop-blur-sm border-slate-200 dark:border-slate-800 shadow-lg"
               >
-                <CompetencyCountryInteractive />
+                <CompetencyCountryRadar />
               </ChartWrapper>
             </div>
           </AnimatedSection>
@@ -113,7 +113,7 @@ export function CompetencyProfilePhase() {
                 description="💡 Usa los controles de abajo para activar o desactivar ejes de competencias. Haz clic en cualquier eje (Business, Datos, IA…) para entrar en detalle: verás todos sus clústeres de habilidades y las habilidades individuales que lo componen. El tamaño de cada clúster refleja su peso relativo dentro del eje — cuanto más grande, más frecuente es ese grupo de skills en las publicaciones analizadas."
                 className="w-full bg-white/50 dark:bg-slate-950/50 backdrop-blur-sm border-slate-200 dark:border-slate-800 shadow-lg"
               >
-                <SkillsSunburstChart />
+                <CompetencySunburstChart />
               </ChartWrapper>
             </div>
           </AnimatedSection>

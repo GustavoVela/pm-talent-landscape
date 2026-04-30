@@ -14,7 +14,7 @@ const weeklyData = [
   { week: "Abr 20", jobs: 267 },
 ]
 
-export function JobsFreshnessChart() {
+export function SampleRecencyChart() {
   const option = {
     tooltip: {
       trigger: 'axis',
