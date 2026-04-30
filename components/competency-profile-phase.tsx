@@ -131,12 +131,12 @@ export function CompetencyProfilePhase() {
                 <p className="text-xs text-muted-foreground mb-2 font-medium">Ver clasificación completa por eje →</p>
                 <div className="flex flex-wrap gap-2">
                   {[
-                    { label: 'IA', url: 'https://github.com/GustavoVela/pm-talent-landscape/blob/main/data/skills/ai_skills_grouping.md' },
-                    { label: 'Datos', url: 'https://github.com/GustavoVela/pm-talent-landscape/blob/main/data/skills/data_skills_grouping.md' },
-                    { label: 'Técnico', url: 'https://github.com/GustavoVela/pm-talent-landscape/blob/main/data/skills/technical_skills_grouping.md' },
-                    { label: 'Negocio', url: 'https://github.com/GustavoVela/pm-talent-landscape/blob/main/data/skills/business_skills_grouping.md' },
-                    { label: 'UX/UI', url: 'https://github.com/GustavoVela/pm-talent-landscape/blob/main/data/skills/ux_ui_skills_grouping.md' },
-                    { label: 'Core PM', url: 'https://github.com/GustavoVela/pm-talent-landscape/blob/main/data/skills/core_pm_skills_grouping.md' },
+                    { label: 'IA', url: 'https://github.com/GustavoVela/pm-talent-landscape/blob/main/data/groupings/ai_skills_grouping.md' },
+                    { label: 'Datos', url: 'https://github.com/GustavoVela/pm-talent-landscape/blob/main/data/groupings/data_skills_grouping.md' },
+                    { label: 'Técnico', url: 'https://github.com/GustavoVela/pm-talent-landscape/blob/main/data/groupings/technical_skills_grouping.md' },
+                    { label: 'Negocio', url: 'https://github.com/GustavoVela/pm-talent-landscape/blob/main/data/groupings/business_skills_grouping.md' },
+                    { label: 'UX/UI', url: 'https://github.com/GustavoVela/pm-talent-landscape/blob/main/data/groupings/ux_ui_skills_grouping.md' },
+                    { label: 'Core PM', url: 'https://github.com/GustavoVela/pm-talent-landscape/blob/main/data/groupings/core_pm_skills_grouping.md' },
                   ].map(({ label, url }) => (
                     <a
                       key={label}
