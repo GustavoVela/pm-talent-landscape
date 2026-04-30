@@ -121,6 +121,15 @@ export function CompetencyProfilePhase() {
             </p>
           </NarrativeText>
 
+          <NarrativeText>
+            <div className="rounded-lg border border-border/50 bg-muted/30 px-6 py-5 text-sm text-muted-foreground leading-relaxed space-y-2">
+              <p className="font-semibold text-foreground text-base">📌 Nota de lectura</p>
+              <p>Las habilidades en este gráfico están clasificadas en el eje donde tienen mayor presencia, pero algunas aparecen de forma natural en más de un dominio. Esto no es un error de clasificación: refleja que ciertas habilidades son genuinamente transversales.</p>
+              <p>Ejemplos concretos: <strong>SQL</strong> está en el eje de Datos (donde lidera como lenguaje de consulta), pero también aparece en el eje Técnico como habilidad de ingeniería. <strong>Python</strong> figura en Técnico como lenguaje de programación y en Datos como herramienta de análisis. <strong>Machine Learning</strong> vive en IA como disciplina central, en Datos como capacidad predictiva y en Técnico como conocimiento de infraestructura. <strong>Databricks y Snowflake</strong> aparecen tanto en la capa de ingeniería técnica como en los ecosistemas de datos.</p>
+              <p>Para este gráfico, cada habilidad fue asignada al eje donde el contexto de uso era más frecuente en las publicaciones analizadas. Los porcentajes en la tabla comparativa reflejan si la habilidad fue mencionada en alguno de los ejes, no si fue asignada a uno exclusivamente.</p>
+            </div>
+          </NarrativeText>
+
           <AnimatedSection delay={250}>
             <div className="mt-16">
               <ChartWrapper
