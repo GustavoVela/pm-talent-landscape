@@ -90,9 +90,12 @@ export function CompetencyProfilePhase() {
 
           <AnimatedSection delay={200}>
             <div className="mt-16">
-              <Blockquote>
-                <p>Los datos de esta sección son señales de demanda, no evaluaciones de talento. Muestran qué están pidiendo las empresas en sus publicaciones, no qué tan buenos son los PMs en cada mercado. Lo que sí es concluyente: no existe un perfil único de PM en las Américas. Los anunciantes en Brasil y EE. UU. solicitan autonomía analítica con mayor frecuencia; los de Colombia incorporan más diseño; los de Chile y EE. UU. son quienes más frecuentemente buscan el perfil completo. Para quienes toman decisiones de contratación o de desarrollo de carrera, la tabla adjunta ofrece el diagnóstico por mercado.</p>
-              </Blockquote>
+              <div className="relative border-l-2 border-foreground/20 pl-6 py-2">
+                <div className="text-sm text-muted-foreground leading-relaxed space-y-3">
+                  <p>Los datos de esta sección son señales de demanda, no evaluaciones de talento. Muestran qué están pidiendo las empresas en sus publicaciones, no qué tan buenos son los profesionales en Product Management en cada mercado. Lo que sí es concluyente: no existe un perfil único en las Américas. Los anunciantes en Brasil y EE. UU. solicitan autonomía analítica con mayor frecuencia; los de Colombia incorporan más diseño; los de Chile y EE. UU. son quienes más frecuentemente buscan el perfil completo.</p>
+                  <p>Para quienes toman decisiones de contratación, o para quienes están en Product Management y quieren orientar su desarrollo hacia los ejes con mayor demanda en su mercado, el siguiente gráfico desglosa la taxonomía completa de habilidades solicitadas.</p>
+                </div>
+              </div>
             </div>
           </AnimatedSection>
 
