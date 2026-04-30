@@ -100,7 +100,7 @@ export function CompetencyProfilePhase() {
             <p className="mb-6">
               Al desagregar la región, las señales de demanda no son uniformes. Cada mercado muestra un perfil de solicitudes distinto:
             </p>
-            <ul className="space-y-5 mb-8">
+            <ul className="list-disc pl-5 space-y-5 mb-8">
               <li>
                 <strong>Brasil (N=626)</strong> — Los anunciantes brasileños solicitan competencias analíticas con mayor frecuencia que el resto de la región: Datos al 53.2% y Técnico al 39.1%, ambos los más cercanos a EE. UU. en la tabla. En Business (64.9%) y UX/UI (37.4%) converge con Colombia, formando un patrón similar entre los dos mercados de mayor volumen.
               </li>
