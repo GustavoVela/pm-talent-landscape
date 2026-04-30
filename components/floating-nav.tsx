@@ -15,8 +15,7 @@ const navItems: NavItem[] = [
   { id: "marco-mental", label: "Contexto", number: "02" },
   { id: "phase-demographics", label: "Datos", number: "03" },
   { id: "phase-competency", label: "Competencias", number: "04" },
-  { id: "limitations-phase", label: "Elefante", number: "05" },
-  { id: "closing-phase", label: "Conclusión", number: "06" },
+  { id: "closing-phase", label: "Conclusión", number: "05" },
 ]
 
 export function FloatingNav() {

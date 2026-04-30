@@ -16,7 +16,7 @@ export function ClosingPhase() {
           {/* Section Header — matching style */}
           <AnimatedSection>
             <div className="mb-12">
-              <span className="text-sm font-medium text-muted-foreground">08</span>
+              <span className="text-sm font-medium text-muted-foreground">05</span>
               <h2 className="mt-2 text-3xl font-bold tracking-tight text-foreground md:text-4xl">
                 Construye tu foso competitivo
               </h2>
@@ -26,19 +26,13 @@ export function ClosingPhase() {
           <AnimatedSection delay={100}>
             <div className="space-y-6 text-lg text-muted-foreground leading-relaxed mb-16">
               <p>
-                La demanda técnica en LATAM y EE. UU. no es la misma, aunque tenga el mismo porcentaje. La paridad en el eje Técnico no implica que los anunciantes soliciten lo mismo. La mayor frecuencia de SQL en LATAM (8.9% vs. 4.6% en EE. UU.) sugiere que las empresas de la región esperan que el PM acceda directamente a los datos. En EE. UU., el mismo eje puede concentrarse en habilidades distintas. Esta hipótesis está parcialmente sustentada, pero requiere un análisis de etiquetas más exhaustivo para ser concluyente.
+                El rol del Product Manager está evolucionando hacia un perfil de orquestación donde la base ya no es solo metodológica. La paridad técnica entre regiones esconde matices profundos: mientras que en LATAM se espera que el PM acceda directamente a los datos (con una notable demanda de SQL), el mercado de EE. UU. ya está integrando la infraestructura de manera más nativa y priorizando otras exigencias técnicas.
               </p>
               <p>
-                La brecha en IA es la señal con mayor relevancia práctica. De todas las diferencias observadas, los 10.1 puntos en IA entre EE. UU. y Latinoamérica tienen la mayor implicación para quienes toman decisiones de desarrollo profesional o diseño de equipos. No porque los PMs latinoamericanos sean menos capaces en este dominio, sino porque las empresas que contratan ya lo están incorporando como criterio con notablemente mayor frecuencia en un mercado que históricamente anticipa los estándares de la región.
+                Sin embargo, la brecha más crítica que evidencian los datos está en la Inteligencia Artificial. Los más de 10 puntos de diferencia en la demanda de habilidades de IA entre Estados Unidos y Latinoamérica son la señal con mayor relevancia práctica para quienes diseñan planes de desarrollo o equipos de producto. Un mercado históricamente anticipa los estándares del otro; lo que hoy puede parecer un diferencial competitivo en LATAM, será un requisito innegociable en los próximos <span className="font-semibold text-foreground">18 a 24 meses</span>.
               </p>
               <p>
-                Mi amiga tenía razón en su contexto geográfico inmediato. Pero la visión panorámica es irrefutable: <span className="font-semibold text-foreground">El futuro del Product Management ya llegó, simplemente está mal distribuido.</span>
-              </p>
-              <p>
-                Lo que hoy es un requisito técnico base en EE. UU., será el estándar mínimo operativo en CDMX, Bogotá o São Paulo en los próximos <span className="font-semibold text-foreground">18 a 24 meses</span>. El PM que solo se dedicaba a gestionar metodologías ágiles será reemplazado velozmente por la automatización.
-              </p>
-              <p>
-                El mercado ya está pagando por <span className="font-semibold text-foreground">orquestadores</span>: personas con alta agencia, curiosidad implacable, y el sentido común comercial y técnico para saber qué problemas vale la pena resolver. La ejecución se comoditizó; tu <span className="font-semibold text-foreground">&quot;Product Taste&quot;</span> y tu visión de negocio son tu foso defensivo.
+                El futuro del Product Management requiere <span className="font-semibold text-foreground">orquestadores</span>: personas con alta agencia, una curiosidad técnica implacable, y el sentido comercial para saber qué problemas valen la pena resolver. La ejecución táctica de ceremonias ágiles se está comoditizando velozmente gracias a la automatización. Tu visión de negocio, tu capacidad para apalancar datos y tu "Product Taste" son tu verdadero foso defensivo.
               </p>
 
               {/* Highlighted quote — matching blockquote style */}
@@ -99,9 +93,6 @@ export function ClosingPhase() {
               </p>
               <p className="text-xl font-bold text-foreground mt-4">
                 ¿Mis habilidades actuales me van a mantener relevante en tres años?
-              </p>
-              <p className="text-muted-foreground mt-6">
-                ¿Sientes que en tu empresa ya te están exigiendo este rol híbrido &quot;Full-Stack&quot; o seguimos estancados en la era del gestor tradicional? Estaré leyendo sus hallazgos en los comentarios. 👇
               </p>
             </div>
           </AnimatedSection>
