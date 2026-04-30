@@ -20,17 +20,37 @@ const BASE_URL = 'https://pm-talent-landscape.vercel.app'
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
   title: 'PM Talent Landscape | Análisis del Mercado de Product Management en Las Américas',
-  description: 'Análisis de 2,836 vacantes de Product Management en EE. UU. y Latinoamérica. Descubre qué habilidades, competencias técnicas e IA solicitan las empresas en 2026. Datos reales de LinkedIn.',
+  description: 'Analizamos 2,836 ofertas de trabajo de Product Manager en EE. UU., Brasil, México, Colombia y Chile para descubrir qué habilidades de negocio, datos, SQL, inteligencia artificial y UX solicita el mercado en 2026. Datos reales extraídos de LinkedIn.',
   keywords: [
-    'Product Management',
+    // Términos de búsqueda directa — roles
     'Product Manager',
-    'talento digital',
-    'habilidades PM',
-    'mercado laboral Latinoamérica',
-    'inteligencia artificial',
-    'vacantes tecnología',
-    'competencias producto',
-    'EE.UU. vs LATAM',
+    'Product Management',
+    'Product Owner',
+    'vacantes Product Manager',
+    'ofertas de trabajo Product Management',
+    // Skills y competencias
+    'habilidades Product Manager 2026',
+    'competencias Product Manager',
+    'skills product manager latinoamerica',
+    'SQL product manager',
+    'inteligencia artificial product manager',
+    'IA product management',
+    // Mercados y geografía
+    'mercado laboral Product Management Latinoamérica',
+    'Product Manager México',
+    'Product Manager Colombia',
+    'Product Manager Brasil',
+    'Product Manager Chile',
+    'Product Manager Estados Unidos',
+    'LATAM vs USA product management',
+    // Análisis y tendencias
+    'tendencias product management 2026',
+    'análisis mercado product management',
+    'talent landscape product management',
+    'product management data analysis',
+    // Inglés — por búsquedas bilingües en LATAM
+    'product manager jobs latin america',
+    'product manager skills 2026',
   ],
   authors: [{ name: 'Gustavo Vela Zúñiga', url: 'https://www.linkedin.com/in/gustavo-vela/' }],
   alternates: {
