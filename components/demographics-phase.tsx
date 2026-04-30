@@ -378,7 +378,7 @@ export function DemographicsPhase() {
           <AnimatedSection delay={150}>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 my-8">
               <StatCard value="3,471" label="Vacantes evaluadas" sublabel="(Fuente: LinkedIn)." />
-              <StatCard value="2,836" label="Roles válidos de Product Management" sublabel="(Post-filtro IA)." />
+              <StatCard value="2,836" label="Roles válidos de Product Management" sublabel={<>(Post-filtro IA: <a href="https://github.com/GustavoVela/pm-talent-landscape/blob/main/analysis/prompt/prompt.md" target="_blank" rel="noopener noreferrer" className="underline hover:text-foreground transition-colors">Ver prompt</a>).</>} />
               <StatCard value="4,629" label="Skills únicas" sublabel="extraídas y procesadas." />
               <StatCard value="6" label="Mercados analizados" sublabel="(EE. UU., BR, MX, CO, CL, PE)." />
             </div>

@@ -71,7 +71,7 @@ export function Blockquote({ children }: BlockquoteProps) {
 interface StatCardProps {
   value: string
   label: string
-  sublabel?: string
+  sublabel?: React.ReactNode | string
 }
 
 export function StatCard({ value, label, sublabel }: StatCardProps) {
