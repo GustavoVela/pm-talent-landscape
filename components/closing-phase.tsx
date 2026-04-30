@@ -10,7 +10,7 @@ export function ClosingPhase() {
   const profileImage = "https://media.licdn.com/dms/image/v2/D4E03AQGX6nV2oMzC8g/profile-displayphoto-crop_800_800/B4EZ0M81ysHUAI-/0/1774038774403?e=1778716800&v=beta&t=Ko07etYOzdTZ_CwgiR6QSZts9CeRL5THeDzTap8MDro"
 
   return (
-    <section id="conclusion" className="border-t border-border/40">
+    <section id="closing-phase" className="border-t border-border/40">
       <div className="container mx-auto px-4 py-20 md:px-6 md:py-28">
         <div className="mx-auto max-w-5xl">
           {/* Section Header — matching style */}
