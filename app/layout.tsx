@@ -15,9 +15,50 @@ const manrope = Manrope({
   display: 'swap',
 })
 
+const BASE_URL = 'https://pm-talent-landscape.vercel.app'
+
 export const metadata: Metadata = {
-  title: 'PM Talent Landscape | Análisis del Mercado de Product Management',
-  description: 'Análisis interactivo del panorama de talento en Product Management. Explora tendencias, salarios, habilidades y más.',
+  metadataBase: new URL(BASE_URL),
+  title: 'PM Talent Landscape | Análisis del Mercado de Product Management en Las Américas',
+  description: 'Análisis de 2,836 vacantes de Product Management en EE. UU. y Latinoamérica. Descubre qué habilidades, competencias técnicas e IA solicitan las empresas en 2024. Datos reales de LinkedIn.',
+  keywords: [
+    'Product Management',
+    'Product Manager',
+    'talento digital',
+    'habilidades PM',
+    'mercado laboral Latinoamérica',
+    'inteligencia artificial',
+    'vacantes tecnología',
+    'competencias producto',
+    'EE.UU. vs LATAM',
+  ],
+  authors: [{ name: 'Gustavo Vela Zúñiga', url: 'https://www.linkedin.com/in/gustavo-vela/' }],
+  alternates: {
+    canonical: BASE_URL,
+  },
+  openGraph: {
+    type: 'article',
+    url: BASE_URL,
+    title: 'PM Talent Landscape — ¿Qué exige el mercado de un Product Manager en 2024?',
+    description: 'Análisis de 2,836 vacantes en EE. UU. y Latinoamérica. Competencias, brechas de IA, perfiles Unicornio y más. Datos reales de LinkedIn.',
+    siteName: 'PM Talent Landscape',
+    locale: 'es_ES',
+    images: [
+      {
+        url: '/images/og.png',
+        width: 1200,
+        height: 630,
+        alt: 'PM Talent Landscape — Análisis de vacantes de Product Management en Las Américas 2024',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'PM Talent Landscape — ¿Qué exige el mercado de un Product Manager en 2024?',
+    description: 'Análisis de 2,836 vacantes en EE. UU. y Latinoamérica. Competencias, brechas de IA, perfiles Unicornio y más.',
+    images: ['/images/og.png'],
+    creator: '@gustavovela',
+  },
   icons: {
     icon: [
       {
