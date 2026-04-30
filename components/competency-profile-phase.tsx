@@ -88,16 +88,38 @@ export function CompetencyProfilePhase() {
             </ul>
           </NarrativeText>
 
-          <AnimatedSection delay={200}>
-            <div className="mt-16">
-              <div className="relative border-l-2 border-foreground/20 pl-6 py-2">
-                <div className="text-sm text-muted-foreground leading-relaxed space-y-3">
-                  <p>Los datos de esta sección son señales de demanda, no evaluaciones de talento. Muestran qué están pidiendo las empresas en sus publicaciones, no qué tan buenos son los profesionales en Product Management en cada mercado. Lo que sí es concluyente: no existe un perfil único en las Américas. Los anunciantes en Brasil y EE. UU. solicitan autonomía analítica con mayor frecuencia; los de Colombia incorporan más diseño; los de Chile y EE. UU. son quienes más frecuentemente buscan el perfil completo.</p>
-                  <p>Para quienes toman decisiones de contratación, o para quienes están en Product Management y quieren orientar su desarrollo hacia los ejes con mayor demanda en su mercado, el siguiente gráfico desglosa la taxonomía completa de habilidades solicitadas.</p>
-                </div>
-              </div>
-            </div>
-          </AnimatedSection>
+          <NarrativeText>
+            <h3 className="text-xl font-bold text-foreground mb-4 mt-8">Desglose por países: lo que pide cada mercado</h3>
+            <p className="mb-6">
+              Al desagregar la región, las señales de demanda no son uniformes. Cada mercado muestra un perfil de solicitudes distinto:
+            </p>
+            <ul className="space-y-5 mb-8">
+              <li>
+                <strong>Brasil (N=626)</strong> — Los anunciantes brasileños solicitan competencias analíticas con mayor frecuencia que el resto de la región: Datos al 53.2% y Técnico al 39.1%, ambos los más cercanos a EE. UU. en la tabla. En Business (64.9%) y UX/UI (37.4%) converge con Colombia, formando un patrón similar entre los dos mercados de mayor volumen.
+              </li>
+              <li>
+                <strong>Colombia (N=201)</strong> — La anomalía más llamativa de la tabla: los anunciantes locales incluyen UX/UI en el <strong>38.8%</strong> de sus publicaciones — el valor más alto de toda la tabla, por encima de EE. UU. (36.0%). Al mismo tiempo, es el país hispanohablante donde los avisos solicitan IA con mayor frecuencia (27.9%). La diferencia de <strong>8.4 puntos</strong> entre Colombia y México en UX/UI es la mayor brecha entre países con muestras comparables. Una hipótesis plausible: la composición de industrias que publica en Colombia —con presencia relevante de fintech y empresas de producto digital— puede presionar hacia este perfil, pero los datos de industria no permiten confirmarlo.
+              </li>
+              <li>
+                <strong>México (N=415)</strong> — El mercado con el perfil de solicitudes más equilibrado: Business (66.3%), Técnico (38.8%), sin anomalías marcadas. El rezago relativo aparece en IA (23.1%) y Datos (43.1%), por debajo de Brasil y Colombia en ambos ejes. Tasa de Unicornio: 2.4% — la segunda más baja de la región.
+              </li>
+              <li>
+                <strong>Chile (N=182)</strong> — Los anunciantes chilenos solicitan Business en el <strong>70.9%</strong> de sus publicaciones, el segundo valor más alto de toda la tabla después de EE. UU. (73.6%). Su tasa de Unicornio (6.0%) supera el promedio regional (5.3%) y es comparable a Brasil (6.1%). La muestra de 182 vacantes está en el límite estadístico recomendable; los patrones son descriptivos, no proyectables con alta confianza.
+              </li>
+              <li>
+                <strong>Perú (N=73)</strong> — ⚠️ Con 73 publicaciones, el margen de error implícito supera los 10 puntos en la mayoría de los ejes. Los valores de Perú se incluyen para completar el mapa regional, pero no se usan como base comparativa en los análisis de esta sección.
+              </li>
+            </ul>
+            <p className="mb-6">
+              Los datos de esta sección son señales de demanda, no evaluaciones de talento. Muestran qué están pidiendo las empresas en sus publicaciones, no qué tan buenos son los profesionales en Product Management en cada mercado. Lo que sí es concluyente: no existe un perfil único en las Américas. Los anunciantes en Brasil y EE. UU. solicitan autonomía analítica con mayor frecuencia; los de Colombia incorporan más diseño; los de Chile y EE. UU. son quienes más frecuentemente buscan el perfil completo.</p>
+          </NarrativeText>
+
+          <NarrativeText>
+            <h3 className="text-xl font-bold text-foreground mb-4 mt-8">Detalle y taxonomía de competencias solicitadas</h3>
+            <p className="mb-6">
+              Para quienes toman decisiones de contratación, o para quienes están en Product Management y quieren orientar su desarrollo hacia los ejes con mayor demanda en su mercado, el siguiente gráfico desglosa la taxonomía completa de habilidades solicitadas.
+            </p>
+          </NarrativeText>
 
           <AnimatedSection delay={250}>
             <div className="mt-16">
