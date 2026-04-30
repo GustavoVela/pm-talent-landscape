@@ -128,8 +128,21 @@ export function CompetencyProfilePhase() {
             </p>
           </NarrativeText>
 
-          <AnimatedSection>
-            <Alert className="bg-background border-border">
+          <AnimatedSection delay={250}>
+            <div className="mt-16">
+              <ChartWrapper
+                id="chart-taxonomia-competencias"
+                title="Taxonomía de Competencias (Sunburst)"
+                description="💡 Usa los controles de abajo para activar o desactivar ejes de competencias. Haz clic en cualquier eje (Business, Datos, IA…) para entrar en detalle: verás todos sus clústeres de habilidades y las habilidades individuales que lo componen. El tamaño de cada clúster refleja su peso relativo dentro del eje — cuanto más grande, más frecuente es ese grupo de skills en las publicaciones analizadas."
+                className="w-full bg-white/50 dark:bg-slate-950/50 backdrop-blur-sm border-slate-200 dark:border-slate-800 shadow-lg"
+              >
+                <SkillsSunburstChart />
+              </ChartWrapper>
+            </div>
+          </AnimatedSection>
+
+          <AnimatedSection delay={300}>
+            <Alert className="bg-background border-border mt-8">
               <InfoIcon className="h-4 w-4 text-foreground" />
               <AlertTitle className="text-foreground font-medium">Nota de lectura: Clasificación de habilidades</AlertTitle>
               <AlertDescription className="text-muted-foreground mt-2 space-y-2">
@@ -163,20 +176,6 @@ export function CompetencyProfilePhase() {
               </AlertDescription>
             </Alert>
           </AnimatedSection>
-
-          <AnimatedSection delay={250}>
-            <div className="mt-16">
-              <ChartWrapper
-                id="chart-taxonomia-competencias"
-                title="Taxonomía de Competencias (Sunburst)"
-                description="💡 Usa los controles de abajo para activar o desactivar ejes de competencias. Haz clic en cualquier eje (Business, Datos, IA…) para entrar en detalle: verás todos sus clústeres de habilidades y las habilidades individuales que lo componen. El tamaño de cada clúster refleja su peso relativo dentro del eje — cuanto más grande, más frecuente es ese grupo de skills en las publicaciones analizadas."
-                className="w-full bg-white/50 dark:bg-slate-950/50 backdrop-blur-sm border-slate-200 dark:border-slate-800 shadow-lg"
-              >
-                <SkillsSunburstChart />
-              </ChartWrapper>
-            </div>
-          </AnimatedSection>
-
         </div>
       </div>
     </section>
