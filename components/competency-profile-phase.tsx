@@ -127,15 +127,14 @@ export function CompetencyProfilePhase() {
                 <p>Ejemplos concretos: <strong>SQL</strong> está en el eje de Datos (donde lidera como lenguaje de consulta), pero también aparece en el eje Técnico como habilidad de ingeniería. <strong>Python</strong> figura en Técnico como lenguaje de programación y en Datos como herramienta de análisis. <strong>Machine Learning</strong> vive en IA como disciplina central, en Datos como capacidad predictiva y en Técnico como conocimiento de infraestructura. <strong>Databricks y Snowflake</strong> aparecen tanto en la capa de ingeniería técnica como en los ecosistemas de datos.</p>
                 <p>Para este gráfico, cada habilidad fue asignada al eje donde el contexto de uso era más frecuente en las publicaciones analizadas. Los porcentajes en la tabla comparativa reflejan si la habilidad fue mencionada en alguno de los ejes, no si fue asignada a uno exclusivamente.</p>
                 <div className="pt-3 border-t border-border/40 mt-3">
-                  <p className="text-xs text-muted-foreground mb-2 font-medium">Ver clasificación completa por eje →</p>
                   <div className="flex flex-wrap gap-2">
                     {[
-                      { label: 'IA', url: 'https://github.com/GustavoVela/pm-talent-landscape/blob/main/analysis/groupings/ai_skills_grouping.md' },
-                      { label: 'Datos', url: 'https://github.com/GustavoVela/pm-talent-landscape/blob/main/analysis/groupings/data_skills_grouping.md' },
-                      { label: 'Técnico', url: 'https://github.com/GustavoVela/pm-talent-landscape/blob/main/analysis/groupings/technical_skills_grouping.md' },
-                      { label: 'Negocio', url: 'https://github.com/GustavoVela/pm-talent-landscape/blob/main/analysis/groupings/business_skills_grouping.md' },
-                      { label: 'UX/UI', url: 'https://github.com/GustavoVela/pm-talent-landscape/blob/main/analysis/groupings/ux_ui_skills_grouping.md' },
-                      { label: 'Core PM', url: 'https://github.com/GustavoVela/pm-talent-landscape/blob/main/analysis/groupings/core_pm_skills_grouping.md' },
+                      { label: 'Ver clasificación: Core PM', url: 'https://github.com/GustavoVela/pm-talent-landscape/blob/main/analysis/groupings/core_pm_skills_grouping.md' },
+                      { label: 'Ver clasificación: Datos', url: 'https://github.com/GustavoVela/pm-talent-landscape/blob/main/analysis/groupings/data_skills_grouping.md' },
+                      { label: 'Ver clasificación: IA', url: 'https://github.com/GustavoVela/pm-talent-landscape/blob/main/analysis/groupings/ai_skills_grouping.md' },
+                      { label: 'Ver clasificación: Negocio', url: 'https://github.com/GustavoVela/pm-talent-landscape/blob/main/analysis/groupings/business_skills_grouping.md' },
+                      { label: 'Ver clasificación: Técnico', url: 'https://github.com/GustavoVela/pm-talent-landscape/blob/main/analysis/groupings/technical_skills_grouping.md' },
+                      { label: 'Ver clasificación: UX/UI', url: 'https://github.com/GustavoVela/pm-talent-landscape/blob/main/analysis/groupings/ux_ui_skills_grouping.md' },
                     ].map(({ label, url }) => (
                       <a
                         key={label}
