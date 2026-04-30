@@ -3,7 +3,6 @@ import { Introduction } from "@/components/introduction"
 
 import { DemographicsPhase } from "@/components/demographics-phase"
 import { CompetencyProfilePhase } from "@/components/competency-profile-phase"
-import { AiAdoptionPhase } from "@/components/ai-adoption-phase"
 import { ElephantInTheRoom } from "@/components/elephant-in-the-room"
 import { Conclusion } from "@/components/conclusion"
 import { Footer } from "@/components/footer"
@@ -18,7 +17,6 @@ export default function Home() {
         <Introduction />
         <DemographicsPhase />
         <CompetencyProfilePhase />
-        <AiAdoptionPhase />
         <ElephantInTheRoom />
         <Conclusion />
       </main>
