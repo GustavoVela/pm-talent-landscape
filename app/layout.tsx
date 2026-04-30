@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Script from 'next/script'
 import { Nunito_Sans, Manrope } from 'next/font/google'
 import { ThemeProvider } from '@/components/theme-provider'
 import './globals.css'
@@ -106,6 +107,18 @@ export default function RootLayout({
   return (
     <html lang="es" suppressHydrationWarning>
       <body className={`${nunitoSans.variable} ${manrope.variable} min-h-screen bg-background font-sans antialiased`}>
+        <Script 
+          src="https://www.googletagmanager.com/gtag/js?id=G-P7KP48X6NK" 
+          strategy="afterInteractive" 
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-P7KP48X6NK');
+          `}
+        </Script>
         <ThemeProvider
           attribute="class"
           defaultTheme="light"

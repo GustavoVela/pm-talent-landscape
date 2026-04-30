@@ -24,6 +24,17 @@ export function FloatingNav() {
   const [isVisible, setIsVisible] = useState(true)
 
   useEffect(() => {
+    if (typeof window !== 'undefined' && (window as any).gtag) {
+      const sectionLabel = navItems.find(i => i.id === activeSection)?.label || activeSection;
+      (window as any).gtag('event', 'section_view', {
+        event_category: 'navigation',
+        event_label: sectionLabel,
+        section_id: activeSection
+      });
+    }
+  }, [activeSection])
+
+  useEffect(() => {
     const handleScroll = () => {
       // Determine active section
       const sections = navItems.map(item => ({
