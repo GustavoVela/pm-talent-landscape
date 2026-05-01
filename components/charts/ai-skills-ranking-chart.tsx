@@ -4,83 +4,86 @@ import React, { useState, useEffect, useMemo } from 'react';
 import ReactECharts from 'echarts-for-react';
 import { useTheme } from 'next-themes';
 
-// Theme colors in exact order from styles/echarts-theme.json
-// gradient: lighter (left/offset-0) → darker (right/offset-1)
 const THEME = {
-  t1: { light: '#7dd3fc', dark: '#0ea5e9' }, // 1st — sky blue
-  t2: { light: '#b3e099', dark: '#91cc75' }, // 2nd — green
-  t3: { light: '#fde68a', dark: '#fac858' }, // 3rd — yellow
-  t4: { light: '#fca5a5', dark: '#ee6666' }, // 4th — coral red
-  t5: { light: '#bae6fd', dark: '#73c0de' }, // 5th — light blue
+  t1: { light: '#7dd3fc', dark: '#0ea5e9', label: '#0ea5e9' },
+  t2: { light: '#b3e099', dark: '#91cc75', label: '#6aaa42' },
+  t3: { light: '#fde68a', dark: '#fac858', label: '#b8861a' },
+  t4: { light: '#fca5a5', dark: '#ee6666', label: '#ee6666' },
+  t5: { light: '#bae6fd', dark: '#73c0de', label: '#3a8faf' },
 };
 
-// ─── 5 Learning tracks ────────────────────────────────────────────────────
 const TRACKS = [
   {
-    id: 'foundations',
-    label: '① Comprende la base conceptual',
-    shortLabel: '① Fundamentos',
-    color: THEME.t1,
+    id: 'foundations', richKey: 't1', color: THEME.t1,
+    label: '① Fundamentos',
+    fullLabel: '① Comprende la base conceptual',
     skills: [
-      { skill: 'Machine Learning',  count: 296, note: 'El concepto más demandado. Entiende cómo aprenden los modelos: supervisado, no supervisado y por refuerzo.' },
-      { skill: 'IA (General)',       count: 212, note: 'Literacy básica: terminología, tipos de modelos y casos de uso reales en productos.' },
-      { skill: 'NLP',               count: 22,  note: 'Procesamiento de lenguaje natural — clave para chatbots, búsqueda y análisis de texto.' },
-      { skill: 'Computer Vision',   count: 11,  note: 'Para productos con imagen, video o detección visual. Creciente en retail, salud y manufactura.' },
+      { skill: 'Machine Learning', count: 296, displayName: 'Machine Learning (cómo aprenden los modelos)', note: 'Entiende supervisado, no supervisado y por refuerzo — sin necesidad de saber programar.' },
+      { skill: 'IA (General)', count: 212, displayName: 'Inteligencia Artificial — conceptos base', note: 'Terminología, tipos de modelos y casos de uso reales en productos digitales.' },
+      { skill: 'NLP', count: 22, displayName: 'Procesamiento de Lenguaje Natural (NLP)', note: 'Cómo los modelos entienden y generan texto — base de los LLMs y chatbots.' },
+      { skill: 'Computer Vision', count: 11, displayName: 'Visión por Computadora', note: 'Modelos que interpretan imágenes y video — clave en retail, salud y manufactura.' },
     ],
   },
   {
-    id: 'llms',
-    label: '② Domina los modelos de lenguaje',
-    shortLabel: '② LLMs y GenAI',
-    color: THEME.t2,
+    id: 'llms', richKey: 't2', color: THEME.t2,
+    label: '② LLMs y GenAI',
+    fullLabel: '② Domina los modelos de lenguaje',
     skills: [
-      { skill: 'LLMs',              count: 157, note: 'Saber qué son, cómo evaluarlos y cuándo usarlos es el nuevo estándar mínimo para PMs.' },
-      { skill: 'Generative AI',     count: 124, note: 'El paraguas del mercado: imagen, texto, código, audio — el PM debe entender sus alcances y límites.' },
-      { skill: 'Prompt Engineering',count: 117, note: 'Skill transversal: estructurar prompts para obtener outputs predecibles y útiles.' },
-      { skill: 'RAG',               count: 21,  note: 'Retrieval-Augmented Generation: cómo dar a los LLMs acceso a tu base de conocimiento empresarial.' },
-      { skill: 'Conversational AI', count: 14,  note: 'Diseño de flujos de conversación inteligente, chatbots y asistentes.' },
-      { skill: 'Fine-tuning',       count: 11,  note: 'Adaptar modelos preentrenados a dominios específicos — entender cuándo vale la pena.' },
+      { skill: 'LLMs', count: 157, displayName: 'Large Language Models (LLMs)', note: 'Qué son, cómo evaluarlos y cuándo usarlos — el nuevo mínimo del mercado.' },
+      { skill: 'Generative AI', count: 124, displayName: 'IA Generativa — texto, imagen, código, audio', note: 'El paraguas del mercado: entender qué puede generar y cuáles son sus límites.' },
+      { skill: 'Prompt Engineering', count: 117, displayName: 'Prompt Engineering — instrucciones a la IA', note: 'Estructurar instrucciones para obtener outputs predecibles y útiles.' },
+      { skill: 'RAG', count: 21, displayName: 'RAG — memoria empresarial para LLMs', note: 'Retrieval-Augmented Generation: dar a los modelos acceso a tu base de conocimiento.' },
+      { skill: 'Conversational AI', count: 14, displayName: 'IA Conversacional y diseño de chatbots', note: 'Diseñar flujos de conversación inteligente — más allá del FAQ simple.' },
+      { skill: 'Fine-tuning', count: 11, displayName: 'Fine-tuning — ajuste fino de modelos', note: 'Adaptar modelos a dominios específicos — saber cuándo vale la pena frente a RAG.' },
     ],
   },
   {
-    id: 'productivity',
-    label: '③ Automatiza tu productividad',
-    shortLabel: '③ Productividad',
-    color: THEME.t3,
+    id: 'productivity', richKey: 't3', color: THEME.t3,
+    label: '③ Productividad',
+    fullLabel: '③ Automatiza tu productividad diaria',
     skills: [
-      { skill: 'AI Tools',              count: 77, note: 'Fluency con herramientas: saber cuál usar para cada tarea de PM (spec, research, análisis).' },
-      { skill: 'Automation',            count: 48, note: 'Automatizar tareas repetitivas: reportes, clasificación, resúmenes — libera tiempo para decisiones.' },
-      { skill: 'Claude',                count: 46, note: 'El modelo de Anthropic — muy usado para análisis, redacción y síntesis de documentos largos.' },
-      { skill: 'ChatGPT',               count: 26, note: 'El estándar de referencia; los equipos esperan que lo conozcas bien.' },
-      { skill: 'AI-assisted workflows', count: 25, note: 'Integrar IA en tu flujo de trabajo: discovery, roadmap, specs y retrospectivas.' },
-      { skill: 'Cursor',                count: 30, note: 'Editor con IA integrada (también Windsurf, v0, Replit). Fundamental si trabajas cerca de ingeniería.' },
-      { skill: 'Copilots',              count: 20, note: 'Asistentes integrados en el ecosistema (GitHub, Microsoft 365, Notion AI).' },
-      { skill: 'Gemini',                count: 11, note: 'El modelo de Google — emergente en entornos Google Workspace y GCP.' },
+      { skill: 'AI Tools', count: 77, displayName: 'Herramientas de IA — cuál usar y cuándo', note: 'Fluency general: saber qué herramienta aplica a cada tarea de PM.' },
+      { skill: 'Automation', count: 49, displayName: 'Automatización de tareas con IA', note: 'Reportes, clasificaciones, resúmenes automáticos — libera tiempo para decisiones.' },
+      { skill: 'Claude', count: 46, displayName: 'Claude — modelo de Anthropic', note: 'Muy usado para análisis extenso, redacción y síntesis de documentos largos.' },
+      { skill: 'Cursor', count: 30, displayName: 'Cursor, v0 y Windsurf — IDEs con IA integrada', note: 'Entornos de desarrollo potenciados con IA — clave si trabajas cerca de ingeniería.' },
+      { skill: 'ChatGPT', count: 26, displayName: 'ChatGPT — modelo de OpenAI', note: 'El estándar de referencia que todos los equipos esperan que conozcas.' },
+      { skill: 'AI-assisted workflows', count: 25, displayName: 'Flujos de trabajo aumentados con IA', note: 'Integrar IA en discovery, roadmap, specs y retrospectivas como PM.' },
+      { skill: 'Copilots', count: 20, displayName: 'Copilots — asistentes de Microsoft y GitHub', note: 'Asistentes IA integrados en el ecosistema de trabajo (365, Teams, código).' },
+      { skill: 'Gemini', count: 11, displayName: 'Gemini — modelo de Google', note: 'Emergente en entornos Google Workspace y GCP — crece rápido.' },
     ],
   },
   {
-    id: 'agents',
-    label: '④ Diseña sistemas agénticos',
-    shortLabel: '④ Agentes',
-    color: THEME.t4,
+    id: 'agents', richKey: 't4', color: THEME.t4,
+    label: '④ Agentes',
+    fullLabel: '④ Diseña sistemas agénticos',
     skills: [
-      { skill: 'Agent Orchestration', count: 111, note: 'Coordinar múltiples agentes especializados (LangChain, LlamaIndex, sistemas multi-agente).' },
-      { skill: 'Agentic AI',          count: 70,  note: 'Sistemas que toman acciones autónomas en múltiples pasos sin intervención humana constante.' },
-      { skill: 'Agentic Workflows',   count: 19,  note: 'Orquestar flujos donde la IA actúa, decide y ejecuta — no solo responde.' },
+      { skill: 'Agent Orchestration', count: 111, displayName: 'Orquestación de Agentes de IA', note: 'Coordinar múltiples agentes especializados (LangChain, LlamaIndex, multi-agent).' },
+      { skill: 'Agentic AI', count: 70, displayName: 'IA Agéntica — sistemas que actúan solos', note: 'Sistemas que toman acciones autónomas en múltiples pasos sin supervisión constante.' },
+      { skill: 'Agentic Workflows', count: 17, displayName: 'Flujos Agénticos — IA que ejecuta, no solo responde', note: 'Orquestar procesos donde la IA decide y ejecuta — no solo contesta preguntas.' },
     ],
   },
   {
-    id: 'governance',
-    label: '⑤ Lidera con responsabilidad',
-    shortLabel: '⑤ Gobernanza',
-    color: THEME.t5,
+    id: 'governance', richKey: 't5', color: THEME.t5,
+    label: '⑤ Gobernanza',
+    fullLabel: '⑤ Lidera con responsabilidad',
     skills: [
-      { skill: 'Responsible AI', count: 30, note: 'Marco ético, regulatorio y de seguridad para productos con IA — ya es un requisito explícito en muchas vacantes.' },
-      { skill: 'AI Ethics',      count: 20, note: 'Bias, fairness, transparencia — las preguntan en entrevistas de PM para productos de IA.' },
-      { skill: 'AI Strategy',    count: 11, note: 'Cómo priorizar, justificar y escalar iniciativas de IA alineadas al negocio.' },
+      { skill: 'Responsible AI', count: 30, displayName: 'IA Responsable — ética y seguridad', note: 'Marco regulatorio y de seguridad para productos IA — ya es requisito explícito.' },
+      { skill: 'AI Ethics', count: 20, displayName: 'Ética en IA — sesgo, fairness, transparencia', note: 'Lo preguntan en entrevistas de PM para productos de IA en roles senior.' },
+      { skill: 'AI Strategy', count: 11, displayName: 'Estrategia de IA para el negocio', note: 'Cómo priorizar, justificar y escalar iniciativas de IA alineadas al negocio.' },
     ],
   },
 ];
+
+type FlatRow = {
+  type: 'header' | 'skill' | 'spacer';
+  key: string;
+  displayName: string;
+  count: number;
+  note: string;
+  trackId: string;
+  richKey: string;
+  color: typeof THEME.t1;
+};
 
 export function AiSkillsRankingChart() {
   const [mounted, setMounted] = useState(false);
@@ -93,19 +96,21 @@ export function AiSkillsRankingChart() {
   const textColor = isDark ? '#9ca3af' : '#6b7280';
   const axisLineColor = isDark ? '#374151' : '#e5e7eb';
 
-  // Flatten with spacers between tracks
-  const flatData = useMemo(() => {
-    const rows: {
-      skill: string; count: number; note: string;
-      trackId: string; color: { light: string; dark: string }; isSpacer?: boolean;
-    }[] = [];
+  const flatData = useMemo<FlatRow[]>(() => {
+    const rows: FlatRow[] = [];
     const tracksToShow = activeTrack ? TRACKS.filter(t => t.id === activeTrack) : TRACKS;
+
+    // Reversed — ECharts renders bottom→top, so last item = top of chart
     [...tracksToShow].reverse().forEach((track, ti) => {
+      // Skills reversed so they display top→bottom within each group
       [...track.skills].reverse().forEach(s => {
-        rows.push({ skill: s.skill, count: s.count, note: s.note, trackId: track.id, color: track.color });
+        rows.push({ type: 'skill', key: s.skill, displayName: s.displayName, count: s.count, note: s.note, trackId: track.id, richKey: track.richKey, color: track.color });
       });
+      // Header row appears at the TOP of each group
+      rows.push({ type: 'header', key: `header-${track.id}`, displayName: track.fullLabel, count: 0, note: '', trackId: track.id, richKey: track.richKey, color: track.color });
+      // Spacer between groups
       if (ti < tracksToShow.length - 1) {
-        rows.push({ skill: '  ', count: 0, note: '', trackId: track.id, color: track.color, isSpacer: true });
+        rows.push({ type: 'spacer', key: `spacer-${ti}`, displayName: '', count: 0, note: '', trackId: track.id, richKey: track.richKey, color: track.color });
       }
     });
     return rows;
@@ -121,20 +126,17 @@ export function AiSkillsRankingChart() {
       textStyle: { color: isDark ? '#f9fafb' : '#111827', fontSize: 12 },
       formatter: (params: any) => {
         const d = flatData[params[0].dataIndex];
-        if (d?.isSpacer || !d?.count) return '';
+        if (!d || d.type !== 'skill') return '';
         const track = TRACKS.find(t => t.id === d.trackId);
-        return `
-          <div style="max-width:260px">
-            <div style="font-weight:700;margin-bottom:4px">${d.skill}</div>
-            <div style="font-size:11px;color:${isDark ? '#9ca3af' : '#6b7280'};margin-bottom:6px">${track?.shortLabel || ''}</div>
-            <div style="margin-bottom:6px">Mencionado en <strong>${d.count}</strong> vacantes PM con IA</div>
-            <div style="font-size:11px;border-top:1px solid ${isDark ? '#374151' : '#e5e7eb'};padding-top:6px;color:${isDark ? '#d1d5db' : '#374151'}">
-              📚 ${d.note}
-            </div>
-          </div>`;
+        return `<div style="max-width:260px">
+          <div style="font-weight:700;margin-bottom:3px">${d.displayName}</div>
+          <div style="font-size:11px;color:${isDark ? '#9ca3af' : '#6b7280'};margin-bottom:5px">${track?.fullLabel}</div>
+          <div style="margin-bottom:5px">Mencionado en <strong>${d.count}</strong> vacantes PM con IA</div>
+          <div style="font-size:11px;border-top:1px solid ${isDark ? '#374151' : '#e5e7eb'};padding-top:5px">📚 ${d.note}</div>
+        </div>`;
       }
     },
-    grid: { left: '1%', right: '12%', top: '2%', bottom: '2%', containLabel: true },
+    grid: { left: '1%', right: '12%', top: '1%', bottom: '1%', containLabel: true },
     xAxis: {
       type: 'value',
       axisLabel: { color: textColor, fontSize: 10 },
@@ -144,71 +146,70 @@ export function AiSkillsRankingChart() {
     },
     yAxis: {
       type: 'category',
-      data: flatData.map(d => d.skill),
-      axisLabel: {
-        color: (val: string) => val.trim() === '' ? 'transparent' : textColor,
-        fontSize: 11,
-        width: 180,
-        overflow: 'truncate',
-      },
+      data: flatData.map(d => d.key),
       axisLine: { lineStyle: { color: axisLineColor } },
       axisTick: { show: false },
+      axisLabel: {
+        fontSize: 11,
+        width: 260,
+        overflow: 'truncate',
+        // ECharts axisLabel formatter with index for rich text per type
+        formatter: (_val: string, index: number) => {
+          const d = flatData[index];
+          if (!d || d.type === 'spacer') return '';
+          if (d.type === 'header') return `{${d.richKey}|${d.displayName}}`;
+          return d.displayName;
+        },
+        rich: {
+          t1: { color: THEME.t1.label, fontWeight: 700, fontSize: 11 },
+          t2: { color: THEME.t2.label, fontWeight: 700, fontSize: 11 },
+          t3: { color: THEME.t3.label, fontWeight: 700, fontSize: 11 },
+          t4: { color: THEME.t4.label, fontWeight: 700, fontSize: 11 },
+          t5: { color: THEME.t5.label, fontWeight: 700, fontSize: 11 },
+        },
+        color: textColor,
+      },
     },
     series: [{
       type: 'bar',
-      barMaxWidth: 20,
-      data: flatData.map(d => ({
-        value: d.isSpacer ? null : d.count,
-        itemStyle: {
-          color: d.isSpacer ? 'transparent' : {
-            type: 'linear', x: 0, y: 0, x2: 1, y2: 0,
-            // lighter on LEFT (offset 0), darker on RIGHT (offset 1)
-            colorStops: [
-              { offset: 0, color: d.color.light },
-              { offset: 1, color: d.color.dark },
-            ]
-          },
-          borderRadius: [0, 4, 4, 0],
-        }
-      })),
+      barMaxWidth: 18,
+      data: flatData.map(d => {
+        if (d.type !== 'skill') return { value: null };
+        return {
+          value: d.count,
+          itemStyle: {
+            color: { type: 'linear', x: 0, y: 0, x2: 1, y2: 0, colorStops: [{ offset: 0, color: d.color.light }, { offset: 1, color: d.color.dark }] },
+            borderRadius: [0, 4, 4, 0],
+          }
+        };
+      }),
       label: {
-        show: true,
-        position: 'right',
+        show: true, position: 'right',
         formatter: (p: any) => p.data.value ? `${p.data.value}` : '',
-        color: textColor,
-        fontSize: 10,
-        fontWeight: 600,
+        color: textColor, fontSize: 10, fontWeight: 600,
       },
-      emphasis: {
-        itemStyle: { shadowBlur: 8, shadowColor: 'rgba(14,165,233,0.3)' }
-      }
+      emphasis: { itemStyle: { shadowBlur: 8, shadowColor: 'rgba(14,165,233,0.3)' } }
     }],
   }), [flatData, isDark, textColor, axisLineColor]);
 
-  const chartHeight = Math.max(300, flatData.length * 27 + 40);
+  const chartHeight = Math.max(320, flatData.length * 26 + 40);
 
   if (!mounted) return null;
 
   return (
     <div className="flex flex-col w-full">
-      {/* Title */}
       <div className="mb-5">
         <h3 className="text-xl font-bold text-foreground">¿Qué skills de IA deberías aprender y dominar?</h3>
         <p className="text-sm text-muted-foreground mt-1">
-          Skills extraídas de vacantes PM con demanda de IA, agrupadas en 5 rutas de aprendizaje.
-          Pasa el cursor sobre cualquier barra para ver por qué ese skill importa.
+          Skills extraídas de vacantes PM que exigen IA, agrupadas en 5 rutas de aprendizaje progresivo.
         </p>
       </div>
 
-      {/* Track filter pills */}
+      {/* Filter pills */}
       <div className="flex flex-wrap gap-2 mb-4">
         <button
           onClick={() => setActiveTrack(null)}
-          className={`text-xs px-3 py-1 rounded-full border transition-colors ${
-            activeTrack === null
-              ? 'bg-foreground text-background border-foreground'
-              : 'bg-background text-muted-foreground border-border hover:border-foreground/50'
-          }`}
+          className={`text-xs px-3 py-1 rounded-full border transition-colors ${activeTrack === null ? 'bg-foreground text-background border-foreground' : 'bg-background text-muted-foreground border-border hover:border-foreground/50'}`}
         >
           Todas las rutas
         </button>
@@ -216,47 +217,27 @@ export function AiSkillsRankingChart() {
           <button
             key={track.id}
             onClick={() => setActiveTrack(activeTrack === track.id ? null : track.id)}
-            className={`text-xs px-3 py-1 rounded-full border transition-colors ${
-              activeTrack === track.id
-                ? 'text-white border-transparent'
-                : 'bg-background text-muted-foreground border-border hover:border-foreground/50'
-            }`}
+            className={`text-xs px-3 py-1 rounded-full border transition-colors ${activeTrack === track.id ? 'text-white border-transparent' : 'bg-background text-muted-foreground border-border hover:border-foreground/50'}`}
             style={activeTrack === track.id ? { backgroundColor: track.color.dark } : {}}
           >
-            {track.shortLabel}
+            {track.label}
           </button>
         ))}
       </div>
 
-      {/* 💡 Antes de explorar — BEFORE the chart */}
+      {/* 💡 Antes de explorar */}
       <div className="mb-4 text-xs text-muted-foreground bg-muted/40 border border-border/40 rounded-md px-3 py-2.5">
         <p className="font-bold text-foreground/80 mb-1.5">💡 Antes de explorar</p>
         <ul className="list-disc list-inside space-y-1 leading-relaxed">
-          <li>Cada barra indica cuántas vacantes PM mencionan ese skill. El número no dice <em>cuánto</em> tienes que saber, sino <em>qué tan urgente</em> es que lo entiendas.</li>
-          <li>Usa los filtros de ruta para concentrarte en el área que más te interesa: fundamentos, herramientas del día a día, agentes o gobernanza.</li>
-          <li>Pasa el cursor sobre cualquier skill para leer una nota de contexto que explica qué es y por qué el mercado lo pide.</li>
+          <li>Cada barra indica cuántas vacantes PM mencionan ese skill — qué tan urgente es que lo entiendas como profesional.</li>
+          <li>Los encabezados en color marcan el inicio de cada ruta de aprendizaje. Usa los filtros para ver una sola ruta a la vez.</li>
+          <li>Pasa el cursor sobre cualquier skill para ver una descripción de qué es y por qué el mercado lo pide.</li>
         </ul>
       </div>
 
       {/* Chart */}
       <div style={{ height: `${chartHeight}px` }}>
-        <ReactECharts
-          option={option}
-          notMerge={true}
-          style={{ height: '100%', width: '100%' }}
-          opts={{ renderer: 'svg' }}
-        />
-      </div>
-
-      {/* Track legend below chart */}
-      <div className="flex flex-wrap gap-x-5 gap-y-2 mt-3 pt-3 border-t border-border/40">
-        {TRACKS.map(track => (
-          <div key={track.id} className="flex items-center gap-1.5 text-xs text-muted-foreground">
-            <span className="w-2.5 h-2.5 rounded-sm inline-block flex-shrink-0"
-              style={{ background: track.color.dark }} />
-            {track.label}
-          </div>
-        ))}
+        <ReactECharts option={option} notMerge={true} style={{ height: '100%', width: '100%' }} opts={{ renderer: 'svg' }} />
       </div>
     </div>
   );
