@@ -24,7 +24,7 @@ export function AiMarketShift() {
           <h4 className="font-bold text-foreground text-base mb-2 leading-tight">
             De Operación de Dashboards a Estrategia Analítica
           </h4>
-          <div className="text-xs text-muted-foreground bg-muted/40 p-2.5 rounded-md mb-4 border border-border/40">
+          <div className="text-sm text-muted-foreground bg-muted/40 p-3 rounded-md mb-4 border border-border/40">
             <strong className="text-foreground/80">Evidencia (Datos):</strong> LATAM prioriza la extracción y visualización operativa (SQL 12.8%, Power BI 5.7%, Tableau 5.3%). En EE.UU., estas herramientas decrecen (SQL cae a 8.1%, Tableau 2.4%), priorizando el análisis abstracto (Data Analysis 23.4%, Quantitative Analysis 2.1%).
           </div>
           <p className="text-sm text-muted-foreground leading-relaxed">
@@ -43,7 +43,7 @@ export function AiMarketShift() {
           <h4 className="font-bold text-foreground text-base mb-2 leading-tight">
             De Integración Legacy a Arquitecturas Nativas
           </h4>
-          <div className="text-xs text-muted-foreground bg-muted/40 p-2.5 rounded-md mb-4 border border-border/40">
+          <div className="text-sm text-muted-foreground bg-muted/40 p-3 rounded-md mb-4 border border-border/40">
             <strong className="text-foreground/80">Evidencia (Tech):</strong> LATAM mantiene peticiones de integración legacy (ERP 2.5%, Middleware 2.1%). EE.UU. estandariza el conocimiento en lenguajes de programación e infraestructura (Python 2.5%, AWS 2.5%, CI/CD 1.1%, Snowflake 1.0%).
           </div>
           <p className="text-sm text-muted-foreground leading-relaxed">
@@ -62,7 +62,7 @@ export function AiMarketShift() {
           <h4 className="font-bold text-foreground text-base mb-2 leading-tight">
             De Adopción de Herramientas a Modelado de Producto
           </h4>
-          <div className="text-xs text-muted-foreground bg-muted/40 p-2.5 rounded-md mb-4 border border-border/40">
+          <div className="text-sm text-muted-foreground bg-muted/40 p-3 rounded-md mb-4 border border-border/40">
             <strong className="text-foreground/80">Evidencia (IA):</strong> LATAM registra búsquedas nominales de herramientas (ChatGPT 1.5%, Claude 1.9%). EE.UU. demanda comprensión de conceptos estructurales (Prompt Engineering 5.8%, Orquestación de Agentes 3.1%, AI/ML 2.5%).
           </div>
           <p className="text-sm text-muted-foreground leading-relaxed">
