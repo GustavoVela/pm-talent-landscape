@@ -155,10 +155,20 @@ export function AiSalaryPremiumChart() {
           </ul>
         </div>
 
-        {/* Main layout: cards left (or top), chart right (or bottom) */}
-        <div className="grid grid-cols-1 lg:grid-cols-[1fr_2.5fr] gap-6 items-center border border-border/50 rounded-xl p-4 bg-background">
+        {/* Main layout: chart left, cards right */}
+        <div className="grid grid-cols-1 lg:grid-cols-[2.5fr_1fr] gap-6 items-center border border-border/50 rounded-xl p-4 bg-background">
+          {/* Bar Chart */}
+          <div className="h-[320px] w-full order-1">
+            <ReactECharts
+              option={option}
+              notMerge={true}
+              style={{ height: '100%', width: '100%' }}
+              opts={{ renderer: 'svg' }}
+            />
+          </div>
+
           {/* Insight cards */}
-          <div className="flex flex-col gap-3 order-2 lg:order-1">
+          <div className="flex flex-col gap-3 order-2">
             <h4 className="text-sm font-semibold text-foreground mb-1">Crecimiento (Premium)</h4>
             {DATA.slice().reverse().map(row => {
               const premiumPct = Math.round(((row.ai - row.noAi) / row.noAi) * 100);
@@ -175,16 +185,6 @@ export function AiSalaryPremiumChart() {
                 </div>
               );
             })}
-          </div>
-
-          {/* Bar Chart */}
-          <div className="h-[320px] w-full order-1 lg:order-2">
-            <ReactECharts
-              option={option}
-              notMerge={true}
-              style={{ height: '100%', width: '100%' }}
-              opts={{ renderer: 'svg' }}
-            />
           </div>
         </div>
 
