@@ -135,9 +135,9 @@ export function AiSalaryPremiumChart() {
         <div className="mb-5 text-xs text-muted-foreground bg-muted/40 border border-border/40 rounded-md px-3 py-2.5">
           <p className="font-bold text-foreground/80 mb-1.5">💡 Antes de explorar</p>
           <ul className="list-disc list-inside space-y-1 leading-relaxed">
-            <li>Analizamos 897 vacantes PM que transparentan su banda salarial.</li>
-            <li>Dado que Estados Unidos paga salarios superiores y publica más roles de IA, un promedio global generaría una "Paradoja de Simpson".</li>
-            <li><strong>Solución:</strong> Este gráfico incluye <em>exclusivamente vacantes basadas en Estados Unidos</em> para medir el "Premium" real (aislando el efecto país). Se lee como el indicador adelantado para LATAM.</li>
+            <li>Analizamos 897 vacantes PM que transparentan su banda salarial en Estados Unidos.</li>
+            <li>Dado que Estados Unidos paga salarios superiores y publica más roles de IA, un promedio global generaría una "Paradoja de Simpson". Por eso esta gráfica aisla exclusivamente el mercado de EE.UU. como indicador adelantado.</li>
+            <li><strong>Dato Curioso de Transparencia:</strong> En nuestra muestra, el <strong>67%</strong> de las vacantes de Producto en EE.UU. publican su salario abiertamente, frente a un alarmante <strong>5.3%</strong> en LATAM. La falta de transparencia salarial en nuestra región nos obliga a usar a EE.UU. como benchmark.</li>
           </ul>
         </div>
 
