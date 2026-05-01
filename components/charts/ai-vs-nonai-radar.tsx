@@ -20,7 +20,7 @@ const DATA = {
 
 // Theme colors in order: 1st = sky blue, 4th = coral red
 const COLOR_AI   = '#0ea5e9'; // 1st theme color
-const COLOR_NOAI = '#ee6666'; // 4th theme color
+const COLOR_NOAI = '#91cc75'; // 2nd theme color
 
 const INDICATORS = [
   { name: 'Core PM',  key: 'corePm'  },
@@ -183,7 +183,7 @@ export function AiVsNonAiRadar() {
             <li>Cuanto más hacia el exterior cae el vértice, más frecuente es ese pilar en las vacantes de ese perfil.</li>
             <li>
               <span style={{ color: COLOR_AI }} className="font-semibold">Azul continuo</span> = Roles de Product Management con IA ·{' '}
-              <span style={{ color: COLOR_NOAI }} className="font-semibold">Coral punteado</span> = Roles sin IA.
+              <span style={{ color: COLOR_NOAI }} className="font-semibold">Verde punteado</span> = Roles sin IA.
             </li>
             <li>Pasa el cursor sobre cada card de la derecha para ver la interpretación de esa brecha.</li>
           </ul>
