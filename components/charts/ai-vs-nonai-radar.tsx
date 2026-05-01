@@ -39,7 +39,7 @@ const CARDS = [
     noai:     26.7,
     gap:      30.0,
     icon:     Cpu,
-    iconCls:  'text-sky-500',
+    iconCls:  'text-foreground',
     note:     'El doble de exigencia técnica. Roles de Product Management con IA esperan que puedas hablar de APIs, arquitectura de ML e infraestructura. Es el pilar que más diferencia a los dos perfiles y el que más esfuerzo requiere desarrollar.',
   },
   {
@@ -48,7 +48,7 @@ const CARDS = [
     noai:     41.9,
     gap:      29.9,
     icon:     Database,
-    iconCls:  'text-sky-500',
+    iconCls:  'text-foreground',
     note:     'Co-requisito inseparable de la IA. Roles con IA esperan que trabajes directamente con datos: SQL, analytics y ciencia de datos aplicada. No es un plus — es el nuevo piso del rol de producto.',
   },
   {
@@ -57,7 +57,7 @@ const CARDS = [
     noai:     29.2,
     gap:      20.1,
     icon:     Palette,
-    iconCls:  'text-amber-500',
+    iconCls:  'text-foreground',
     note:     'Los productos con IA requieren más diseño intencional: trust signals, error states claros y feedback loops bien pensados. La experiencia de usuario en IA no se diseña sola — y el mercado lo sabe.',
   },
   {
@@ -66,7 +66,7 @@ const CARDS = [
     noai:     93.1,
     gap:      4.0,
     icon:     Target,
-    iconCls:  'text-muted-foreground',
+    iconCls:  'text-foreground',
     note:     'Los fundamentos del rol no se deprecan. Discovery, roadmap y agilidad siguen siendo no negociables en ambos perfiles. La IA amplifica el rol de producto, no lo reemplaza. Lo que ya sabes sigue valiendo.',
   },
   {
@@ -75,7 +75,7 @@ const CARDS = [
     noai:     69.9,
     gap:      -0.8,
     icon:     Briefcase,
-    iconCls:  'text-emerald-500',
+    iconCls:  'text-foreground',
     note:     'El criterio de negocio pesa prácticamente igual en ambos perfiles. Las empresas con IA siguen valorando el juicio estratégico, el P&L y la visión de mercado al mismo nivel que antes. La inteligencia de negocio no se automatiza.',
   },
 ];
@@ -195,9 +195,9 @@ export function AiVsNonAiRadar() {
         </div>
 
         {/* Main layout: radar left, cards right */}
-        <div className="grid grid-cols-1 lg:grid-cols-[3fr_2fr] gap-6 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-[2fr_1fr] gap-4 xl:gap-8 items-center border border-border/50 rounded-xl p-4 bg-background">
           {/* Radar */}
-          <div className="h-[420px] w-full">
+          <div className="h-[400px] w-full">
             <ReactECharts
               option={option}
               notMerge={true}
@@ -207,7 +207,7 @@ export function AiVsNonAiRadar() {
           </div>
 
           {/* Insight cards */}
-          <div className="flex flex-col gap-3">
+          <div className="flex flex-col gap-2.5">
             {CARDS.map(card => {
               const Icon = card.icon;
               const isNeutral = Math.abs(card.gap) < 5;

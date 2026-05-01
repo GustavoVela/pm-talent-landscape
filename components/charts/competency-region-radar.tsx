@@ -1,104 +1,97 @@
-"use client"
+"use client";
 
-import React, { useState } from 'react';
-import { Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, Tooltip, Legend, ResponsiveContainer } from 'recharts';
+import React, { useState, useEffect, useMemo } from 'react';
+import ReactECharts from 'echarts-for-react';
+import { useTheme } from 'next-themes';
 
-export const regionRadarData = [
-  { subject: "Core Product", "Global": 94.3, "Latinoamérica": 92.8, "United States": 96.0 },
-  { subject: "UX / UI", "Global": 35.2, "Latinoamérica": 34.4, "United States": 36.0 },
-  { subject: "AI / GenAI", "Global": 29.6, "Latinoamérica": 23.7, "United States": 36.2 },
-  { subject: "Data", "Global": 51.6, "Latinoamérica": 47.6, "United States": 56.2 },
-  { subject: "Technical", "Global": 38.4, "Latinoamérica": 37.1, "United States": 39.7 },
-  { subject: "Business", "Global": 69.6, "Latinoamérica": 66.1, "United States": 73.6 },
+const SERIES_DATA = [
+  { name: 'Global',        color: '#0ea5e9', values: [94.3, 35.2, 29.6, 51.6, 38.4, 69.6] },
+  { name: 'Latinoamérica', color: '#91cc75', values: [92.8, 34.4, 23.7, 47.6, 37.1, 66.1] },
+  { name: 'United States', color: '#9a60b4', values: [96.0, 36.0, 36.2, 56.2, 39.7, 73.6] },
 ];
 
-const COLORS: Record<string, string> = {
-  "Global": '#3c82f6',
-  "Latinoamérica": '#91cc75',
-  "United States": '#9a60b4',
-};
-
-const SERIES = ["Global", "Latinoamérica", "United States"];
-
-const CustomTooltip = ({ active, payload, label }: any) => {
-  if (active && payload && payload.length) {
-    return (
-      <div className="bg-white/95 backdrop-blur-sm p-3 border border-slate-200 shadow-lg rounded-lg text-sm font-sans" style={{ minWidth: '150px' }}>
-        <p className="font-semibold mb-2 text-slate-800">{label}</p>
-        <div className="flex flex-col gap-1.5">
-          {payload.map((entry: any, index: number) => (
-            <div key={index} className="flex items-center justify-between gap-4">
-              <div className="flex items-center gap-2">
-                <div className="w-3 h-1 rounded-full" style={{ backgroundColor: entry.color }} />
-                <span className="text-slate-600 font-medium">{entry.name}</span>
-              </div>
-              <span className="font-bold text-slate-800">{entry.value}%</span>
-            </div>
-          ))}
-        </div>
-      </div>
-    );
-  }
-  return null;
-};
+const INDICATORS = [
+  'Core Product', 'UX / UI', 'AI / GenAI', 'Data', 'Technical', 'Business'
+];
 
 export function CompetencyRegionRadar() {
-  const [hiddenSeries, setHiddenSeries] = useState<Record<string, boolean>>({});
+  const [mounted, setMounted] = useState(false);
+  const [hidden, setHidden] = useState<Record<string, boolean>>({});
+  const { resolvedTheme } = useTheme();
+  useEffect(() => setMounted(true), []);
 
-  const toggleSeries = (dataKey: string) => {
-    setHiddenSeries(prev => ({
-      ...prev,
-      [dataKey]: !prev[dataKey]
-    }));
-  };
+  const isDark    = resolvedTheme === 'dark';
+  const gridColor = isDark ? '#1e293b' : '#f1f5f9';
+  const lineColor = isDark ? '#334155' : '#e2e8f0';
+  const labelColor = isDark ? '#f1f5f9' : '#0f172a';
+  const textColor  = isDark ? '#94a3b8' : '#475569';
 
-  const CustomLegend = ({ payload }: any) => {
-    return (
-      <div className="flex flex-wrap justify-center gap-x-4 gap-y-2 mt-4">
-        {payload.map((entry: any, index: number) => {
-          const isHidden = hiddenSeries[entry.value];
-          return (
-            <div 
-              key={`item-${index}`} 
-              className="flex items-center gap-2 cursor-pointer transition-opacity hover:opacity-80"
-              onClick={() => toggleSeries(entry.value)}
-              style={{ opacity: isHidden ? 0.4 : 1 }}
-            >
-              <div className="w-4 h-1.5 rounded-full" style={{ backgroundColor: isHidden ? '#cbd5e1' : entry.color }} />
-              <span className="text-sm font-semibold" style={{ color: isHidden ? '#94a3b8' : '#1e293b' }}>
-                {entry.value}
-              </span>
-            </div>
-          );
-        })}
-      </div>
-    );
-  };
+  const toggle = (name: string) => setHidden(p => ({ ...p, [name]: !p[name] }));
+
+  const option = useMemo(() => ({
+    backgroundColor: 'transparent',
+    tooltip: {
+      trigger: 'item',
+      backgroundColor: isDark ? '#1f2937' : '#ffffff',
+      borderColor: isDark ? '#374151' : '#e5e7eb',
+      textStyle: { color: isDark ? '#f9fafb' : '#111827', fontSize: 12 },
+      formatter: (p: any) => {
+        const vals = p.value as number[];
+        const color = SERIES_DATA.find(s => s.name === p.seriesName)?.color ?? '#888';
+        const rows = INDICATORS.map((ind, i) =>
+          `<div style="display:flex;justify-content:space-between;gap:16px;padding:2px 0">
+            <span style="color:${textColor}">${ind}</span><strong>${vals[i]}%</strong>
+          </div>`).join('');
+        return `<div style="min-width:190px">
+          <div style="font-weight:700;margin-bottom:5px;color:${color}">${p.seriesName}</div>${rows}</div>`;
+      }
+    },
+    radar: {
+      indicator: INDICATORS.map(name => ({ name, max: 100 })),
+      shape: 'polygon',
+      splitNumber: 4,
+      center: ['50%', '46%'],
+      radius: '68%',
+      startAngle: 90,
+      axisName: { color: labelColor, fontSize: 12, fontWeight: 700, fontFamily: 'var(--font-sans), sans-serif' },
+      splitLine:  { lineStyle: { color: lineColor, width: 1 } },
+      splitArea:  { areaStyle: { color: [gridColor, 'transparent', gridColor, 'transparent'] } },
+      axisLine:   { lineStyle: { color: lineColor } },
+    },
+    series: [{
+      type: 'radar',
+      data: SERIES_DATA.map(s => ({
+        name: s.name,
+        value: hidden[s.name] ? [0,0,0,0,0,0] : s.values,
+        symbol: 'circle', symbolSize: hidden[s.name] ? 0 : 4,
+        lineStyle: { color: hidden[s.name] ? 'transparent' : s.color, width: 2 },
+        areaStyle: { color: hidden[s.name] ? 'transparent' : s.color, opacity: 0.06 },
+        itemStyle: { color: s.color },
+      }))
+    }],
+  }), [isDark, hidden, gridColor, lineColor, labelColor, textColor]);
+
+  if (!mounted) return <div className="h-[420px] w-full -mt-12 -mb-8" />;
 
   return (
-    <div className="h-[420px] w-full -mt-12 -mb-8">
-      <ResponsiveContainer width="100%" height="100%">
-        <RadarChart cx="50%" cy="50%" outerRadius="85%" data={regionRadarData} startAngle={90} endAngle={-270} margin={{ top: 10, right: 35, bottom: 5, left: 35 }}>
-          <PolarGrid stroke="#e2e8f0" />
-          <PolarAngleAxis dataKey="subject" tick={{ fill: '#0f172a', fontSize: 13, fontWeight: 600, fontFamily: 'var(--font-sans), sans-serif' }} />
-          <PolarRadiusAxis angle={30} domain={[0, 100]} tick={false} axisLine={false} />
-          <Tooltip content={<CustomTooltip />} />
-          <Legend verticalAlign="bottom" content={<CustomLegend />} />
-          {SERIES.map(s => (
-            <Radar 
-              key={s}
-              name={s} 
-              dataKey={s} 
-              stroke={hiddenSeries[s] ? 'transparent' : COLORS[s]} 
-              fill={hiddenSeries[s] ? 'transparent' : COLORS[s]} 
-              fillOpacity={0.05} 
-              strokeWidth={hiddenSeries[s] ? 0 : 2} 
-              dot={hiddenSeries[s] ? false : { r: 3, fill: '#fff', strokeWidth: 2 }} 
-              activeDot={hiddenSeries[s] ? false : undefined}
-            />
-          ))}
-        </RadarChart>
-      </ResponsiveContainer>
+    <div className="flex flex-col h-[420px] w-full -mt-12 -mb-8">
+      <div className="flex-1">
+        <ReactECharts option={option} notMerge={true} style={{ height: '100%', width: '100%' }} opts={{ renderer: 'svg' }} />
+      </div>
+      {/* Custom interactive legend */}
+      <div className="flex flex-wrap justify-center gap-x-5 gap-y-2 pb-2">
+        {SERIES_DATA.map(s => (
+          <button
+            key={s.name}
+            onClick={() => toggle(s.name)}
+            className="flex items-center gap-2 cursor-pointer transition-opacity hover:opacity-70"
+            style={{ opacity: hidden[s.name] ? 0.35 : 1 }}
+          >
+            <span className="w-4 h-1.5 rounded-full inline-block" style={{ backgroundColor: hidden[s.name] ? '#cbd5e1' : s.color }} />
+            <span className="text-sm font-semibold" style={{ color: hidden[s.name] ? '#94a3b8' : (isDark ? '#f1f5f9' : '#1e293b') }}>{s.name}</span>
+          </button>
+        ))}
+      </div>
     </div>
   );
 }
