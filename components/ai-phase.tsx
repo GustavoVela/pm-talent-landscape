@@ -8,6 +8,7 @@ import { AiIndustryChart } from "./charts/ai-industry-chart"
 import { AiRoleChart } from "./charts/ai-role-chart"
 import { AiSkillsRankingChart } from "./charts/ai-skills-ranking-chart"
 import { AiVsNonAiRadar } from "./charts/ai-vs-nonai-radar"
+import { AiSalaryPremiumChart } from "./charts/ai-salary-premium-chart"
 
 export function AiPhase() {
   return (
@@ -58,6 +59,11 @@ export function AiPhase() {
               {/* PM con IA vs sin IA — radar comparativo */}
               <div className="mt-8 pt-8 border-t border-border/50">
                 <AiVsNonAiRadar />
+              </div>
+
+              {/* Salary Premium Chart */}
+              <div className="mt-8 pt-8 border-t border-border/50">
+                <AiSalaryPremiumChart />
               </div>
 
               {/* AI Skills Ranking — last chart in section */}
