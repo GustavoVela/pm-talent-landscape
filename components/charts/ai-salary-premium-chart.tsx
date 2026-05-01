@@ -128,7 +128,7 @@ export function AiSalaryPremiumChart() {
           itemStyle: { 
             color: {
               type: 'linear', x: 0, y: 0, x2: 1, y2: 0,
-              colorStops: [{ offset: 0, color: '#86efac' }, { offset: 1, color: '#16a34a' }]
+              colorStops: [{ offset: 0, color: '#bbf7d0' }, { offset: 1, color: '#91cc75' }]
             }, 
             borderRadius: 4 
           }, // Bordes redondeados en la "vela"
@@ -158,7 +158,7 @@ export function AiSalaryPremiumChart() {
           itemStyle: { 
             color: {
               type: 'linear', x: 0, y: 0, x2: 1, y2: 0,
-              colorStops: [{ offset: 0, color: '#38bdf8' }, { offset: 1, color: '#0284c7' }]
+              colorStops: [{ offset: 0, color: '#38bdf8' }, { offset: 1, color: '#0ea5e9' }]
             }, 
             borderRadius: 4 
           },

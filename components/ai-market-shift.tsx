@@ -16,7 +16,7 @@ export function AiMarketShift() {
         {/* Pilar 1 */}
         <div className="flex flex-col bg-background border border-border/60 rounded-xl p-5 shadow-sm">
           <div className="flex items-center gap-3 mb-4">
-            <div style={{ background: 'linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%)' }} className="w-10 h-10 rounded-lg flex items-center justify-center text-white shadow-md">
+            <div style={{ background: 'linear-gradient(135deg, #7dd3fc 0%, #0ea5e9 100%)' }} className="w-10 h-10 rounded-lg flex items-center justify-center text-white shadow-md">
               <BarChart3 className="w-5 h-5" />
             </div>
             <span className="text-xs font-bold text-muted-foreground uppercase tracking-wider">Hallazgo 1</span>
@@ -35,7 +35,7 @@ export function AiMarketShift() {
         {/* Pilar 2 */}
         <div className="flex flex-col bg-background border border-border/60 rounded-xl p-5 shadow-sm">
           <div className="flex items-center gap-3 mb-4">
-            <div style={{ background: 'linear-gradient(135deg, #91cc75 0%, #16a34a 100%)' }} className="w-10 h-10 rounded-lg flex items-center justify-center text-white shadow-md">
+            <div style={{ background: 'linear-gradient(135deg, #bbf7d0 0%, #91cc75 100%)' }} className="w-10 h-10 rounded-lg flex items-center justify-center text-white shadow-md">
               <CloudCog className="w-5 h-5" />
             </div>
             <span className="text-xs font-bold text-muted-foreground uppercase tracking-wider">Hallazgo 2</span>
@@ -54,7 +54,7 @@ export function AiMarketShift() {
         {/* Pilar 3 */}
         <div className="flex flex-col bg-background border border-border/60 rounded-xl p-5 shadow-sm">
           <div className="flex items-center gap-3 mb-4">
-            <div style={{ background: 'linear-gradient(135deg, #fac858 0%, #ca8a04 100%)' }} className="w-10 h-10 rounded-lg flex items-center justify-center text-white shadow-md">
+            <div style={{ background: 'linear-gradient(135deg, #fef08a 0%, #fac858 100%)' }} className="w-10 h-10 rounded-lg flex items-center justify-center text-white shadow-md">
               <FlaskConical className="w-5 h-5" />
             </div>
             <span className="text-xs font-bold text-muted-foreground uppercase tracking-wider">Hallazgo 3</span>
