@@ -231,7 +231,7 @@ export function AiVsNonAiRadar() {
                         <div className="flex items-end gap-1.5 mt-1">
                           <span className="text-lg font-bold text-foreground leading-none">{card.ai}%</span>
                           <span className={`text-xs font-semibold pb-px ${
-                            isNeutral ? 'text-muted-foreground' : isPositive ? 'text-sky-500' : 'text-emerald-500'
+                            isNeutral ? 'text-muted-foreground' : isPositive ? 'text-emerald-500' : 'text-red-500'
                           }`}>
                             {isNeutral ? '≈ igual' : `+${card.gap}pp`}
                           </span>
@@ -244,7 +244,7 @@ export function AiVsNonAiRadar() {
                     <div className="flex items-center gap-1 flex-shrink-0 mt-0.5">
                       {isNeutral
                         ? <Minus className="w-3.5 h-3.5 text-muted-foreground" />
-                        : <TrendingUp className="w-3.5 h-3.5 text-sky-500" />
+                        : <TrendingUp className="w-3.5 h-3.5 text-emerald-500" />
                       }
                       <Tooltip>
                         <TooltipTrigger asChild>
