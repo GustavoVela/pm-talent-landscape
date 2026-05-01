@@ -4,15 +4,14 @@ import React, { useState, useEffect, useMemo } from 'react';
 import ReactECharts from 'echarts-for-react';
 import { useTheme } from 'next-themes';
 
-// ─── Theme colors from styles/echarts-theme.json ──────────────────────────
+// Theme colors in exact order from styles/echarts-theme.json
 // gradient: lighter (left/offset-0) → darker (right/offset-1)
-// for horizontal bars: darker color goes to the RIGHT
 const THEME = {
-  sky:    { light: '#38bdf8', dark: '#0ea5e9' }, // Track 1 – Fundamentos
-  indigo: { light: '#93a8f4', dark: '#5470c6' }, // Track 2 – LLMs
-  green:  { light: '#b3e099', dark: '#3ba272' }, // Track 3 – Productividad
-  purple: { light: '#c89fd4', dark: '#9a60b4' }, // Track 4 – Agentes
-  slate:  { light: '#9bd5ea', dark: '#73c0de' }, // Track 5 – Gobernanza
+  t1: { light: '#7dd3fc', dark: '#0ea5e9' }, // 1st — sky blue
+  t2: { light: '#b3e099', dark: '#91cc75' }, // 2nd — green
+  t3: { light: '#fde68a', dark: '#fac858' }, // 3rd — yellow
+  t4: { light: '#fca5a5', dark: '#ee6666' }, // 4th — coral red
+  t5: { light: '#bae6fd', dark: '#73c0de' }, // 5th — light blue
 };
 
 // ─── 5 Learning tracks ────────────────────────────────────────────────────
@@ -21,7 +20,7 @@ const TRACKS = [
     id: 'foundations',
     label: '① Comprende la base conceptual',
     shortLabel: '① Fundamentos',
-    color: THEME.sky,
+    color: THEME.t1,
     skills: [
       { skill: 'Machine Learning',  count: 296, note: 'El concepto más demandado. Entiende cómo aprenden los modelos: supervisado, no supervisado y por refuerzo.' },
       { skill: 'IA (General)',       count: 212, note: 'Literacy básica: terminología, tipos de modelos y casos de uso reales en productos.' },
@@ -33,7 +32,7 @@ const TRACKS = [
     id: 'llms',
     label: '② Domina los modelos de lenguaje',
     shortLabel: '② LLMs y GenAI',
-    color: THEME.indigo,
+    color: THEME.t2,
     skills: [
       { skill: 'LLMs',              count: 157, note: 'Saber qué son, cómo evaluarlos y cuándo usarlos es el nuevo estándar mínimo para PMs.' },
       { skill: 'Generative AI',     count: 124, note: 'El paraguas del mercado: imagen, texto, código, audio — el PM debe entender sus alcances y límites.' },
@@ -47,7 +46,7 @@ const TRACKS = [
     id: 'productivity',
     label: '③ Automatiza tu productividad',
     shortLabel: '③ Productividad',
-    color: THEME.green,
+    color: THEME.t3,
     skills: [
       { skill: 'AI Tools',              count: 77, note: 'Fluency con herramientas: saber cuál usar para cada tarea de PM (spec, research, análisis).' },
       { skill: 'Automation',            count: 48, note: 'Automatizar tareas repetitivas: reportes, clasificación, resúmenes — libera tiempo para decisiones.' },
@@ -63,7 +62,7 @@ const TRACKS = [
     id: 'agents',
     label: '④ Diseña sistemas agénticos',
     shortLabel: '④ Agentes',
-    color: THEME.purple,
+    color: THEME.t4,
     skills: [
       { skill: 'Agent Orchestration', count: 111, note: 'Coordinar múltiples agentes especializados (LangChain, LlamaIndex, sistemas multi-agente).' },
       { skill: 'Agentic AI',          count: 70,  note: 'Sistemas que toman acciones autónomas en múltiples pasos sin intervención humana constante.' },
@@ -74,7 +73,7 @@ const TRACKS = [
     id: 'governance',
     label: '⑤ Lidera con responsabilidad',
     shortLabel: '⑤ Gobernanza',
-    color: THEME.slate,
+    color: THEME.t5,
     skills: [
       { skill: 'Responsible AI', count: 30, note: 'Marco ético, regulatorio y de seguridad para productos con IA — ya es un requisito explícito en muchas vacantes.' },
       { skill: 'AI Ethics',      count: 20, note: 'Bias, fairness, transparencia — las preguntan en entrevistas de PM para productos de IA.' },
@@ -194,7 +193,7 @@ export function AiSkillsRankingChart() {
     <div className="flex flex-col w-full">
       {/* Title */}
       <div className="mb-5">
-        <h3 className="text-xl font-bold text-foreground">¿Qué skills de IA debería aprender?</h3>
+        <h3 className="text-xl font-bold text-foreground">¿Qué skills de IA deberías aprender y dominar?</h3>
         <p className="text-sm text-muted-foreground mt-1">
           Skills extraídas de vacantes PM con demanda de IA, agrupadas en 5 rutas de aprendizaje.
           Pasa el cursor sobre cualquier barra para ver por qué ese skill importa.
