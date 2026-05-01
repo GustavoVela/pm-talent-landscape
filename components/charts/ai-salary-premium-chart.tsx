@@ -125,7 +125,13 @@ export function AiSalaryPremiumChart() {
           type: 'bar',
           stack: 'NoAiStack',
           data: noAiRange,
-          itemStyle: { color: COLOR_NOAI, borderRadius: 4 }, // Bordes redondeados en la "vela"
+          itemStyle: { 
+            color: {
+              type: 'linear', x: 0, y: 0, x2: 1, y2: 0,
+              colorStops: [{ offset: 0, color: '#86efac' }, { offset: 1, color: '#16a34a' }]
+            }, 
+            borderRadius: 4 
+          }, // Bordes redondeados en la "vela"
           label: {
             show: true,
             position: 'right',
@@ -149,7 +155,13 @@ export function AiSalaryPremiumChart() {
           type: 'bar',
           stack: 'AiStack',
           data: aiRange,
-          itemStyle: { color: COLOR_AI, borderRadius: 4 },
+          itemStyle: { 
+            color: {
+              type: 'linear', x: 0, y: 0, x2: 1, y2: 0,
+              colorStops: [{ offset: 0, color: '#38bdf8' }, { offset: 1, color: '#0284c7' }]
+            }, 
+            borderRadius: 4 
+          },
           label: {
             show: true,
             position: 'right',
