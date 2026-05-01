@@ -1,6 +1,6 @@
 "use client"
 
-import React, from "react"
+import React from "react"
 import { SectionHeader, NarrativeText, Blockquote, AnimatedSection } from "./section-primitives"
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
 import { InfoIcon } from "lucide-react"
@@ -10,6 +10,7 @@ import { CompetencyCountryRadar } from "./charts/competency-country-radar"
 import { CompetencySunburstChart } from "./charts/competency-sunburst-chart"
 import { CompetencyDataTable } from "./competency-data-table"
 import { SkillsIndustryHeatmap } from "./charts/skills-industry-heatmap"
+import { AiMarketShift } from "./ai-market-shift"
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group"
 import { FLAGS } from "@/lib/data"
 
@@ -99,15 +100,29 @@ export function CompetencyProfilePhase() {
               Los datos de esta sección son señales de demanda, no evaluaciones de talento. Muestran qué están pidiendo las empresas en sus publicaciones, no qué tan buenos son los profesionales en Product Management en cada mercado. Lo que sí es concluyente: no existe un perfil único en las Américas. Los anunciantes en Brasil y EE. UU. solicitan autonomía analítica con mayor frecuencia; los de Colombia incorporan más diseño; los de Chile y EE. UU. son quienes más frecuentemente buscan el perfil completo.</p>
           </NarrativeText>
 
+          {/* MOVED: Heatmap goes BEFORE Sunburst */}
+          <NarrativeText>
+            <h3 className="text-xl font-bold text-foreground mb-4 mt-8">¿Qué pide cada sector?</h3>
+            <p className="mb-6">
+              El perfil de habilidades que el mercado exige no es uniforme: cambia radicalmente según la industria en la que operes. Un PM en el sector financiero enfrenta una demanda completamente distinta a uno en entretenimiento o manufactura. Este mapa de calor permite comparar sector por sector el peso relativo de cada grupo de competencias en las vacantes analizadas, revelando dónde existe mayor ventaja competitiva según el perfil individual.
+            </p>
+          </NarrativeText>
+
+          <AnimatedSection delay={200}>
+            <div className="mb-16">
+              <SkillsIndustryHeatmap />
+            </div>
+          </AnimatedSection>
+
           <NarrativeText>
             <h3 className="text-xl font-bold text-foreground mb-4 mt-8">Detalle y taxonomía de competencias solicitadas</h3>
             <p className="mb-6">
-              Para quienes toman decisiones de contratación, este gráfico desglosa la taxonomía completa de habilidades que el mercado exige hoy. Pero si eres Product Manager, <strong>esta visualización es una brújula para tu desarrollo profesional</strong>. Te recomiendo sumergirte en cada categoría y hacer un <em>checklist</em> honesto de las áreas que necesitas reforzar. Por ejemplo, si tienes un perfil enfocado en negocio pero te falta base técnica, empezar por entender <em>APIs & Integrations</em> o <em>Databases & Storage</em> puede multiplicar tu valor exponencialmente en el mercado actual.
+              Para quienes toman decisiones de contratación, este gráfico desglosa la taxonomía completa de habilidades que el mercado exige hoy. Como herramienta de desarrollo profesional, esta visualización permite realizar una auditoría de áreas a reforzar. Incorporar conocimientos técnicos (e.g., <em>APIs & Integrations</em>) o analíticos específicos aumenta el valor empírico del perfil en el mercado actual.
             </p>
           </NarrativeText>
 
           <AnimatedSection delay={250}>
-            <div className="mt-16">
+            <div className="mt-8">
               <ChartWrapper
                 id="chart-taxonomia-competencias"
                 title="Taxonomía de Competencias (Sunburst)"
@@ -154,16 +169,11 @@ export function CompetencyProfilePhase() {
             </Alert>
           </AnimatedSection>
           
-          <NarrativeText>
-            <h3 className="text-xl font-bold text-foreground mb-4 mt-8">¿Qué pide cada sector?</h3>
-            <p className="mb-6">
-              El perfil de habilidades que el mercado exige no es uniforme: cambia radicalmente según la industria en la que operes. Un PM en el sector financiero enfrenta una demanda completamente distinta a uno en entretenimiento o manufactura. Este mapa de calor te permite comparar, sector por sector, el peso relativo de cada grupo de competencias en las vacantes analizadas — y detectar dónde tu perfil actual tiene más o menos ventaja competitiva.
-            </p>
-          </NarrativeText>
-
+          {/* AiMarketShift inserted exactly here as the analytical conclusion to Section 4 */}
           <AnimatedSection delay={350}>
-            <SkillsIndustryHeatmap />
+            <AiMarketShift />
           </AnimatedSection>
+
         </div>
       </div>
     </section>

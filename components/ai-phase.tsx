@@ -9,7 +9,6 @@ import { AiRoleChart } from "./charts/ai-role-chart"
 import { AiSkillsRankingChart } from "./charts/ai-skills-ranking-chart"
 import { AiVsNonAiRadar } from "./charts/ai-vs-nonai-radar"
 import { AiSalaryPremiumChart } from "./charts/ai-salary-premium-chart"
-import { AiMarketShift } from "./ai-market-shift"
 
 export function AiPhase() {
   return (
@@ -70,11 +69,6 @@ export function AiPhase() {
               {/* AI Skills Ranking — last chart in section */}
               <div className="mt-8 pt-8 border-t border-border/50">
                 <AiSkillsRankingChart />
-              </div>
-
-              {/* Market Shift Narrative Conclusion */}
-              <div className="mt-8 pt-8 border-t border-border/50">
-                <AiMarketShift />
               </div>
             </div>
           </AnimatedSection>

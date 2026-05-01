@@ -1,70 +1,70 @@
 import React from 'react';
-import { Telescope, BrainCircuit, HeartHandshake, Wrench, Lightbulb, ShieldCheck } from 'lucide-react';
+import { Telescope, BarChart3, CloudCog, FlaskConical } from 'lucide-react';
 
 export function AiMarketShift() {
   return (
-    <div className="flex flex-col w-full mt-12 mb-8">
+    <div className="flex flex-col w-full mt-16 mb-8 border-t border-border/40 pt-16">
       {/* Header */}
       <div className="mb-8">
-        <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300 text-xs font-semibold mb-3">
+        <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-xs font-semibold mb-3">
           <Telescope className="w-3.5 h-3.5" />
-          Conclusión de Mercado
+          Conclusión Analítica
         </div>
         <h3 className="text-2xl font-bold text-foreground flex items-center gap-2">
-          La Bola de Cristal: El Futuro del Rol PM
+          Transición del Rol: EE.UU. vs. LATAM
         </h3>
         <p className="text-muted-foreground mt-2 max-w-3xl leading-relaxed">
-          Al contrastar las habilidades más demandadas en Estados Unidos frente a LATAM, se hace evidente una transición filosófica en la disciplina. Mientras nuestra región sigue anclada en la operatividad, el mercado líder ya está exigiendo el <strong>"Modo Humano"</strong> y la <strong>Alta Agencia</strong>.
+          El análisis comparativo de 2,836 vacantes (1,339 EE.UU. | 1,497 LATAM) evidencia una divergencia estructural en las competencias requeridas. El mercado estadounidense opera como un indicador adelantado de la transformación del rol, demostrando cómo la adopción tecnológica desplaza el valor del PM desde la ejecución operativa hacia el juicio de producto y la agencia técnica.
         </p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         
         {/* Pilar 1 */}
-        <div className="flex flex-col bg-background border border-border/60 rounded-xl p-5 hover:border-purple-500/50 transition-colors shadow-sm">
-          <div className="w-10 h-10 rounded-lg bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center mb-4 text-blue-600 dark:text-blue-400">
-            <HeartHandshake className="w-5 h-5" />
+        <div className="flex flex-col bg-background border border-border/60 rounded-xl p-5 shadow-sm">
+          <div className="w-10 h-10 rounded-lg bg-slate-100 dark:bg-slate-800 flex items-center justify-center mb-4 text-slate-600 dark:text-slate-400">
+            <BarChart3 className="w-5 h-5" />
           </div>
           <h4 className="font-bold text-foreground text-base mb-2 leading-tight">
-            1. Del "Dashboarding" al Modo Humano
+            1. De Operación de Dashboards a Estrategia Analítica
           </h4>
           <div className="text-xs text-muted-foreground bg-muted/40 p-2.5 rounded-md mb-4 border border-border/40">
-            <strong className="text-foreground/80">📊 La Data:</strong> En LATAM, SQL (13%) y Power BI dominan las vacantes. En EE.UU., estas herramientas casi desaparecen del top técnico del PM.
+            <strong className="text-foreground/80">Evidencia (Datos):</strong> LATAM prioriza herramientas operativas (SQL 12.8%, Power BI 5.7%, Tableau 5.3%). En EE.UU., estas herramientas decrecen (Tableau 2.4%), priorizando competencias abstractas (Data Analysis 23.4%, Quantitative Analysis 2.1%).
           </div>
           <p className="text-sm text-muted-foreground leading-relaxed">
-            La IA ahora puede generar dashboards e insumos operativos en segundos. El valor del PM se desplaza hacia las "Tough Skills": la <strong>empatía profunda</strong>, la conexión emocional con el usuario y el pensamiento crítico. El PM deja de ser un ejecutor de queries para convertirse en el defensor del ser humano en una sala llena de algoritmos.
+            La operatividad de Inteligencia de Negocios (BI) se delega o automatiza en mercados maduros. El PM transiciona de un constructor de dashboards a un consumidor crítico de datos. La competencia de alto valor se concentra en la definición de métricas, el razonamiento estructurado y la toma de decisiones empírica, no en la elaboración de la consulta técnica.
           </p>
         </div>
 
         {/* Pilar 2 */}
-        <div className="flex flex-col bg-background border border-border/60 rounded-xl p-5 hover:border-purple-500/50 transition-colors shadow-sm">
-          <div className="w-10 h-10 rounded-lg bg-emerald-100 dark:bg-emerald-900/30 flex items-center justify-center mb-4 text-emerald-600 dark:text-emerald-400">
-            <Wrench className="w-5 h-5" />
+        <div className="flex flex-col bg-background border border-border/60 rounded-xl p-5 shadow-sm">
+          <div className="w-10 h-10 rounded-lg bg-slate-100 dark:bg-slate-800 flex items-center justify-center mb-4 text-slate-600 dark:text-slate-400">
+            <CloudCog className="w-5 h-5" />
           </div>
           <h4 className="font-bold text-foreground text-base mb-2 leading-tight">
-            2. De Gestor de ERP a "Full-Stack Builder"
+            2. De Integración Legacy a Arquitecturas Nativas
           </h4>
           <div className="text-xs text-muted-foreground bg-muted/40 p-2.5 rounded-md mb-4 border border-border/40">
-            <strong className="text-foreground/80">📊 La Data:</strong> LATAM aún exige ERPs y Middleware clásico. EE.UU. demanda Python (el nuevo SQL), Cloud e integraciones continuas (CI/CD).
+            <strong className="text-foreground/80">Evidencia (Tech):</strong> LATAM mantiene peticiones de integración legacy (ERP 2.5%, Middleware 2.1%). EE.UU. estandariza lenguajes de programación e infraestructura (Python 2.5%, AWS 2.5%, CI/CD 1.1%, Snowflake 1.0%).
           </div>
           <p className="text-sm text-muted-foreground leading-relaxed">
-            Las fronteras entre diseño, ingeniería y producto colapsan. Emerge el PM como una <strong>"Triple Amenaza" de Alta Agencia</strong>: un constructor capaz de usar IA para prototipar rápidamente, que no tiene miedo de leer código y que no espera que las condiciones sean perfectas para iterar. La curiosidad insaciable reemplaza al conocimiento estático.
+            Las fronteras del rol se expanden hacia un perfil "Full-Stack". El mercado exige alta agencia técnica: capacidad para comprender arquitecturas complejas, iterar modelos de datos y utilizar lenguajes estructurados como Python. El PM deja de ser un gestor de requerimientos pasivo para interactuar directamente con la infraestructura tecnológica.
           </p>
         </div>
 
         {/* Pilar 3 */}
-        <div className="flex flex-col bg-background border border-border/60 rounded-xl p-5 hover:border-purple-500/50 transition-colors shadow-sm">
-          <div className="w-10 h-10 rounded-lg bg-amber-100 dark:bg-amber-900/30 flex items-center justify-center mb-4 text-amber-600 dark:text-amber-400">
-            <ShieldCheck className="w-5 h-5" />
+        <div className="flex flex-col bg-background border border-border/60 rounded-xl p-5 shadow-sm">
+          <div className="w-10 h-10 rounded-lg bg-slate-100 dark:bg-slate-800 flex items-center justify-center mb-4 text-slate-600 dark:text-slate-400">
+            <FlaskConical className="w-5 h-5" />
           </div>
           <h4 className="font-bold text-foreground text-base mb-2 leading-tight">
-            3. De Usar ChatGPT a Construir "Evals"
+            3. De Adopción de Herramientas a Modelado de Producto
           </h4>
           <div className="text-xs text-muted-foreground bg-muted/40 p-2.5 rounded-md mb-4 border border-border/40">
-            <strong className="text-foreground/80">📊 La Data:</strong> LATAM busca "usuarios" nombrando explícitamente a ChatGPT/Claude. EE.UU. exige Orquestación de Agentes, Prompt Engineering y Responsible AI.
+            <strong className="text-foreground/80">Evidencia (IA):</strong> LATAM registra búsquedas nominales de herramientas (ChatGPT 1.5%, Claude 1.9%). EE.UU. demanda conceptos estructurales (Prompt Engineering 5.8%, Orquestación de Agentes 3.1%, AI/ML 2.5%).
           </div>
           <p className="text-sm text-muted-foreground leading-relaxed">
-            Dado que los LLMs son probabilísticos, los PRDs tradicionales no bastan. La habilidad central es tener <strong>"Product Taste"</strong> y saber escribir "Evals" (evaluaciones rigurosas) para medir comportamientos. El PM se vuelve un editor estratégico que domina la ambigüedad, guiando a la máquina hacia la visión correcta del producto.
+            El mercado emergente busca "usuarios" de IA; el mercado líder demanda constructores ("builders"). Frente a modelos probabilísticos, la redacción tradicional de PRDs es insuficiente. El mercado valora el "Product Judgment" y la capacidad de establecer evaluaciones sistemáticas ("Evals") para validar que un modelo entregue un comportamiento confiable y alineado al negocio.
           </p>
         </div>
       </div>
