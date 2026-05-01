@@ -13,7 +13,7 @@ export function AiMarketShift() {
         <h3 className="text-2xl font-bold text-foreground flex items-center gap-2">
           Transición del Rol: EE.UU. vs. LATAM
         </h3>
-        <p className="text-muted-foreground mt-2 max-w-3xl leading-relaxed">
+        <p className="text-muted-foreground mt-2 leading-relaxed">
           El análisis comparativo de 2,836 vacantes (1,339 EE.UU. | 1,497 LATAM) evidencia una divergencia estructural en las competencias requeridas. El mercado estadounidense opera como un indicador adelantado de la transformación del rol, demostrando cómo la adopción tecnológica desplaza el valor del PM desde la ejecución operativa hacia el juicio de producto y la agencia técnica.
         </p>
       </div>
@@ -22,7 +22,7 @@ export function AiMarketShift() {
         
         {/* Pilar 1 */}
         <div className="flex flex-col bg-background border border-border/60 rounded-xl p-5 shadow-sm">
-          <div className="w-10 h-10 rounded-lg bg-slate-100 dark:bg-slate-800 flex items-center justify-center mb-4 text-slate-600 dark:text-slate-400">
+          <div style={{ backgroundColor: '#0ea5e9' }} className="w-10 h-10 rounded-lg flex items-center justify-center mb-4 text-white shadow-sm">
             <BarChart3 className="w-5 h-5" />
           </div>
           <h4 className="font-bold text-foreground text-base mb-2 leading-tight">
@@ -38,7 +38,7 @@ export function AiMarketShift() {
 
         {/* Pilar 2 */}
         <div className="flex flex-col bg-background border border-border/60 rounded-xl p-5 shadow-sm">
-          <div className="w-10 h-10 rounded-lg bg-slate-100 dark:bg-slate-800 flex items-center justify-center mb-4 text-slate-600 dark:text-slate-400">
+          <div style={{ backgroundColor: '#91cc75' }} className="w-10 h-10 rounded-lg flex items-center justify-center mb-4 text-white shadow-sm">
             <CloudCog className="w-5 h-5" />
           </div>
           <h4 className="font-bold text-foreground text-base mb-2 leading-tight">
@@ -54,7 +54,7 @@ export function AiMarketShift() {
 
         {/* Pilar 3 */}
         <div className="flex flex-col bg-background border border-border/60 rounded-xl p-5 shadow-sm">
-          <div className="w-10 h-10 rounded-lg bg-slate-100 dark:bg-slate-800 flex items-center justify-center mb-4 text-slate-600 dark:text-slate-400">
+          <div style={{ backgroundColor: '#fac858' }} className="w-10 h-10 rounded-lg flex items-center justify-center mb-4 text-white shadow-sm">
             <FlaskConical className="w-5 h-5" />
           </div>
           <h4 className="font-bold text-foreground text-base mb-2 leading-tight">
