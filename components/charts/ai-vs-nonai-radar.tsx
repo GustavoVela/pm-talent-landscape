@@ -100,7 +100,7 @@ export function AiVsNonAiRadar() {
       textStyle: { color: isDark ? '#f9fafb' : '#111827', fontSize: 12 },
       formatter: (params: any) => {
         const vals = params.value as number[];
-        const isAi = params.seriesName === 'Roles de PM con IA';
+        const isAi = params.seriesName === 'Roles de PM con IA (N=832)';
         const color = isAi ? COLOR_AI : COLOR_NOAI;
         const n = isAi ? 832 : 2004;
         const rows = INDICATORS.map((ind, i) => `
@@ -120,8 +120,8 @@ export function AiVsNonAiRadar() {
       textStyle: { color: textColor, fontSize: 11, fontWeight: 600 },
       itemWidth: 20, itemHeight: 3,
       data: [
-        { name: 'Roles de PM con IA',  icon: 'rect' },
-        { name: 'Roles de PM sin IA',  icon: 'rect' },
+        { name: 'Roles de PM con IA (N=832)',  icon: 'rect' },
+        { name: 'Roles de PM sin IA (N=2,004)',  icon: 'rect' },
       ]
     },
     radar: {
@@ -145,7 +145,7 @@ export function AiVsNonAiRadar() {
       type: 'radar',
       data: [
         {
-          name: 'Roles de PM con IA',
+          name: 'Roles de PM con IA (N=832)',
           value: INDICATORS.map(ind => DATA['Roles de PM con IA'][ind.key as keyof typeof DATA['Roles de PM con IA']]),
           symbol: 'circle', symbolSize: 5,
           lineStyle: { color: COLOR_AI, width: 2.5 },
@@ -153,7 +153,7 @@ export function AiVsNonAiRadar() {
           itemStyle: { color: COLOR_AI },
         },
         {
-          name: 'Roles de PM sin IA',
+          name: 'Roles de PM sin IA (N=2,004)',
           value: INDICATORS.map(ind => DATA['Roles de PM sin IA'][ind.key as keyof typeof DATA['Roles de PM sin IA']]),
           symbol: 'circle', symbolSize: 5,
           lineStyle: { color: COLOR_NOAI, width: 2, type: 'dashed' },
@@ -174,11 +174,6 @@ export function AiVsNonAiRadar() {
           <h3 className="text-xl font-bold text-foreground">
             Perfil de competencias: Roles de Product Management con IA vs. sin IA
           </h3>
-          <p className="text-sm text-muted-foreground mt-1">
-            Comparativa del perfil de habilidades exigido en {(832 + 2004).toLocaleString()} vacantes PM —{' '}
-            <span style={{ color: COLOR_AI }} className="font-semibold">832 con requisitos de IA</span> vs.{' '}
-            <span style={{ color: COLOR_NOAI }} className="font-semibold">2,004 sin ellos</span>.
-          </p>
         </div>
 
         {/* 💡 Antes de explorar */}
