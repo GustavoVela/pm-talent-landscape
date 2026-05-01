@@ -1,6 +1,7 @@
 "use client"
 
 import React, { useMemo } from 'react';
+import { useTheme } from 'next-themes';
 import ReactECharts from 'echarts-for-react';
 
 // Source: BigQuery — v3l4-493018.jobs.product_management_consolidated
@@ -41,6 +42,8 @@ export function MarketCityChart({
   viewMode?: 'absolute' | 'percentage',
   selectedCountry?: string
 }) {
+  const { resolvedTheme } = useTheme();
+  const isDark = resolvedTheme === "dark";
   const isPercentage = viewMode === 'percentage';
 
   const countryCodeMap: Record<string, string> = {
@@ -69,6 +72,9 @@ export function MarketCityChart({
 
   const option = {
     tooltip: {
+      backgroundColor: isDark ? '#1f2937' : '#ffffff',
+      borderColor: isDark ? '#374151' : '#e5e7eb',
+      textStyle: { color: isDark ? '#f9fafb' : '#111827', fontSize: 12 },
       trigger: 'axis',
       axisPointer: { type: 'shadow' },
       formatter: (params: any) => {

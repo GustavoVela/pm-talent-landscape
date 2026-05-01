@@ -1,6 +1,7 @@
 "use client"
 
 import React from 'react';
+import { useTheme } from 'next-themes';
 import ReactECharts from 'echarts-for-react';
 
 const data = [
@@ -9,8 +10,13 @@ const data = [
 ];
 
 export function SampleQualityChart() {
+  const { resolvedTheme } = useTheme();
+  const isDark = resolvedTheme === "dark";
   const option = {
     tooltip: {
+      backgroundColor: isDark ? '#1f2937' : '#ffffff',
+      borderColor: isDark ? '#374151' : '#e5e7eb',
+      textStyle: { color: isDark ? '#f9fafb' : '#111827', fontSize: 12 },
       trigger: 'item',
       formatter: (p: any) => `${p.name}: <strong>${p.value.toLocaleString('en-US')}</strong> vacantes (${p.percent}%)`
     },

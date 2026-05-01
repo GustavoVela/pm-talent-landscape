@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useMemo } from 'react';
+import { useTheme } from 'next-themes';
 import ReactECharts from 'echarts-for-react';
 
 const rawRolesData = [
@@ -64,6 +65,8 @@ export function JobTitlesChart({
   selectedCountry?: string;
   viewMode?: 'absolute' | 'percentage';
 }) {
+  const { resolvedTheme } = useTheme();
+  const isDark = resolvedTheme === "dark";
   const isPercentage = viewMode === 'percentage';
 
   const chartData = useMemo(() => {
@@ -110,6 +113,9 @@ export function JobTitlesChart({
 
   const option = {
     tooltip: {
+      backgroundColor: isDark ? '#1f2937' : '#ffffff',
+      borderColor: isDark ? '#374151' : '#e5e7eb',
+      textStyle: { color: isDark ? '#f9fafb' : '#111827', fontSize: 12 },
       trigger: 'axis',
       axisPointer: { type: 'shadow' },
       formatter: function (params: any) {

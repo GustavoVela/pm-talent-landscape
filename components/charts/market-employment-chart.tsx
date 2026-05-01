@@ -1,6 +1,7 @@
 "use client"
 
 import React, { useMemo } from 'react';
+import { useTheme } from 'next-themes';
 import ReactECharts from 'echarts-for-react';
 
 const rawData = [
@@ -138,6 +139,8 @@ export function MarketEmploymentChart({
   viewMode?: 'absolute' | 'percentage',
   selectedCountry?: string
 }) {
+  const { resolvedTheme } = useTheme();
+  const isDark = resolvedTheme === "dark";
   const isPercentage = viewMode === 'percentage';
 
   const countryCodeMap: Record<string, string> = {
@@ -167,6 +170,9 @@ export function MarketEmploymentChart({
 
   const option = {
     tooltip: {
+      backgroundColor: isDark ? '#1f2937' : '#ffffff',
+      borderColor: isDark ? '#374151' : '#e5e7eb',
+      textStyle: { color: isDark ? '#f9fafb' : '#111827', fontSize: 12 },
       trigger: 'item',
       formatter: (p: any) => `${p.name}: <strong>${p.value.toLocaleString('en-US')}</strong> vacantes (${p.percent}%)`
     },
