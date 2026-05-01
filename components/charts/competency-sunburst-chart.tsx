@@ -78,19 +78,19 @@ export function CompetencySunburstChart() {
             r0: '15%',
             r: '40%',
             itemStyle: { borderWidth: 2 },
-            label: { rotate: 'tangential', fontWeight: 700, fontSize: 13 }
+            label: { rotate: 'tangential', fontWeight: 700, fontSize: 13, color: '#ffffff' }
           },
           { // Nivel 2: Skills
             r0: '40%',
             r: '85%',
             itemStyle: { borderWidth: 1 },
-            label: { rotate: 'radial', align: 'right', fontSize: 10, minAngle: 4 }
+            label: { rotate: 'radial', align: 'right', fontSize: 10, minAngle: 4, color: '#ffffff' }
           },
           { // Nivel 3: Otros Skills (Resto)
             r0: '85%',
             r: '90%',
             itemStyle: { borderWidth: 1 },
-            label: { align: 'right', fontSize: 9 }
+            label: { align: 'right', fontSize: 9, color: '#ffffff' }
           }
         ]
       }

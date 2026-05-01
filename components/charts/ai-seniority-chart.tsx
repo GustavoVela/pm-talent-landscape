@@ -89,7 +89,7 @@ export function AiSeniorityChart() {
             return `{flag|${item.flag}}\n{jobs|${item.total} vac.}\n{share|${share}}`;
         } else {
             const shortSen = item.seniority === "Junior / Mid-Level" ? "Jr/Mid" : 
-                             item.seniority === "Senior" ? "Senior" : "Lead/Dir/VP+";
+                             item.seniority === "Senior" ? "Senior" : "Head/Lead/Dir/VP/CPO";
             return `{sen|${shortSen}}\n{jobs|${item.total} vac.}\n{share|${share}}`;
         }
       },
@@ -219,7 +219,7 @@ export function AiSeniorityChart() {
         color: isDark ? "#9ca3af" : "#4b5563",
         fontSize: 12,
         margin: 12,
-        formatter: (value: string) => value === "Leadership" ? "Leadership\n(Lead, VP, Director)" : value
+        formatter: (value: string) => value === "Leadership" ? "Leadership\n(Head, Lead, Director, VP, CPO)" : value
       },
       axisLine: { lineStyle: { color: isDark ? "#374151" : "#e5e7eb" } },
       axisTick: { show: false }
@@ -242,20 +242,20 @@ export function AiSeniorityChart() {
 
   return (
     <div className="flex flex-col w-full mt-8 pt-6 border-t border-border/50">
-      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-6 gap-4">
+      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-4 gap-3">
         <div>
           <h3 className="text-xl font-semibold text-foreground">
             Penetración de IA por País y Seniority
           </h3>
         </div>
         
-        <div className="flex flex-wrap items-center gap-3 w-full sm:w-auto justify-start sm:justify-end">
+        <div className="flex flex-wrap items-center gap-2 w-full sm:w-auto justify-start sm:justify-end">
           <div className="relative w-full sm:w-auto" ref={dropdownRef}>
             {mounted ? (
               <>
                 <button 
                   onClick={() => setOpen(!open)}
-                  className="flex h-8 items-center justify-between gap-2 rounded-md border border-input bg-background px-3 py-2 text-xs shadow-sm hover:bg-accent hover:text-accent-foreground w-full sm:min-w-[140px]"
+                  className="flex h-9 items-center justify-between gap-2 rounded-md border border-input bg-background px-3 py-2 text-xs shadow-sm hover:bg-accent hover:text-accent-foreground w-full sm:min-w-[140px]"
                 >
                   <span className="truncate">
                     {selectedCountries.length === allCountries.length 
@@ -283,7 +283,7 @@ export function AiSeniorityChart() {
                 )}
               </>
             ) : (
-              <div className="h-8 w-[130px] border rounded-md" />
+              <div className="h-9 w-[130px] border rounded-md" />
             )}
           </div>
           
@@ -292,13 +292,22 @@ export function AiSeniorityChart() {
             variant="outline" 
             value={viewMode} 
             onValueChange={(v) => v && setViewMode(v as 'bySeniority' | 'byCountry')} 
-            size="sm" 
             className="w-full sm:w-auto justify-start sm:justify-end bg-background"
           >
-            <ToggleGroupItem value="bySeniority" className="text-xs h-8 px-3">Por Seniority</ToggleGroupItem>
-            <ToggleGroupItem value="byCountry" className="text-xs h-8 px-3">Por País</ToggleGroupItem>
+            <ToggleGroupItem value="bySeniority" className="text-xs h-9 px-3">Por Seniority</ToggleGroupItem>
+            <ToggleGroupItem value="byCountry" className="text-xs h-9 px-3">Por País</ToggleGroupItem>
           </ToggleGroup>
         </div>
+      </div>
+
+      {/* 💡 Antes de explorar */}
+      <div className="mb-4 text-xs text-muted-foreground bg-muted/40 border border-border/40 rounded-md px-3 py-2.5">
+        <p className="font-bold text-foreground/80 mb-1.5">💡 Antes de explorar</p>
+        <ul className="list-disc list-inside space-y-1 leading-relaxed">
+          <li><strong>Por Seniority:</strong> compara cómo varía la demanda de IA entre Junior/Mid, Senior y Leadership en cada país. Ideal para saber si el mercado ya lo exige en tu nivel.</li>
+          <li><strong>Por País:</strong> invierte el eje para ver cómo se comporta cada nivel de seniority dentro de un mismo país. Útil para comparar mercados.</li>
+          <li><strong>Filtro de países:</strong> desactiva mercados para aislar la comparación que te interesa — por ejemplo, solo LATAM o solo EE. UU.</li>
+        </ul>
       </div>
       <div className="w-full h-[304px] -mt-2 -mb-4">
         <ReactECharts option={option} notMerge={true} style={{ height: "100%", width: "100%" }} opts={{ renderer: "svg" }} />

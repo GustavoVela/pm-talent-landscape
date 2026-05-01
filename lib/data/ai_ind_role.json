@@ -1,0 +1,840 @@
+{
+  "industry": [
+    {
+      "country": "BR",
+      "category": "Technology, Software & IT Services",
+      "withAi": 95,
+      "total": 297
+    },
+    {
+      "country": "BR",
+      "category": "Healthcare & Life Sciences",
+      "withAi": 1,
+      "total": 14
+    },
+    {
+      "country": "BR",
+      "category": "Manufacturing, Hardware & Industrial",
+      "withAi": 7,
+      "total": 27
+    },
+    {
+      "country": "BR",
+      "category": "Retail, E-Commerce & Consumer Goods",
+      "withAi": 6,
+      "total": 69
+    },
+    {
+      "country": "BR",
+      "category": "Media, Entertainment & Gaming",
+      "withAi": 6,
+      "total": 15
+    },
+    {
+      "country": "BR",
+      "category": "Financial Services & FinTech",
+      "withAi": 26,
+      "total": 135
+    },
+    {
+      "country": "BR",
+      "category": "Business, Consulting & HR",
+      "withAi": 5,
+      "total": 27
+    },
+    {
+      "country": "BR",
+      "category": "Logistics & Transportation",
+      "withAi": 1,
+      "total": 8
+    },
+    {
+      "country": "BR",
+      "category": "Education & EdTech",
+      "withAi": 5,
+      "total": 21
+    },
+    {
+      "country": "BR",
+      "category": "Advertising, Marketing & Creative Services",
+      "withAi": 1,
+      "total": 5
+    },
+    {
+      "country": "BR",
+      "category": "Telecommunications",
+      "withAi": 0,
+      "total": 3
+    },
+    {
+      "country": "BR",
+      "category": "Real Estate & Construction",
+      "withAi": 0,
+      "total": 3
+    },
+    {
+      "country": "BR",
+      "category": "Utilities & Energy",
+      "withAi": 0,
+      "total": 1
+    },
+    {
+      "country": "BR",
+      "category": "Government, Civic & Non-Profit",
+      "withAi": 1,
+      "total": 1
+    },
+    {
+      "country": "CL",
+      "category": "Technology, Software & IT Services",
+      "withAi": 13,
+      "total": 45
+    },
+    {
+      "country": "CL",
+      "category": "Retail, E-Commerce & Consumer Goods",
+      "withAi": 5,
+      "total": 33
+    },
+    {
+      "country": "CL",
+      "category": "Manufacturing, Hardware & Industrial",
+      "withAi": 2,
+      "total": 20
+    },
+    {
+      "country": "CL",
+      "category": "Financial Services & FinTech",
+      "withAi": 10,
+      "total": 44
+    },
+    {
+      "country": "CL",
+      "category": "Logistics & Transportation",
+      "withAi": 0,
+      "total": 1
+    },
+    {
+      "country": "CL",
+      "category": "Business, Consulting & HR",
+      "withAi": 6,
+      "total": 25
+    },
+    {
+      "country": "CL",
+      "category": "Media, Entertainment & Gaming",
+      "withAi": 0,
+      "total": 1
+    },
+    {
+      "country": "CL",
+      "category": "Healthcare & Life Sciences",
+      "withAi": 1,
+      "total": 7
+    },
+    {
+      "country": "CL",
+      "category": "Telecommunications",
+      "withAi": 0,
+      "total": 6
+    },
+    {
+      "country": "CO",
+      "category": "Retail, E-Commerce & Consumer Goods",
+      "withAi": 0,
+      "total": 7
+    },
+    {
+      "country": "CO",
+      "category": "Technology, Software & IT Services",
+      "withAi": 34,
+      "total": 91
+    },
+    {
+      "country": "CO",
+      "category": "Real Estate & Construction",
+      "withAi": 0,
+      "total": 2
+    },
+    {
+      "country": "CO",
+      "category": "Healthcare & Life Sciences",
+      "withAi": 2,
+      "total": 12
+    },
+    {
+      "country": "CO",
+      "category": "Logistics & Transportation",
+      "withAi": 0,
+      "total": 2
+    },
+    {
+      "country": "CO",
+      "category": "Business, Consulting & HR",
+      "withAi": 7,
+      "total": 19
+    },
+    {
+      "country": "CO",
+      "category": "Media, Entertainment & Gaming",
+      "withAi": 0,
+      "total": 5
+    },
+    {
+      "country": "CO",
+      "category": "Financial Services & FinTech",
+      "withAi": 8,
+      "total": 45
+    },
+    {
+      "country": "CO",
+      "category": "Telecommunications",
+      "withAi": 0,
+      "total": 3
+    },
+    {
+      "country": "CO",
+      "category": "Manufacturing, Hardware & Industrial",
+      "withAi": 2,
+      "total": 8
+    },
+    {
+      "country": "CO",
+      "category": "Advertising, Marketing & Creative Services",
+      "withAi": 3,
+      "total": 7
+    },
+    {
+      "country": "MX",
+      "category": "Technology, Software & IT Services",
+      "withAi": 52,
+      "total": 167
+    },
+    {
+      "country": "MX",
+      "category": "Manufacturing, Hardware & Industrial",
+      "withAi": 8,
+      "total": 52
+    },
+    {
+      "country": "MX",
+      "category": "Retail, E-Commerce & Consumer Goods",
+      "withAi": 5,
+      "total": 29
+    },
+    {
+      "country": "MX",
+      "category": "Financial Services & FinTech",
+      "withAi": 18,
+      "total": 83
+    },
+    {
+      "country": "MX",
+      "category": "Logistics & Transportation",
+      "withAi": 0,
+      "total": 11
+    },
+    {
+      "country": "MX",
+      "category": "Business, Consulting & HR",
+      "withAi": 3,
+      "total": 22
+    },
+    {
+      "country": "MX",
+      "category": "Media, Entertainment & Gaming",
+      "withAi": 2,
+      "total": 13
+    },
+    {
+      "country": "MX",
+      "category": "Healthcare & Life Sciences",
+      "withAi": 3,
+      "total": 22
+    },
+    {
+      "country": "MX",
+      "category": "Government, Civic & Non-Profit",
+      "withAi": 0,
+      "total": 6
+    },
+    {
+      "country": "MX",
+      "category": "Telecommunications",
+      "withAi": 1,
+      "total": 1
+    },
+    {
+      "country": "MX",
+      "category": "Advertising, Marketing & Creative Services",
+      "withAi": 3,
+      "total": 5
+    },
+    {
+      "country": "MX",
+      "category": "Real Estate & Construction",
+      "withAi": 1,
+      "total": 3
+    },
+    {
+      "country": "MX",
+      "category": "Education & EdTech",
+      "withAi": 0,
+      "total": 1
+    },
+    {
+      "country": "PE",
+      "category": "Technology, Software & IT Services",
+      "withAi": 4,
+      "total": 13
+    },
+    {
+      "country": "PE",
+      "category": "Retail, E-Commerce & Consumer Goods",
+      "withAi": 1,
+      "total": 15
+    },
+    {
+      "country": "PE",
+      "category": "Logistics & Transportation",
+      "withAi": 0,
+      "total": 1
+    },
+    {
+      "country": "PE",
+      "category": "Business, Consulting & HR",
+      "withAi": 5,
+      "total": 8
+    },
+    {
+      "country": "PE",
+      "category": "Manufacturing, Hardware & Industrial",
+      "withAi": 1,
+      "total": 6
+    },
+    {
+      "country": "PE",
+      "category": "Financial Services & FinTech",
+      "withAi": 1,
+      "total": 22
+    },
+    {
+      "country": "PE",
+      "category": "Healthcare & Life Sciences",
+      "withAi": 0,
+      "total": 2
+    },
+    {
+      "country": "PE",
+      "category": "Real Estate & Construction",
+      "withAi": 0,
+      "total": 3
+    },
+    {
+      "country": "PE",
+      "category": "Telecommunications",
+      "withAi": 0,
+      "total": 2
+    },
+    {
+      "country": "PE",
+      "category": "Advertising, Marketing & Creative Services",
+      "withAi": 0,
+      "total": 1
+    },
+    {
+      "country": "US",
+      "category": "Technology, Software & IT Services",
+      "withAi": 263,
+      "total": 517
+    },
+    {
+      "country": "US",
+      "category": "Manufacturing, Hardware & Industrial",
+      "withAi": 13,
+      "total": 111
+    },
+    {
+      "country": "US",
+      "category": "Retail, E-Commerce & Consumer Goods",
+      "withAi": 19,
+      "total": 107
+    },
+    {
+      "country": "US",
+      "category": "Financial Services & FinTech",
+      "withAi": 62,
+      "total": 229
+    },
+    {
+      "country": "US",
+      "category": "Education & EdTech",
+      "withAi": 8,
+      "total": 22
+    },
+    {
+      "country": "US",
+      "category": "Healthcare & Life Sciences",
+      "withAi": 29,
+      "total": 105
+    },
+    {
+      "country": "US",
+      "category": "Government, Civic & Non-Profit",
+      "withAi": 1,
+      "total": 10
+    },
+    {
+      "country": "US",
+      "category": "Advertising, Marketing & Creative Services",
+      "withAi": 21,
+      "total": 29
+    },
+    {
+      "country": "US",
+      "category": "Business, Consulting & HR",
+      "withAi": 24,
+      "total": 55
+    },
+    {
+      "country": "US",
+      "category": "Logistics & Transportation",
+      "withAi": 2,
+      "total": 14
+    },
+    {
+      "country": "US",
+      "category": "Media, Entertainment & Gaming",
+      "withAi": 24,
+      "total": 104
+    },
+    {
+      "country": "US",
+      "category": "Other / Miscellaneous",
+      "withAi": 0,
+      "total": 1
+    },
+    {
+      "country": "US",
+      "category": "Telecommunications",
+      "withAi": 0,
+      "total": 9
+    },
+    {
+      "country": "US",
+      "category": "Real Estate & Construction",
+      "withAi": 19,
+      "total": 24
+    },
+    {
+      "country": "US",
+      "category": "Utilities & Energy",
+      "withAi": 0,
+      "total": 2
+    },
+    {
+      "country": "all",
+      "category": "Technology, Software & IT Services",
+      "withAi": 461,
+      "total": 1130
+    },
+    {
+      "country": "all",
+      "category": "Healthcare & Life Sciences",
+      "withAi": 36,
+      "total": 162
+    },
+    {
+      "country": "all",
+      "category": "Manufacturing, Hardware & Industrial",
+      "withAi": 33,
+      "total": 224
+    },
+    {
+      "country": "all",
+      "category": "Retail, E-Commerce & Consumer Goods",
+      "withAi": 36,
+      "total": 260
+    },
+    {
+      "country": "all",
+      "category": "Media, Entertainment & Gaming",
+      "withAi": 32,
+      "total": 138
+    },
+    {
+      "country": "all",
+      "category": "Financial Services & FinTech",
+      "withAi": 125,
+      "total": 558
+    },
+    {
+      "country": "all",
+      "category": "Business, Consulting & HR",
+      "withAi": 50,
+      "total": 156
+    },
+    {
+      "country": "all",
+      "category": "Logistics & Transportation",
+      "withAi": 3,
+      "total": 37
+    },
+    {
+      "country": "all",
+      "category": "Education & EdTech",
+      "withAi": 13,
+      "total": 44
+    },
+    {
+      "country": "all",
+      "category": "Advertising, Marketing & Creative Services",
+      "withAi": 28,
+      "total": 47
+    },
+    {
+      "country": "all",
+      "category": "Telecommunications",
+      "withAi": 1,
+      "total": 24
+    },
+    {
+      "country": "all",
+      "category": "Real Estate & Construction",
+      "withAi": 20,
+      "total": 35
+    },
+    {
+      "country": "all",
+      "category": "Utilities & Energy",
+      "withAi": 0,
+      "total": 3
+    },
+    {
+      "country": "all",
+      "category": "Government, Civic & Non-Profit",
+      "withAi": 2,
+      "total": 17
+    },
+    {
+      "country": "all",
+      "category": "Other / Miscellaneous",
+      "withAi": 0,
+      "total": 1
+    }
+  ],
+  "role": [
+    {
+      "country": "US",
+      "category": "Product Manager",
+      "withAi": 218,
+      "total": 542
+    },
+    {
+      "country": "BR",
+      "category": "Product Manager",
+      "withAi": 99,
+      "total": 323
+    },
+    {
+      "country": "MX",
+      "category": "Product Manager",
+      "withAi": 60,
+      "total": 217
+    },
+    {
+      "country": "US",
+      "category": "Product Owner",
+      "withAi": 28,
+      "total": 187
+    },
+    {
+      "country": "US",
+      "category": "Director of Product",
+      "withAi": 80,
+      "total": 183
+    },
+    {
+      "country": "BR",
+      "category": "Product Owner",
+      "withAi": 27,
+      "total": 176
+    },
+    {
+      "country": "US",
+      "category": "Vice President of Product",
+      "withAi": 70,
+      "total": 168
+    },
+    {
+      "country": "CL",
+      "category": "Product Manager",
+      "withAi": 24,
+      "total": 120
+    },
+    {
+      "country": "CO",
+      "category": "Product Manager",
+      "withAi": 34,
+      "total": 109
+    },
+    {
+      "country": "MX",
+      "category": "Product Owner",
+      "withAi": 17,
+      "total": 100
+    },
+    {
+      "country": "US",
+      "category": "Product Marketing Manager",
+      "withAi": 19,
+      "total": 82
+    },
+    {
+      "country": "US",
+      "category": "Product Operations Manager",
+      "withAi": 20,
+      "total": 73
+    },
+    {
+      "country": "MX",
+      "category": "Product Marketing Manager",
+      "withAi": 3,
+      "total": 41
+    },
+    {
+      "country": "CO",
+      "category": "Product Owner",
+      "withAi": 9,
+      "total": 41
+    },
+    {
+      "country": "CL",
+      "category": "Product Owner",
+      "withAi": 7,
+      "total": 40
+    },
+    {
+      "country": "PE",
+      "category": "Product Manager",
+      "withAi": 4,
+      "total": 37
+    },
+    {
+      "country": "US",
+      "category": "Product Lead",
+      "withAi": 14,
+      "total": 33
+    },
+    {
+      "country": "BR",
+      "category": "Product Marketing Manager",
+      "withAi": 3,
+      "total": 29
+    },
+    {
+      "country": "US",
+      "category": "Head of Product",
+      "withAi": 13,
+      "total": 25
+    },
+    {
+      "country": "BR",
+      "category": "Product Operations Manager",
+      "withAi": 2,
+      "total": 25
+    },
+    {
+      "country": "US",
+      "category": "Chief Product Officer",
+      "withAi": 18,
+      "total": 24
+    },
+    {
+      "country": "BR",
+      "category": "Senior Product Owner",
+      "withAi": 2,
+      "total": 23
+    },
+    {
+      "country": "US",
+      "category": "Product Designer",
+      "withAi": 5,
+      "total": 22
+    },
+    {
+      "country": "MX",
+      "category": "Product Designer",
+      "withAi": 8,
+      "total": 21
+    },
+    {
+      "country": "CO",
+      "category": "Product Designer",
+      "withAi": 10,
+      "total": 20
+    },
+    {
+      "country": "PE",
+      "category": "Product Owner",
+      "withAi": 3,
+      "total": 18
+    },
+    {
+      "country": "BR",
+      "category": "Product Designer",
+      "withAi": 10,
+      "total": 16
+    },
+    {
+      "country": "BR",
+      "category": "Head of Product",
+      "withAi": 4,
+      "total": 14
+    },
+    {
+      "country": "CO",
+      "category": "Product Operations Manager",
+      "withAi": 1,
+      "total": 12
+    },
+    {
+      "country": "BR",
+      "category": "Product Lead",
+      "withAi": 6,
+      "total": 12
+    },
+    {
+      "country": "MX",
+      "category": "Director of Product",
+      "withAi": 2,
+      "total": 12
+    },
+    {
+      "country": "MX",
+      "category": "Product Operations Manager",
+      "withAi": 2,
+      "total": 12
+    },
+    {
+      "country": "PE",
+      "category": "Product Designer",
+      "withAi": 5,
+      "total": 12
+    },
+    {
+      "country": "CL",
+      "category": "Product Designer",
+      "withAi": 5,
+      "total": 10
+    },
+    {
+      "country": "CO",
+      "category": "Product Marketing Manager",
+      "withAi": 1,
+      "total": 10
+    },
+    {
+      "country": "BR",
+      "category": "Director of Product",
+      "withAi": 1,
+      "total": 7
+    },
+    {
+      "country": "MX",
+      "category": "Product Lead",
+      "withAi": 3,
+      "total": 6
+    },
+    {
+      "country": "CL",
+      "category": "Product Marketing Manager",
+      "withAi": 0,
+      "total": 6
+    },
+    {
+      "country": "CO",
+      "category": "Director of Product",
+      "withAi": 0,
+      "total": 5
+    },
+    {
+      "country": "MX",
+      "category": "Vice President of Product",
+      "withAi": 1,
+      "total": 4
+    },
+    {
+      "country": "PE",
+      "category": "Product Marketing Manager",
+      "withAi": 0,
+      "total": 3
+    },
+    {
+      "country": "MX",
+      "category": "Head of Product",
+      "withAi": 0,
+      "total": 2
+    },
+    {
+      "country": "CL",
+      "category": "Product Operations Manager",
+      "withAi": 0,
+      "total": 2
+    },
+    {
+      "country": "CO",
+      "category": "Product Lead",
+      "withAi": 1,
+      "total": 2
+    },
+    {
+      "country": "CO",
+      "category": "Head of Product",
+      "withAi": 0,
+      "total": 2
+    },
+    {
+      "country": "CL",
+      "category": "Director of Product",
+      "withAi": 0,
+      "total": 2
+    },
+    {
+      "country": "PE",
+      "category": "Product Operations Manager",
+      "withAi": 0,
+      "total": 1
+    },
+    {
+      "country": "PE",
+      "category": "Head of Product",
+      "withAi": 0,
+      "total": 1
+    },
+    {
+      "country": "BR",
+      "category": "Vice President of Product",
+      "withAi": 0,
+      "total": 1
+    },
+    {
+      "country": "PE",
+      "category": "Product Lead",
+      "withAi": 0,
+      "total": 1
+    },
+    {
+      "country": "CL",
+      "category": "Head of Product",
+      "withAi": 0,
+      "total": 1
+    },
+    {
+      "country": "CL",
+      "category": "Product Lead",
+      "withAi": 1,
+      "total": 1
+    }
+  ]
+}

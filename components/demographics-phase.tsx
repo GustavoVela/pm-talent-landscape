@@ -256,7 +256,7 @@ function PhaseZeroCarousel() {
             <div className={cn("transition-all duration-500 h-full", current !== 6 ? "opacity-40 scale-[0.98] blur-[1px]" : "opacity-100 scale-100 shadow-xl ring-1 ring-border/50 rounded-xl")}>
               <ChartWrapper
                 id="chart-demografia-industry"
-                title="Top 10 Industrias Contratando"
+                title="Top 15 Industrias Contratando"
                 interpretation="El sector de Servicios IT y Consultoría (422), junto con Software (355) y Fintech/Banca (381 consolidado), dominan la captura de talento. Además, gigantes como TikTok, Meta, Amazon y corporativos tradicionales (Mastercard, JPMorgan) se disputan el talento contra scale-ups locales (Nubank, MercadoLibre)."
                 className="h-full bg-white/50 dark:bg-slate-950/50 backdrop-blur-sm shadow-lg"
                 controls={

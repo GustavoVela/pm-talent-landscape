@@ -4,6 +4,9 @@ import { AnimatedSection } from "./section-primitives"
 import { AiPenetrationChart } from "./charts/ai-penetration-chart"
 import { AiSeniorityChart } from "./charts/ai-seniority-chart"
 import { AiCityChart } from "./charts/ai-city-chart"
+import { AiIndustryChart } from "./charts/ai-industry-chart"
+import { AiRoleChart } from "./charts/ai-role-chart"
+import { AiSkillsRankingChart } from "./charts/ai-skills-ranking-chart"
 
 export function AiPhase() {
   return (
@@ -45,6 +48,16 @@ export function AiPhase() {
               <AiPenetrationChart />
               <AiSeniorityChart />
               <AiCityChart />
+
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-2 pt-8 border-t border-border/50">
+                <AiIndustryChart />
+                <AiRoleChart />
+              </div>
+
+              {/* AI Skills Ranking — last chart in section */}
+              <div className="mt-8 pt-8 border-t border-border/50">
+                <AiSkillsRankingChart />
+              </div>
             </div>
           </AnimatedSection>
         </div>

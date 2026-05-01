@@ -1,0 +1,362 @@
+[
+  {
+    "country": "BR",
+    "industry": "Technology, Software & IT Services",
+    "count": 297
+  },
+  {
+    "country": "BR",
+    "industry": "Healthcare & Life Sciences",
+    "count": 14
+  },
+  {
+    "country": "BR",
+    "industry": "Manufacturing, Hardware & Industrial",
+    "count": 27
+  },
+  {
+    "country": "BR",
+    "industry": "Retail, E-Commerce & Consumer Goods",
+    "count": 69
+  },
+  {
+    "country": "BR",
+    "industry": "Media, Entertainment & Gaming",
+    "count": 15
+  },
+  {
+    "country": "BR",
+    "industry": "Financial Services & FinTech",
+    "count": 135
+  },
+  {
+    "country": "BR",
+    "industry": "Business, Consulting & HR",
+    "count": 27
+  },
+  {
+    "country": "BR",
+    "industry": "Logistics & Transportation",
+    "count": 8
+  },
+  {
+    "country": "BR",
+    "industry": "Education & EdTech",
+    "count": 21
+  },
+  {
+    "country": "BR",
+    "industry": "Advertising, Marketing & Creative Services",
+    "count": 5
+  },
+  {
+    "country": "BR",
+    "industry": "Telecommunications",
+    "count": 3
+  },
+  {
+    "country": "BR",
+    "industry": "Real Estate & Construction",
+    "count": 3
+  },
+  {
+    "country": "BR",
+    "industry": "Utilities & Energy",
+    "count": 1
+  },
+  {
+    "country": "BR",
+    "industry": "Government, Civic & Non-Profit",
+    "count": 1
+  },
+  {
+    "country": "CL",
+    "industry": "Technology, Software & IT Services",
+    "count": 45
+  },
+  {
+    "country": "CL",
+    "industry": "Retail, E-Commerce & Consumer Goods",
+    "count": 33
+  },
+  {
+    "country": "CL",
+    "industry": "Manufacturing, Hardware & Industrial",
+    "count": 20
+  },
+  {
+    "country": "CL",
+    "industry": "Financial Services & FinTech",
+    "count": 44
+  },
+  {
+    "country": "CL",
+    "industry": "Logistics & Transportation",
+    "count": 1
+  },
+  {
+    "country": "CL",
+    "industry": "Business, Consulting & HR",
+    "count": 25
+  },
+  {
+    "country": "CL",
+    "industry": "Media, Entertainment & Gaming",
+    "count": 1
+  },
+  {
+    "country": "CL",
+    "industry": "Healthcare & Life Sciences",
+    "count": 7
+  },
+  {
+    "country": "CL",
+    "industry": "Telecommunications",
+    "count": 6
+  },
+  {
+    "country": "CO",
+    "industry": "Retail, E-Commerce & Consumer Goods",
+    "count": 7
+  },
+  {
+    "country": "CO",
+    "industry": "Technology, Software & IT Services",
+    "count": 91
+  },
+  {
+    "country": "CO",
+    "industry": "Real Estate & Construction",
+    "count": 2
+  },
+  {
+    "country": "CO",
+    "industry": "Healthcare & Life Sciences",
+    "count": 12
+  },
+  {
+    "country": "CO",
+    "industry": "Logistics & Transportation",
+    "count": 2
+  },
+  {
+    "country": "CO",
+    "industry": "Business, Consulting & HR",
+    "count": 19
+  },
+  {
+    "country": "CO",
+    "industry": "Media, Entertainment & Gaming",
+    "count": 5
+  },
+  {
+    "country": "CO",
+    "industry": "Financial Services & FinTech",
+    "count": 45
+  },
+  {
+    "country": "CO",
+    "industry": "Telecommunications",
+    "count": 3
+  },
+  {
+    "country": "CO",
+    "industry": "Manufacturing, Hardware & Industrial",
+    "count": 8
+  },
+  {
+    "country": "CO",
+    "industry": "Advertising, Marketing & Creative Services",
+    "count": 7
+  },
+  {
+    "country": "MX",
+    "industry": "Technology, Software & IT Services",
+    "count": 167
+  },
+  {
+    "country": "MX",
+    "industry": "Manufacturing, Hardware & Industrial",
+    "count": 52
+  },
+  {
+    "country": "MX",
+    "industry": "Retail, E-Commerce & Consumer Goods",
+    "count": 29
+  },
+  {
+    "country": "MX",
+    "industry": "Financial Services & FinTech",
+    "count": 83
+  },
+  {
+    "country": "MX",
+    "industry": "Logistics & Transportation",
+    "count": 11
+  },
+  {
+    "country": "MX",
+    "industry": "Business, Consulting & HR",
+    "count": 22
+  },
+  {
+    "country": "MX",
+    "industry": "Media, Entertainment & Gaming",
+    "count": 13
+  },
+  {
+    "country": "MX",
+    "industry": "Healthcare & Life Sciences",
+    "count": 22
+  },
+  {
+    "country": "MX",
+    "industry": "Government, Civic & Non-Profit",
+    "count": 6
+  },
+  {
+    "country": "MX",
+    "industry": "Telecommunications",
+    "count": 1
+  },
+  {
+    "country": "MX",
+    "industry": "Advertising, Marketing & Creative Services",
+    "count": 5
+  },
+  {
+    "country": "MX",
+    "industry": "Real Estate & Construction",
+    "count": 3
+  },
+  {
+    "country": "MX",
+    "industry": "Education & EdTech",
+    "count": 1
+  },
+  {
+    "country": "PE",
+    "industry": "Technology, Software & IT Services",
+    "count": 13
+  },
+  {
+    "country": "PE",
+    "industry": "Retail, E-Commerce & Consumer Goods",
+    "count": 15
+  },
+  {
+    "country": "PE",
+    "industry": "Logistics & Transportation",
+    "count": 1
+  },
+  {
+    "country": "PE",
+    "industry": "Business, Consulting & HR",
+    "count": 8
+  },
+  {
+    "country": "PE",
+    "industry": "Manufacturing, Hardware & Industrial",
+    "count": 6
+  },
+  {
+    "country": "PE",
+    "industry": "Financial Services & FinTech",
+    "count": 22
+  },
+  {
+    "country": "PE",
+    "industry": "Healthcare & Life Sciences",
+    "count": 2
+  },
+  {
+    "country": "PE",
+    "industry": "Real Estate & Construction",
+    "count": 3
+  },
+  {
+    "country": "PE",
+    "industry": "Telecommunications",
+    "count": 2
+  },
+  {
+    "country": "PE",
+    "industry": "Advertising, Marketing & Creative Services",
+    "count": 1
+  },
+  {
+    "country": "US",
+    "industry": "Technology, Software & IT Services",
+    "count": 517
+  },
+  {
+    "country": "US",
+    "industry": "Manufacturing, Hardware & Industrial",
+    "count": 111
+  },
+  {
+    "country": "US",
+    "industry": "Retail, E-Commerce & Consumer Goods",
+    "count": 107
+  },
+  {
+    "country": "US",
+    "industry": "Financial Services & FinTech",
+    "count": 229
+  },
+  {
+    "country": "US",
+    "industry": "Education & EdTech",
+    "count": 22
+  },
+  {
+    "country": "US",
+    "industry": "Healthcare & Life Sciences",
+    "count": 105
+  },
+  {
+    "country": "US",
+    "industry": "Government, Civic & Non-Profit",
+    "count": 10
+  },
+  {
+    "country": "US",
+    "industry": "Advertising, Marketing & Creative Services",
+    "count": 29
+  },
+  {
+    "country": "US",
+    "industry": "Business, Consulting & HR",
+    "count": 55
+  },
+  {
+    "country": "US",
+    "industry": "Logistics & Transportation",
+    "count": 14
+  },
+  {
+    "country": "US",
+    "industry": "Media, Entertainment & Gaming",
+    "count": 104
+  },
+  {
+    "country": "US",
+    "industry": "Other / Miscellaneous",
+    "count": 1
+  },
+  {
+    "country": "US",
+    "industry": "Telecommunications",
+    "count": 9
+  },
+  {
+    "country": "US",
+    "industry": "Real Estate & Construction",
+    "count": 24
+  },
+  {
+    "country": "US",
+    "industry": "Utilities & Energy",
+    "count": 2
+  }
+]

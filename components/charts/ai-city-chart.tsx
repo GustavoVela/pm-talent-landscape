@@ -185,11 +185,11 @@ export function AiCityChart() {
           </p>
         </div>
         
-        <div className="flex flex-wrap items-center gap-3 w-full lg:w-auto justify-start lg:justify-end">
+        <div className="flex flex-wrap items-center gap-2 w-full lg:w-auto justify-start lg:justify-end">
           <div className="w-full sm:w-auto sm:min-w-[140px]">
             {mounted ? (
               <Select value={selectedCountry} onValueChange={setSelectedCountry}>
-                <SelectTrigger className="h-8 text-xs bg-background">
+                <SelectTrigger className="h-9 text-xs bg-background">
                   <SelectValue placeholder="País..." />
                 </SelectTrigger>
                 <SelectContent>
@@ -202,14 +202,14 @@ export function AiCityChart() {
                 </SelectContent>
               </Select>
             ) : (
-              <div className="h-8 w-full border rounded-md" />
+              <div className="h-9 w-full border rounded-md" />
             )}
           </div>
 
           <div className="w-full sm:w-auto sm:min-w-[140px]">
             {mounted ? (
               <Select value={cityType} onValueChange={setCityType}>
-                <SelectTrigger className="h-8 text-xs bg-background">
+                <SelectTrigger className="h-9 text-xs bg-background">
                   <SelectValue placeholder="Tipo de ciudad..." />
                 </SelectTrigger>
                 <SelectContent>
@@ -218,14 +218,14 @@ export function AiCityChart() {
                 </SelectContent>
               </Select>
             ) : (
-              <div className="h-8 w-full border rounded-md" />
+              <div className="h-9 w-full border rounded-md" />
             )}
           </div>
           
           <div className="w-full sm:w-auto sm:min-w-[150px]">
             {mounted ? (
               <Select value={minJobs} onValueChange={setMinJobs}>
-                <SelectTrigger className="h-8 text-xs bg-background">
+                <SelectTrigger className="h-9 text-xs bg-background">
                   <SelectValue placeholder="Volumen..." />
                 </SelectTrigger>
                 <SelectContent>
@@ -237,10 +237,20 @@ export function AiCityChart() {
                 </SelectContent>
               </Select>
             ) : (
-              <div className="h-8 w-full border rounded-md" />
+              <div className="h-9 w-full border rounded-md" />
             )}
           </div>
         </div>
+      </div>
+
+      {/* 💡 Antes de explorar */}
+      <div className="mb-4 text-xs text-muted-foreground bg-muted/40 border border-border/40 rounded-md px-3 py-2.5">
+        <p className="font-bold text-foreground/80 mb-1.5">💡 Antes de explorar</p>
+        <ul className="list-disc list-inside space-y-1 leading-relaxed">
+          <li><strong>"Otra ciudad":</strong> agrupa todas las vacantes de ese país que no pertenecen a ningún hub urbano identificado. Representa el trabajo <em>remote-first</em> o roles distribuidos sin ciudad explícita — especialmente alto en EE. UU. (542 vacantes), lo que refleja la madurez del modelo híbrido/remoto.</li>
+          <li><strong>Filtro de volumen:</strong> sube el umbral para comparar solo ciudades con muestra significativa y evitar conclusiones de baja estadística.</li>
+          <li><strong>Solo capitales:</strong> activa este filtro para una comparativa directa entre las ciudades principales de cada país.</li>
+        </ul>
       </div>
       
       {filteredData.length > 0 ? (

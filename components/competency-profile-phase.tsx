@@ -9,6 +9,7 @@ import { CompetencyRegionRadar } from "./charts/competency-region-radar"
 import { CompetencyCountryRadar } from "./charts/competency-country-radar"
 import { CompetencySunburstChart } from "./charts/competency-sunburst-chart"
 import { CompetencyDataTable } from "./competency-data-table"
+import { SkillsIndustryHeatmap } from "./charts/skills-industry-heatmap"
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group"
 import { FLAGS } from "@/lib/data"
 
@@ -50,7 +51,7 @@ export function CompetencyProfilePhase() {
               <ChartWrapper
                 id="chart-radar-macro"
                 title="Comparativa por regiones"
-                description="💡 Tip: Haz clic en las zonas geográficas de la leyenda para encenderlas o apagarlas y aislar tu comparación."
+                description="💡 Antes de explorar: el radar muestra el perfil de skills promedio exigido en cada zona geográfica (LATAM, US, Global). Cuanto más al exterior cae el vértice, más frecuente es ese pilar en las vacantes de esa región. Haz clic en los nombres de la leyenda para aislar una región y ver su perfil puro sin ruido visual."
                 className="h-full bg-white/50 dark:bg-slate-950/50 backdrop-blur-sm border-slate-200 dark:border-slate-800 shadow-lg"
               >
                 <CompetencyRegionRadar />
@@ -59,7 +60,7 @@ export function CompetencyProfilePhase() {
               <ChartWrapper
                 id="chart-radar-country"
                 title="Comparativa por países"
-                description="💡 Tip: Haz clic en los países de la leyenda para encenderlos o apagarlos y aislar tu comparación."
+                description="💡 Antes de explorar: cada país tiene un perfil de demanda distinto — no todos los mercados piden lo mismo ni en la misma proporción. Un vértice más alejado del centro indica que ese skill se menciona con mayor frecuencia en ese país. Haz clic en la leyenda para activar o desactivar países y comparar solo los que te interesan."
                 className="h-full bg-white/50 dark:bg-slate-950/50 backdrop-blur-sm border-slate-200 dark:border-slate-800 shadow-lg"
               >
                 <CompetencyCountryRadar />
@@ -110,7 +111,7 @@ export function CompetencyProfilePhase() {
               <ChartWrapper
                 id="chart-taxonomia-competencias"
                 title="Taxonomía de Competencias (Sunburst)"
-                description="💡 Usa los controles de abajo para activar o desactivar ejes de competencias. Haz clic en cualquier eje (Business, Datos, IA…) para entrar en detalle: verás todos sus clústeres de habilidades y las habilidades individuales que lo componen. El tamaño de cada clúster refleja su peso relativo dentro del eje — cuanto más grande, más frecuente es ese grupo de skills en las publicaciones analizadas."
+                description="💡 Antes de explorar: Usa los controles de abajo para activar o desactivar ejes de competencias. Haz clic en cualquier eje (Business, Datos, IA…) para entrar en detalle: verás todos sus clústeres de habilidades y las habilidades individuales que lo componen. El tamaño de cada clúster refleja su peso relativo dentro del eje — cuanto más grande, más frecuente es ese grupo de skills en las publicaciones analizadas."
                 className="w-full bg-white/50 dark:bg-slate-950/50 backdrop-blur-sm border-slate-200 dark:border-slate-800 shadow-lg"
               >
                 <CompetencySunburstChart />
@@ -151,6 +152,17 @@ export function CompetencyProfilePhase() {
                 </div>
               </AlertDescription>
             </Alert>
+          </AnimatedSection>
+          
+          <NarrativeText>
+            <h3 className="text-xl font-bold text-foreground mb-4 mt-8">¿Qué pide cada sector?</h3>
+            <p className="mb-6">
+              El perfil de habilidades que el mercado exige no es uniforme: cambia radicalmente según la industria en la que operes. Un PM en el sector financiero enfrenta una demanda completamente distinta a uno en entretenimiento o manufactura. Este mapa de calor te permite comparar, sector por sector, el peso relativo de cada grupo de competencias en las vacantes analizadas — y detectar dónde tu perfil actual tiene más o menos ventaja competitiva.
+            </p>
+          </NarrativeText>
+
+          <AnimatedSection delay={350}>
+            <SkillsIndustryHeatmap />
           </AnimatedSection>
         </div>
       </div>

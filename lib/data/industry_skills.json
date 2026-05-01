@@ -1,0 +1,152 @@
+[
+  {
+    "industry": "Technology, Software & IT Services",
+    "total": 1130,
+    "core_pm": 1086,
+    "technical": 478,
+    "business": 682,
+    "data": 609,
+    "ux_ui": 446,
+    "ai": 461
+  },
+  {
+    "industry": "Financial Services & FinTech",
+    "total": 558,
+    "core_pm": 532,
+    "technical": 216,
+    "business": 439,
+    "data": 298,
+    "ux_ui": 170,
+    "ai": 125
+  },
+  {
+    "industry": "Retail, E-Commerce & Consumer Goods",
+    "total": 260,
+    "core_pm": 232,
+    "technical": 69,
+    "business": 194,
+    "data": 138,
+    "ux_ui": 79,
+    "ai": 36
+  },
+  {
+    "industry": "Manufacturing, Hardware & Industrial",
+    "total": 224,
+    "core_pm": 201,
+    "technical": 86,
+    "business": 161,
+    "data": 91,
+    "ux_ui": 49,
+    "ai": 33
+  },
+  {
+    "industry": "Healthcare & Life Sciences",
+    "total": 162,
+    "core_pm": 148,
+    "technical": 44,
+    "business": 135,
+    "data": 68,
+    "ux_ui": 51,
+    "ai": 36
+  },
+  {
+    "industry": "Business, Consulting & HR",
+    "total": 156,
+    "core_pm": 147,
+    "technical": 66,
+    "business": 107,
+    "data": 70,
+    "ux_ui": 69,
+    "ai": 50
+  },
+  {
+    "industry": "Media, Entertainment & Gaming",
+    "total": 138,
+    "core_pm": 130,
+    "technical": 48,
+    "business": 109,
+    "data": 100,
+    "ux_ui": 55,
+    "ai": 32
+  },
+  {
+    "industry": "Advertising, Marketing & Creative Services",
+    "total": 47,
+    "core_pm": 41,
+    "technical": 15,
+    "business": 30,
+    "data": 18,
+    "ux_ui": 23,
+    "ai": 28
+  },
+  {
+    "industry": "Education & EdTech",
+    "total": 44,
+    "core_pm": 43,
+    "technical": 11,
+    "business": 32,
+    "data": 24,
+    "ux_ui": 17,
+    "ai": 13
+  },
+  {
+    "industry": "Logistics & Transportation",
+    "total": 37,
+    "core_pm": 36,
+    "technical": 19,
+    "business": 22,
+    "data": 10,
+    "ux_ui": 13,
+    "ai": 3
+  },
+  {
+    "industry": "Real Estate & Construction",
+    "total": 35,
+    "core_pm": 35,
+    "technical": 18,
+    "business": 26,
+    "data": 17,
+    "ux_ui": 16,
+    "ai": 20
+  },
+  {
+    "industry": "Telecommunications",
+    "total": 24,
+    "core_pm": 23,
+    "technical": 12,
+    "business": 22,
+    "data": 10,
+    "ux_ui": 5,
+    "ai": 1
+  },
+  {
+    "industry": "Government, Civic & Non-Profit",
+    "total": 17,
+    "core_pm": 16,
+    "technical": 5,
+    "business": 12,
+    "data": 10,
+    "ux_ui": 3,
+    "ai": 2
+  },
+  {
+    "industry": "Utilities & Energy",
+    "total": 3,
+    "core_pm": 3,
+    "technical": 1,
+    "business": 3,
+    "data": 0,
+    "ux_ui": 1,
+    "ai": 0
+  },
+  {
+    "industry": "Other / Miscellaneous",
+    "total": 1,
+    "core_pm": 1,
+    "technical": 0,
+    "business": 1,
+    "data": 1,
+    "ux_ui": 0,
+    "ai": 0
+  }
+]
