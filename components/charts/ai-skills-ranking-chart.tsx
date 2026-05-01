@@ -18,23 +18,23 @@ const TRACKS = [
     label: '① Fundamentos',
     fullLabel: '① Comprende la base conceptual',
     skills: [
-      { skill: 'Machine Learning', count: 296, displayName: 'Machine Learning (cómo aprenden los modelos)', note: 'Entiende supervisado, no supervisado y por refuerzo — sin necesidad de saber programar.' },
-      { skill: 'IA (General)', count: 212, displayName: 'Inteligencia Artificial — conceptos base', note: 'Terminología, tipos de modelos y casos de uso reales en productos digitales.' },
-      { skill: 'NLP', count: 22, displayName: 'Procesamiento de Lenguaje Natural (NLP)', note: 'Cómo los modelos entienden y generan texto — base de los LLMs y chatbots.' },
-      { skill: 'Computer Vision', count: 11, displayName: 'Visión por Computadora', note: 'Modelos que interpretan imágenes y video — clave en retail, salud y manufactura.' },
+      { skill: 'Machine Learning',  count: 296, displayName: 'Machine Learning (cómo aprenden los modelos)', note: 'Entiende supervisado, no supervisado y por refuerzo — sin necesidad de saber programar.' },
+      { skill: 'IA (General)',       count: 212, displayName: 'Inteligencia Artificial — conceptos base', note: 'Terminología, tipos de modelos y casos de uso reales en productos digitales.' },
+      { skill: 'Generative AI',      count: 124, displayName: 'IA Generativa — texto, imagen, código, audio', note: 'El paraguas del mercado: entender qué puede generar la IA y cuáles son sus límites reales.' },
+      { skill: 'NLP',               count: 22,  displayName: 'Procesamiento de Lenguaje Natural (NLP)', note: 'Cómo los modelos entienden y generan texto — la base de los LLMs y chatbots.' },
+      { skill: 'Computer Vision',   count: 11,  displayName: 'Visión por Computadora', note: 'Modelos que interpretan imágenes y video — clave en retail, salud y manufactura.' },
     ],
   },
   {
     id: 'llms', richKey: 't2', color: THEME.t2,
-    label: '② LLMs y GenAI',
+    label: '② LLMs y Prompting',
     fullLabel: '② Domina los modelos de lenguaje',
     skills: [
-      { skill: 'LLMs', count: 157, displayName: 'Large Language Models (LLMs)', note: 'Qué son, cómo evaluarlos y cuándo usarlos — el nuevo mínimo del mercado.' },
-      { skill: 'Generative AI', count: 124, displayName: 'IA Generativa — texto, imagen, código, audio', note: 'El paraguas del mercado: entender qué puede generar y cuáles son sus límites.' },
-      { skill: 'Prompt Engineering', count: 117, displayName: 'Prompt Engineering — instrucciones a la IA', note: 'Estructurar instrucciones para obtener outputs predecibles y útiles.' },
-      { skill: 'RAG', count: 21, displayName: 'RAG — memoria empresarial para LLMs', note: 'Retrieval-Augmented Generation: dar a los modelos acceso a tu base de conocimiento.' },
-      { skill: 'Conversational AI', count: 14, displayName: 'IA Conversacional y diseño de chatbots', note: 'Diseñar flujos de conversación inteligente — más allá del FAQ simple.' },
-      { skill: 'Fine-tuning', count: 11, displayName: 'Fine-tuning — ajuste fino de modelos', note: 'Adaptar modelos a dominios específicos — saber cuándo vale la pena frente a RAG.' },
+      { skill: 'LLMs',             count: 157, displayName: 'Large Language Models (LLMs)', note: 'Qué son, cómo evaluarlos y cuándo usarlos — el nuevo mínimo del mercado.' },
+      { skill: 'Prompt Engineering',count: 117, displayName: 'Prompt Engineering — instrucciones a la IA', note: 'Estructurar instrucciones para obtener outputs predecibles y útiles como PM.' },
+      { skill: 'RAG',              count: 21,  displayName: 'RAG — memoria empresarial para LLMs', note: 'Retrieval-Augmented Generation: cómo conectar LLMs con tu base de conocimiento.' },
+      { skill: 'Conversational AI', count: 14,  displayName: 'IA Conversacional y diseño de chatbots', note: 'Diseñar flujos de conversación inteligente — más allá del FAQ simple.' },
+      { skill: 'Fine-tuning',      count: 11,  displayName: 'Fine-tuning — ajuste fino de modelos', note: 'Adaptar modelos a dominios específicos — saber cuándo vale la pena frente a RAG.' },
     ],
   },
   {
@@ -42,14 +42,14 @@ const TRACKS = [
     label: '③ Productividad',
     fullLabel: '③ Automatiza tu productividad diaria',
     skills: [
-      { skill: 'AI Tools', count: 77, displayName: 'Herramientas de IA — cuál usar y cuándo', note: 'Fluency general: saber qué herramienta aplica a cada tarea de PM.' },
-      { skill: 'Automation', count: 49, displayName: 'Automatización de tareas con IA', note: 'Reportes, clasificaciones, resúmenes automáticos — libera tiempo para decisiones.' },
-      { skill: 'Claude', count: 46, displayName: 'Claude — modelo de Anthropic', note: 'Muy usado para análisis extenso, redacción y síntesis de documentos largos.' },
-      { skill: 'Cursor', count: 30, displayName: 'Cursor, v0 y Windsurf — IDEs con IA integrada', note: 'Entornos de desarrollo potenciados con IA — clave si trabajas cerca de ingeniería.' },
-      { skill: 'ChatGPT', count: 26, displayName: 'ChatGPT — modelo de OpenAI', note: 'El estándar de referencia que todos los equipos esperan que conozcas.' },
-      { skill: 'AI-assisted workflows', count: 25, displayName: 'Flujos de trabajo aumentados con IA', note: 'Integrar IA en discovery, roadmap, specs y retrospectivas como PM.' },
-      { skill: 'Copilots', count: 20, displayName: 'Copilots — asistentes de Microsoft y GitHub', note: 'Asistentes IA integrados en el ecosistema de trabajo (365, Teams, código).' },
-      { skill: 'Gemini', count: 11, displayName: 'Gemini — modelo de Google', note: 'Emergente en entornos Google Workspace y GCP — crece rápido.' },
+      { skill: 'AI Tools',              count: 77, displayName: 'Herramientas de IA — cuál usar y cuándo', note: 'Fluency general: saber qué herramienta aplica a cada tarea de PM.' },
+      { skill: 'Automation',            count: 49, displayName: 'Automatización de tareas con IA', note: 'Reportes, clasificaciones y resúmenes automáticos — libera tiempo para decisiones.' },
+      { skill: 'Claude',                count: 46, displayName: 'Claude — modelo de Anthropic', note: 'Muy usado para análisis extenso, redacción y síntesis de documentos largos.' },
+      { skill: 'Cursor',                count: 30, displayName: 'Cursor, v0 y Windsurf — IDEs con IA integrada', note: 'Entornos de desarrollo con IA — clave si trabajas cerca de ingeniería.' },
+      { skill: 'ChatGPT',               count: 26, displayName: 'ChatGPT — modelo de OpenAI', note: 'El estándar de referencia que todos los equipos esperan que conozcas.' },
+      { skill: 'AI-assisted workflows', count: 25, displayName: 'Flujos de trabajo aumentados con IA', note: 'Integrar IA en discovery, roadmap, specs y retrospectivas.' },
+      { skill: 'Copilots',              count: 20, displayName: 'Copilots — asistentes de Microsoft y GitHub', note: 'Asistentes IA integrados en el ecosistema de trabajo (365, Teams, código).' },
+      { skill: 'Gemini',                count: 11, displayName: 'Gemini — modelo de Google', note: 'Emergente en entornos Google Workspace y GCP — crece rápido en LATAM.' },
     ],
   },
   {
@@ -57,9 +57,10 @@ const TRACKS = [
     label: '④ Agentes',
     fullLabel: '④ Diseña sistemas agénticos',
     skills: [
-      { skill: 'Agent Orchestration', count: 111, displayName: 'Orquestación de Agentes de IA', note: 'Coordinar múltiples agentes especializados (LangChain, LlamaIndex, multi-agent).' },
-      { skill: 'Agentic AI', count: 70, displayName: 'IA Agéntica — sistemas que actúan solos', note: 'Sistemas que toman acciones autónomas en múltiples pasos sin supervisión constante.' },
-      { skill: 'Agentic Workflows', count: 17, displayName: 'Flujos Agénticos — IA que ejecuta, no solo responde', note: 'Orquestar procesos donde la IA decide y ejecuta — no solo contesta preguntas.' },
+      { skill: 'Agent Orchestration', count: 70, displayName: 'Orquestación de Agentes (LangChain, LlamaIndex)', note: 'Coordinar múltiples agentes especializados usando frameworks como LangChain o LlamaIndex.' },
+      { skill: 'AI Agents',           count: 41, displayName: 'AI Agents — sistemas autónomos de IA', note: 'Diseñar y supervisar agentes que toman acciones sin supervisión humana constante.' },
+      { skill: 'Agentic AI',          count: 70, displayName: 'IA Agéntica — sistemas que actúan solos', note: 'El concepto paraguas: sistemas de IA que planifican, deciden y ejecutan en múltiples pasos.' },
+      { skill: 'AI Workflows',        count: 17, displayName: 'AI Workflows — flujos de trabajo con IA', note: 'Término de industria: pipelines donde la IA actúa, decide y ejecuta — no solo responde.' },
     ],
   },
   {
@@ -67,22 +68,17 @@ const TRACKS = [
     label: '⑤ Gobernanza',
     fullLabel: '⑤ Lidera con responsabilidad',
     skills: [
-      { skill: 'Responsible AI', count: 30, displayName: 'IA Responsable — ética y seguridad', note: 'Marco regulatorio y de seguridad para productos IA — ya es requisito explícito.' },
-      { skill: 'AI Ethics', count: 20, displayName: 'Ética en IA — sesgo, fairness, transparencia', note: 'Lo preguntan en entrevistas de PM para productos de IA en roles senior.' },
-      { skill: 'AI Strategy', count: 11, displayName: 'Estrategia de IA para el negocio', note: 'Cómo priorizar, justificar y escalar iniciativas de IA alineadas al negocio.' },
+      { skill: 'Responsible AI', count: 30, displayName: 'IA Responsable — ética y seguridad', note: 'Marco regulatorio y de seguridad para productos IA — ya es requisito explícito en vacantes.' },
+      { skill: 'AI Ethics',      count: 20, displayName: 'Ética en IA — sesgo, fairness, transparencia', note: 'Lo preguntan en entrevistas de PM para productos de IA en roles senior y liderazgo.' },
+      { skill: 'AI Strategy',    count: 11, displayName: 'Estrategia de IA para el negocio', note: 'Cómo priorizar, justificar y escalar iniciativas de IA alineadas al negocio.' },
     ],
   },
 ];
 
 type FlatRow = {
   type: 'header' | 'skill' | 'spacer';
-  key: string;
-  displayName: string;
-  count: number;
-  note: string;
-  trackId: string;
-  richKey: string;
-  color: typeof THEME.t1;
+  key: string; displayName: string; count: number; note: string;
+  trackId: string; richKey: string; color: typeof THEME.t1;
 };
 
 export function AiSkillsRankingChart() {
@@ -100,15 +96,11 @@ export function AiSkillsRankingChart() {
     const rows: FlatRow[] = [];
     const tracksToShow = activeTrack ? TRACKS.filter(t => t.id === activeTrack) : TRACKS;
 
-    // Reversed — ECharts renders bottom→top, so last item = top of chart
     [...tracksToShow].reverse().forEach((track, ti) => {
-      // Skills reversed so they display top→bottom within each group
       [...track.skills].reverse().forEach(s => {
         rows.push({ type: 'skill', key: s.skill, displayName: s.displayName, count: s.count, note: s.note, trackId: track.id, richKey: track.richKey, color: track.color });
       });
-      // Header row appears at the TOP of each group
       rows.push({ type: 'header', key: `header-${track.id}`, displayName: track.fullLabel, count: 0, note: '', trackId: track.id, richKey: track.richKey, color: track.color });
-      // Spacer between groups
       if (ti < tracksToShow.length - 1) {
         rows.push({ type: 'spacer', key: `spacer-${ti}`, displayName: '', count: 0, note: '', trackId: track.id, richKey: track.richKey, color: track.color });
       }
@@ -119,8 +111,7 @@ export function AiSkillsRankingChart() {
   const option = useMemo(() => ({
     backgroundColor: 'transparent',
     tooltip: {
-      trigger: 'axis',
-      axisPointer: { type: 'shadow' },
+      trigger: 'axis', axisPointer: { type: 'shadow' },
       backgroundColor: isDark ? '#1f2937' : '#ffffff',
       borderColor: isDark ? '#374151' : '#e5e7eb',
       textStyle: { color: isDark ? '#f9fafb' : '#111827', fontSize: 12 },
@@ -128,7 +119,7 @@ export function AiSkillsRankingChart() {
         const d = flatData[params[0].dataIndex];
         if (!d || d.type !== 'skill') return '';
         const track = TRACKS.find(t => t.id === d.trackId);
-        return `<div style="max-width:260px">
+        return `<div style="max-width:265px">
           <div style="font-weight:700;margin-bottom:3px">${d.displayName}</div>
           <div style="font-size:11px;color:${isDark ? '#9ca3af' : '#6b7280'};margin-bottom:5px">${track?.fullLabel}</div>
           <div style="margin-bottom:5px">Mencionado en <strong>${d.count}</strong> vacantes PM con IA</div>
@@ -141,8 +132,7 @@ export function AiSkillsRankingChart() {
       type: 'value',
       axisLabel: { color: textColor, fontSize: 10 },
       splitLine: { lineStyle: { color: axisLineColor, type: 'dashed' } },
-      axisLine: { show: false },
-      axisTick: { show: false },
+      axisLine: { show: false }, axisTick: { show: false },
     },
     yAxis: {
       type: 'category',
@@ -150,10 +140,7 @@ export function AiSkillsRankingChart() {
       axisLine: { lineStyle: { color: axisLineColor } },
       axisTick: { show: false },
       axisLabel: {
-        fontSize: 11,
-        width: 260,
-        overflow: 'truncate',
-        // ECharts axisLabel formatter with index for rich text per type
+        fontSize: 11, width: 265, overflow: 'truncate',
         formatter: (_val: string, index: number) => {
           const d = flatData[index];
           if (!d || d.type === 'spacer') return '';
@@ -171,8 +158,7 @@ export function AiSkillsRankingChart() {
       },
     },
     series: [{
-      type: 'bar',
-      barMaxWidth: 18,
+      type: 'bar', barMaxWidth: 18,
       data: flatData.map(d => {
         if (d.type !== 'skill') return { value: null };
         return {
@@ -185,7 +171,7 @@ export function AiSkillsRankingChart() {
       }),
       label: {
         show: true, position: 'right',
-        formatter: (p: any) => p.data.value ? `${p.data.value}` : '',
+        formatter: (p: any) => p.data.value ? `${p.data.value} vacantes` : '',
         color: textColor, fontSize: 10, fontWeight: 600,
       },
       emphasis: { itemStyle: { shadowBlur: 8, shadowColor: 'rgba(14,165,233,0.3)' } }
@@ -229,15 +215,34 @@ export function AiSkillsRankingChart() {
       <div className="mb-4 text-xs text-muted-foreground bg-muted/40 border border-border/40 rounded-md px-3 py-2.5">
         <p className="font-bold text-foreground/80 mb-1.5">💡 Antes de explorar</p>
         <ul className="list-disc list-inside space-y-1 leading-relaxed">
-          <li>Cada barra indica cuántas vacantes PM mencionan ese skill — qué tan urgente es que lo entiendas como profesional.</li>
+          <li>Cada barra indica cuántas vacantes PM mencionan ese skill — qué tan urgente es que lo entiendas.</li>
           <li>Los encabezados en color marcan el inicio de cada ruta de aprendizaje. Usa los filtros para ver una sola ruta a la vez.</li>
-          <li>Pasa el cursor sobre cualquier skill para ver una descripción de qué es y por qué el mercado lo pide.</li>
+          <li>Pasa el cursor sobre cualquier skill para ver qué es y por qué el mercado lo pide.</li>
         </ul>
       </div>
 
       {/* Chart */}
       <div style={{ height: `${chartHeight}px` }}>
         <ReactECharts option={option} notMerge={true} style={{ height: '100%', width: '100%' }} opts={{ renderer: 'svg' }} />
+      </div>
+
+      {/* Ver clasificación link */}
+      <div className="mt-4 pt-3 border-t border-border/40 flex flex-wrap gap-2">
+        {[
+          { label: 'Ver clasificación: Skills de IA (rutas)', url: 'https://github.com/GustavoVela/pm-talent-landscape/blob/main/analysis/groupings/ai_skills_tracks_grouping.md' },
+          { label: 'Ver clasificación: Taxonomía completa', url: 'https://github.com/GustavoVela/pm-talent-landscape/blob/main/analysis/groupings/ai_skills_grouping.md' },
+        ].map(({ label, url }) => (
+          <a
+            key={label}
+            href={url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1.5 rounded-md border border-border/60 bg-background px-3 py-1 text-xs font-medium text-foreground hover:border-foreground/40 hover:bg-muted transition-all duration-150"
+          >
+            <span className="opacity-60">↪</span>
+            {label}
+          </a>
+        ))}
       </div>
     </div>
   );

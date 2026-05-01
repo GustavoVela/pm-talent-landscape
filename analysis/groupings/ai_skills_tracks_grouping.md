@@ -14,17 +14,17 @@ Las 5 rutas están ordenadas de forma que representan una **progresión pedagóg
 
 | Ruta | Color (Tema) | Total Menciones |
 |------|-------------|----------------|
-| ① Comprende la base conceptual | `#0ea5e9` Sky Blue | N=531 |
-| ② Domina los modelos de lenguaje | `#91cc75` Green | N=444 |
+| ① Comprende la base conceptual | `#0ea5e9` Sky Blue | N=655 |
+| ② Domina los modelos de lenguaje | `#91cc75` Green | N=320 |
 | ③ Automatiza tu productividad | `#fac858` Yellow | N=284 |
 | ④ Diseña sistemas agénticos | `#ee6666` Coral Red | N=198 |
 | ⑤ Lidera con responsabilidad | `#73c0de` Light Blue | N=61 |
 
 ---
 
-## 1. ① Comprende la base conceptual (N=531)
+## 1. ① Comprende la base conceptual (N=655)
 
-Fundamentos conceptuales de IA que todo PM debe entender antes de aplicar herramientas. No requieren saber programar, sino comprender **cómo piensan los modelos** y qué pueden y no pueden hacer.
+Fundamentos conceptuales de IA que todo PM debe entender antes de aplicar herramientas. No requieren saber programar, sino comprender **cómo piensan los modelos**, qué pueden generar y cuáles son sus límites.
 
 *   **Etiquetas canónicas y sus sinónimos crudos del dataset:**
 
@@ -79,11 +79,16 @@ Fundamentos conceptuales de IA que todo PM debe entender antes de aplicar herram
     *   `Computer Vision` (N=11)
         *   `Computer Vision` (N=11) ← sin sinónimos relevantes
 
+    *   `Generative AI` (N=124) ← **movida a Fundamentos** (es un concepto base, no solo un stack técnico)
+        *   `Generative AI` (N=107) ← etiqueta directa
+        *   `GenAI` (N=16)
+        *   `Generative Artificial Intelligence` (N=1)
+
 ---
 
-## 2. ② Domina los modelos de lenguaje (N=444)
+## 2. ② Domina los modelos de lenguaje (N=320)
 
-El corazón del mercado de IA actual. Engloba todo lo relacionado con **Large Language Models, IA generativa y las técnicas para usarlos efectivamente** en productos.
+El stack técnico central de los LLMs. Engloba todo lo relacionado con cómo funcionan los modelos de lenguaje y las técnicas para usarlos efectivamente en productos. **Nota:** Generative AI se movió a Fundamentos por ser un concepto base más que un stack técnico.
 
 *   **Etiquetas canónicas y sus sinónimos crudos del dataset:**
 
@@ -102,10 +107,7 @@ El corazón del mercado de IA actual. Engloba todo lo relacionado con **Large La
         *   `AI/LLMs` (N=1)
         *   `Large Language Models` (N=1) ← nombre completo en inglés
 
-    *   `Generative AI` (N=124)
-        *   `Generative AI` (N=107) ← etiqueta directa
-        *   `GenAI` (N=16)
-        *   `Generative Artificial Intelligence` (N=1)
+    *   `Generative AI` — ⚠️ *Movida al Track 1 (Fundamentos). Ver sección anterior.*
 
     *   `Prompt Engineering` (N=117)
         *   `Prompt Engineering` (N=110) ← etiqueta directa
@@ -202,48 +204,51 @@ Skills orientadas a **aplicar IA en el trabajo diario del PM**: herramientas, mo
 
 ## 4. ④ Diseña sistemas agénticos (N=198)
 
-La **próxima ola** del mercado. Sistemas que no solo responden sino que actúan de forma autónoma, coordinan múltiples modelos y ejecutan flujos de trabajo complejos sin intervención humana continua.
+La **próxima ola** del mercado. Sistemas que no solo responden sino que actúan de forma autónoma. Se divide en tres conceptos distintos que el mercado empieza a diferenciar.
+
+*   **Cambios de taxonomía respecto a versión anterior:**
+    *   `Agent Orchestration` y `AI Agents` se **separaron**: antes estaban fusionados en una sola etiqueta.
+    *   `Agentic Workflows` fue **renombrado a `AI Workflows`** — término más establecido en la industria.
 
 *   **Etiquetas canónicas y sus sinónimos crudos del dataset:**
 
-    *   `Agent Orchestration` (N=111) — Orquestación de múltiples agentes
+    *   `Agent Orchestration` (N=70) — Frameworks de orquestación multi-agente
         *   `Agent Orchestration` (N=43) ← etiqueta directa
-        *   `AI Agents` (N=28)
-        *   `Agents` (N=8)
-        *   `AI agents` (N=5)
-        *   `Sistemas multiagentes` (N=1) ← en español
-        *   `Agentic Workforces` (N=1)
-        *   `Coding Agents` (N=1)
-        *   `Agentic systems` (N=1)
-        *   `Agentic Patterns` (N=1)
         *   `Multi-agent services` (N=1)
-        *   `Autonomous systems` (N=1)
+        *   `Sistemas multiagentes` (N=1) ← en español
         *   `Agent frameworks` (N=1)
-        *   `Agentes autónomos` (N=1) ← en español
+        *   `Agentic coding frameworks` (N=1)
         *   `AI orchestration` (N=1)
-        *   `Agentic Systems` (N=1)
         *   `Multi-agent orchestration` (N=1)
         *   `Agent-based workflows` (N=1)
         *   `LangChain` (N=1) — framework de orquestación
         *   `LlamaIndex` (N=1) — framework de orquestación
         *   `Agentic architectures` (N=1)
-        *   `Agentic coding frameworks` (N=1)
-        *   `AI coding agent` (N=1)
-        *   `AI Agent` (N=1)
-        *   `AI-driven agents` (N=1)
         *   `AI agent frameworks` (N=1)
-        *   `Agentic Commerce` (N=1)
         *   `Multi-Agent systems` (N=1)
         *   `Agent-based systems` (N=1)
-        *   `AI/agents` (N=1)
+        *   `Agentic Workforces` (N=1)
+        *   `Agentic Systems` (N=1)
         *   `Agentic patterns` (N=1)
         *   `Agentic tools` (N=1)
+
+    *   `AI Agents` (N=41) — ⚠️ *Separado de Agent Orchestration*
+        *   `AI Agents` (N=28) ← etiqueta directa
+        *   `Agents` (N=8)
+        *   `AI agents` (N=5)
+        *   `AI Agent` (N=1)
+        *   `AI coding agent` (N=1)
+        *   `AI-driven agents` (N=1)
+        *   `Agentes autónomos` (N=1) ← en español
+        *   `Autonomous systems` (N=1)
+        *   `Coding Agents` (N=1)
+        *   `AI/agents` (N=1)
 
     *   `Agentic AI` (N=70)
         *   `Agentic AI` (N=70) ← sin sinónimos; etiqueta muy estable
 
-    *   `Agentic Workflows` (N=17) — Flujos donde la IA actúa, no solo responde
-        *   `Agentic Workflows` (N=8) ← etiqueta directa
+    *   `AI Workflows` (N=17) — ⚠️ *Antes: "Agentic Workflows" — renombrado a término de industria*
+        *   `Agentic Workflows` (N=8) ← etiqueta más frecuente en el dataset
         *   `Agentic workflows` (N=5)
         *   `Intelligent workflows` (N=1)
         *   `Agentic tool use` (N=1)
