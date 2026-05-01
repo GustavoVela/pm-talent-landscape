@@ -16,7 +16,7 @@ export function ClosingPhase() {
           {/* Section Header — matching style */}
           <AnimatedSection>
             <div className="mb-12">
-              <span className="text-sm font-medium text-muted-foreground">05</span>
+              <span className="text-sm font-medium text-muted-foreground">06</span>
               <h2 className="mt-2 text-3xl font-bold tracking-tight text-foreground md:text-4xl">
                 Construye tu foso competitivo
               </h2>
@@ -48,42 +48,7 @@ export function ClosingPhase() {
             </div>
           </AnimatedSection>
 
-          {/* External Links — using same card style */}
-          <AnimatedSection delay={200}>
-            <div className="grid sm:grid-cols-2 gap-4 mb-16">
-              <a
-                href="#"
-                className="group relative flex items-center gap-4 rounded-xl border border-border/50 bg-background p-6 transition-all duration-300 hover:border-border hover:shadow-lg hover:shadow-foreground/5 hover:-translate-y-1"
-              >
-                <ArrowSquareOut className="h-5 w-5 text-muted-foreground/60 transition-colors duration-300 group-hover:text-foreground shrink-0" />
-                <div>
-                  <p className="font-semibold text-foreground">
-                    Talent Taxonomy Dashboard
-                  </p>
-                  <p className="text-xs text-muted-foreground mt-0.5">
-                    Versión HTML interactiva · Datos abiertos
-                  </p>
-                </div>
-              </a>
 
-              <a
-                href={githubUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group relative flex items-center gap-4 rounded-xl border border-border/50 bg-background p-6 transition-all duration-300 hover:border-border hover:shadow-lg hover:shadow-foreground/5 hover:-translate-y-1"
-              >
-                <GithubLogo className="h-5 w-5 text-muted-foreground/60 transition-colors duration-300 group-hover:text-foreground shrink-0" />
-                <div>
-                  <p className="font-semibold text-foreground">
-                    Repositorio en GitHub
-                  </p>
-                  <p className="text-xs text-muted-foreground mt-0.5">
-                    Código fuente · Metodología · Auditable
-                  </p>
-                </div>
-              </a>
-            </div>
-          </AnimatedSection>
 
           {/* Final Question */}
           <AnimatedSection delay={250}>

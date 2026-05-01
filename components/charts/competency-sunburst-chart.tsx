@@ -7,11 +7,18 @@ const treeData = { "name": "Product\nSkills", "children": [{ "name": "Core PM\n(
 
 export function CompetencySunburstChart() {
   const [activeData, setActiveData] = React.useState(treeData.children);
-  const sunburstPalette = ['#3b82f6', '#10b981', '#f59e0b', '#ef4444', '#8b5cf6', '#06b6d4'];
+  const sunburstPalette = [
+    { type: "linear", x: 0, y: 0, x2: 1, y2: 1, colorStops: [{ offset: 0, color: "#60a5fa" }, { offset: 1, color: "#2563eb" }] },
+    { type: "linear", x: 0, y: 0, x2: 1, y2: 1, colorStops: [{ offset: 0, color: "#34d399" }, { offset: 1, color: "#059669" }] },
+    { type: "linear", x: 0, y: 0, x2: 1, y2: 1, colorStops: [{ offset: 0, color: "#fbbf24" }, { offset: 1, color: "#d97706" }] },
+    { type: "linear", x: 0, y: 0, x2: 1, y2: 1, colorStops: [{ offset: 0, color: "#f87171" }, { offset: 1, color: "#dc2626" }] },
+    { type: "linear", x: 0, y: 0, x2: 1, y2: 1, colorStops: [{ offset: 0, color: "#a78bfa" }, { offset: 1, color: "#7c3aed" }] },
+    { type: "linear", x: 0, y: 0, x2: 1, y2: 1, colorStops: [{ offset: 0, color: "#22d3ee" }, { offset: 1, color: "#0891b2" }] }
+  ];
   const sunburstCategories = treeData.children.map(c => c.name);
 
   const colorMap = useMemo(() => {
-    const map: Record<string, string> = {};
+    const map: Record<string, any> = {};
     treeData.children.forEach((child, index) => {
       map[child.name] = sunburstPalette[index % sunburstPalette.length];
     });

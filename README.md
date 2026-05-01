@@ -56,6 +56,10 @@ Sube el contenido completo de la carpeta `out/` al directorio `public_html/` de 
   * Uniformidad de alturas de los contenedores (`280px` a `320px`) en los gráficos de la Sección 03 para eliminar "espacios muertos" en las tarjetas del carrusel, logrando un diseño más compacto.
 * **Refactorización de Tabla de Competencias (`CompetencyDataTable`):** La lógica de visualización se dividió en dos componentes de visualización dinámica (`TableView`). Esto permite mostrar separadamente la *Comparativa Regional* y la *Comparativa por Países*, ambas ordenadas automáticamente por volumen (N) de mayor a menor sin mezclar las dimensiones del dataset original.
 * **Módulo de Contexto Metodológico:** Implementación de un bloque modular (basado en `Alert` de *shadcn/ui* estandarizado a colores neutrales) para documentar y justificar técnicamente el procesamiento de lenguaje natural aplicado a la multiplicidad de títulos (inglés, español, portugués) sin afectar la limpieza visual de la sección Demográfica.
+* **Evolución del Módulo de Inteligencia Artificial (Sección 05):**
+  * Refactorización completa de `AiSeniorityChart` para sustituir la leyenda nativa por un sistema de filtrado multi-select custom y etiquetas directas sobre barras (`Lead/Dir/VP+`), mejorando la auto-explicabilidad visual y limpieza del gráfico. Adicionalmente, se estableció un orden duro descendente en los países.
+  * Creación e integración de `AiCityChart`, una nueva gráfica paramétrica alimentada por consultas directas a BigQuery. Cuenta con lógica de filtrado cruzado por *País*, *Volumen Base (minJobs)* y *Clasificación de Ciudad (Capital vs Todas)*, empleando un sistema de controles `shadcn` unificados (`gap-3`, `flex-wrap`) que asegura consistencia y legibilidad responsive en el DOM.
+  * Reincorporación estratégica de la variable "Otra ciudad" al ecosistema de datos de penetración IA para evitar sesgos estadísticos.
 
 ---
 

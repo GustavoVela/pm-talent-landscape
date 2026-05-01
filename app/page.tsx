@@ -3,6 +3,7 @@ import { Introduction } from "@/components/introduction"
 
 import { DemographicsPhase } from "@/components/demographics-phase"
 import { CompetencyProfilePhase } from "@/components/competency-profile-phase"
+import { AiPhase } from "@/components/ai-phase"
 import { ClosingPhase } from "@/components/closing-phase"
 import { Footer } from "@/components/footer"
 import { FloatingNav } from "@/components/floating-nav"
@@ -16,6 +17,7 @@ export default function Home() {
         <Introduction />
         <DemographicsPhase />
         <CompetencyProfilePhase />
+        <AiPhase />
         <ClosingPhase />
       </main>
       <Footer />
