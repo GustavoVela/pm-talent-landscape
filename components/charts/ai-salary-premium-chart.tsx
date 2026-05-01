@@ -13,10 +13,10 @@ import {
 
 // Datos controlados SOLO para el mercado de Estados Unidos para evitar sesgos geográficos
 const DATA = [
-  { level: 'Director / VP', n: 310, noAi: 186085, ai: 208143 },
-  { level: 'Senior / Lead', n: 262, noAi: 138737, ai: 171968 },
-  { level: 'Mid-Level',     n: 171, noAi: 100615, ai: 115073 },
-  { level: 'Junior',        n: 154, noAi:  41021, ai:  56963 },
+  { level: 'Director / VP', total: 310, noAi: 186085, ai: 208143, n_noAi: 191, n_ai: 119 },
+  { level: 'Senior / Lead', total: 262, noAi: 138737, ai: 171968, n_noAi: 134, n_ai: 128 },
+  { level: 'Mid-Level',     total: 171, noAi: 100615, ai: 115073, n_noAi: 132, n_ai:  39 },
+  { level: 'Junior',        total: 154, noAi:  41021, ai:  56963, n_noAi: 118, n_ai:  36 },
 ];
 
 const COLOR_AI   = '#0ea5e9'; // Tema: 1ro (Azul)
@@ -34,8 +34,8 @@ export function AiSalaryPremiumChart() {
 
   const option = useMemo(() => {
     const levels = DATA.map(d => d.level);
-    const noAiData = DATA.map(d => d.noAi);
-    const aiData = DATA.map(d => d.ai);
+    const noAiData = DATA.map(d => ({ value: d.noAi, vacantes: d.n_noAi }));
+    const aiData = DATA.map(d => ({ value: d.ai, vacantes: d.n_ai }));
 
     return {
       backgroundColor: 'transparent',
@@ -103,14 +103,28 @@ export function AiSalaryPremiumChart() {
           data: noAiData,
           itemStyle: { color: COLOR_NOAI, borderRadius: [0, 4, 4, 0] },
           barWidth: 14,
-          barGap: '15%'
+          barGap: '15%',
+          label: {
+            show: true,
+            position: 'right',
+            formatter: (params: any) => `${params.data.vacantes} vacantes`,
+            color: textColor,
+            fontSize: 10
+          }
         },
         {
           name: 'Roles de PM con IA (Vacantes=322)',
           type: 'bar',
           data: aiData,
           itemStyle: { color: COLOR_AI, borderRadius: [0, 4, 4, 0] },
-          barWidth: 14
+          barWidth: 14,
+          label: {
+            show: true,
+            position: 'right',
+            formatter: (params: any) => `${params.data.vacantes} vacantes`,
+            color: textColor,
+            fontSize: 10
+          }
         }
       ]
     };
@@ -152,7 +166,7 @@ export function AiSalaryPremiumChart() {
                 <div key={row.level} className="rounded-lg border border-border/60 bg-background px-4 py-3 flex items-center justify-between">
                   <div className="min-w-0">
                     <p className="text-xs font-semibold text-foreground">{row.level}</p>
-                    <p className="text-[10px] text-muted-foreground mt-0.5">N = {row.n}</p>
+                    <p className="text-[10px] text-muted-foreground mt-0.5">N = {row.total}</p>
                   </div>
                   <div className="flex items-center gap-1.5">
                     <TrendingUp className="w-4 h-4 text-emerald-500" />
