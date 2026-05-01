@@ -3,13 +3,9 @@ import { Telescope, BarChart3, CloudCog, FlaskConical } from 'lucide-react';
 
 export function AiMarketShift() {
   return (
-    <div className="flex flex-col w-full mt-16 mb-8 border-t border-border/40 pt-16">
+    <div className="flex flex-col w-full mt-10 mb-8">
       {/* Header */}
       <div className="mb-8">
-        <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-xs font-semibold mb-3">
-          <Telescope className="w-3.5 h-3.5" />
-          Conclusión Analítica
-        </div>
         <h3 className="text-2xl font-bold text-foreground flex items-center gap-2">
           Transición del Rol: EE.UU. vs. LATAM
         </h3>
