@@ -156,9 +156,9 @@ export function AiSalaryPremiumChart() {
         </div>
 
         {/* Main layout: chart left, cards right */}
-        <div className="grid grid-cols-1 lg:grid-cols-[2.5fr_1fr] gap-6 items-center border border-border/50 rounded-xl p-4 bg-background">
+        <div className="grid grid-cols-1 lg:grid-cols-[2fr_1fr] gap-4 xl:gap-8 items-center border border-border/50 rounded-xl p-4 bg-background">
           {/* Bar Chart */}
-          <div className="h-[320px] w-full order-1">
+          <div className="h-[320px] w-full">
             <ReactECharts
               option={option}
               notMerge={true}
@@ -168,7 +168,7 @@ export function AiSalaryPremiumChart() {
           </div>
 
           {/* Insight cards */}
-          <div className="flex flex-col gap-3 order-2">
+          <div className="flex flex-col gap-3">
             <h4 className="text-sm font-semibold text-foreground mb-1">Crecimiento (Premium)</h4>
             {DATA.slice().reverse().map(row => {
               const premiumPct = Math.round(((row.ai - row.noAi) / row.noAi) * 100);
