@@ -7,6 +7,7 @@ import { AiCityChart } from "./charts/ai-city-chart"
 import { AiIndustryChart } from "./charts/ai-industry-chart"
 import { AiRoleChart } from "./charts/ai-role-chart"
 import { AiSkillsRankingChart } from "./charts/ai-skills-ranking-chart"
+import { AiVsNonAiRadar } from "./charts/ai-vs-nonai-radar"
 
 export function AiPhase() {
   return (
@@ -52,6 +53,11 @@ export function AiPhase() {
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-2 pt-8 border-t border-border/50">
                 <AiIndustryChart />
                 <AiRoleChart />
+              </div>
+
+              {/* PM con IA vs sin IA — radar comparativo */}
+              <div className="mt-8 pt-8 border-t border-border/50">
+                <AiVsNonAiRadar />
               </div>
 
               {/* AI Skills Ranking — last chart in section */}
