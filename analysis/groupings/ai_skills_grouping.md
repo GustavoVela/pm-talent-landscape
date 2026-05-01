@@ -1,474 +1,283 @@
-# AI & GenAI Skills Taxonomy
+# Clasificación de Skills de IA para Product Managers
 
-A structured taxonomy of artificial intelligence skills.
+Este documento define la **taxonomía canónica de skills de IA** utilizada en el dashboard de PM Talent Landscape, en particular para la gráfica *"¿Qué skills de IA deberías aprender y dominar?"* de la Sección 05.
 
-## AI Automation & RPA
-- AI Automation
-- Automated orchestration
-- Automation
-- Automation Tools
-- Automation workflows
-- Automatización
-- DevOps automation
-- Intelligent Automation
-- Intelligent automation
-- Intelligent systems
-- RPA
-- Workflow Automation
-- Workflow automation
+Los skills se extraen del campo `ai_skills_list` (array) de la tabla `product_management_consolidated` en BigQuery. Dado que LinkedIn permite texto libre en los requisitos de vacante, el mismo concepto aparece con **múltiples etiquetas distintas en español e inglés**. Este documento documenta la normalización aplicada.
 
-## AI Coding & Design Assistants
-- AI coding agent
-- Claude Code
-- Codex
-- Coding Agents
-- Copilot
-- Copilot solutions
-- Copilot Studio
-- Copilots
-- Figma Make
-- GitHub Copilot
-- Kiro
-- Lovable
-- Microsoft Copilot
-- Midjourney
-- Relume
-- Replit Agent
-- Uizard
-- V0
-- v0
-- v0.dev
-- Vibe coding
-- Windsurf
+**Total de menciones analizadas (PM roles con IA):** ~1,518 menciones únicas normalizadas
 
-## AI Evaluation & Quality
-- AI Assurance
-- Benchmark Evaluation
-- Evals
-- Evaluation
-- Evaluation Frameworks
-- Evaluation frameworks
-- Evaluation suites
-- LLM evaluation
-- Model Evaluation
-- Model Quality
-- Multimodal evaluation
-- QA for AI
-- Quality Assurance
-- Rubric Development
-- Validación de modelos
-- Validation de modelos
+---
 
-## AI Governance & Security
-- AI Governance
-- AI governance
-- AI Security
-- Post-quantum cryptography
-- Privacy-preserving systems
+## 🗺️ Estructura de las 5 Rutas de Aprendizaje
 
-## AI Inference & Edge Computing
-- Edge AI
-- Edge Computing
-- Inference
-- Inference optimization
-- On-device AI inference
-- Quantization
-- Real-time inference
+Las 5 rutas están ordenadas de forma que representan una **progresión pedagógica sugerida** para un PM que quiere desarrollar su perfil de IA:
 
-## AI Infrastructure & Platforms
-- AI infrastructure
-- AI Platform
-- AI platforms
-- AI Studio
-- AI/ML Infrastructure
-- AI/ML pipeline infrastructure
-- AI/ML platforms
-- Cloud AI
-- Enterprise AI
-- GPU provisioning
-- High-density AI infrastructure
-- Vertex AI
+| Ruta | Color (Tema) | Total Menciones |
+|------|-------------|----------------|
+| ① Comprende la base conceptual | `#0ea5e9` Sky Blue | N=531 |
+| ② Domina los modelos de lenguaje | `#91cc75` Green | N=444 |
+| ③ Automatiza tu productividad | `#fac858` Yellow | N=284 |
+| ④ Diseña sistemas agénticos | `#ee6666` Coral Red | N=198 |
+| ⑤ Lidera con responsabilidad | `#73c0de` Light Blue | N=61 |
 
-## AI Integration & APIs
-- AI Integration
-- AI Tools Integration
-- AI/LLM integrations
-- APIs
-- Function calling
-- LLM integrations
+---
 
-## AI Models (Tools)
-- ChatGPT
-- ChatGPT Enterprise
-- Claude
-- Claude IA
-- ClaudeAI
-- Gemini
-- NotebookLM
-- OpenAI
+## 1. ① Comprende la base conceptual (N=531)
 
-## AI Observability
-- AI monitoring
-- AI Observability
-- AI observability
-- Observability of AI systems
+Fundamentos conceptuales de IA que todo PM debe entender antes de aplicar herramientas. No requieren saber programar, sino comprender **cómo piensan los modelos** y qué pueden y no pueden hacer.
 
-## AI Orchestration
-- Agent Orchestration
-- Agent-based workflows
-- Agentic architectures
-- Agentic Process Automation
-- Agentic workflows
-- Agentic Workflows
-- AI orchestration
-- Automated orchestration
-- Multi-agent orchestration
-- Multi-agent services
-- Multi-Agent systems
-- Sistemas multiagentes
+*   **Etiquetas canónicas y sus sinónimos crudos del dataset:**
 
-## AI Product Management
-- AI in product development
-- AI PM tools
-- AI Product Management
-- IA para produto
+    *   `Machine Learning` (N=286)
+        *   `Machine Learning` (N=195) ← etiqueta directa
+        *   `AI/ML` (N=44)
+        *   `AI/ML concepts` (N=17)
+        *   `ML` (N=9)
+        *   `Predictive Analytics` (N=6)
+        *   `AI/ML Concepts` (N=2)
+        *   `ML models` (N=2)
+        *   `Data Science Models` (N=1)
+        *   `ML lifecycle` (N=1)
+        *   `AI/ML features` (N=1)
+        *   `AI/ML tooling` (N=1)
+        *   `Predictive Models` (N=1)
+        *   `AI/Machine Learning solutions` (N=1)
+        *   `Modelos predictivos` (N=1)
+        *   `AI/ML platforms` (N=1)
+        *   `AI/ML Infrastructure` (N=1)
+        *   `AI/ML Workloads` (N=1)
+        *   `Machine learning` (N=1)
+        *   `Machine learning lifecycle` (N=1)
+        *   `Model Lifecycle` (N=1)
+        *   `AI/ML pipeline infrastructure` (N=1)
+        *   `AI/ML tools` (N=1)
+        *   `AI/ML Products` (N=1)
+        *   `Machine Learning Models` (N=1)
 
-## AI Prototyping & Interaction Design
-- AI Interaction Design
-- AI Prototyping
-- AI prototyping platforms
-- AI tools for design
-- AI tools in design workflows
-- AI-assisted design
-- AI-Driven Design
-- AI-Driven Development Lifecycle
-- AI-enabled product development
-- Prototyping
-- Prototyping with agents
-- Prototyping with AI
+    *   `IA (General)` (N=212)
+        *   `AI` (N=162) ← etiqueta directa más frecuente
+        *   `Artificial Intelligence` (N=35)
+        *   `AI features` (N=2)
+        *   `AI technologies` (N=2)
+        *   `AI Native` (N=1)
+        *   `IA para produto` (N=1) ← en portugués (Brasil)
+        *   `Inteligencia Artificial` (N=1) ← en español
+        *   `AI-Native` (N=1)
+        *   `AI-first mindset` (N=1)
+        *   `Inteligencia artificial` (N=1)
+        *   `AI functionality` (N=1)
+        *   `AI concepts` (N=1)
+        *   `AI Trends` (N=1)
+        *   `AI Capabilities` (N=1)
+        *   `AI Technologies` (N=1)
 
-## AI Research
-- AI research
-- AI Research Tools
+    *   `NLP` (N=22) — Procesamiento de Lenguaje Natural
+        *   `NLP` (N=20) ← etiqueta directa
+        *   `AI/NLU` (N=1)
+        *   `NLP/NLU` (N=1)
 
-## AI Strategy & Adoption
-- AI Adoption
-- AI Ecosystem
-- AI Enablement
-- AI Implementation
-- AI implementation
-- AI Strategy
-- AI tooling strategy
-- AI Transformation
-- AI Trends
-- Strategic AI Fluency
+    *   `Computer Vision` (N=11)
+        *   `Computer Vision` (N=11) ← sin sinónimos relevantes
 
-## AI Tooling
-- AI assisted tools
-- AI Productivity Tools
-- AI tooling
-- AI Tooling
-- AI Tooling Enablement
-- AI Tools
-- AI tools
-- AI Tools for design
-- AI-assisted tools
-- AI-enabled tools
-- AI-powered tools
+---
 
-## AI Use Cases & Content Intelligence
-- AI classifiers
-- AI Fraud Solutions
-- AI-driven payment intelligence
-- AI-driven search
-- AI-driven sentiment analysis
-- AI-driven SOC
-- AI-enabled pathology solutions
-- AI-powered content detection
-- Classification
-- Content Understanding
-- Detecção de fraude
-- Fraud Detection
-- Hallucination Detection
-- Search Models
-- Semantic Search
+## 2. ② Domina los modelos de lenguaje (N=444)
 
-## AI-Augmented Workflows
-- AI workflows
-- AI-assisted workflows
-- AI-augmented workflow
-- AI-augmented workflows
-- AI-driven workflows
-- AI-enabled workflows
-- Intelligent workflows
+El corazón del mercado de IA actual. Engloba todo lo relacionado con **Large Language Models, IA generativa y las técnicas para usarlos efectivamente** en productos.
 
-## AI-Driven Product Features
-- AI features
-- AI functionality
-- AI-driven experiences
-- AI-driven feature differentiation
-- AI-driven features
-- AI-enabled product capabilities
-- AI-first features
-- AI-powered experiences
-- AI-powered features
-- AI-powered product capabilities
-- AI-powered product experiences
-- AI/ML features
+*   **Etiquetas canónicas y sus sinónimos crudos del dataset:**
 
-## AI-Enabled Business Initiatives
-- AI-driven CRM
-- AI-enabled commercial execution
-- AI-enabled initiatives
-- AI-enabled market sensing
+    *   `LLMs` (N=157) — Large Language Models
+        *   `LLMs` (N=136) ← etiqueta directa
+        *   `LLM` (N=9)
+        *   `Foundation Models` (N=2)
+        *   `LLM integrations` (N=1)
+        *   `AI/LLM integrations` (N=1)
+        *   `Agentic LLM products` (N=1)
+        *   `Multimodal LLMs` (N=1)
+        *   `LLM evaluation` (N=1)
+        *   `LLM APIs` (N=1)
+        *   `Multimodal foundation models` (N=1)
+        *   `LLM selection` (N=1)
+        *   `AI/LLMs` (N=1)
+        *   `Large Language Models` (N=1) ← nombre completo en inglés
 
-## AI-Native Development
-- AI-driven approach
-- AI-first development
-- AI-first mindset
-- AI-first product development
-- AI-first products
-- AI-first solutions
-- AI-Native
-- AI-native
-- AI-native building
-- AI-native development
-- AI-native fluency
-- AI-native product development
-- AI-native products
-- AI-native workflows
+    *   `Generative AI` (N=124)
+        *   `Generative AI` (N=107) ← etiqueta directa
+        *   `GenAI` (N=16)
+        *   `Generative Artificial Intelligence` (N=1)
 
-## AI-Powered Solutions
-- AI Solutions
-- AI-driven products
-- AI-driven solutions
-- AI-enabled products
-- AI-enabled solutions
-- AI-powered products
-- AI-powered SaaS
-- AI/ML Application
-- AI/ML products
-- AI/ML-driven products
+    *   `Prompt Engineering` (N=117)
+        *   `Prompt Engineering` (N=110) ← etiqueta directa
+        *   `Prompts` (N=1)
+        *   `Task prompts` (N=1)
+        *   `Prompt generation` (N=1)
+        *   `AI Prompt Design` (N=1)
+        *   `Prompt design` (N=1)
+        *   `Prompting` (N=1)
+        *   `Prompt creation` (N=1)
 
-## AI/ML Concepts
-- AI concepts
-- AI Concepts
-- AI Models
-- AI models
-- AI/ML
-- AI/ML concepts
-- AI/ML Concepts
-- AI/ML Models
-- Machine Learning Models
-- ML models
+    *   `RAG` (N=21) — Retrieval-Augmented Generation
+        *   `RAG` (N=21) ← sin sinónimos relevantes
 
-## Agentic AI
-- Agent frameworks
-- Agent Frameworks
-- Agent permissions
-- Agent-based systems
-- Agentes autónomos
-- Agentforce
-- Agentic AI
-- Agentic coding frameworks
-- Agentic Commerce
-- Agentic Frameworks
-- Agentic LLM products
-- Agentic patterns
-- Agentic Systems
-- Agentic systems
-- Agentic tool use
-- Agentic tools
-- Agentic Workforces
-- Agents
-- AGI
-- AI agent frameworks
-- AI agents
-- AI Agents
-- AI-driven agents
-- Autonomous Agents
-- Autonomous Systems
-- Intelligent Systems
-- Replit Agent
+    *   `Conversational AI` (N=14)
+        *   `Conversational AI` (N=13) ← etiqueta directa
+        *   `Bots conversacionales` (N=1) ← en español
 
-## Artificial Intelligence (General)
-- AI
-- AI technologies
-- Artificial intelligence
-- Artificial Intelligence
-- IA
-- Inteligencia Artificial
-- Inteligencia artificial
-- Inteligência Artificial
+    *   `Fine-tuning` (N=11) — Ajuste fino de modelos
+        *   `Fine-tuning` (N=9) ← etiqueta directa
+        *   `RLHF` (N=1) — Reinforcement Learning from Human Feedback
+        *   `Model Fine-tuning` (N=1)
 
-## Assistive AI & Decisioning
-- AI-assisted analytics
-- AI-assisted data exploration
-- AI-assisted decisioning
-- AI-assisted products
-- Assistive AI
-- Atlassian Intelligence
-- Now Assist
-- NowAssist
+---
 
-## Computer Vision
-- Biometrics
-- Computer Vision
-- Document AI
-- Liveness Detection
-- Model Recognition
-- OCR
-- YOLO
+## 3. ③ Automatiza tu productividad (N=284)
 
-## Conversational AI & NLP
-- AI/NLU
-- Bots conversacionales
-- Chatbot
-- Chatbot Ecosystems
-- Chatbots
-- Conversation Intelligence
-- Conversational AI
-- Entities
-- Intent
-- Intents
-- Natural Language Processing
-- NLP
-- NLP/NLU
-- NLU
-- Oracle Digital Assistant
-- Voice AI
+Skills orientadas a **aplicar IA en el trabajo diario del PM**: herramientas, modelos específicos y flujos de trabajo aumentados con IA. El énfasis es en el uso práctico, no en el entendimiento teórico.
 
-## Core Machine Learning
-- AI/Machine Learning solutions
-- Algorithms
-- Data Science
-- Data Science Models
-- Data Science workflows
-- Deep Learning
-- Machine Learning
-- Machine learning
-- ML
-- Pattern Learning
-- Reinforcement Learning
+*   **Etiquetas canónicas y sus sinónimos crudos del dataset:**
 
-## Generative AI (GenAI)
-- AIGC
-- Gen AI
-- GenAI
-- Generative AI
-- Generative Artificial Intelligence
-- Generative Engine Optimization
-- IA Generativa
-- OCI Generative AI
+    *   `AI Tools` (N=77) — Herramientas de IA en general
+        *   `AI Tools` (N=29) ← etiqueta directa
+        *   `AI tools` (N=35)
+        *   `AI Tools Integration` (N=2)
+        *   `AI tooling strategy` (N=2)
+        *   `AI Research Tools` (N=1)
+        *   `AI tools for design` (N=1)
+        *   `AI tools in design workflows` (N=1)
+        *   `AI Tooling Enablement` (N=1)
+        *   `AI Assistants` (N=1)
+        *   `AI assisted tools` (N=1)
+        *   `AI Productivity Tools` (N=1)
+        *   `AI tooling` (N=1)
+        *   `AI PM tools` (N=1)
 
-## Human-in-the-Loop & RLHF
-- AI Behavior
-- Human Data Annotation
-- Human-in-the-loop
-- Human-in-the-loop systems
-- RLHF
+    *   `Automation` (N=49) — Automatización con IA
+        *   `Automation` (N=35) ← etiqueta directa
+        *   `Intelligent Automation` (N=6)
+        *   `Automation Tools` (N=2)
+        *   `Automated orchestration` (N=1)
+        *   `Automatización` (N=1) ← en español
+        *   `Automation workflows` (N=1)
+        *   `Workflow automation` (N=1)
+        *   `Workflow Automation` (N=1)
+        *   `DevOps automation` (N=1)
 
-## Large Language Models (LLMs) & Foundation Models
-- AI/LLMs
-- Foundation Models
-- Large Language Models
-- LLM
-- LLM APIs
-- LLMs
-- Multimodal foundation models
-- Multimodal LLMs
-- Transformer architectures
+    *   `Claude` (N=46) — Modelo de Anthropic
+        *   `Claude` (N=36) ← etiqueta directa
+        *   `Claude Code` (N=9)
+        *   `ClaudeAI` (N=1)
 
-## MLOps & Deployment
-- AI deployment
-- LLMOps
-- MLOps
-- Model Deployment
+    *   `Cursor` (N=30) — IDEs y herramientas de coding con IA integrada
+        *   `Cursor` (N=19) ← etiqueta directa
+        *   `v0` (N=7) — herramienta de Vercel para UI
+        *   `v0.dev` (N=1)
+        *   `Windsurf` (N=1) — IDE de Codeium
+        *   `Kiro` (N=1) — IDE de Amazon
+        *   `Replit Agent` (N=1) — agente de Replit
 
-## Model & Data Lifecycle
-- AI Product Lifecycle
-- AI workloads
-- AI/ML Workloads
-- Data Lifecycle
-- Machine learning lifecycle
-- ML lifecycle
-- Model Lifecycle
-- Model lifecycle
-- Model lifecycle management
+    *   `ChatGPT` (N=26)
+        *   `ChatGPT` (N=25) ← etiqueta directa
+        *   `ChatGPT Enterprise` (N=1)
 
-## Model Training & Fine-Tuning
-- Fine-tuning
-- Model Development
-- Model Fine-tuning
-- Model Training
-- Model training
+    *   `AI-assisted workflows` (N=25) — Flujos de trabajo aumentados con IA
+        *   `AI-assisted workflows` (N=14) ← etiqueta directa
+        *   `AI-enabled workflows` (N=5)
+        *   `AI-augmented workflow` (N=1)
+        *   `AI-assisted products` (N=1)
+        *   `AI-assisted decisioning` (N=1)
+        *   `AI-assisted development` (N=1)
+        *   `AI-assisted analytics` (N=1)
+        *   `AI-augmented workflows` (N=1)
 
-## Predictive Analytics
-- Bid prediction
-- Modelos predictivos
-- Predictive AI
-- Predictive Analytics
-- Predictive analytics
-- Predictive Intelligence
-- Predictive inventory
-- Predictive lead scoring
-- Predictive Modeling
-- Predictive Models
-- Predictive models
-- Predictive Scheduling
-- Prescriptive models
-- Prevenção preditiva
+    *   `Copilots` (N=20) — Asistentes integrados (GitHub, Microsoft 365)
+        *   `Copilots` (N=12) ← etiqueta directa
+        *   `Copilot` (N=7)
+        *   `Copilot solutions` (N=1)
 
-## Prompt Engineering
-- AI Prompt Design
-- Context Engineering
-- Prompt creation
-- prompt design
-- Prompt Design
-- Prompt Engineering
-- prompt engineering
-- Prompt generation
-- Prompting
-- Prompts
-- Task prompts
+    *   `Gemini` (N=11) — Modelo de Google
+        *   `Gemini` (N=11) ← sin sinónimos relevantes
 
-## RAG & Vector Search
-- Embeddings
-- LangChain
-- LlamaIndex
-- RAG
-- Semantic Search
-- Vector Databases
-- Vector Search
+---
 
-## Recommendation Systems & Personalization
-- AI-driven personalization
-- AI-powered Personalization
-- Algorithmic recommendation
-- Matching Algorithms
-- Personalisation
-- Personalization
-- Personalization engine
-- Personalization Systems
-- Recommendation Algorithms
-- Recommendation engines
-- Recommendation Systems
-- Recommendations
-- Targeting refinement
+## 4. ④ Diseña sistemas agénticos (N=198)
 
-## Responsible AI & Ethics
-- AI Ethics
-- AI ethics
-- Ethical AI
-- Ethics frameworks
-- Responsible AI
-- Responsible AI Practices
-- Ética de la IA
+La **próxima ola** del mercado. Sistemas que no solo responden sino que actúan de forma autónoma, coordinan múltiples modelos y ejecutan flujos de trabajo complejos sin intervención humana continua.
 
-## Risk & Bias Mitigation
-- Bias Analysis
-- Bias Mitigation
-- Model Risk Management
-- Model risk management
-- Risk Assessment
+*   **Etiquetas canónicas y sus sinónimos crudos del dataset:**
 
+    *   `Agent Orchestration` (N=111) — Orquestación de múltiples agentes
+        *   `Agent Orchestration` (N=43) ← etiqueta directa
+        *   `AI Agents` (N=28)
+        *   `Agents` (N=8)
+        *   `AI agents` (N=5)
+        *   `Sistemas multiagentes` (N=1) ← en español
+        *   `Agentic Workforces` (N=1)
+        *   `Coding Agents` (N=1)
+        *   `Agentic systems` (N=1)
+        *   `Agentic Patterns` (N=1)
+        *   `Multi-agent services` (N=1)
+        *   `Autonomous systems` (N=1)
+        *   `Agent frameworks` (N=1)
+        *   `Agentes autónomos` (N=1) ← en español
+        *   `AI orchestration` (N=1)
+        *   `Agentic Systems` (N=1)
+        *   `Multi-agent orchestration` (N=1)
+        *   `Agent-based workflows` (N=1)
+        *   `LangChain` (N=1) — framework de orquestación
+        *   `LlamaIndex` (N=1) — framework de orquestación
+        *   `Agentic architectures` (N=1)
+        *   `Agentic coding frameworks` (N=1)
+        *   `AI coding agent` (N=1)
+        *   `AI Agent` (N=1)
+        *   `AI-driven agents` (N=1)
+        *   `AI agent frameworks` (N=1)
+        *   `Agentic Commerce` (N=1)
+        *   `Multi-Agent systems` (N=1)
+        *   `Agent-based systems` (N=1)
+        *   `AI/agents` (N=1)
+        *   `Agentic patterns` (N=1)
+        *   `Agentic tools` (N=1)
+
+    *   `Agentic AI` (N=70)
+        *   `Agentic AI` (N=70) ← sin sinónimos; etiqueta muy estable
+
+    *   `Agentic Workflows` (N=17) — Flujos donde la IA actúa, no solo responde
+        *   `Agentic Workflows` (N=8) ← etiqueta directa
+        *   `Agentic workflows` (N=5)
+        *   `Intelligent workflows` (N=1)
+        *   `Agentic tool use` (N=1)
+        *   `Function calling` (N=1)
+
+---
+
+## 5. ⑤ Lidera con responsabilidad (N=61)
+
+Skills de **gobernanza, ética y estrategia** que posicionan al PM como líder de iniciativas de IA, no solo como usuario. Ya aparecen de forma explícita en requisitos de vacante senior y de liderazgo.
+
+*   **Etiquetas canónicas y sus sinónimos crudos del dataset:**
+
+    *   `Responsible AI` (N=30) — Marco ético y regulatorio
+        *   `Responsible AI` (N=28) ← etiqueta directa
+        *   `Responsible AI Practices` (N=2)
+
+    *   `AI Ethics` (N=20) — Ética en IA (bias, fairness, transparencia)
+        *   `AI Ethics` (N=14) ← etiqueta directa
+        *   `Ethical AI` (N=2)
+        *   `Bias Analysis` (N=1)
+        *   `Ética de la IA` (N=1) ← en español
+        *   `AI Assurance` (N=1)
+        *   `AI ethics` (N=1)
+
+    *   `AI Strategy` (N=11) — Estrategia de IA a nivel negocio
+        *   `AI Strategy` (N=11) ← sin sinónimos relevantes
+
+---
+
+## Notas metodológicas
+
+1. **Fuente de datos:** campo `ai_skills_list` (ARRAY\<STRING\>) de `v3l4-493018.jobs.product_management_consolidated`, filtrado por `is_pm_role = true`.
+2. **Normalización:** se aplicó un diccionario de ~80 reglas para unificar sinónimos en español, inglés y portugués en una etiqueta canónica única.
+3. **Umbral de inclusión:** solo se incluyen skills canónicas con N ≥ 5 menciones para evitar ruido estadístico.
+4. **Skills excluidas:** skills demasiado específicas, de empresas concretas (Einstein AI, NowAssist, Agentforce, Snowflake Cortex), o demasiado genéricas (Quality Assurance, Prototyping) fueron descartadas de la gráfica pero existen en el dataset.
+5. **Fecha de corte del dataset:** los datos corresponden a las vacantes capturadas en la versión actual del dataset de BigQuery.
