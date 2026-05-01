@@ -39,7 +39,7 @@ export function AiSalaryPremiumChart() {
 
     return {
       backgroundColor: 'transparent',
-      grid: { left: '3%', right: '4%', bottom: '5%', top: '8%', containLabel: true },
+      grid: { left: '3%', right: '4%', bottom: '18%', top: '8%', containLabel: true },
       tooltip: {
         trigger: 'axis',
         axisPointer: { type: 'shadow' },
@@ -58,12 +58,12 @@ export function AiSalaryPremiumChart() {
               Nivel: ${levelName}
             </div>
             <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 4px;">
-              <span style="color: ${COLOR_NOAI}; font-weight: 600;">Sin IA</span>
-              <strong>$${dataRow.noAi.toLocaleString()}</strong>
+              <span style="color: ${COLOR_NOAI}; font-weight: 600;">Roles sin IA</span>
+              <strong>$${dataRow.noAi.toLocaleString()} USD</strong>
             </div>
             <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 8px;">
-              <span style="color: ${COLOR_AI}; font-weight: 600;">Con IA</span>
-              <strong>$${dataRow.ai.toLocaleString()}</strong>
+              <span style="color: ${COLOR_AI}; font-weight: 600;">Roles con IA</span>
+              <strong>$${dataRow.ai.toLocaleString()} USD</strong>
             </div>
             <div style="background: ${isDark ? '#374151' : '#f1f5f9'}; padding: 4px 8px; border-radius: 4px; display: inline-block; font-size: 11px;">
               <strong style="color: #10b981;">+${premiumPct}%</strong> de AI Premium
@@ -75,7 +75,7 @@ export function AiSalaryPremiumChart() {
         bottom: 0,
         textStyle: { color: textColor, fontSize: 11, fontWeight: 600 },
         itemWidth: 16, itemHeight: 16, borderRadius: 4,
-        data: ['Base: PM sin IA', 'Base: PM con IA']
+        data: ['Roles de PM sin IA (Vacantes=575)', 'Roles de PM con IA (Vacantes=322)']
       },
       xAxis: {
         type: 'value',
@@ -83,6 +83,10 @@ export function AiSalaryPremiumChart() {
           color: textColor, 
           formatter: (value: number) => `$${value >= 1000 ? (value/1000) + 'k' : value}` 
         },
+        name: 'Salario Base Anual (USD)',
+        nameLocation: 'middle',
+        nameGap: 30,
+        nameTextStyle: { color: textColor, fontSize: 11, fontWeight: 500 },
         splitLine: { lineStyle: { color: gridColor, type: 'dashed' } }
       },
       yAxis: {
@@ -94,7 +98,7 @@ export function AiSalaryPremiumChart() {
       },
       series: [
         {
-          name: 'Base: PM sin IA',
+          name: 'Roles de PM sin IA (Vacantes=575)',
           type: 'bar',
           data: noAiData,
           itemStyle: { color: COLOR_NOAI, borderRadius: [0, 4, 4, 0] },
@@ -102,7 +106,7 @@ export function AiSalaryPremiumChart() {
           barGap: '15%'
         },
         {
-          name: 'Base: PM con IA',
+          name: 'Roles de PM con IA (Vacantes=322)',
           type: 'bar',
           data: aiData,
           itemStyle: { color: COLOR_AI, borderRadius: [0, 4, 4, 0] },
@@ -129,7 +133,7 @@ export function AiSalaryPremiumChart() {
 
         {/* 💡 Antes de explorar */}
         <div className="mb-5 text-xs text-muted-foreground bg-muted/40 border border-border/40 rounded-md px-3 py-2.5">
-          <p className="font-bold text-foreground/80 mb-1.5">💡 Control de Sesgos (Metodología)</p>
+          <p className="font-bold text-foreground/80 mb-1.5">💡 Antes de explorar</p>
           <ul className="list-disc list-inside space-y-1 leading-relaxed">
             <li>Analizamos 897 vacantes PM que transparentan su banda salarial.</li>
             <li>Dado que Estados Unidos paga salarios superiores y publica más roles de IA, un promedio global generaría una "Paradoja de Simpson".</li>
