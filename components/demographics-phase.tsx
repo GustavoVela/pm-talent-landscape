@@ -322,9 +322,9 @@ function PhaseZeroCarousel() {
             <div className={cn("transition-all duration-500 h-full", current !== 7 ? "opacity-40 scale-[0.98] blur-[1px]" : "opacity-100 scale-100 shadow-xl ring-1 ring-border/50 rounded-xl")}>
               <ChartWrapper
                 id="chart-demografia-employment"
-                title="¿Bajo qué tipo de contrato operan los roles de Producto?"
-                interpretation="La abrumadora mayoría de los roles son Full-time (2,539), desmitificando la tendencia al trabajo freelance puro en producto. Esto indica que el Product Manager sigue siendo considerado una pieza core interna dentro de la organización."
-                className="h-full bg-white/50 dark:bg-slate-950/50 backdrop-blur-sm shadow-lg"
+                title="¿Qué tipo de contrato ofrecen estas vacantes?"
+                interpretation="La abrumadora mayoría de las posiciones exigen exclusividad bajo modalidad 'Full-time' (2,539 vacantes, ~90%). Esto desmitifica la supuesta tendencia de la disciplina hacia un modelo freelance o fraccional ('Fractional PM'). El mercado nos dice claramente que el rol de Product Manager, al manejar datos sensibles y ejecución crítica de negocio, sigue siendo considerado una pieza estructural in-house."
+                className="h-full"
                 controls={
                   <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 w-full justify-between">
                     <div className="w-full sm:w-auto sm:min-w-[280px]">
