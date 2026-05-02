@@ -80,7 +80,7 @@ function PhaseZeroCarousel() {
             <div className={cn("transition-all duration-500 h-full", current !== 0 ? "opacity-40 scale-[0.98] blur-[1px]" : "opacity-100 scale-100 shadow-xl ring-1 ring-border/50 rounded-xl")}>
               <ChartWrapper
                 id="chart-filtro-ruido"
-                title="Filtro de Ruido Total: Posiciones Core vs Otras Áreas"
+                title="¿Cuántas vacantes son verdaderamente de Producto?"
                 
                 interpretation="De las 3,471 vacantes recolectadas buscando el término 'Product Manager', el 18.2% (635 roles) resultaron ser de construcción, ventas, marketing o finanzas que usan un título engañoso. Solo las 2,836 vacantes 'Core' pasaron a nuestro análisis."
                 className="h-full"
@@ -94,7 +94,7 @@ function PhaseZeroCarousel() {
             <div className={cn("transition-all duration-500 h-full", current !== 1 ? "opacity-40 scale-[0.98] blur-[1px]" : "opacity-100 scale-100 shadow-xl ring-1 ring-border/50 rounded-xl")}>
               <ChartWrapper
                 id="chart-freshness"
-                title="Frescura del Dataset: ¿Qué tan recientes son los datos?"
+                title="¿Qué tan recientes son los datos?"
                 interpretation="El 64% de las vacantes (1,818 de 2,836) fueron publicadas en la semana del 13 de abril de 2026. Más del 98% de los datos tienen menos de 4 semanas de antigüedad, lo que confirma que el análisis refleja el estado actual del mercado de talento en producto."
                 className="h-full"
               >
@@ -107,7 +107,7 @@ function PhaseZeroCarousel() {
             <div className={cn("transition-all duration-500 h-full", current !== 2 ? "opacity-40 scale-[0.98] blur-[1px]" : "opacity-100 scale-100 shadow-xl ring-1 ring-border/50 rounded-xl")}>
               <ChartWrapper
                 id="chart-demografia-pais"
-                title="Distribución de Roles de PM por País"
+                title="¿En qué países se concentra la demanda?"
                 
                 interpretation="Estados Unidos concentra el 47.2% de todas las vacantes validadas (1,339 roles), reflejando la madurez de su mercado tecnológico. En Latinoamérica, Brasil lidera con 626 roles seguido de México (415). La distribución confirma que el análisis tiene representación real en los 6 mercados."
                 className="h-full"
@@ -129,7 +129,7 @@ function PhaseZeroCarousel() {
             <div className={cn("transition-all duration-500 h-full", current !== 3 ? "opacity-40 scale-[0.98] blur-[1px]" : "opacity-100 scale-100 shadow-xl ring-1 ring-border/50 rounded-xl")}>
               <ChartWrapper
                 id="chart-demografia-ciudad"
-                title="Top 10: Roles de PM por Ciudad"
+                title="¿Cuáles son las ciudades con más vacantes?"
                 
                 interpretation="São Paulo (290 roles consolidados) y Ciudad de México (273) son los hubs de LatAm. En EE. UU., Nueva York lidera con 240 roles y San Francisco con 173. Santiago concentra el talento en producto de Chile con 142 roles, mientras Bogotá posiciona a Colombia con 99 roles core en el mercado."
                 className="h-full"
@@ -172,7 +172,7 @@ function PhaseZeroCarousel() {
             <div className={cn("transition-all duration-500 h-full", current !== 4 ? "opacity-40 scale-[0.98] blur-[1px]" : "opacity-100 scale-100 shadow-xl ring-1 ring-border/50 rounded-xl")}>
               <ChartWrapper
                 id="chart-roles-taxonomy"
-                title="Taxonomía de Roles Principales"
+                title="¿Qué títulos exactos usan las empresas para contratar?"
                 interpretation="Nota temporal: Los títulos 'Product Owner' y 'Product Marketing Manager' tienen una gran participación, pero 'Product Manager' domina abrumadoramente."
                 className="h-full bg-white/50 dark:bg-slate-950/50 backdrop-blur-sm shadow-lg"
                 controls={
@@ -214,7 +214,7 @@ function PhaseZeroCarousel() {
             <div className={cn("transition-all duration-500 h-full", current !== 5 ? "opacity-40 scale-[0.98] blur-[1px]" : "opacity-100 scale-100 shadow-xl ring-1 ring-border/50 rounded-xl")}>
               <ChartWrapper
                 id="chart-demografia-seniority"
-                title="Distribución por Nivel de Seniority"
+                title="¿Qué nivel de experiencia exige el mercado?"
                 interpretation="El mercado está dominado por roles Mid-Level (923) y Senior (878), conformando el 63.5% de todas las vacantes de PM validas. Las posiciones Junior o Entry-level son considerablemente menores (12.5%), lo que refleja la alta barrera de entrada a la disciplina."
                 className="h-full bg-white/50 dark:bg-slate-950/50 backdrop-blur-sm shadow-lg"
                 controls={
@@ -256,7 +256,7 @@ function PhaseZeroCarousel() {
             <div className={cn("transition-all duration-500 h-full", current !== 6 ? "opacity-40 scale-[0.98] blur-[1px]" : "opacity-100 scale-100 shadow-xl ring-1 ring-border/50 rounded-xl")}>
               <ChartWrapper
                 id="chart-demografia-industry"
-                title="Top 15 Industrias Contratando"
+                title="¿Qué industrias están buscando más Product Managers?"
                 interpretation="El sector de Tecnología, Software y Servicios IT (1,130), junto con Servicios Financieros y FinTech (558), dominan la captura de talento (concentrando casi el 60% de los roles). Además, el comercio minorista y E-Commerce (260) se posicionan como el tercer gran competidor por talento."
                 className="h-full bg-white/50 dark:bg-slate-950/50 backdrop-blur-sm shadow-lg"
                 controls={
@@ -298,7 +298,7 @@ function PhaseZeroCarousel() {
             <div className={cn("transition-all duration-500 h-full", current !== 7 ? "opacity-40 scale-[0.98] blur-[1px]" : "opacity-100 scale-100 shadow-xl ring-1 ring-border/50 rounded-xl")}>
               <ChartWrapper
                 id="chart-demografia-employment"
-                title="Distribución por Modalidad de Contrato"
+                title="¿Bajo qué tipo de contrato operan los roles de Producto?"
                 interpretation="La abrumadora mayoría de los roles son Full-time (2,539), desmitificando la tendencia al trabajo freelance puro en producto. Esto indica que el Product Manager sigue siendo considerado una pieza core interna dentro de la organización."
                 className="h-full bg-white/50 dark:bg-slate-950/50 backdrop-blur-sm shadow-lg"
                 controls={
