@@ -398,7 +398,7 @@ export function DemographicsPhase() {
                 Este apartado detalla la estructura de la muestra procesada, estableciendo el origen y la segmentación del análisis. Los datos provienen de ofertas de empleo activas en LinkedIn durante las últimas semanas, cubriendo vacantes en Estados Unidos, Brasil, México, Colombia, Chile y Perú. 
               </p>
               <p>
-                Para garantizar una lectura limpia y estadísticamente válida, el procesamiento requirió la estandarización de la información extraída. Esto implicó crear agrupaciones metodológicas para homologar cientos de variantes ruidosas en categorías clave como las <strong>ciudades</strong>, los diferentes <strong>cargos de Product Management</strong> y las <strong>industrias</strong>. 
+                Para garantizar una lectura limpia y estadísticamente válida, el procesamiento requirió la estandarización de la información extraída. Esto implicó crear agrupaciones metodológicas para homologar miles de variantes ruidosas en categorías clave como las <strong>ciudades</strong>, los <strong>cargos de Product Management</strong>, las <strong>industrias</strong> y la amplia taxonomía de <strong>habilidades y competencias</strong>. 
               </p>
               <p>
                 En cada gráfica analítica dentro del carrusel, encontrarás un enlace de acceso directo al <em>Diccionario de estandarización</em> correspondiente, permitiéndote auditar cómo se agruparon exactamente los datos originales.
