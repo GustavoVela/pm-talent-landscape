@@ -52,7 +52,7 @@ export function CompetencyProfilePhase() {
               <ChartWrapper
                 id="chart-radar-macro"
                 title="Comparativa por regiones"
-                description="💡 Antes de explorar: el radar muestra el perfil de skills promedio exigido en cada zona geográfica (LATAM, US, Global). Cuanto más al exterior cae el vértice, más frecuente es ese pilar en las vacantes de esa región. Haz clic en los nombres de la leyenda para aislar una región y ver su perfil puro sin ruido visual."
+                helpText="El radar muestra el perfil de skills promedio exigido en cada zona geográfica (LATAM, US, Global). Cuanto más al exterior cae el vértice, más frecuente es ese pilar en las vacantes de esa región. Haz clic en los nombres de la leyenda para aislar una región y ver su perfil puro sin ruido visual."
                 className="h-full bg-white/50 dark:bg-slate-950/50 backdrop-blur-sm border-slate-200 dark:border-slate-800 shadow-lg"
               >
                 <CompetencyRegionRadar />
@@ -61,7 +61,7 @@ export function CompetencyProfilePhase() {
               <ChartWrapper
                 id="chart-radar-country"
                 title="Comparativa por países"
-                description="💡 Antes de explorar: cada país tiene un perfil de demanda distinto — no todos los mercados piden lo mismo ni en la misma proporción. Un vértice más alejado del centro indica que ese skill se menciona con mayor frecuencia en ese país. Haz clic en la leyenda para activar o desactivar países y comparar solo los que te interesan."
+                helpText="Cada país tiene un perfil de demanda distinto — no todos los mercados piden lo mismo ni en la misma proporción. Un vértice más alejado del centro indica que ese skill se menciona con mayor frecuencia en ese país. Haz clic en la leyenda para activar o desactivar países y comparar solo los que te interesan."
                 className="h-full bg-white/50 dark:bg-slate-950/50 backdrop-blur-sm border-slate-200 dark:border-slate-800 shadow-lg"
               >
                 <CompetencyCountryRadar />

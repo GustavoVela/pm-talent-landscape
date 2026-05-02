@@ -3,14 +3,15 @@
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Separator } from "@/components/ui/separator"
-import { Lightbulb } from "lucide-react"
+import { Lightbulb, Info } from "lucide-react"
 import { Alert, AlertDescription } from "@/components/ui/alert"
 
 interface ChartWrapperProps {
   id: string
   title: string
   description?: string
-  interpretation?: string
+  interpretation?: string | React.ReactNode
+  helpText?: string | React.ReactNode
   className?: string
   controls?: React.ReactNode
   footer?: React.ReactNode
@@ -22,6 +23,7 @@ export function ChartWrapper({
   title,
   description,
   interpretation,
+  helpText,
   className,
   controls,
   footer,
@@ -37,7 +39,17 @@ export function ChartWrapper({
             <CardDescription className="mt-1">{description}</CardDescription>
           )}
         </CardHeader>
-        <CardContent className="space-y-2 flex-1 flex flex-col">
+        <CardContent className="space-y-2 flex-1 flex flex-col pt-0">
+          {helpText && (
+            <div className="mb-2 w-full">
+              <Alert className="w-full border-primary/10 bg-primary/5 shadow-none py-2 px-3">
+                <Info className="h-4 w-4 text-primary" />
+                <AlertDescription className="text-muted-foreground text-[12.5px] leading-relaxed w-full">
+                  {helpText}
+                </AlertDescription>
+              </Alert>
+            </div>
+          )}
           {controls && (
             <div className="w-full">
               {controls}
