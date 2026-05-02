@@ -160,9 +160,11 @@ export function Introduction() {
           <div className="mx-auto max-w-5xl">
             <AnimatedSection>
               <div className="flex justify-center mb-8">
-                <Badge variant="outline" className="gap-2 px-4 py-2 text-xs font-medium text-muted-foreground border-border/60 bg-background/80 backdrop-blur-sm rounded-full shadow-sm">
-                  <Monitor className="h-3.5 w-3.5" />
-                  Las gráficas interactivas se disfrutan mejor desde un ordenador
+                <Badge variant="outline" className="gap-2 px-4 py-2 text-xs font-semibold border-sky-500/20 bg-sky-50/50 dark:bg-sky-950/20 backdrop-blur-sm rounded-full shadow-sm">
+                  <Monitor className="h-3.5 w-3.5 text-sky-500" />
+                  <span className="bg-gradient-to-r from-sky-600 to-emerald-500 bg-clip-text text-transparent dark:from-sky-400 dark:to-emerald-400">
+                    Las gráficas interactivas se disfrutan mejor desde un ordenador
+                  </span>
                 </Badge>
               </div>
             </AnimatedSection>
