@@ -257,7 +257,7 @@ function PhaseZeroCarousel() {
               <ChartWrapper
                 id="chart-demografia-industry"
                 title="Top 15 Industrias Contratando"
-                interpretation="El sector de Servicios IT y Consultoría (422), junto con Software (355) y Fintech/Banca (381 consolidado), dominan la captura de talento. Además, gigantes como TikTok, Meta, Amazon y corporativos tradicionales (Mastercard, JPMorgan) se disputan el talento contra scale-ups locales (Nubank, MercadoLibre)."
+                interpretation="El sector de Tecnología, Software y Servicios IT (1,130), junto con Servicios Financieros y FinTech (558), dominan la captura de talento (concentrando casi el 60% de los roles). Además, el comercio minorista y E-Commerce (260) se posicionan como el tercer gran competidor por talento."
                 className="h-full bg-white/50 dark:bg-slate-950/50 backdrop-blur-sm shadow-lg"
                 controls={
                   <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 w-full justify-between">
