@@ -3,7 +3,7 @@
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Separator } from "@/components/ui/separator"
-import { BrainCircuit } from "lucide-react"
+import { Lightbulb } from "lucide-react"
 import { Alert, AlertDescription } from "@/components/ui/alert"
 
 interface ChartWrapperProps {
@@ -51,9 +51,9 @@ export function ChartWrapper({
           {interpretation && (
             <div className="mt-4 w-full">
               <Alert className="w-full border-primary/20 bg-background shadow-sm">
-                <BrainCircuit className="h-4 w-4 text-primary" />
-                <AlertDescription className="text-muted-foreground text-[14px] leading-relaxed">
-                  <p><span className="text-foreground font-semibold mr-1">Lectura Ejecutiva:</span> {interpretation}</p>
+                <Lightbulb className="h-4 w-4 text-primary" />
+                <AlertDescription className="text-foreground text-[14px] leading-relaxed">
+                  <p>{interpretation}</p>
                 </AlertDescription>
               </Alert>
             </div>
