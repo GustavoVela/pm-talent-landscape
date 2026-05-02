@@ -136,6 +136,32 @@ export function AiPenetrationChart() {
               lineHeight: 22
             }
           }
+        },
+        markLine: {
+          symbol: ['none', 'none'],
+          silent: true,
+          z: 0,
+          label: {
+            show: true,
+            position: 'insideEndTop',
+            formatter: '{b}',
+            color: isDark ? "#9ca3af" : "#6b7280",
+            fontSize: 11,
+            fontWeight: 600,
+            padding: [0, 0, 4, 0]
+          },
+          data: [
+            {
+              name: '🇺🇸 Benchmark EE.UU. (36.2%)',
+              yAxis: 36.2,
+              lineStyle: { color: '#0ea5e9', type: 'dashed', width: 1.5, opacity: 0.7 }
+            },
+            {
+              name: '🌎 Promedio LatAm (23.7%)',
+              yAxis: 23.7,
+              lineStyle: { color: '#10b981', type: 'dashed', width: 1.5, opacity: 0.7 }
+            }
+          ]
         }
       }
     ]
