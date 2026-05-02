@@ -84,8 +84,7 @@ export function JobTitlesChart({
 
     let result = Object.entries(aggregated)
       .map(([rol, cantidad]) => ({ rol, cantidad }))
-      .sort((a, b) => b.cantidad - a.cantidad)
-      .slice(0, 15);
+      .sort((a, b) => b.cantidad - a.cantidad);
 
     let totalVacancies = result.reduce((acc, curr) => acc + curr.cantidad, 0);
 
@@ -180,7 +179,7 @@ export function JobTitlesChart({
 
   return (
     <div className="flex flex-col h-full w-full">
-      <div className="h-[270px] w-full">
+      <div className="h-[340px] w-full">
         <ReactECharts 
           option={option} 
           style={{ height: '100%', width: '100%' }} 

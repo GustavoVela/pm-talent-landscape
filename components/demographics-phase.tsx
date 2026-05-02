@@ -180,7 +180,7 @@ function PhaseZeroCarousel() {
             <div className={cn("transition-all duration-500 h-full", current !== 4 ? "opacity-40 scale-[0.98] blur-[1px]" : "opacity-100 scale-100 shadow-xl ring-1 ring-border/50 rounded-xl")}>
               <ChartWrapper
                 id="chart-roles-taxonomy"
-                title="¿Bajo qué categorías se agrupan los roles de Producto?"
+                title="¿Qué roles de Product Management contemplamos?"
                 interpretation={
                   <div className="flex flex-col gap-2.5">
                     <span>Dada la extrema variación en los títulos originales de las vacantes, estandarizamos cientos de nomenclaturas en 10 categorías macro. El 47.5% del talento base opera estrictamente bajo la etiqueta 'Product Manager' (1,348 roles), seguido por 'Product Owner' con el 20.6%. Esta consolidación demuestra que, aunque la especialización crece (ej. Product Ops o PMM), casi el 70% de la demanda sigue anclada a los roles tradicionales de ejecución central.</span>
