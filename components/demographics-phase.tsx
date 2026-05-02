@@ -95,7 +95,7 @@ function PhaseZeroCarousel() {
               <ChartWrapper
                 id="chart-freshness"
                 title="¿Qué tan recientes son los datos?"
-                interpretation="El 64% de las vacantes (1,818 de 2,836) fueron publicadas en la semana del 13 de abril de 2026. Más del 98% de los datos tienen menos de 4 semanas de antigüedad, lo que confirma que el análisis refleja el estado actual del mercado de talento en producto."
+                interpretation="El dataset es altamente dinámico. El 64% de las posiciones analizadas (1,818 vacantes) se publicaron en la semana del 13 de abril de 2026, y más del 98% de la muestra total tiene menos de cuatro semanas de antigüedad. Esta compresión temporal elimina el sesgo estadístico de 'vacantes zombie' y garantiza que el análisis refleje la demanda de talento estrictamente en tiempo real."
                 className="h-full"
               >
                 <SampleRecencyChart />

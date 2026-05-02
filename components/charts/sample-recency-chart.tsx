@@ -45,7 +45,7 @@ export function SampleRecencyChart() {
     xAxis: {
       type: 'category',
       data: weeklyData.map(d => d.week),
-      name: 'Semana de publicación (lunes)',
+      name: 'Semana de publicación',
       nameLocation: 'middle',
       nameGap: 36,
       nameTextStyle: { fontSize: 11, color: '#94a3b8' },
