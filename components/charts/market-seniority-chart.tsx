@@ -76,30 +76,27 @@ export function MarketSeniorityChart({
       data = rawData.filter(d => d.country === code);
     }
 
-    // Aggregate by seniority
+    // Aggregate by seniority (alineado con la sección de compensación)
     const agg: Record<string, number> = {
-      "Executive": 0,
-      "Director": 0,
-      "Lead": 0,
-      "Senior": 0,
+      "Director / Ejecutivo": 0,
+      "Senior / Lead": 0,
       "Mid-Level": 0,
-      "Junior": 0
+      "Junior / Entry": 0
     };
 
     data.forEach(d => {
-      if (agg[d.seniority] !== undefined) {
-        agg[d.seniority] += d.count;
+      if (d.seniority === "Executive" || d.seniority === "Director") {
+        agg["Director / Ejecutivo"] += d.count;
+      } else if (d.seniority === "Senior" || d.seniority === "Lead") {
+        agg["Senior / Lead"] += d.count;
+      } else if (d.seniority === "Mid-Level") {
+        agg["Mid-Level"] += d.count;
+      } else if (d.seniority === "Junior") {
+        agg["Junior / Entry"] += d.count;
       }
     });
 
-    return {
-      "Ejecutivo (VP, C-Level)": agg["Executive"],
-      "Director": agg["Director"],
-      "Lead / Principal": agg["Lead"],
-      "Senior": agg["Senior"],
-      "Mid-Level": agg["Mid-Level"],
-      "Junior / Entry": agg["Junior"]
-    };
+    return agg;
   }, [selectedCountry]);
 
   const totalFiltered = useMemo(() => {
@@ -108,10 +105,8 @@ export function MarketSeniorityChart({
 
   // Order from bottom to top for ECharts
   const chartData = [
-    { label: "Ejecutivo (VP, C-Level)", raw: filteredData["Ejecutivo (VP, C-Level)"] },
-    { label: "Director", raw: filteredData["Director"] },
-    { label: "Lead / Principal", raw: filteredData["Lead / Principal"] },
-    { label: "Senior", raw: filteredData["Senior"] },
+    { label: "Director / Ejecutivo", raw: filteredData["Director / Ejecutivo"] },
+    { label: "Senior / Lead", raw: filteredData["Senior / Lead"] },
     { label: "Mid-Level", raw: filteredData["Mid-Level"] },
     { label: "Junior / Entry", raw: filteredData["Junior / Entry"] },
   ].map(d => ({

@@ -230,9 +230,9 @@ function PhaseZeroCarousel() {
             <div className={cn("transition-all duration-500 h-full", current !== 5 ? "opacity-40 scale-[0.98] blur-[1px]" : "opacity-100 scale-100 shadow-xl ring-1 ring-border/50 rounded-xl")}>
               <ChartWrapper
                 id="chart-demografia-seniority"
-                title="¿Qué nivel de experiencia exige el mercado?"
-                interpretation="El mercado está dominado por roles Mid-Level (923) y Senior (878), conformando el 63.5% de todas las vacantes de PM validas. Las posiciones Junior o Entry-level son considerablemente menores (12.5%), lo que refleja la alta barrera de entrada a la disciplina."
-                className="h-full bg-white/50 dark:bg-slate-950/50 backdrop-blur-sm shadow-lg"
+                title="¿Qué nivel de experiencia exigen las vacantes disponibles?"
+                interpretation="El mercado de Producto presenta una fuerte barrera de entrada. Al alinear los niveles de experiencia en cuatro macro-categorías (consistentes con nuestro análisis salarial posterior), observamos que casi el 70% de la demanda exige perfiles probados: 'Mid-Level' (923 vacantes) y 'Senior / Lead' (1,013 vacantes). Las posiciones 'Junior' representan apenas el 12% del total, confirmando que las empresas rara vez contratan PMs para formarlos; exigen talento listo para ejecutar."
+                className="h-full"
                 controls={
                   <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 w-full justify-between">
                     <div className="w-full sm:w-auto sm:min-w-[280px]">
