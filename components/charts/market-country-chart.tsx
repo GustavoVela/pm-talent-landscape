@@ -110,7 +110,7 @@ export function MarketCountryChart({
 
   return (
     <div className="flex flex-col h-full w-full">
-      <div className="h-[280px] w-full -mt-4">
+      <div className="h-[240px] w-full -mt-4">
         <ReactECharts
           option={option}
           style={{ height: '100%', width: '100%' }}
