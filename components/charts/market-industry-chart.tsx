@@ -68,7 +68,7 @@ export function MarketIndustryChart({
     grid: {
       left: '3%',
       right: '10%',
-      bottom: '15%',
+      bottom: '5%',
       top: '5%',
       containLabel: true
     },
