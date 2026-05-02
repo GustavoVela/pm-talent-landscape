@@ -131,7 +131,7 @@ function PhaseZeroCarousel() {
                 id="chart-demografia-ciudad"
                 title="¿Qué ciudades y modalidades concentran las vacantes?"
                 
-                interpretation="São Paulo y Ciudad de México lideran los hubs urbanos en LatAm. Sin embargo, el alto volumen de vacantes categorizadas como 'Otra (Nivel País)' en todos los mercados no es una carencia de datos, sino un hallazgo estructural: refleja la alta penetración de posiciones remotas o reclutamientos a nivel nacional donde las empresas ya no limitan la contratación a una sede metropolitana."
+                interpretation="São Paulo y Ciudad de México lideran los hubs urbanos en LatAm. Destaca el altísimo volumen de vacantes bajo 'Otra (Nivel País)': son posiciones donde el reclutador especificó únicamente el país, omitiendo cualquier ciudad. Lejos de ser una carencia de datos, esto evidencia la consolidación del modelo remoto, donde las empresas contratan talento a nivel nacional sin restricciones metropolitanas."
                 className="h-full"
                 controls={
                   <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 w-full justify-between">
