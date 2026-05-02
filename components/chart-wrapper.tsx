@@ -50,7 +50,7 @@ export function ChartWrapper({
 
           {interpretation && (
             <div className="mt-4 w-full">
-              <Alert className="w-full border-primary/20 bg-background shadow-sm">
+              <Alert className="w-full border-border/50 bg-muted/50 shadow-sm">
                 <Lightbulb className="h-4 w-4 text-primary" />
                 <AlertDescription className="text-foreground text-[14px] leading-relaxed">
                   <p>{interpretation}</p>
