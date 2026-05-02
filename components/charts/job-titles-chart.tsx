@@ -179,7 +179,7 @@ export function JobTitlesChart({
 
   return (
     <div className="flex flex-col h-full w-full">
-      <div className="h-[260px] w-full">
+      <div className="flex-1 w-full min-h-[250px]">
         <ReactECharts 
           option={option} 
           style={{ height: '100%', width: '100%' }} 
