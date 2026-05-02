@@ -3,7 +3,7 @@
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Separator } from "@/components/ui/separator"
-import { Lightbulb, Compass } from "lucide-react"
+import { Compass } from "lucide-react"
 import { Alert, AlertDescription } from "@/components/ui/alert"
 
 interface ChartWrapperProps {
@@ -43,7 +43,7 @@ export function ChartWrapper({
           {helpText && (
             <div className="mb-4 w-full">
               <p className="text-[13px] text-muted-foreground leading-relaxed mb-3">
-                <span className="font-medium text-foreground">🤓 Antes de explorar: </span>
+                <span className="font-medium text-foreground">💡 Antes de explorar: </span>
                 {helpText}
               </p>
               <Separator className="w-full bg-border/60" />
@@ -61,8 +61,8 @@ export function ChartWrapper({
 
           {interpretation && (
             <div className="mt-4 w-full">
-              <Alert className="w-full border-border/50 bg-muted/50 shadow-sm">
-                <Lightbulb className="h-4 w-4 text-primary" />
+              <Alert className="w-full border-border/50 bg-muted/50 shadow-sm grid-cols-[auto_1fr] gap-x-3">
+                <span className="text-base leading-none translate-y-[2px]">🤓</span>
                 <AlertDescription className="text-foreground text-[14px] leading-relaxed w-full">
                   <div className="w-full">{interpretation}</div>
                 </AlertDescription>

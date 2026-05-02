@@ -336,8 +336,8 @@ export function Introduction() {
 
             <AnimatedSection delay={250}>
               <div className="mt-12 w-full">
-                <Alert className="w-full border-primary/20 bg-background shadow-sm">
-                  <Lightbulb className="h-5 w-5 text-primary" />
+                <Alert className="w-full border-primary/20 bg-background shadow-sm grid-cols-[auto_1fr] gap-x-3">
+                  <span className="text-xl leading-none translate-y-[2px]">🤓</span>
                   <AlertDescription className="text-muted-foreground text-[15px] leading-relaxed space-y-4">
                     <p>
                       Como adelanto de los resultados: la demanda real por este perfil integral 🦄 —que domine los cinco ejes transversales además del conocimiento fundacional de producto— <span className="font-medium italic text-foreground">choca con el hype actual y con mi marco mental</span>, representando solo el 6.45% de las ofertas. Su concentración es ligeramente mayor en Estados Unidos (8.8%), marcando la pauta hacia la que probablemente evolucionará la industria.
