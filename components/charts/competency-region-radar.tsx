@@ -71,10 +71,10 @@ export function CompetencyRegionRadar() {
     }],
   }), [isDark, hidden, gridColor, lineColor, labelColor, textColor]);
 
-  if (!mounted) return <div className="h-[420px] w-full -mt-12 -mb-8" />;
+  if (!mounted) return <div className="h-[500px] w-full" />;
 
   return (
-    <div className="flex flex-col h-[420px] w-full -mt-12 -mb-8">
+    <div className="flex flex-col h-[500px] w-full">
       <div className="flex-1">
         <ReactECharts option={option} notMerge={true} style={{ height: '100%', width: '100%' }} opts={{ renderer: 'svg' }} />
       </div>
