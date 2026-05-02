@@ -272,9 +272,17 @@ function PhaseZeroCarousel() {
             <div className={cn("transition-all duration-500 h-full", current !== 6 ? "opacity-40 scale-[0.98] blur-[1px]" : "opacity-100 scale-100 shadow-xl ring-1 ring-border/50 rounded-xl")}>
               <ChartWrapper
                 id="chart-demografia-industry"
-                title="¿Qué industrias están buscando más Product Managers?"
-                interpretation="El sector de Tecnología, Software y Servicios IT (1,130), junto con Servicios Financieros y FinTech (558), dominan la captura de talento (concentrando casi el 60% de los roles). Además, el comercio minorista y E-Commerce (260) se posicionan como el tercer gran competidor por talento."
-                className="h-full bg-white/50 dark:bg-slate-950/50 backdrop-blur-sm shadow-lg"
+                title="¿En qué industrias están disponibles las vacantes?"
+                interpretation={
+                  <div className="flex flex-col gap-2.5">
+                    <span>Mapeamos las 489 etiquetas crudas del ecosistema en 15 macro-sectores estandarizados. La concentración es altísima: el 59.5% del mercado está dominado por Tecnología/Software (1,130 vacantes) y Servicios Financieros/FinTech (558 vacantes). El tercer pilar lo compone Retail & E-Commerce (260 vacantes). Esta tripleta confirma que la digitalización financiera y transaccional sigue siendo el motor absoluto de empleabilidad para los PMs.</span>
+                    <div className="h-px w-full bg-border/50" />
+                    <a href="https://github.com/GustavoVela/pm-talent-landscape/blob/main/analysis/groupings/industry_grouping.md" target="_blank" rel="noopener noreferrer" className="font-medium text-primary hover:underline text-[13px] w-fit">
+                      Ver taxonomía de agrupación industrial ↗
+                    </a>
+                  </div>
+                }
+                className="h-full"
                 controls={
                   <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 w-full justify-between">
                     <div className="w-full sm:w-auto sm:min-w-[280px]">
