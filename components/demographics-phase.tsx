@@ -231,7 +231,7 @@ function PhaseZeroCarousel() {
               <ChartWrapper
                 id="chart-demografia-seniority"
                 title="¿Qué nivel de experiencia exigen las vacantes disponibles?"
-                interpretation="El mercado de Producto presenta una fuerte barrera de entrada. Al alinear los niveles de experiencia en cuatro macro-categorías (consistentes con nuestro análisis salarial posterior), observamos que casi el 70% de la demanda exige perfiles probados: 'Mid-Level' (923 vacantes) y 'Senior / Lead' (1,013 vacantes). Las posiciones 'Junior' representan apenas el 12% del total, confirmando que las empresas rara vez contratan PMs para formarlos; exigen talento listo para ejecutar."
+                interpretation="El mercado de Producto presenta una fuerte barrera de entrada. Al alinear los niveles de experiencia en cuatro macro-categorías (consistentes con nuestro análisis salarial posterior), observamos que casi el 70% de la demanda exige perfiles probados: 'Mid-Level' (923 vacantes) y 'Senior / Lead / Head' (1,013 vacantes). Las posiciones 'Junior' representan apenas el 12% del total, confirmando que las empresas rara vez contratan PMs para formarlos; exigen talento listo para ejecutar."
                 className="h-full"
                 controls={
                   <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 w-full justify-between">

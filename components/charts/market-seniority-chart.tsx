@@ -79,7 +79,7 @@ export function MarketSeniorityChart({
     // Aggregate by seniority (alineado con la sección de compensación)
     const agg: Record<string, number> = {
       "Director / Ejecutivo": 0,
-      "Senior / Lead": 0,
+      "Senior / Lead / Head": 0,
       "Mid-Level": 0,
       "Junior / Entry": 0
     };
@@ -88,7 +88,7 @@ export function MarketSeniorityChart({
       if (d.seniority === "Executive" || d.seniority === "Director") {
         agg["Director / Ejecutivo"] += d.count;
       } else if (d.seniority === "Senior" || d.seniority === "Lead") {
-        agg["Senior / Lead"] += d.count;
+        agg["Senior / Lead / Head"] += d.count;
       } else if (d.seniority === "Mid-Level") {
         agg["Mid-Level"] += d.count;
       } else if (d.seniority === "Junior") {
@@ -106,7 +106,7 @@ export function MarketSeniorityChart({
   // Order from bottom to top for ECharts
   const chartData = [
     { label: "Director / Ejecutivo", raw: filteredData["Director / Ejecutivo"] },
-    { label: "Senior / Lead", raw: filteredData["Senior / Lead"] },
+    { label: "Senior / Lead / Head", raw: filteredData["Senior / Lead / Head"] },
     { label: "Mid-Level", raw: filteredData["Mid-Level"] },
     { label: "Junior / Entry", raw: filteredData["Junior / Entry"] },
   ].map(d => ({
