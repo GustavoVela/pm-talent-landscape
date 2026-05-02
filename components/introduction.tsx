@@ -341,7 +341,7 @@ export function Introduction() {
                       Como adelanto de los resultados: la demanda real por este perfil integral 🦄 —que domine los cinco ejes transversales además del conocimiento fundacional de producto— <span className="font-medium italic text-foreground">choca con el hype actual y con mi marco mental</span>, representando solo el 6.45% de las ofertas. Su concentración es ligeramente mayor en Estados Unidos (8.8%), marcando la pauta hacia la que probablemente evolucionará la industria.
                     </p>
                     <p>
-                      <span className="text-foreground font-semibold mr-1">¿Quieres explorar esto a detalle?</span> Si te interesa profundizar en cómo el PM puede liderar esta adopción táctica, puedes descargar la presentación de Product-LatAm: <a href="https://www.linkedin.com/feed/update/urn:li:activity:7401464764436254720/" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary hover:underline">aquí</a>.
+                      Si te interesa profundizar en cómo el PM puede liderar esta adopción táctica, puedes descargar la presentación de Product-LatAm: <a href="https://www.linkedin.com/feed/update/urn:li:activity:7401464764436254720/" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary hover:underline">aquí</a>.
                     </p>
                   </AlertDescription>
                 </Alert>
