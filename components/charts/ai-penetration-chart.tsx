@@ -152,14 +152,14 @@ export function AiPenetrationChart() {
           },
           data: [
             {
-              name: '🇺🇸 Benchmark EE.UU. (36.2%)',
+              name: 'EE.UU.\n(36.2%)',
               yAxis: 36.2,
-              lineStyle: { color: '#0ea5e9', type: 'dashed', width: 1.5, opacity: 0.7 }
+              lineStyle: { color: '#0ea5e9', type: 'dashed', width: 1, opacity: 0.6 }
             },
             {
-              name: '🌎 Promedio LatAm (23.7%)',
+              name: 'LatAm\n(23.7%)',
               yAxis: 23.7,
-              lineStyle: { color: '#10b981', type: 'dashed', width: 1.5, opacity: 0.7 }
+              lineStyle: { color: '#10b981', type: 'dashed', width: 1, opacity: 0.6 }
             }
           ]
         }
