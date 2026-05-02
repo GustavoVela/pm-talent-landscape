@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Separator } from "@/components/ui/separator"
 import { BrainCircuit } from "lucide-react"
-import { Item, ItemContent, ItemDescription, ItemMedia, ItemTitle } from "@/components/ui/item"
+import { Alert, AlertDescription } from "@/components/ui/alert"
 
 interface ChartWrapperProps {
   id: string
@@ -49,17 +49,14 @@ export function ChartWrapper({
           </div>
 
           {interpretation && (
-            <Item variant="outline" size="xs" className="mt-4 bg-muted/30 hover:bg-muted/50 transition-colors">
-              <ItemMedia variant="icon" className="mt-0.5">
-                <BrainCircuit className="text-primary/80" />
-              </ItemMedia>
-              <ItemContent>
-                <ItemTitle className="text-[11px] text-muted-foreground uppercase tracking-wider mb-0.5">Lectura Ejecutiva</ItemTitle>
-                <ItemDescription className="text-sm leading-relaxed text-foreground/90">
-                  {interpretation}
-                </ItemDescription>
-              </ItemContent>
-            </Item>
+            <div className="mt-4 w-full">
+              <Alert className="w-full border-primary/20 bg-background shadow-sm">
+                <BrainCircuit className="h-4 w-4 text-primary" />
+                <AlertDescription className="text-muted-foreground text-[14px] leading-relaxed">
+                  <p><span className="text-foreground font-semibold mr-1">Lectura Ejecutiva:</span> {interpretation}</p>
+                </AlertDescription>
+              </Alert>
+            </div>
           )}
         </CardContent>
         {footer && (
