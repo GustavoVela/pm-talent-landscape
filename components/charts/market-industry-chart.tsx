@@ -90,7 +90,7 @@ export function MarketIndustryChart({
       data: filteredData.map(d => d.label),
       axisLine: { show: false },
       axisTick: { show: false },
-      axisLabel: { fontSize: 11, color: '#374151', width: 220, overflow: 'break' }
+      axisLabel: { fontSize: 10, color: '#374151', interval: 0, width: 220, overflow: 'truncate' }
     },
     series: [
       {
