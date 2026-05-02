@@ -126,7 +126,7 @@ export function CompetencyProfilePhase() {
               <ChartWrapper
                 id="chart-taxonomia-competencias"
                 title="Taxonomía de Competencias (Sunburst)"
-                description="💡 Antes de explorar: Usa los controles de abajo para activar o desactivar ejes de competencias. Haz clic en cualquier eje (Business, Datos, IA…) para entrar en detalle: verás todos sus clústeres de habilidades y las habilidades individuales que lo componen. El tamaño de cada clúster refleja su peso relativo dentro del eje — cuanto más grande, más frecuente es ese grupo de skills en las publicaciones analizadas."
+                helpText="Usa los controles de abajo para activar o desactivar ejes de competencias. Haz clic en cualquier eje (Business, Datos, IA…) para entrar en detalle: verás todos sus clústeres de habilidades y las habilidades individuales que lo componen. El tamaño de cada clúster refleja su peso relativo dentro del eje — cuanto más grande, más frecuente es ese grupo de skills en las publicaciones analizadas."
                 className="w-full bg-white/50 dark:bg-slate-950/50 backdrop-blur-sm border-slate-200 dark:border-slate-800 shadow-lg"
               >
                 <CompetencySunburstChart />

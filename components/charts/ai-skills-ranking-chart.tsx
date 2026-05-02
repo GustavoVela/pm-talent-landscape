@@ -213,8 +213,8 @@ export function AiSkillsRankingChart() {
 
       {/* 💡 Antes de explorar */}
       <div className="mb-4 w-full">
-        <div className="text-[13px] text-muted-foreground leading-relaxed mb-3">
-          <span className="font-medium text-foreground">💡 Antes de explorar: </span>
+        <div className="text-xs text-muted-foreground leading-relaxed mb-3">
+          <span className="font-bold text-foreground">💡 Antes de explorar: </span>
           <ul className="list-disc list-inside space-y-1 mt-2 ml-1">
             <li>Cada barra indica cuántas vacantes PM mencionan ese skill — qué tan urgente es que lo entiendas.</li>
             <li>Los encabezados en color marcan el inicio de cada ruta de aprendizaje. Usa los filtros para ver una sola ruta a la vez.</li>

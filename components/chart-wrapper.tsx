@@ -42,8 +42,8 @@ export function ChartWrapper({
         <CardContent className="space-y-2 flex-1 flex flex-col pt-0">
           {helpText && (
             <div className="mb-4 w-full">
-              <p className="text-[13px] text-muted-foreground leading-relaxed mb-3">
-                <span className="font-medium text-foreground">💡 Antes de explorar: </span>
+              <p className="text-xs text-muted-foreground leading-relaxed mb-3">
+                <span className="font-bold text-foreground">💡 Antes de explorar: </span>
                 {helpText}
               </p>
               <Separator className="w-full bg-border/60" />

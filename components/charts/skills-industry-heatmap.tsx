@@ -270,8 +270,8 @@ export function SkillsIndustryHeatmap() {
 
             {/* 💡 Tip — full width */}
             <div className="mb-4 w-full">
-              <div className="text-[13px] text-muted-foreground leading-relaxed mb-3">
-                <span className="font-medium text-foreground">💡 Antes de explorar: </span>
+              <div className="text-xs text-muted-foreground leading-relaxed mb-3">
+                <span className="font-bold text-foreground">💡 Antes de explorar: </span>
                 <ul className="list-disc list-inside space-y-1 mt-2 ml-1">
                   <li><strong>Absoluto:</strong> escala 0–100 % compartida. Responde: <em>¿Qué % de vacantes de este sector piden este skill?</em></li>
                   <li><strong>Por Pilar:</strong> cada columna tiene su propio rango de color. Core PM se omite (es &gt;90 % en todos los sectores). Responde: <em>¿En qué sectores destaca relativamente este pilar?</em></li>

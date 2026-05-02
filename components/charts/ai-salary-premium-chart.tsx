@@ -191,8 +191,8 @@ export function AiSalaryPremiumChart() {
 
         {/* 💡 Antes de explorar */}
         <div className="mb-5 w-full">
-          <div className="text-[13px] text-muted-foreground leading-relaxed mb-3">
-            <span className="font-medium text-foreground">💡 Antes de explorar: </span>
+          <div className="text-xs text-muted-foreground leading-relaxed mb-3">
+            <span className="font-bold text-foreground">💡 Antes de explorar: </span>
             <ul className="list-disc list-inside space-y-1 mt-2 ml-1">
               <li>Analizamos ~900 vacantes PM que transparentan su banda salarial (Mínimo y Máximo) en Estados Unidos.</li>
               <li>Dado que Estados Unidos paga salarios superiores y publica más roles de IA, un promedio global generaría una "Paradoja de Simpson". Por eso esta gráfica aísla exclusivamente el mercado de EE.UU. como indicador adelantado.</li>

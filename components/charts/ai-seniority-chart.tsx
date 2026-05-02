@@ -302,8 +302,8 @@ export function AiSeniorityChart() {
 
       {/* 💡 Antes de explorar */}
       <div className="mb-4 w-full">
-        <div className="text-[13px] text-muted-foreground leading-relaxed mb-3">
-          <span className="font-medium text-foreground">💡 Antes de explorar: </span>
+        <div className="text-xs text-muted-foreground leading-relaxed mb-3">
+          <span className="font-bold text-foreground">💡 Antes de explorar: </span>
           <ul className="list-disc list-inside space-y-1 mt-2 ml-1">
             <li><strong>Por Seniority:</strong> compara cómo varía la demanda de IA entre Junior/Mid, Senior y Leadership en cada país. Ideal para saber si el mercado ya lo exige en tu nivel.</li>
             <li><strong>Por País:</strong> invierte el eje para ver cómo se comporta cada nivel de seniority dentro de un mismo país. Útil para comparar mercados.</li>

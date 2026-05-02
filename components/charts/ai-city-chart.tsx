@@ -245,8 +245,8 @@ export function AiCityChart() {
 
       {/* 💡 Antes de explorar */}
       <div className="mb-4 w-full">
-        <div className="text-[13px] text-muted-foreground leading-relaxed mb-3">
-          <span className="font-medium text-foreground">💡 Antes de explorar: </span>
+        <div className="text-xs text-muted-foreground leading-relaxed mb-3">
+          <span className="font-bold text-foreground">💡 Antes de explorar: </span>
           <ul className="list-disc list-inside space-y-1 mt-2 ml-1">
             <li><strong>"Otra (Nivel País)":</strong> agrupa vacantes que solo especificaron el país (mercado remoto o distribuido) junto con ciudades secundarias de muy baja emisión estadística.</li>
             <li><strong>Filtro de volumen:</strong> sube el umbral para comparar solo ciudades con muestra significativa y evitar conclusiones de baja estadística.</li>

@@ -178,8 +178,8 @@ export function AiVsNonAiRadar() {
 
         {/* 💡 Antes de explorar */}
         <div className="mb-5 w-full">
-          <div className="text-[13px] text-muted-foreground leading-relaxed mb-3">
-            <span className="font-medium text-foreground">💡 Antes de explorar: </span>
+          <div className="text-xs text-muted-foreground leading-relaxed mb-3">
+            <span className="font-bold text-foreground">💡 Antes de explorar: </span>
             <ul className="list-disc list-inside space-y-1 mt-2 ml-1">
               <li>Cuanto más hacia el exterior cae el vértice, más frecuente es ese pilar en las vacantes de ese perfil.</li>
               <li>
