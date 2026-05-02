@@ -70,7 +70,7 @@ export function Blockquote({ children }: BlockquoteProps) {
 /** Simple stat display — no colored borders, matches card style from section 02 */
 interface StatCardProps {
   value: string
-  label: string
+  label: React.ReactNode | string
   sublabel?: React.ReactNode | string
 }
 

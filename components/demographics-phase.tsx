@@ -23,6 +23,7 @@ import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group"
 
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Separator } from "@/components/ui/separator"
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip"
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
 import { InfoIcon } from "lucide-react"
 import { cn } from "@/lib/utils"
@@ -403,7 +404,25 @@ export function DemographicsPhase() {
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 my-8">
               <StatCard value="3,471" label="Vacantes evaluadas" sublabel="(Fuente: LinkedIn)." />
               <StatCard value="2,836" label="Roles válidos de Product Management" sublabel={<>(Post-filtro IA: <a href="https://github.com/GustavoVela/pm-talent-landscape/blob/main/analysis/prompt/prompt.md" target="_blank" rel="noopener noreferrer" className="underline hover:text-foreground transition-colors">Ver prompt</a>).</>} />
-              <StatCard value="4,629" label="Skills únicas" sublabel="extraídas y procesadas." />
+              <StatCard 
+                value="4,629" 
+                label={
+                  <div className="flex items-center justify-center gap-1.5">
+                    Skills únicas
+                    <TooltipProvider delayDuration={100}>
+                      <Tooltip>
+                        <TooltipTrigger type="button" className="cursor-help inline-flex">
+                          <InfoIcon className="h-3.5 w-3.5 text-muted-foreground hover:text-foreground transition-colors" />
+                        </TooltipTrigger>
+                        <TooltipContent className="max-w-[280px] text-xs leading-relaxed p-3" side="top">
+                          <strong>Variantes lingüísticas:</strong> La multiplicidad de títulos y requerimientos se debe a la extracción cruda de descripciones originales en tres idiomas simultáneos (inglés, español y portugués).
+                        </TooltipContent>
+                      </Tooltip>
+                    </TooltipProvider>
+                  </div>
+                } 
+                sublabel="extraídas y procesadas." 
+              />
               <StatCard value="6" label="Mercados analizados" sublabel="(EE. UU., BR, MX, CO, CL, PE)." />
             </div>
           </AnimatedSection>
@@ -413,21 +432,7 @@ export function DemographicsPhase() {
             <PhaseZeroCarousel />
           </AnimatedSection>
 
-          {/* End of Section Note */}
-          <AnimatedSection delay={250}>
-            <Separator className="my-10" />
-            <Alert className="bg-background border-border">
-              <InfoIcon className="h-4 w-4 text-foreground" />
-              <AlertTitle className="text-foreground font-medium">Nota de lectura: Procesamiento de los datos</AlertTitle>
-              <AlertDescription className="text-muted-foreground mt-2">
-                <ul className="list-disc pl-4 space-y-1.5 text-xs md:text-[13px] leading-relaxed">
-                  <li><strong>Variantes lingüísticas:</strong> La multiplicidad de títulos y requerimientos se debe a la extracción cruda de descripciones originales en tres idiomas simultáneos (inglés, español y portugués).</li>
-                  <li><strong>Duplicidad semántica:</strong> Conceptos equivalentes (ej. "Product Manager" vs "Gerente de Producto") se mantienen intactos en esta etapa para reflejar la realidad del mercado y evitar sesgos tempranos.</li>
-                  <li><strong>Estandarización:</strong> Las agrupaciones, consolidación de roles y unificación de habilidades se ejecutan analíticamente en fases posteriores para garantizar una lectura limpia y concluyente.</li>
-                </ul>
-              </AlertDescription>
-            </Alert>
-          </AnimatedSection>
+
         </div>
       </div>
     </section>
