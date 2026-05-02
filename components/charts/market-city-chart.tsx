@@ -66,7 +66,7 @@ export function MarketCityChart({
     // Sort desc, take top 15, reverse for ECharts (so largest is at top)
     return [...data]
       .sort((a, b) => b.pm_count - a.pm_count)
-      .slice(0, 10)
+      .slice(0, 15)
       .reverse();
   }, [selectedCountry, viewMode]);
 
@@ -144,7 +144,7 @@ export function MarketCityChart({
 
   return (
     <div className="flex flex-col h-full w-full">
-      <div className="h-[240px] w-full -mt-4">
+      <div className="h-[340px] w-full -mt-4">
         <ReactECharts
           option={option}
           style={{ height: '100%', width: '100%' }}

@@ -129,9 +129,9 @@ function PhaseZeroCarousel() {
             <div className={cn("transition-all duration-500 h-full", current !== 3 ? "opacity-40 scale-[0.98] blur-[1px]" : "opacity-100 scale-100 shadow-xl ring-1 ring-border/50 rounded-xl")}>
               <ChartWrapper
                 id="chart-demografia-ciudad"
-                title="¿Cuáles son las ciudades con más vacantes?"
+                title="¿Qué ciudades y modalidades concentran las vacantes?"
                 
-                interpretation="São Paulo (290 roles consolidados) y Ciudad de México (273) son los hubs de LatAm. En EE. UU., Nueva York lidera con 240 roles y San Francisco con 173. Santiago concentra el talento en producto de Chile con 142 roles, mientras Bogotá posiciona a Colombia con 99 roles core en el mercado."
+                interpretation="São Paulo y Ciudad de México lideran los hubs urbanos en LatAm. Sin embargo, el alto volumen de vacantes categorizadas como 'Otros' en todos los mercados no es una carencia de datos, sino un hallazgo estructural: refleja la penetración de posiciones remotas o reclutamientos a nivel nacional donde las empresas ya no restringen la búsqueda a una sede metropolitana (ej. contratan 'en México', no 'en CDMX')."
                 className="h-full"
                 controls={
                   <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 w-full justify-between">
