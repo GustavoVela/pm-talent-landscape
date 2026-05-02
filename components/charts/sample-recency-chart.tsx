@@ -98,7 +98,7 @@ export function SampleRecencyChart() {
   }
 
   return (
-    <div className="h-[240px] w-full">
+    <div className="flex-1 w-full min-h-[250px]">
       <ReactECharts
         option={option}
         style={{ height: '100%', width: '100%' }}
