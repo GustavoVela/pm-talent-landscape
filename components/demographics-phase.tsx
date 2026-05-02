@@ -76,7 +76,7 @@ function PhaseZeroCarousel() {
         className="w-full"
       >
         <CarouselContent className="-ml-4 md:-ml-6 py-4">
-          <CarouselItem className="pl-4 md:pl-6 basis-full lg:basis-[60%] xl:basis-[55%]">
+          <CarouselItem className="pl-4 md:pl-6 basis-full lg:basis-[50%] xl:basis-[45%]">
             <div className={cn("transition-all duration-500 h-full", current !== 0 ? "opacity-40 scale-[0.98] blur-[1px]" : "opacity-100 scale-100 shadow-xl ring-1 ring-border/50 rounded-xl")}>
               <ChartWrapper
                 id="chart-filtro-ruido"
@@ -90,7 +90,7 @@ function PhaseZeroCarousel() {
             </div>
           </CarouselItem>
 
-          <CarouselItem className="pl-4 md:pl-6 basis-full lg:basis-[60%] xl:basis-[55%]">
+          <CarouselItem className="pl-4 md:pl-6 basis-full lg:basis-[50%] xl:basis-[45%]">
             <div className={cn("transition-all duration-500 h-full", current !== 1 ? "opacity-40 scale-[0.98] blur-[1px]" : "opacity-100 scale-100 shadow-xl ring-1 ring-border/50 rounded-xl")}>
               <ChartWrapper
                 id="chart-freshness"
@@ -103,7 +103,7 @@ function PhaseZeroCarousel() {
             </div>
           </CarouselItem>
 
-          <CarouselItem className="pl-4 md:pl-6 basis-full lg:basis-[60%] xl:basis-[55%]">
+          <CarouselItem className="pl-4 md:pl-6 basis-full lg:basis-[50%] xl:basis-[45%]">
             <div className={cn("transition-all duration-500 h-full", current !== 2 ? "opacity-40 scale-[0.98] blur-[1px]" : "opacity-100 scale-100 shadow-xl ring-1 ring-border/50 rounded-xl")}>
               <ChartWrapper
                 id="chart-demografia-pais"
@@ -125,7 +125,7 @@ function PhaseZeroCarousel() {
             </div>
           </CarouselItem>
 
-          <CarouselItem className="pl-4 md:pl-6 basis-full lg:basis-[60%] xl:basis-[55%]">
+          <CarouselItem className="pl-4 md:pl-6 basis-full lg:basis-[50%] xl:basis-[45%]">
             <div className={cn("transition-all duration-500 h-full", current !== 3 ? "opacity-40 scale-[0.98] blur-[1px]" : "opacity-100 scale-100 shadow-xl ring-1 ring-border/50 rounded-xl")}>
               <ChartWrapper
                 id="chart-demografia-ciudad"
@@ -168,7 +168,7 @@ function PhaseZeroCarousel() {
             </div>
           </CarouselItem>
 
-          <CarouselItem className="pl-4 md:pl-6 basis-full lg:basis-[60%] xl:basis-[55%]">
+          <CarouselItem className="pl-4 md:pl-6 basis-full lg:basis-[50%] xl:basis-[45%]">
             <div className={cn("transition-all duration-500 h-full", current !== 4 ? "opacity-40 scale-[0.98] blur-[1px]" : "opacity-100 scale-100 shadow-xl ring-1 ring-border/50 rounded-xl")}>
               <ChartWrapper
                 id="chart-roles-taxonomy"
@@ -210,7 +210,7 @@ function PhaseZeroCarousel() {
             </div>
           </CarouselItem>
 
-          <CarouselItem className="pl-4 md:pl-6 basis-full lg:basis-[60%] xl:basis-[55%]">
+          <CarouselItem className="pl-4 md:pl-6 basis-full lg:basis-[50%] xl:basis-[45%]">
             <div className={cn("transition-all duration-500 h-full", current !== 5 ? "opacity-40 scale-[0.98] blur-[1px]" : "opacity-100 scale-100 shadow-xl ring-1 ring-border/50 rounded-xl")}>
               <ChartWrapper
                 id="chart-demografia-seniority"
@@ -252,7 +252,7 @@ function PhaseZeroCarousel() {
             </div>
           </CarouselItem>
 
-          <CarouselItem className="pl-4 md:pl-6 basis-full lg:basis-[60%] xl:basis-[55%]">
+          <CarouselItem className="pl-4 md:pl-6 basis-full lg:basis-[50%] xl:basis-[45%]">
             <div className={cn("transition-all duration-500 h-full", current !== 6 ? "opacity-40 scale-[0.98] blur-[1px]" : "opacity-100 scale-100 shadow-xl ring-1 ring-border/50 rounded-xl")}>
               <ChartWrapper
                 id="chart-demografia-industry"
@@ -294,7 +294,7 @@ function PhaseZeroCarousel() {
             </div>
           </CarouselItem>
 
-          <CarouselItem className="pl-4 md:pl-6 basis-full lg:basis-[60%] xl:basis-[55%]">
+          <CarouselItem className="pl-4 md:pl-6 basis-full lg:basis-[50%] xl:basis-[45%]">
             <div className={cn("transition-all duration-500 h-full", current !== 7 ? "opacity-40 scale-[0.98] blur-[1px]" : "opacity-100 scale-100 shadow-xl ring-1 ring-border/50 rounded-xl")}>
               <ChartWrapper
                 id="chart-demografia-employment"
