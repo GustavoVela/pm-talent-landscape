@@ -5,8 +5,8 @@ import { useTheme } from 'next-themes';
 import ReactECharts from 'echarts-for-react';
 
 const data = [
-  { value: 2836, name: "Cargo Core de Producto" },
-  { value: 635, name: "Cargos en otra área" }
+  { value: 2836, name: "Vacantes en Product Management" },
+  { value: 635, name: "Vacantes en otras áreas" }
 ];
 
 export function SampleQualityChart() {
@@ -33,8 +33,8 @@ export function SampleQualityChart() {
       {
         name: 'Filtro de Ruido',
         type: 'pie',
-        radius: ['45%', '75%'],
-        center: ['50%', '45%'],
+        radius: ['40%', '80%'],
+        center: ['50%', '50%'],
         avoidLabelOverlap: false,
         itemStyle: {
           borderRadius: 8,
@@ -49,12 +49,12 @@ export function SampleQualityChart() {
             percent: {
               fontSize: 14,
               fontWeight: 'bold',
-              color: '#fff',
+              color: '#111827',
               align: 'center'
             },
             value: {
               fontSize: 11,
-              color: 'rgba(255, 255, 255, 0.9)',
+              color: '#374151',
               align: 'center',
               padding: [2, 0, 0, 0]
             }

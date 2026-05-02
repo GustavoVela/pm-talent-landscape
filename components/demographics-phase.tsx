@@ -80,9 +80,9 @@ function PhaseZeroCarousel() {
             <div className={cn("transition-all duration-500 h-full", current !== 0 ? "opacity-40 scale-[0.98] blur-[1px]" : "opacity-100 scale-100 shadow-xl ring-1 ring-border/50 rounded-xl")}>
               <ChartWrapper
                 id="chart-filtro-ruido"
-                title="¿Cuántas vacantes son verdaderamente de Producto?"
+                title="¿Cuántas vacantes son verdaderamente de Product Management?"
                 
-                interpretation="De las 3,471 vacantes recolectadas buscando el término 'Product Manager', el 18.2% (635 roles) resultaron ser de construcción, ventas, marketing o finanzas que usan un título engañoso. Solo las 2,836 vacantes 'Core' pasaron a nuestro análisis."
+                interpretation="Se procesaron 3,471 posiciones iniciales. Se descartó el 18.2% (635 vacantes) por pertenecer a áreas operativas ajenas a tecnología (construcción, ventas, finanzas) bajo títulos engañosos. El análisis se ejecuta exclusivamente sobre la base purgada de 2,836 vacantes validadas de Product Management."
                 className="h-full"
               >
                 <SampleQualityChart />

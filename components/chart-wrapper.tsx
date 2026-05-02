@@ -3,6 +3,7 @@
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Separator } from "@/components/ui/separator"
+import { Lightbulb } from "lucide-react"
 
 interface ChartWrapperProps {
   id: string
@@ -47,12 +48,17 @@ export function ChartWrapper({
           </div>
 
           {interpretation && (
-            <>
-              <Separator className="my-1" />
-              <p className="text-sm font-medium leading-relaxed text-foreground">
-                {interpretation}
-              </p>
-            </>
+            <div className="mt-4 bg-muted/30 border border-border/50 rounded-lg p-4 flex gap-3 items-start shadow-sm transition-colors hover:bg-muted/50">
+              <div className="bg-background border border-border/40 p-2 rounded-md shadow-sm shrink-0 mt-0.5">
+                <Lightbulb className="w-4 h-4 text-amber-500" />
+              </div>
+              <div className="flex flex-col gap-1.5">
+                <span className="text-[11px] font-bold text-muted-foreground uppercase tracking-wider">Lectura Ejecutiva</span>
+                <p className="text-sm leading-relaxed text-foreground/90">
+                  {interpretation}
+                </p>
+              </div>
+            </div>
           )}
         </CardContent>
         {footer && (
