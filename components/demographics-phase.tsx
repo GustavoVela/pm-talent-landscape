@@ -131,7 +131,15 @@ function PhaseZeroCarousel() {
                 id="chart-demografia-ciudad"
                 title="¿Qué ciudades y modalidades concentran las vacantes?"
                 
-                interpretation="De las 2,836 vacantes validadas, 1,958 (69%) se ubican en hubs urbanos específicos, con São Paulo y CDMX liderando LatAm. Las 878 vacantes restantes (31%) se consolidan como 'Otra (Nivel País)'. Este volumen agrupa tanto posiciones donde el reclutador estipuló únicamente el país (típico en esquemas remotos a nivel nacional) como ciudades de muy baja emisión, evidenciando un mercado de talento altamente distribuido fuera de las capitales."
+                interpretation={
+                  <div className="flex flex-col gap-2.5">
+                    <span>De las 2,836 vacantes validadas, 1,958 (69%) se ubican en hubs urbanos específicos, con São Paulo y CDMX liderando LatAm. Las 878 vacantes restantes (31%) se consolidan como 'Otra (Nivel País)'. Este volumen agrupa tanto posiciones donde el reclutador estipuló únicamente el país (típico en esquemas remotos a nivel nacional) como ciudades de muy baja emisión, evidenciando un mercado de talento altamente distribuido fuera de las capitales.</span>
+                    <div className="h-px w-full bg-border/50" />
+                    <a href="https://github.com/GustavoVela/pm-talent-landscape/blob/main/analysis/groupings/locations_grouping.md" target="_blank" rel="noopener noreferrer" className="font-medium text-primary hover:underline text-[13px] w-fit">
+                      Ver taxonomía geográfica de ciudades ↗
+                    </a>
+                  </div>
+                }
                 className="h-full"
                 controls={
                   <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 w-full justify-between">
