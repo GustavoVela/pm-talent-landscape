@@ -19,7 +19,7 @@ const INDICATORS = [
 
 export function CompetencyCountryRadar() {
   const [mounted, setMounted] = useState(false);
-  const [hidden, setHidden] = useState<Record<string, boolean>>({});
+  const [hidden, setHidden] = useState<Record<string, boolean>>({ 'Perú': true });
   const { resolvedTheme } = useTheme();
   useEffect(() => setMounted(true), []);
 
