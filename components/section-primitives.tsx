@@ -80,9 +80,9 @@ export function StatCard({ value, label, sublabel }: StatCardProps) {
       <p className="text-3xl font-bold text-foreground tracking-tight">
         {value}
       </p>
-      <p className="text-sm font-medium text-foreground mt-2">{label}</p>
+      <div className="text-sm font-medium text-foreground mt-2">{label}</div>
       {sublabel && (
-        <p className="text-xs text-muted-foreground mt-1">{sublabel}</p>
+        <div className="text-xs text-muted-foreground mt-1">{sublabel}</div>
       )}
     </div>
   )
