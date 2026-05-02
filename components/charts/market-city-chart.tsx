@@ -9,28 +9,59 @@ import ReactECharts from 'echarts-for-react';
 // Consolidation: grouped by metropolitan area / country name
 const rawCityData = [
   // United States
-  { country: "US", label: "🇺🇸 New York (US)",         pm_count: 240 }, // NY + NY Metro + New York US
-  { country: "US", label: "🇺🇸 San Francisco (US)",     pm_count: 173 }, // SF + San Jose + SF Bay Area
-  { country: "US", label: "🇺🇸 Otros (US)",             pm_count: 926 }, // United States + others
+  { country: "US", label: "🇺🇸 Otra (Nivel País)", pm_count: 542 },
+  { country: "US", label: "🇺🇸 New York", pm_count: 246 },
+  { country: "US", label: "🇺🇸 San Francisco Bay Area", pm_count: 225 },
+  { country: "US", label: "🇺🇸 Boston", pm_count: 49 },
+  { country: "US", label: "🇺🇸 Seattle", pm_count: 47 },
+  { country: "US", label: "🇺🇸 Los Angeles", pm_count: 42 },
+  { country: "US", label: "🇺🇸 Dallas", pm_count: 32 },
+  { country: "US", label: "🇺🇸 Chicago", pm_count: 29 },
+  { country: "US", label: "🇺🇸 Austin", pm_count: 24 },
+  { country: "US", label: "🇺🇸 Atlanta", pm_count: 23 },
+  { country: "US", label: "🇺🇸 Philadelphia", pm_count: 16 },
+  { country: "US", label: "🇺🇸 Denver", pm_count: 16 },
+  { country: "US", label: "🇺🇸 Washington, D.C.", pm_count: 15 },
+  { country: "US", label: "🇺🇸 Charlotte", pm_count: 11 },
+  { country: "US", label: "🇺🇸 San Diego", pm_count: 9 },
+  { country: "US", label: "🇺🇸 Houston", pm_count: 8 },
+  { country: "US", label: "🇺🇸 Miami", pm_count: 5 },
+  
   // Brazil
-  { country: "BR", label: "🇧🇷 São Paulo (BR)",         pm_count: 290 }, // SP + Greater SP + SP Brazil
-  { country: "BR", label: "🇧🇷 Belo Horizonte (BR)",    pm_count: 17  },
-  { country: "BR", label: "🇧🇷 Campinas (BR)",          pm_count: 16  },
-  { country: "BR", label: "🇧🇷 Otros (BR)",             pm_count: 303 }, // Brazil + others
+  { country: "BR", label: "🇧🇷 São Paulo", pm_count: 341 },
+  { country: "BR", label: "🇧🇷 Otra (Nivel País)", pm_count: 151 },
+  { country: "BR", label: "🇧🇷 Rio de Janeiro", pm_count: 28 },
+  { country: "BR", label: "🇧🇷 Belo Horizonte", pm_count: 26 },
+  { country: "BR", label: "🇧🇷 Porto Alegre", pm_count: 21 },
+  { country: "BR", label: "🇧🇷 Fortaleza", pm_count: 11 },
+  { country: "BR", label: "🇧🇷 Florianópolis", pm_count: 10 },
+  { country: "BR", label: "🇧🇷 Brasília", pm_count: 9 },
+  { country: "BR", label: "🇧🇷 Curitiba", pm_count: 8 },
+  { country: "BR", label: "🇧🇷 Blumenau", pm_count: 7 },
+
   // Mexico
-  { country: "MX", label: "🇲🇽 Ciudad de México (MX)", pm_count: 273 }, // Mexico City + CDMX Metro + Mexico
-  { country: "MX", label: "🇲🇽 Monterrey (MX)",        pm_count: 17  },
-  { country: "MX", label: "🇲🇽 Guadalajara (MX)",       pm_count: 17  },
-  { country: "MX", label: "🇲🇽 Otros (MX)",             pm_count: 108 },
+  { country: "MX", label: "🇲🇽 Ciudad de México", pm_count: 242 },
+  { country: "MX", label: "🇲🇽 Otra (Nivel País)", pm_count: 95 },
+  { country: "MX", label: "🇲🇽 Guadalajara", pm_count: 29 },
+  { country: "MX", label: "🇲🇽 Monterrey", pm_count: 25 },
+  { country: "MX", label: "🇲🇽 Querétaro", pm_count: 8 },
+
   // Colombia
-  { country: "CO", label: "🇨🇴 Bogotá (CO)",            pm_count: 99  },
-  { country: "CO", label: "🇨🇴 Otros (CO)",             pm_count: 102 }, // Colombia + others
+  { country: "CO", label: "🇨🇴 Bogotá", pm_count: 105 },
+  { country: "CO", label: "🇨🇴 Otra (Nivel País)", pm_count: 58 },
+  { country: "CO", label: "🇨🇴 Medellín", pm_count: 15 },
+  { country: "CO", label: "🇨🇴 Bucaramanga", pm_count: 6 },
+  { country: "CO", label: "🇨🇴 Pereira", pm_count: 5 },
+  { country: "CO", label: "🇨🇴 Cali", pm_count: 5 },
+  { country: "CO", label: "🇨🇴 Barranquilla", pm_count: 4 },
+
   // Chile
-  { country: "CL", label: "🇨🇱 Santiago (CL)",          pm_count: 142 }, // Santiago + Las Condes + Santiago Metro
-  { country: "CL", label: "🇨🇱 Otros (CL)",             pm_count: 40  },
+  { country: "CL", label: "🇨🇱 Santiago", pm_count: 165 },
+  { country: "CL", label: "🇨🇱 Otra (Nivel País)", pm_count: 17 },
+
   // Peru
-  { country: "PE", label: "🇵🇪 Lima (PE)",              pm_count: 46  },
-  { country: "PE", label: "🇵🇪 Otros (PE)",             pm_count: 27  },
+  { country: "PE", label: "🇵🇪 Lima", pm_count: 57 },
+  { country: "PE", label: "🇵🇪 Otra (Nivel País)", pm_count: 15 },
 ];
 
 const TOTAL = 2836;

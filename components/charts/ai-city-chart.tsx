@@ -6,16 +6,16 @@ import { useTheme } from "next-themes";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 
 const rawData = [
-  { country: "Estados Unidos", city: "Otra ciudad", withAi: 176, total: 542 },
+  { country: "Estados Unidos", city: "Otra (Nivel País)", withAi: 176, total: 542 },
   { country: "Brasil", city: "São Paulo", withAi: 68, total: 341 },
   { country: "Estados Unidos", city: "New York", withAi: 76, total: 246 },
   { country: "México", city: "Ciudad de México", withAi: 42, total: 242 },
   { country: "Estados Unidos", city: "San Francisco Bay Area", withAi: 118, total: 225 },
   { country: "Chile", city: "Santiago", withAi: 28, total: 165 },
-  { country: "Brasil", city: "Otra ciudad", withAi: 55, total: 151 },
+  { country: "Brasil", city: "Otra (Nivel País)", withAi: 55, total: 151 },
   { country: "Colombia", city: "Bogotá", withAi: 21, total: 105 },
-  { country: "México", city: "Otra ciudad", withAi: 30, total: 95 },
-  { country: "Colombia", city: "Otra ciudad", withAi: 24, total: 58 },
+  { country: "México", city: "Otra (Nivel País)", withAi: 30, total: 95 },
+  { country: "Colombia", city: "Otra (Nivel País)", withAi: 24, total: 58 },
   { country: "Perú", city: "Lima", withAi: 7, total: 57 },
   { country: "Estados Unidos", city: "Boston", withAi: 30, total: 49 },
   { country: "Estados Unidos", city: "Seattle", withAi: 26, total: 47 },
@@ -29,10 +29,10 @@ const rawData = [
   { country: "Estados Unidos", city: "Austin", withAi: 11, total: 24 },
   { country: "Estados Unidos", city: "Atlanta", withAi: 2, total: 23 },
   { country: "Brasil", city: "Porto Alegre", withAi: 5, total: 21 },
-  { country: "Chile", city: "Otra ciudad", withAi: 9, total: 17 },
+  { country: "Chile", city: "Otra (Nivel País)", withAi: 9, total: 17 },
   { country: "Estados Unidos", city: "Philadelphia", withAi: 2, total: 16 },
   { country: "Estados Unidos", city: "Denver", withAi: 7, total: 16 },
-  { country: "Perú", city: "Otra ciudad", withAi: 5, total: 15 },
+  { country: "Perú", city: "Otra (Nivel País)", withAi: 5, total: 15 },
   { country: "Colombia", city: "Medellín", withAi: 4, total: 15 },
   { country: "Estados Unidos", city: "Washington, D.C.", withAi: 5, total: 15 },
   { country: "Estados Unidos", city: "Charlotte", withAi: 0, total: 11 },
@@ -247,7 +247,7 @@ export function AiCityChart() {
       <div className="mb-4 text-xs text-muted-foreground bg-muted/40 border border-border/40 rounded-md px-3 py-2.5">
         <p className="font-bold text-foreground/80 mb-1.5">💡 Antes de explorar</p>
         <ul className="list-disc list-inside space-y-1 leading-relaxed">
-          <li><strong>"Otra ciudad":</strong> agrupa todas las vacantes de ese país que no pertenecen a ningún hub urbano identificado. Representa el trabajo <em>remote-first</em> o roles distribuidos sin ciudad explícita — especialmente alto en EE. UU. (542 vacantes), lo que refleja la madurez del modelo híbrido/remoto.</li>
+          <li><strong>"Otra (Nivel País)":</strong> agrupa todas las vacantes de ese país que no especifican una sede metropolitana exacta. Refleja principalmente el mercado remoto, posiciones distribuidas o reclutamientos a nivel nacional.</li>
           <li><strong>Filtro de volumen:</strong> sube el umbral para comparar solo ciudades con muestra significativa y evitar conclusiones de baja estadística.</li>
           <li><strong>Solo capitales:</strong> activa este filtro para una comparativa directa entre las ciudades principales de cada país.</li>
         </ul>
