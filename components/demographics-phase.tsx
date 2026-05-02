@@ -107,9 +107,9 @@ function PhaseZeroCarousel() {
             <div className={cn("transition-all duration-500 h-full", current !== 2 ? "opacity-40 scale-[0.98] blur-[1px]" : "opacity-100 scale-100 shadow-xl ring-1 ring-border/50 rounded-xl")}>
               <ChartWrapper
                 id="chart-demografia-pais"
-                title="¿En qué países se concentra la demanda?"
+                title="¿Cómo se distribuye la muestra de datos por país?"
                 
-                interpretation="Estados Unidos concentra el 47.2% de todas las vacantes validadas (1,339 roles), reflejando la madurez de su mercado tecnológico. En Latinoamérica, Brasil lidera con 626 roles seguido de México (415). La distribución confirma que el análisis tiene representación real en los 6 mercados."
+                interpretation="La recolección no forzó cuotas geográficas; capturó la totalidad de vacantes orgánicamente disponibles en la ventana de extracción. Estados Unidos aporta el mayor volumen (1,339 vacantes), estableciendo el benchmark de madurez. En LatAm, Brasil (626) y México (415) dominan la muestra. Es importante notar que la participación de Perú (73 vacantes) no constituye un volumen estadísticamente significativo para derivar conclusiones locales aisladas."
                 className="h-full"
                 controls={
                   <div className="flex w-full justify-end">
