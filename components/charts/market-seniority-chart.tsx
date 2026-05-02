@@ -77,7 +77,8 @@ export function MarketSeniorityChart({
     }
 
     const agg: Record<string, number> = {
-      "Director / Ejecutivo": 0,
+      "Ejecutivo (VP, CPO)": 0,
+      "Director": 0,
       "Lead / Head": 0,
       "Senior": 0,
       "Mid-Level": 0,
@@ -85,8 +86,10 @@ export function MarketSeniorityChart({
     };
 
     data.forEach(d => {
-      if (d.seniority === "Executive" || d.seniority === "Director") {
-        agg["Director / Ejecutivo"] += d.count;
+      if (d.seniority === "Executive") {
+        agg["Ejecutivo (VP, CPO)"] += d.count;
+      } else if (d.seniority === "Director") {
+        agg["Director"] += d.count;
       } else if (d.seniority === "Lead") {
         agg["Lead / Head"] += d.count;
       } else if (d.seniority === "Senior") {
@@ -107,7 +110,8 @@ export function MarketSeniorityChart({
 
   // Order from bottom to top for ECharts
   const chartData = [
-    { label: "Director / Ejecutivo", raw: filteredData["Director / Ejecutivo"] },
+    { label: "Ejecutivo (VP, CPO)", raw: filteredData["Ejecutivo (VP, CPO)"] },
+    { label: "Director", raw: filteredData["Director"] },
     { label: "Lead / Head", raw: filteredData["Lead / Head"] },
     { label: "Senior", raw: filteredData["Senior"] },
     { label: "Mid-Level", raw: filteredData["Mid-Level"] },

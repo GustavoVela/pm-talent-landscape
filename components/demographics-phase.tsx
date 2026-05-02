@@ -231,7 +231,7 @@ function PhaseZeroCarousel() {
               <ChartWrapper
                 id="chart-demografia-seniority"
                 title="¿Qué nivel de experiencia exigen las vacantes disponibles?"
-                interpretation="El mercado de Producto presenta una fuerte barrera de entrada. Al desagregar los niveles, observamos que el 63.5% de la demanda se concentra en los roles de ejecución táctica/estratégica: 'Mid-Level' (923 vacantes) y 'Senior' (878). Las posiciones de liderazgo intermedio ('Lead / Head') y alta dirección ('Director / Ejecutivo') suman casi un 24%, mientras que las vacantes 'Junior' representan apenas el 12.5% del total. Las empresas rara vez forman PMs desde cero; exigen talento listo para entregar valor."
+                interpretation="El mercado de Producto presenta una fuerte barrera de entrada. Al desagregar todos los niveles, observamos que el 63.5% de la demanda se concentra en ejecución ('Mid-Level' con 923 vacantes y 'Senior' con 878). En el plano de liderazgo estratégico, los roles de 'Director' (318) y 'Ejecutivo' (226) conforman casi el 20% del mercado, mientras que las vacantes 'Junior' representan apenas el 12.5%. Las empresas rara vez forman talento desde cero."
                 className="h-full"
                 controls={
                   <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 w-full justify-between">
