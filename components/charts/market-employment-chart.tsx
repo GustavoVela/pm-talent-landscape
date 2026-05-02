@@ -231,7 +231,7 @@ export function MarketEmploymentChart({
 
   return (
     <div className="flex flex-col h-full w-full">
-      <div className="h-[240px] w-full">
+      <div className="h-[204px] w-full">
         <ReactECharts
           option={option}
           style={{ height: '100%', width: '100%' }}
