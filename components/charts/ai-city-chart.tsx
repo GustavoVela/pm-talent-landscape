@@ -244,13 +244,16 @@ export function AiCityChart() {
       </div>
 
       {/* 💡 Antes de explorar */}
-      <div className="mb-4 text-xs text-muted-foreground bg-muted/40 border border-border/40 rounded-md px-3 py-2.5">
-        <p className="font-bold text-foreground/80 mb-1.5">💡 Antes de explorar</p>
-        <ul className="list-disc list-inside space-y-1 leading-relaxed">
-          <li><strong>"Otra (Nivel País)":</strong> agrupa vacantes que solo especificaron el país (mercado remoto o distribuido) junto con ciudades secundarias de muy baja emisión estadística.</li>
-          <li><strong>Filtro de volumen:</strong> sube el umbral para comparar solo ciudades con muestra significativa y evitar conclusiones de baja estadística.</li>
-          <li><strong>Solo capitales:</strong> activa este filtro para una comparativa directa entre las ciudades principales de cada país.</li>
-        </ul>
+      <div className="mb-4 w-full">
+        <div className="text-[13px] text-muted-foreground leading-relaxed mb-3">
+          <span className="font-medium text-foreground">💡 Antes de explorar: </span>
+          <ul className="list-disc list-inside space-y-1 mt-2 ml-1">
+            <li><strong>"Otra (Nivel País)":</strong> agrupa vacantes que solo especificaron el país (mercado remoto o distribuido) junto con ciudades secundarias de muy baja emisión estadística.</li>
+            <li><strong>Filtro de volumen:</strong> sube el umbral para comparar solo ciudades con muestra significativa y evitar conclusiones de baja estadística.</li>
+            <li><strong>Solo capitales:</strong> activa este filtro para una comparativa directa entre las ciudades principales de cada país.</li>
+          </ul>
+        </div>
+        <div className="w-full h-px bg-border/60" />
       </div>
       
       {filteredData.length > 0 ? (

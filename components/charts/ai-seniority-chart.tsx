@@ -301,13 +301,16 @@ export function AiSeniorityChart() {
       </div>
 
       {/* 💡 Antes de explorar */}
-      <div className="mb-4 text-xs text-muted-foreground bg-muted/40 border border-border/40 rounded-md px-3 py-2.5">
-        <p className="font-bold text-foreground/80 mb-1.5">💡 Antes de explorar</p>
-        <ul className="list-disc list-inside space-y-1 leading-relaxed">
-          <li><strong>Por Seniority:</strong> compara cómo varía la demanda de IA entre Junior/Mid, Senior y Leadership en cada país. Ideal para saber si el mercado ya lo exige en tu nivel.</li>
-          <li><strong>Por País:</strong> invierte el eje para ver cómo se comporta cada nivel de seniority dentro de un mismo país. Útil para comparar mercados.</li>
-          <li><strong>Filtro de países:</strong> desactiva mercados para aislar la comparación que te interesa — por ejemplo, solo LATAM o solo EE. UU.</li>
-        </ul>
+      <div className="mb-4 w-full">
+        <div className="text-[13px] text-muted-foreground leading-relaxed mb-3">
+          <span className="font-medium text-foreground">💡 Antes de explorar: </span>
+          <ul className="list-disc list-inside space-y-1 mt-2 ml-1">
+            <li><strong>Por Seniority:</strong> compara cómo varía la demanda de IA entre Junior/Mid, Senior y Leadership en cada país. Ideal para saber si el mercado ya lo exige en tu nivel.</li>
+            <li><strong>Por País:</strong> invierte el eje para ver cómo se comporta cada nivel de seniority dentro de un mismo país. Útil para comparar mercados.</li>
+            <li><strong>Filtro de países:</strong> desactiva mercados para aislar la comparación que te interesa — por ejemplo, solo LATAM o solo EE. UU.</li>
+          </ul>
+        </div>
+        <div className="w-full h-px bg-border/60" />
       </div>
       <div className="w-full h-[304px] -mt-2 -mb-4">
         <ReactECharts option={option} notMerge={true} style={{ height: "100%", width: "100%" }} opts={{ renderer: "svg" }} />

@@ -190,13 +190,16 @@ export function AiSalaryPremiumChart() {
         </div>
 
         {/* 💡 Antes de explorar */}
-        <div className="mb-5 text-xs text-muted-foreground bg-muted/40 border border-border/40 rounded-md px-3 py-2.5">
-          <p className="font-bold text-foreground/80 mb-1.5">💡 Antes de explorar</p>
-          <ul className="list-disc list-inside space-y-1 leading-relaxed">
-            <li>Analizamos ~900 vacantes PM que transparentan su banda salarial (Mínimo y Máximo) en Estados Unidos.</li>
-            <li>Dado que Estados Unidos paga salarios superiores y publica más roles de IA, un promedio global generaría una "Paradoja de Simpson". Por eso esta gráfica aísla exclusivamente el mercado de EE.UU. como indicador adelantado.</li>
-            <li><strong>Dato Curioso de Transparencia:</strong> En nuestra muestra, el <strong>67%</strong> de las vacantes de Producto en EE.UU. publican su salario abiertamente, frente a un alarmante <strong>5.3%</strong> en LATAM. Esta disparidad justifica el uso de EE.UU. como benchmark central.</li>
-          </ul>
+        <div className="mb-5 w-full">
+          <div className="text-[13px] text-muted-foreground leading-relaxed mb-3">
+            <span className="font-medium text-foreground">💡 Antes de explorar: </span>
+            <ul className="list-disc list-inside space-y-1 mt-2 ml-1">
+              <li>Analizamos ~900 vacantes PM que transparentan su banda salarial (Mínimo y Máximo) en Estados Unidos.</li>
+              <li>Dado que Estados Unidos paga salarios superiores y publica más roles de IA, un promedio global generaría una "Paradoja de Simpson". Por eso esta gráfica aísla exclusivamente el mercado de EE.UU. como indicador adelantado.</li>
+              <li><strong>Dato Curioso de Transparencia:</strong> En nuestra muestra, el <strong>67%</strong> de las vacantes de Producto en EE.UU. publican su salario abiertamente, frente a un alarmante <strong>5.3%</strong> en LATAM. Esta disparidad justifica el uso de EE.UU. como benchmark central.</li>
+            </ul>
+          </div>
+          <div className="w-full h-px bg-border/60" />
         </div>
 
         {/* Main layout: chart left, cards right */}

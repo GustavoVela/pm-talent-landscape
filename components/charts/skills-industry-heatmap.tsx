@@ -269,13 +269,16 @@ export function SkillsIndustryHeatmap() {
             </div>
 
             {/* 💡 Tip — full width */}
-            <div className="w-full text-xs text-muted-foreground bg-muted/40 border border-border/40 rounded-md px-3 py-2.5">
-              <p className="font-bold text-foreground/80 mb-1.5">💡 Antes de explorar</p>
-              <ul className="list-disc list-inside space-y-1 leading-relaxed">
-                <li><strong>Absoluto:</strong> escala 0–100 % compartida. Responde: <em>¿Qué % de vacantes de este sector piden este skill?</em></li>
-                <li><strong>Por Pilar:</strong> cada columna tiene su propio rango de color. Core PM se omite (es &gt;90 % en todos los sectores). Responde: <em>¿En qué sectores destaca relativamente este pilar?</em></li>
-                <li><strong>Filtro:</strong> ajusta el mínimo de vacantes por sector. Usa <em>&gt; 20</em> para señal estadística sólida; sube a <em>&gt; 200</em> para ver solo los sectores dominantes.</li>
-              </ul>
+            <div className="mb-4 w-full">
+              <div className="text-[13px] text-muted-foreground leading-relaxed mb-3">
+                <span className="font-medium text-foreground">💡 Antes de explorar: </span>
+                <ul className="list-disc list-inside space-y-1 mt-2 ml-1">
+                  <li><strong>Absoluto:</strong> escala 0–100 % compartida. Responde: <em>¿Qué % de vacantes de este sector piden este skill?</em></li>
+                  <li><strong>Por Pilar:</strong> cada columna tiene su propio rango de color. Core PM se omite (es &gt;90 % en todos los sectores). Responde: <em>¿En qué sectores destaca relativamente este pilar?</em></li>
+                  <li><strong>Filtro:</strong> ajusta el mínimo de vacantes por sector. Usa <em>&gt; 20</em> para señal estadística sólida; sube a <em>&gt; 200</em> para ver solo los sectores dominantes.</li>
+                </ul>
+              </div>
+              <div className="w-full h-px bg-border/60" />
             </div>
 
 

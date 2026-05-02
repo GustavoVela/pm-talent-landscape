@@ -212,13 +212,16 @@ export function AiSkillsRankingChart() {
       </div>
 
       {/* 💡 Antes de explorar */}
-      <div className="mb-4 text-xs text-muted-foreground bg-muted/40 border border-border/40 rounded-md px-3 py-2.5">
-        <p className="font-bold text-foreground/80 mb-1.5">💡 Antes de explorar</p>
-        <ul className="list-disc list-inside space-y-1 leading-relaxed">
-          <li>Cada barra indica cuántas vacantes PM mencionan ese skill — qué tan urgente es que lo entiendas.</li>
-          <li>Los encabezados en color marcan el inicio de cada ruta de aprendizaje. Usa los filtros para ver una sola ruta a la vez.</li>
-          <li>Pasa el cursor sobre cualquier skill para ver qué es y por qué el mercado lo pide.</li>
-        </ul>
+      <div className="mb-4 w-full">
+        <div className="text-[13px] text-muted-foreground leading-relaxed mb-3">
+          <span className="font-medium text-foreground">💡 Antes de explorar: </span>
+          <ul className="list-disc list-inside space-y-1 mt-2 ml-1">
+            <li>Cada barra indica cuántas vacantes PM mencionan ese skill — qué tan urgente es que lo entiendas.</li>
+            <li>Los encabezados en color marcan el inicio de cada ruta de aprendizaje. Usa los filtros para ver una sola ruta a la vez.</li>
+            <li>Pasa el cursor sobre cualquier skill para ver qué es y por qué el mercado lo pide.</li>
+          </ul>
+        </div>
+        <div className="w-full h-px bg-border/60" />
       </div>
 
       {/* Chart */}
