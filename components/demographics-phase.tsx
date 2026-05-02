@@ -136,7 +136,7 @@ function PhaseZeroCarousel() {
                     <span>De las 2,836 vacantes validadas, 1,958 (69%) se ubican en hubs urbanos específicos, con São Paulo y CDMX liderando LatAm. Las 878 vacantes restantes (31%) se consolidan como 'Otra (Nivel País)'. Este volumen agrupa tanto posiciones donde el reclutador estipuló únicamente el país (típico en esquemas remotos a nivel nacional) como ciudades de muy baja emisión, evidenciando un mercado de talento altamente distribuido fuera de las capitales.</span>
                     <div className="h-px w-full bg-border/50" />
                     <a href="https://github.com/GustavoVela/pm-talent-landscape/blob/main/analysis/groupings/locations_grouping.md" target="_blank" rel="noopener noreferrer" className="font-medium text-primary hover:underline text-[13px] w-fit">
-                      Ver taxonomía geográfica de ciudades ↗
+                      Diccionario de estandarización geográfica ↗
                     </a>
                   </div>
                 }
@@ -186,7 +186,7 @@ function PhaseZeroCarousel() {
                     <span>Dada la extrema variación en los títulos originales de las vacantes, estandarizamos cientos de nomenclaturas en 10 categorías macro. El 47.5% del talento base opera estrictamente bajo la etiqueta 'Product Manager' (1,348 roles), seguido por 'Product Owner' con el 20.6%. Esta consolidación demuestra que, aunque la especialización crece (ej. Product Ops o PMM), casi el 70% de la demanda sigue anclada a los roles tradicionales de ejecución central.</span>
                     <div className="h-px w-full bg-border/50" />
                     <a href="https://github.com/GustavoVela/pm-talent-landscape/blob/main/analysis/groupings/jobs_grouping.md" target="_blank" rel="noopener noreferrer" className="font-medium text-primary hover:underline text-[13px] w-fit">
-                      Ver diccionario de mapeo y estandarización de cargos ↗
+                      Diccionario de estandarización de cargos ↗
                     </a>
                   </div>
                 }
@@ -278,7 +278,7 @@ function PhaseZeroCarousel() {
                     <span>Mapeamos las 489 etiquetas crudas del ecosistema en 15 macro-sectores estandarizados. La concentración es altísima: el 59.5% del mercado está dominado por Tecnología/Software (1,130 vacantes) y Servicios Financieros/FinTech (558 vacantes). El tercer pilar lo compone Retail & E-Commerce (260 vacantes). Esta tripleta confirma que la digitalización financiera y transaccional sigue siendo el motor absoluto de empleabilidad para los PMs.</span>
                     <div className="h-px w-full bg-border/50" />
                     <a href="https://github.com/GustavoVela/pm-talent-landscape/blob/main/analysis/groupings/industry_grouping.md" target="_blank" rel="noopener noreferrer" className="font-medium text-primary hover:underline text-[13px] w-fit">
-                      Ver taxonomía de agrupación industrial ↗
+                      Diccionario de estandarización de industrias ↗
                     </a>
                   </div>
                 }
