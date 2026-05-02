@@ -129,7 +129,7 @@ function PhaseZeroCarousel() {
             <div className={cn("transition-all duration-500 h-full", current !== 3 ? "opacity-40 scale-[0.98] blur-[1px]" : "opacity-100 scale-100 shadow-xl ring-1 ring-border/50 rounded-xl")}>
               <ChartWrapper
                 id="chart-demografia-ciudad"
-                title="¿Qué ciudades y modalidades concentran las vacantes?"
+                title="¿Qué ciudades concentran las vacantes?"
                 
                 interpretation={
                   <div className="flex flex-col gap-2.5">
@@ -180,9 +180,17 @@ function PhaseZeroCarousel() {
             <div className={cn("transition-all duration-500 h-full", current !== 4 ? "opacity-40 scale-[0.98] blur-[1px]" : "opacity-100 scale-100 shadow-xl ring-1 ring-border/50 rounded-xl")}>
               <ChartWrapper
                 id="chart-roles-taxonomy"
-                title="¿Qué títulos exactos usan las empresas para contratar?"
-                interpretation="Nota temporal: Los títulos 'Product Owner' y 'Product Marketing Manager' tienen una gran participación, pero 'Product Manager' domina abrumadoramente."
-                className="h-full bg-white/50 dark:bg-slate-950/50 backdrop-blur-sm shadow-lg"
+                title="¿Bajo qué categorías se agrupan los roles de Producto?"
+                interpretation={
+                  <div className="flex flex-col gap-2.5">
+                    <span>Dada la extrema variación en los títulos originales de las vacantes, estandarizamos cientos de nomenclaturas en 10 categorías macro. El 47.5% del talento base opera estrictamente bajo la etiqueta 'Product Manager' (1,348 roles), seguido por 'Product Owner' con el 20.6%. Esta consolidación demuestra que, aunque la especialización crece (ej. Product Ops o PMM), casi el 70% de la demanda sigue anclada a los roles tradicionales de ejecución central.</span>
+                    <div className="h-px w-full bg-border/50" />
+                    <a href="https://github.com/GustavoVela/pm-talent-landscape/blob/main/analysis/groupings/jobs_grouping.md" target="_blank" rel="noopener noreferrer" className="font-medium text-primary hover:underline text-[13px] w-fit">
+                      Ver diccionario de mapeo y estandarización de cargos ↗
+                    </a>
+                  </div>
+                }
+                className="h-full"
                 controls={
                   <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 w-full justify-between">
                     <div className="w-full sm:w-auto sm:min-w-[280px]">
