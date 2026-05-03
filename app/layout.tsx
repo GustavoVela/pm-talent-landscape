@@ -109,9 +109,48 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode
 }>) {
+  // Structured Data para Google (Rich Snippets)
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Report",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://pm-talent-landscape.vercel.app/"
+    },
+    "headline": "El Product Management en la Era de la IA | Datos reales. Menos hype.",
+    "description": "Análisis empírico de 2,836 ofertas de trabajo de Product Management en EE. UU., Brasil, México, Colombia y Chile.",
+    "author": {
+      "@type": "Person",
+      "name": "Gustavo Vela Zúñiga",
+      "url": "https://www.linkedin.com/in/gustavo-vela/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "PM Talent Landscape",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://pm-talent-landscape.vercel.app/icon.svg"
+      }
+    },
+    "datePublished": "2026-05-02T12:00:00+00:00",
+    "dateModified": "2026-05-02T12:00:00+00:00",
+    "image": "https://pm-talent-landscape.vercel.app/images/og.png",
+    "about": [
+      {"@type": "Thing", "name": "Product Management"},
+      {"@type": "Thing", "name": "Artificial Intelligence"},
+      {"@type": "Thing", "name": "Data Analysis"},
+      {"@type": "Thing", "name": "Labor Market"}
+    ]
+  };
+
   return (
     <html lang="es" suppressHydrationWarning>
       <body className={`${nunitoSans.variable} ${manrope.variable} min-h-screen bg-background font-sans antialiased`}>
+        {/* Structured Data Schema */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-P7KP48X6NK"
           strategy="afterInteractive"
