@@ -149,9 +149,9 @@ const columns: ColumnDef<CompetencyData>[] = [
     cell: ({ row }) => {
       const type = row.original.type
       return (
-        <div className="flex items-center gap-2 font-semibold text-slate-800">
+        <div className="flex items-center gap-2 font-semibold text-foreground">
           {row.getValue("name")}
-          <Badge variant="secondary" className="text-[10px] font-normal h-5 px-1.5 bg-slate-100 text-slate-500">
+          <Badge variant="secondary" className="text-[10px] font-normal h-5 px-1.5 bg-muted text-muted-foreground dark:bg-muted/40">
             {type}
           </Badge>
         </div>
@@ -163,38 +163,38 @@ const columns: ColumnDef<CompetencyData>[] = [
     header: () => <div className="text-right">Volumen (N)</div>,
     cell: ({ row }) => {
       const val = row.getValue("total") as number;
-      return <div className="text-slate-600 text-right">{val.toLocaleString('en-US')}</div>
+      return <div className="text-muted-foreground text-right">{val.toLocaleString('en-US')}</div>
     },
   },
   {
     accessorKey: "core_pm",
     header: () => <div className="text-center">Core PM</div>,
-    cell: ({ row }) => <div className="text-slate-600 font-medium text-center">{(row.getValue("core_pm") as number).toFixed(1)}%</div>,
+    cell: ({ row }) => <div className="text-muted-foreground font-medium text-center">{(row.getValue("core_pm") as number).toFixed(1)}%</div>,
   },
   {
     accessorKey: "business",
     header: () => <div className="text-center">Business</div>,
-    cell: ({ row }) => <div className="text-slate-600 text-center">{(row.getValue("business") as number).toFixed(1)}%</div>,
+    cell: ({ row }) => <div className="text-muted-foreground text-center">{(row.getValue("business") as number).toFixed(1)}%</div>,
   },
   {
     accessorKey: "technical",
     header: () => <div className="text-center">Technical</div>,
-    cell: ({ row }) => <div className="text-slate-600 text-center">{(row.getValue("technical") as number).toFixed(1)}%</div>,
+    cell: ({ row }) => <div className="text-muted-foreground text-center">{(row.getValue("technical") as number).toFixed(1)}%</div>,
   },
   {
     accessorKey: "data",
     header: () => <div className="text-center">Data</div>,
-    cell: ({ row }) => <div className="text-slate-600 text-center">{(row.getValue("data") as number).toFixed(1)}%</div>,
+    cell: ({ row }) => <div className="text-muted-foreground text-center">{(row.getValue("data") as number).toFixed(1)}%</div>,
   },
   {
     accessorKey: "ai",
     header: () => <div className="text-center">AI</div>,
-    cell: ({ row }) => <div className="text-slate-600 text-center">{(row.getValue("ai") as number).toFixed(1)}%</div>,
+    cell: ({ row }) => <div className="text-muted-foreground text-center">{(row.getValue("ai") as number).toFixed(1)}%</div>,
   },
   {
     accessorKey: "ux_ui",
     header: () => <div className="text-center">UX/UI</div>,
-    cell: ({ row }) => <div className="text-slate-600 text-center">{(row.getValue("ux_ui") as number).toFixed(1)}%</div>,
+    cell: ({ row }) => <div className="text-muted-foreground text-center">{(row.getValue("ux_ui") as number).toFixed(1)}%</div>,
   },
   {
     accessorKey: "unicorn",
@@ -203,7 +203,7 @@ const columns: ColumnDef<CompetencyData>[] = [
       const val = (row.getValue("unicorn") as number).toFixed(1);
       return (
         <div className="text-center">
-          <span className="inline-block bg-amber-50 text-amber-700 font-semibold px-2 py-0.5 rounded-md text-xs border border-amber-200">
+          <span className="inline-block bg-amber-50 text-amber-700 dark:bg-amber-900/30 dark:text-amber-400 font-semibold px-2 py-0.5 rounded-md text-xs border border-amber-200 dark:border-amber-800/50">
             {val}%
           </span>
         </div>
@@ -221,15 +221,15 @@ function TableView({ data, title }: { data: CompetencyData[], title: string }) {
 
   return (
     <div className="w-full mt-6">
-      <h4 className="text-base font-semibold text-slate-700 mb-3">{title}</h4>
-      <div className="rounded-xl border border-slate-200 bg-white overflow-hidden shadow-sm">
+      <h4 className="text-base font-semibold text-foreground mb-3">{title}</h4>
+      <div className="rounded-xl border border-border bg-background overflow-hidden shadow-sm">
         <Table>
-          <TableHeader className="bg-slate-50 border-b border-slate-200">
+          <TableHeader className="bg-muted/30 border-b border-border">
             {table.getHeaderGroups().map((headerGroup) => (
-              <TableRow key={headerGroup.id} className="hover:bg-slate-50">
+              <TableRow key={headerGroup.id} className="hover:bg-muted/40 border-border">
                 {headerGroup.headers.map((header) => {
                   return (
-                    <TableHead key={header.id} className="h-12 font-semibold text-slate-700">
+                    <TableHead key={header.id} className="h-12 font-semibold text-foreground">
                       {header.isPlaceholder
                         ? null
                         : flexRender(
@@ -248,7 +248,7 @@ function TableView({ data, title }: { data: CompetencyData[], title: string }) {
                 <TableRow
                   key={row.id}
                   data-state={row.getIsSelected() && "selected"}
-                  className="border-b border-slate-100 hover:bg-slate-50/50 transition-colors"
+                  className="border-b border-border hover:bg-muted/30 transition-colors"
                 >
                   {row.getVisibleCells().map((cell) => (
                     <TableCell key={cell.id} className="py-3">

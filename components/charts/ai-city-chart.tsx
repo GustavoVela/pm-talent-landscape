@@ -53,7 +53,7 @@ const rawData = [
 
 export function AiCityChart() {
   const [selectedCountry, setSelectedCountry] = useState<string>('all');
-  const [minJobs, setMinJobs] = useState<string>('20');
+  const [minJobs, setMinJobs] = useState<string>('30');
   const [cityType, setCityType] = useState<string>('all');
   const [mounted, setMounted] = useState(false);
   const { resolvedTheme } = useTheme();
@@ -175,85 +175,79 @@ export function AiCityChart() {
 
   return (
     <div className="flex flex-col w-full mt-8 pt-6 border-t border-border/50">
-      <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center mb-6 gap-4">
-        <div>
-          <h3 className="text-xl font-semibold text-foreground">
-            Penetración de IA por Ciudad
-          </h3>
-          <p className="text-sm text-muted-foreground mt-1">
-            Centros urbanos liderando la adopción de Inteligencia Artificial.
-          </p>
-        </div>
-        
-        <div className="flex flex-wrap items-center gap-2 w-full lg:w-auto justify-start lg:justify-end">
-          <div className="w-full sm:w-auto sm:min-w-[140px]">
-            {mounted ? (
-              <Select value={selectedCountry} onValueChange={setSelectedCountry}>
-                <SelectTrigger className="h-9 text-xs bg-background">
-                  <SelectValue placeholder="País..." />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="all">Todos los países</SelectItem>
-                  {allCountries.map(c => (
-                    <SelectItem key={c} value={c}>
-                      {flagMap[c]} <span className="ml-1">{c}</span>
-                    </SelectItem>
-                  ))}
-                </SelectContent>
-              </Select>
-            ) : (
-              <div className="h-9 w-full border rounded-md" />
-            )}
-          </div>
-
-          <div className="w-full sm:w-auto sm:min-w-[140px]">
-            {mounted ? (
-              <Select value={cityType} onValueChange={setCityType}>
-                <SelectTrigger className="h-9 text-xs bg-background">
-                  <SelectValue placeholder="Tipo de ciudad..." />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="all">Todas las ciudades</SelectItem>
-                  <SelectItem value="capital">Solo capitales</SelectItem>
-                </SelectContent>
-              </Select>
-            ) : (
-              <div className="h-9 w-full border rounded-md" />
-            )}
-          </div>
-          
-          <div className="w-full sm:w-auto sm:min-w-[150px]">
-            {mounted ? (
-              <Select value={minJobs} onValueChange={setMinJobs}>
-                <SelectTrigger className="h-9 text-xs bg-background">
-                  <SelectValue placeholder="Volumen..." />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="10">&gt; 10 vacantes</SelectItem>
-                  <SelectItem value="20">&gt; 20 vacantes</SelectItem>
-                  <SelectItem value="30">&gt; 30 vacantes</SelectItem>
-                  <SelectItem value="40">&gt; 40 vacantes</SelectItem>
-                  <SelectItem value="50">&gt; 50 vacantes</SelectItem>
-                </SelectContent>
-              </Select>
-            ) : (
-              <div className="h-9 w-full border rounded-md" />
-            )}
-          </div>
-        </div>
+      <div className="mb-6">
+        <h3 className="text-xl font-semibold text-foreground">
+          ¿Qué ciudades lideran la solicitud de conocimientos en IA?
+        </h3>
+        <p className="text-sm text-muted-foreground mt-1">
+          Los hubs tecnológicos de Estados Unidos (Boston, Seattle, San Francisco) lideran claramente la solicitud de competencias en IA, superando el 50% de penetración.
+        </p>
       </div>
 
       {/* 💡 Antes de explorar */}
       <div className="mb-4 w-full">
         <div className="text-xs text-muted-foreground leading-relaxed mb-3">
           <span className="font-bold text-foreground">💡 Antes de explorar: </span>
-          <ul className="list-disc list-inside space-y-1 mt-2 ml-1">
-            <li><strong>"Otra (Nivel País)":</strong> agrupa vacantes que solo especificaron el país (mercado remoto o distribuido) junto con ciudades secundarias de muy baja emisión estadística.</li>
-            <li><strong>Filtro de volumen:</strong> sube el umbral para comparar solo ciudades con muestra significativa y evitar conclusiones de baja estadística.</li>
-            <li><strong>Solo capitales:</strong> activa este filtro para una comparativa directa entre las ciudades principales de cada país.</li>
-          </ul>
+          La categoría <strong>"Otra (Nivel País)"</strong> agrupa vacantes remotas o sin ciudad específica, revelando un patrón interesante en roles distribuidos. Puedes usar el filtro de <strong>Volumen</strong> para asegurar una comparativa estadística sólida, o activar el filtro de <strong>Solo capitales</strong> para comparar el comportamiento exclusivo entre las ciudades principales.
         </div>
         <div className="w-full h-px bg-border/60" />
+      </div>
+
+      <div className="flex flex-wrap items-center gap-2 w-full justify-end mb-4">
+        <div className="w-full sm:w-auto sm:min-w-[140px]">
+          {mounted ? (
+            <Select value={selectedCountry} onValueChange={setSelectedCountry}>
+              <SelectTrigger className="h-9 text-xs bg-background">
+                <SelectValue placeholder="País..." />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="all">Todos los países</SelectItem>
+                {allCountries.map(c => (
+                  <SelectItem key={c} value={c}>
+                    {flagMap[c]} <span className="ml-1">{c}</span>
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
+          ) : (
+            <div className="h-9 w-full border rounded-md" />
+          )}
+        </div>
+
+        <div className="w-full sm:w-auto sm:min-w-[140px]">
+          {mounted ? (
+            <Select value={cityType} onValueChange={setCityType}>
+              <SelectTrigger className="h-9 text-xs bg-background">
+                <SelectValue placeholder="Tipo de ciudad..." />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="all">Todas las ciudades</SelectItem>
+                <SelectItem value="capital">Solo capitales</SelectItem>
+              </SelectContent>
+            </Select>
+          ) : (
+            <div className="h-9 w-full border rounded-md" />
+          )}
+        </div>
+        
+        <div className="w-full sm:w-auto sm:min-w-[150px]">
+          {mounted ? (
+            <Select value={minJobs} onValueChange={setMinJobs}>
+              <SelectTrigger className="h-9 text-xs bg-background">
+                <SelectValue placeholder="Volumen..." />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="10">&gt; 10 vacantes</SelectItem>
+                <SelectItem value="20">&gt; 20 vacantes</SelectItem>
+                <SelectItem value="30">&gt; 30 vacantes</SelectItem>
+                <SelectItem value="40">&gt; 40 vacantes</SelectItem>
+                <SelectItem value="50">&gt; 50 vacantes</SelectItem>
+              </SelectContent>
+            </Select>
+          ) : (
+            <div className="h-9 w-full border rounded-md" />
+          )}
+        </div>
       </div>
       
       {filteredData.length > 0 ? (

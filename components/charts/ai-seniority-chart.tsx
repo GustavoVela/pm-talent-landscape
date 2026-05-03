@@ -5,32 +5,39 @@ import ReactECharts from 'echarts-for-react';
 import { useTheme } from "next-themes";
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group"
 import { ChevronDownIcon, CheckIcon } from "lucide-react"
+import { Alert, AlertDescription } from "@/components/ui/alert"
 
 const rawData = [
   { country: "Estados Unidos", flag: "🇺🇸", seniority: "Junior / Mid-Level", withAi: 124, total: 513 },
   { country: "Estados Unidos", flag: "🇺🇸", seniority: "Senior", withAi: 134, total: 297 },
-  { country: "Estados Unidos", flag: "🇺🇸", seniority: "Leadership", withAi: 227, total: 529 },
+  { country: "Estados Unidos", flag: "🇺🇸", seniority: "Head / Lead", withAi: 23, total: 53 },
+  { country: "Estados Unidos", flag: "🇺🇸", seniority: "Director / VP / CPO", withAi: 204, total: 476 },
   { country: "Brasil", flag: "🇧🇷", seniority: "Junior / Mid-Level", withAi: 60, total: 312 },
   { country: "Brasil", flag: "🇧🇷", seniority: "Senior", withAi: 74, total: 248 },
-  { country: "Brasil", flag: "🇧🇷", seniority: "Leadership", withAi: 20, total: 66 },
+  { country: "Brasil", flag: "🇧🇷", seniority: "Head / Lead", withAi: 14, total: 39 },
+  { country: "Brasil", flag: "🇧🇷", seniority: "Director / VP / CPO", withAi: 6, total: 27 },
   { country: "Colombia", flag: "🇨🇴", seniority: "Junior / Mid-Level", withAi: 22, total: 94 },
   { country: "Colombia", flag: "🇨🇴", seniority: "Senior", withAi: 28, total: 88 },
-  { country: "Colombia", flag: "🇨🇴", seniority: "Leadership", withAi: 6, total: 19 },
+  { country: "Colombia", flag: "🇨🇴", seniority: "Head / Lead", withAi: 3, total: 9 },
+  { country: "Colombia", flag: "🇨🇴", seniority: "Director / VP / CPO", withAi: 3, total: 10 },
   { country: "México", flag: "🇲🇽", seniority: "Junior / Mid-Level", withAi: 26, total: 178 },
   { country: "México", flag: "🇲🇽", seniority: "Senior", withAi: 59, total: 195 },
-  { country: "México", flag: "🇲🇽", seniority: "Leadership", withAi: 11, total: 42 },
+  { country: "México", flag: "🇲🇽", seniority: "Head / Lead", withAi: 6, total: 19 },
+  { country: "México", flag: "🇲🇽", seniority: "Director / VP / CPO", withAi: 5, total: 23 },
   { country: "Chile", flag: "🇨🇱", seniority: "Junior / Mid-Level", withAi: 25, total: 138 },
   { country: "Chile", flag: "🇨🇱", seniority: "Senior", withAi: 8, total: 34 },
-  { country: "Chile", flag: "🇨🇱", seniority: "Leadership", withAi: 4, total: 10 },
+  { country: "Chile", flag: "🇨🇱", seniority: "Head / Lead", withAi: 4, total: 6 },
+  { country: "Chile", flag: "🇨🇱", seniority: "Director / VP / CPO", withAi: 0, total: 4 },
   { country: "Perú", flag: "🇵🇪", seniority: "Junior / Mid-Level", withAi: 5, total: 44 },
   { country: "Perú", flag: "🇵🇪", seniority: "Senior", withAi: 3, total: 16 },
-  { country: "Perú", flag: "🇵🇪", seniority: "Leadership", withAi: 4, total: 13 },
+  { country: "Perú", flag: "🇵🇪", seniority: "Head / Lead", withAi: 4, total: 9 },
+  { country: "Perú", flag: "🇵🇪", seniority: "Director / VP / CPO", withAi: 0, total: 4 }
 ];
 
 export function AiSeniorityChart() {
   const [viewMode, setViewMode] = React.useState<'bySeniority' | 'byCountry'>('bySeniority');
   const allCountries = ["Estados Unidos", "Colombia", "Brasil", "México", "Chile", "Perú"];
-  const [selectedCountries, setSelectedCountries] = React.useState<string[]>(allCountries);
+  const [selectedCountries, setSelectedCountries] = React.useState<string[]>(["Estados Unidos", "Colombia", "Brasil", "México"]);
   const [open, setOpen] = React.useState(false);
   const dropdownRef = React.useRef<HTMLDivElement>(null);
   const [mounted, setMounted] = React.useState(false);
@@ -58,7 +65,7 @@ export function AiSeniorityChart() {
   };
 
   const countries = selectedCountries;
-  const seniorities = ["Junior / Mid-Level", "Senior", "Leadership"];
+  const seniorities = ["Junior / Mid-Level", "Senior", "Head / Lead", "Director / VP / CPO"];
   
   const flagMap: Record<string, string> = {
     "Estados Unidos": "🇺🇸", "Brasil": "🇧🇷", "Colombia": "🇨🇴", "México": "🇲🇽", "Chile": "🇨🇱", "Perú": "🇵🇪"
@@ -89,8 +96,9 @@ export function AiSeniorityChart() {
             return `{flag|${item.flag}}\n{jobs|${item.total} vac.}\n{share|${share}}`;
         } else {
             const shortSen = item.seniority === "Junior / Mid-Level" ? "Jr/Mid" : 
-                             item.seniority === "Senior" ? "Senior" : "Head/Lead/Dir/VP/CPO";
-            return `{sen|${shortSen}}\n{jobs|${item.total} vac.}\n{share|${share}}`;
+                         item.seniority === "Senior" ? "Senior" : 
+                         item.seniority === "Head / Lead" ? "Head/Lead" : "Dir/VP\n/CPO";
+        return `{sen|${shortSen}}\n{jobs|${item.total} vac.}\n{share|${share}}`;
         }
       },
       rich: {
@@ -242,62 +250,13 @@ export function AiSeniorityChart() {
 
   return (
     <div className="flex flex-col w-full mt-8 pt-6 border-t border-border/50">
-      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-4 gap-3">
-        <div>
-          <h3 className="text-xl font-semibold text-foreground">
-            Penetración de IA por País y Seniority
-          </h3>
-        </div>
-        
-        <div className="flex flex-wrap items-center gap-2 w-full sm:w-auto justify-start sm:justify-end">
-          <div className="relative w-full sm:w-auto" ref={dropdownRef}>
-            {mounted ? (
-              <>
-                <button 
-                  onClick={() => setOpen(!open)}
-                  className="flex h-9 items-center justify-between gap-2 rounded-md border border-input bg-background px-3 py-2 text-xs shadow-sm hover:bg-accent hover:text-accent-foreground w-full sm:min-w-[140px]"
-                >
-                  <span className="truncate">
-                    {selectedCountries.length === allCountries.length 
-                      ? "Todos (6)" 
-                      : `${selectedCountries.length} países`}
-                  </span>
-                  <ChevronDownIcon className="h-3 w-3 opacity-50" />
-                </button>
-                
-                {open && (
-                  <div className="absolute right-0 sm:right-auto sm:left-0 top-full mt-1 z-50 w-48 rounded-md border bg-popover text-popover-foreground shadow-md outline-none p-1">
-                    {allCountries.map(c => (
-                      <div 
-                        key={c}
-                        onClick={() => toggleCountry(c)}
-                        className="relative flex w-full cursor-pointer items-center rounded-sm py-1.5 pl-8 pr-2 text-xs outline-none hover:bg-accent hover:text-accent-foreground"
-                      >
-                        <span className="absolute left-2 flex h-3.5 w-3.5 items-center justify-center">
-                          {selectedCountries.includes(c) && <CheckIcon className="h-3 w-3" />}
-                        </span>
-                        {flagMap[c]} <span className="ml-2">{c}</span>
-                      </div>
-                    ))}
-                  </div>
-                )}
-              </>
-            ) : (
-              <div className="h-9 w-[130px] border rounded-md" />
-            )}
-          </div>
-          
-          <ToggleGroup 
-            type="single" 
-            variant="outline" 
-            value={viewMode} 
-            onValueChange={(v) => v && setViewMode(v as 'bySeniority' | 'byCountry')} 
-            className="w-full sm:w-auto justify-start sm:justify-end bg-background"
-          >
-            <ToggleGroupItem value="bySeniority" className="text-xs h-9 px-3">Por Seniority</ToggleGroupItem>
-            <ToggleGroupItem value="byCountry" className="text-xs h-9 px-3">Por País</ToggleGroupItem>
-          </ToggleGroup>
-        </div>
+      <div className="mb-4">
+        <h3 className="text-xl font-semibold text-foreground">
+          ¿La demanda de IA varía según el nivel de experiencia?
+        </h3>
+        <p className="text-sm text-muted-foreground mt-1">
+          A mayor seniority, es significativamente más probable que la vacante solicite conocimientos de Inteligencia Artificial como competencia clave.
+        </p>
       </div>
 
       {/* 💡 Antes de explorar */}
@@ -312,8 +271,69 @@ export function AiSeniorityChart() {
         </div>
         <div className="w-full h-px bg-border/60" />
       </div>
+
+      <div className="flex flex-wrap items-center gap-2 w-full justify-end mb-4">
+        <div className="relative w-full sm:w-auto" ref={dropdownRef}>
+          {mounted ? (
+            <>
+              <button 
+                onClick={() => setOpen(!open)}
+                className="flex h-9 items-center justify-between gap-2 rounded-md border border-input bg-background px-3 py-2 text-xs shadow-sm hover:bg-accent hover:text-accent-foreground w-full sm:min-w-[140px]"
+              >
+                <span className="truncate">
+                  {selectedCountries.length === allCountries.length 
+                    ? "Todos (6)" 
+                    : `${selectedCountries.length} países`}
+                </span>
+                <ChevronDownIcon className="h-3 w-3 opacity-50" />
+              </button>
+              
+              {open && (
+                <div className="absolute right-0 sm:right-auto sm:left-0 top-full mt-1 z-50 w-48 rounded-md border bg-popover text-popover-foreground shadow-md outline-none p-1">
+                  {allCountries.map(c => (
+                    <div 
+                      key={c}
+                      onClick={() => toggleCountry(c)}
+                      className="relative flex w-full cursor-pointer items-center rounded-sm py-1.5 pl-8 pr-2 text-xs outline-none hover:bg-accent hover:text-accent-foreground"
+                    >
+                      <span className="absolute left-2 flex h-3.5 w-3.5 items-center justify-center">
+                        {selectedCountries.includes(c) && <CheckIcon className="h-3 w-3" />}
+                      </span>
+                      {flagMap[c]} <span className="ml-2">{c}</span>
+                    </div>
+                  ))}
+                </div>
+              )}
+            </>
+          ) : (
+            <div className="h-9 w-[130px] border rounded-md" />
+          )}
+        </div>
+        
+        <ToggleGroup 
+          type="single" 
+          variant="outline" 
+          value={viewMode} 
+          onValueChange={(v) => v && setViewMode(v as 'bySeniority' | 'byCountry')} 
+          className="w-full sm:w-auto justify-start sm:justify-end bg-background"
+        >
+          <ToggleGroupItem value="bySeniority" className="text-xs h-9 px-3">Por Seniority</ToggleGroupItem>
+          <ToggleGroupItem value="byCountry" className="text-xs h-9 px-3">Por País</ToggleGroupItem>
+        </ToggleGroup>
+      </div>
       <div className="w-full h-[304px] -mt-2 -mb-4">
         <ReactECharts option={option} notMerge={true} style={{ height: "100%", width: "100%" }} opts={{ renderer: "svg" }} />
+      </div>
+
+      <div className="mt-6 w-full">
+        <Alert className="w-full border-border/50 bg-muted/50 shadow-sm grid-cols-[auto_1fr] gap-x-3">
+          <span className="text-base leading-none translate-y-[2px]">🤓</span>
+          <AlertDescription className="text-foreground text-[14px] leading-relaxed w-full">
+            <div className="w-full">
+              Los datos de Estados Unidos, respaldados por una mayor muestra estadística, confirman que la Inteligencia Artificial se exige con mayor frecuencia en posiciones Senior y en cargos directivos (cerca del 45%). Esto sugiere que las empresas buscan líderes que comprendan el impacto de la IA para impulsar la estrategia de producto de manera <em>top-down</em>. En Latinoamérica, aunque contamos con una menor cantidad de muestras para altos cargos, el patrón se repite: al ascender a roles Senior o de liderazgo, la exigencia explícita de conocimientos en IA se dispara significativamente en comparación con los perfiles Junior o Mid-level.
+            </div>
+          </AlertDescription>
+        </Alert>
       </div>
     </div>
   );

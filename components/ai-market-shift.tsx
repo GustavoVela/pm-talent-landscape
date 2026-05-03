@@ -7,7 +7,7 @@ export function AiMarketShift() {
       {/* Header sin título grande, conectando directamente con el texto anterior */}
       <div className="mb-8">
         <p className="text-muted-foreground leading-relaxed">
-          Al examinar la taxonomía a nivel microscópico, el análisis comparativo de 2,836 vacantes (1,339 EE.UU. | 1,497 LATAM) evidencia una divergencia estructural crítica. Es importante destacar que <strong>ambos mercados exigen competencias tecnológicas y de datos con igual intensidad</strong>, pero el <em>tipo</em> de habilidad solicitada cambia por completo. El mercado estadounidense opera como un indicador adelantado de la transformación del rol, demostrando cómo la adopción tecnológica desplaza el valor del PM desde la ejecución operativa hacia el juicio de producto y la agencia técnica pura.
+          Al examinar la taxonomía a nivel microscópico, el análisis comparativo de 2,836 vacantes (1,339 EE.UU. | 1,497 LATAM) evidencia una divergencia estructural crítica. Es importante destacar que <strong>ambos mercados exigen los dominios tecnológico y de datos con igual intensidad</strong>, pero el <em>tipo</em> de habilidad específica solicitada cambia por completo. El mercado estadounidense opera como un indicador adelantado de la transformación del rol, demostrando cómo la adopción tecnológica desplaza el valor del PM desde la ejecución operativa hacia el juicio de producto y la agencia técnica pura.
         </p>
       </div>
 

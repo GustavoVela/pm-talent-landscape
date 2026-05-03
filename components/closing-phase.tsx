@@ -29,7 +29,7 @@ export function ClosingPhase() {
                 El rol del Product Manager está evolucionando hacia un perfil de orquestación donde la base ya no es solo metodológica. La paridad técnica entre regiones esconde matices profundos: mientras que en LATAM se espera que el PM acceda directamente a los datos (con una notable demanda de SQL), el mercado de EE. UU. ya está integrando la infraestructura de manera más nativa y priorizando otras exigencias técnicas.
               </p>
               <p>
-                Sin embargo, la brecha más crítica que evidencian los datos está en la Inteligencia Artificial. Los más de 10 puntos de diferencia en la demanda de habilidades de IA entre Estados Unidos y Latinoamérica son la señal con mayor relevancia práctica para quienes diseñan planes de desarrollo o equipos de producto. Un mercado históricamente anticipa los estándares del otro; lo que hoy puede parecer un diferencial competitivo en LATAM, será un requisito innegociable en los próximos <span className="font-semibold text-foreground">18 a 24 meses</span>.
+                Sin embargo, la brecha más crítica que evidencian los datos está en la Inteligencia Artificial. Los más de 10 puntos de diferencia en la demanda de competencias en IA entre Estados Unidos y Latinoamérica son la señal con mayor relevancia práctica para quienes diseñan planes de desarrollo o equipos de producto. Un mercado históricamente anticipa los estándares del otro; lo que hoy puede parecer un diferencial competitivo en LATAM, será un requisito innegociable en los próximos <span className="font-semibold text-foreground">18 a 24 meses</span>.
               </p>
               <p>
                 El futuro del Product Management requiere <span className="font-semibold text-foreground">orquestadores</span>: personas con alta agencia, una curiosidad técnica implacable, y el sentido comercial para saber qué problemas valen la pena resolver. La ejecución táctica de ceremonias ágiles se está comoditizando velozmente gracias a la automatización. Tu visión de negocio, tu capacidad para apalancar datos y tu "Product Taste" son tu verdadero foso defensivo.
@@ -57,7 +57,7 @@ export function ClosingPhase() {
                 La próxima vez que actualices tu CV o decidas qué aprender el fin de semana, no adivines. Entra al portal y hazte la pregunta incómoda:
               </p>
               <p className="text-xl font-bold text-foreground mt-4">
-                ¿Mis habilidades actuales me van a mantener relevante en tres años?
+                ¿Mis competencias y habilidades específicas actuales me van a mantener relevante en tres años?
               </p>
             </div>
           </AnimatedSection>

@@ -189,7 +189,7 @@ export function MarketEmploymentChart({
       icon: 'circle',
       itemWidth: 10,
       itemHeight: 10,
-      textStyle: { fontSize: 11, color: '#64748b' }
+      textStyle: { fontSize: 11, color: isDark ? '#d1d5db' : '#374151' }
     },
     series: [
       {
@@ -200,14 +200,14 @@ export function MarketEmploymentChart({
         avoidLabelOverlap: true,
         itemStyle: {
           borderRadius: 4,
-          borderColor: '#fff',
+          borderColor: isDark ? '#1e293b' : '#fff',
           borderWidth: 2
         },
         label: { 
           show: true,
           position: 'outside',
           formatter: (p: any) => `${p.name}\n${p.value.toLocaleString('en-US')} (${p.percent}%)`,
-          color: '#374151',
+          color: isDark ? '#9ca3af' : '#374151',
           fontSize: 12,
           fontWeight: 600
         },

@@ -67,16 +67,16 @@ export function MarketCountryChart({
       axisLabel: {
         formatter: isPercentage ? '{value}%' : '{value}',
         fontSize: 11,
-        color: '#64748b',
+        color: isDark ? "#9ca3af" : '#64748b',
       },
-      splitLine: { lineStyle: { type: 'dashed', color: 'rgba(0,0,0,0.08)' } }
+      splitLine: { lineStyle: { type: 'dashed', color: isDark ? 'rgba(255,255,255,0.08)' : 'rgba(0,0,0,0.08)' } }
     },
     yAxis: {
       type: 'category',
       data: chartData.map(d => d.country),
       axisLine: { show: false },
       axisTick: { show: false },
-      axisLabel: { fontSize: 12, color: '#374151' }
+      axisLabel: { fontSize: 12, color: isDark ? "#9ca3af" : '#374151' }
     },
     series: [
       {
@@ -100,7 +100,7 @@ export function MarketCountryChart({
           formatter: (p: any) => isPercentage
             ? `${p.value}%`
             : p.data.rawCount.toLocaleString('en-US'),
-          color: '#374151',
+          color: isDark ? "#9ca3af" : '#374151',
           fontSize: 11,
           fontWeight: 600,
         }

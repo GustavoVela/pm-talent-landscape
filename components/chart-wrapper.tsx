@@ -39,7 +39,7 @@ export function ChartWrapper({
             <CardDescription className="mt-1">{description}</CardDescription>
           )}
         </CardHeader>
-        <CardContent className="space-y-2 flex-1 flex flex-col pt-0">
+        <CardContent className="space-y-2 flex-1 flex flex-col pt-0 min-h-0">
           {helpText && (
             <div className="mb-4 w-full">
               <p className="text-xs text-muted-foreground leading-relaxed mb-3">
@@ -50,12 +50,12 @@ export function ChartWrapper({
             </div>
           )}
           {controls && (
-            <div className="w-full">
+            <div className="w-full shrink-0">
               {controls}
             </div>
           )}
           
-          <div className="w-full flex-1 p-0 flex flex-col justify-center bg-transparent rounded-md">
+          <div className="w-full flex-1 min-h-0 p-0 flex flex-col justify-center bg-transparent rounded-md">
             {children}
           </div>
 

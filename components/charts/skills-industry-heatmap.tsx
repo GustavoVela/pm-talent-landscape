@@ -179,7 +179,7 @@ export function SkillsIndustryHeatmap() {
           const industry = industries[params.data[1]];
           return `<div style="font-weight:600;margin-bottom:4px">${industry}</div>
                   <div>Demanda de <b>${skill.label}</b>: <strong style="color:${color}">${parseFloat(params.data[2]).toFixed(1)}%</strong></div>
-                  <div style="font-size:11px;color:#94a3b8;margin-top:2px">Rango del pilar: ${min.toFixed(1)}% – ${max.toFixed(1)}%</div>`;
+                  <div style="font-size:11px;color:#94a3b8;margin-top:2px">Rango del dominio: ${min.toFixed(1)}% – ${max.toFixed(1)}%</div>`;
         }
       },
       visualMapIndex: xIdx,
@@ -224,7 +224,7 @@ export function SkillsIndustryHeatmap() {
                   Mapa de Calor: Competencias por Sector
                 </CardTitle>
                 <CardDescription className="mt-1">
-                  Porcentaje de vacantes PM en cada macro-sector que demandan cada grupo de habilidades.
+                  Porcentaje de vacantes PM en cada macro-sector que demandan cada dominio.
                 </CardDescription>
               </div>
 
@@ -261,7 +261,7 @@ export function SkillsIndustryHeatmap() {
                       Absoluto
                     </ToggleGroupItem>
                     <ToggleGroupItem value="by_skill" className="text-xs h-9 px-3">
-                      Por Pilar
+                      Por Dominio
                     </ToggleGroupItem>
                   </ToggleGroup>
                 )}
@@ -273,8 +273,8 @@ export function SkillsIndustryHeatmap() {
               <div className="text-xs text-muted-foreground leading-relaxed mb-3">
                 <span className="font-bold text-foreground">💡 Antes de explorar: </span>
                 <ul className="list-disc list-inside space-y-1 mt-2 ml-1">
-                  <li><strong>Absoluto:</strong> escala 0–100 % compartida. Responde: <em>¿Qué % de vacantes de este sector piden este skill?</em></li>
-                  <li><strong>Por Pilar:</strong> cada columna tiene su propio rango de color. Core PM se omite (es &gt;90 % en todos los sectores). Responde: <em>¿En qué sectores destaca relativamente este pilar?</em></li>
+                  <li><strong>Absoluto:</strong> escala 0–100 % compartida. Responde: <em>¿Qué % de vacantes de este sector piden este dominio?</em></li>
+                  <li><strong>Por Dominio:</strong> cada columna tiene su propio rango de color. Core PM se omite (es &gt;90 % en todos los sectores). Responde: <em>¿En qué sectores destaca relativamente este dominio?</em></li>
                   <li><strong>Filtro:</strong> ajusta el mínimo de vacantes por sector. Usa <em>&gt; 20</em> para señal estadística sólida; sube a <em>&gt; 200</em> para ver solo los sectores dominantes.</li>
                 </ul>
               </div>

@@ -22,7 +22,7 @@ export function CompetencyProfilePhase() {
           <SectionHeader
             number="04"
             title="Perfil de competencias"
-            subtitle="¿Existe un perfil de habilidades estandarizado, o los requisitos varían de forma medible entre mercados?"
+            subtitle="¿Existe un perfil de competencias estandarizado, o las habilidades específicas varían de forma medible entre mercados?"
           />
 
           <AnimatedSection>
@@ -30,20 +30,14 @@ export function CompetencyProfilePhase() {
               <InfoIcon className="h-4 w-4 text-foreground" />
               <AlertTitle className="text-foreground font-medium">Nota de lectura: Señales de demanda</AlertTitle>
               <AlertDescription className="text-muted-foreground mt-2">
-                Los datos de esta sección provienen de 2,836 descripciones de empleo publicadas en LinkedIn. Lo que se mide es la frecuencia con la que los anunciantes solicitan una habilidad, no el nivel real de competencia de los PMs en cada mercado. Son señales de demanda de contratación, no calificaciones de desempeño.
+                Los datos de esta sección provienen de 2,836 descripciones de empleo publicadas en LinkedIn. Lo que se mide es la frecuencia con la que los anunciantes solicitan una habilidad específica, no el nivel real de destreza de los PMs en cada mercado. Son señales de demanda de contratación, no calificaciones de desempeño.
               </AlertDescription>
             </Alert>
           </AnimatedSection>
           <NarrativeText>
             <p>
-              Las habilidades base de gestión de producto —metodologías ágiles, roadmapping, discovery— son el punto de partida definitorio: todos los registros de esta muestra son roles en Product Management. El 92% que aparece en la tabla refleja que el 8% restante corresponde a publicaciones con descripciones demasiado genéricas o incompletas para que el análisis extrajera estas etiquetas; no son excepciones al perfil. Las variaciones relevantes entre mercados se expresan en los conocimientos y habilidades solicitados en cinco ejes adicionales: negocio, tecnología, datos, diseño (UX/UI) e inteligencia artificial.
+              Las competencias del Dominio Core PM —metodologías ágiles, roadmapping, discovery— son el punto de partida definitorio: todos los registros de esta muestra son roles en Product Management. El 92% que aparece en la tabla refleja que el 8% restante corresponde a publicaciones con descripciones demasiado genéricas o incompletas para que el análisis extrajera estas habilidades específicas; no son excepciones al perfil. Las variaciones relevantes entre mercados se expresan en los conocimientos solicitados en cinco dominios adicionales: negocio, tecnología, datos, diseño (UX/UI) e inteligencia artificial.
             </p>
-            <h3 className="text-xl font-bold text-foreground mb-4 mt-8">Lo que solicitan los equipos de reclutamiento en EE. UU. vs. Latinoamérica</h3>
-            <ul className="list-disc pl-5 space-y-4 my-6">
-              <li><strong>La brecha más amplia está en IA y Datos.</strong> Las publicaciones en EE. UU. incluyen requerimientos de IA en el <strong>36.2%</strong> de los casos, frente al <strong>26.1%</strong> en Latinoamérica — 10.1 puntos de diferencia. En Datos, la brecha es de 6.3 puntos (56.2% vs. 49.9%). Esto refleja que los equipos de reclutamiento en EE. UU. ya incorporaron estas competencias como criterio de filtro con mayor frecuencia. Si eso implica que los profesionales allí son más capaces en estas áreas, o simplemente que el mercado las pide más por presión competitiva o tendencia, es una pregunta que esta base de datos no puede responder.</li>
-              <li><strong>La paridad técnica es el dato contraintuitivo — y lo que se pide no es lo mismo.</strong> La diferencia en el eje Técnico entre EE. UU. (39.7%) y Latinoamérica (38.0%) es de apenas 1.7 puntos. Sin embargo, al revisar las habilidades individuales, la naturaleza de la demanda diverge. En EE. UU., las habilidades técnicas más solicitadas son APIs (9.1%), arquitectura de sistemas (1.5%), pipelines de datos (1.2%), cloud (AWS 2.5%, Azure 1.7%, GCP 1.0%) y plataformas de datos como Snowflake o Databricks. En Latinoamérica, SQL lidera con 8.9% frente al 4.6% en EE. UU. Esta diferencia es consistente con una hipótesis razonable: en mercados más maduros, la infraestructura de datos ya está construida —dashboards, plataformas de analítica, equipos de Data Science dedicados— y el PM no necesita consultar bases de datos directamente. En Latinoamérica, donde esa infraestructura aún está en construcción en muchas empresas, el mercado solicita que el propio PM pueda extraer sus propios datos. Los datos de SQL apoyan esta lectura, aunque no la comprueban de forma definitiva.</li>
-              <li><strong>El perfil Unicornio es minoritario — y no lo piden las empresas que uno esperaría.</strong> Solo el <strong>8.8%</strong> de las publicaciones en EE. UU. y el <strong>5.3%</strong> en Latinoamérica solicitan simultáneamente los cinco dominios de conocimiento. En EE. UU., lo piden empresas como Meta, BetterUp, Pinterest, Automation Anywhere o Samba TV. En Latinoamérica, predominan empresas brasileras de escala (Serasa Experian, Creditas, Bees Brasil) y algunas chilenas (Banco Falabella, Global66). Son empresas con productos digitales maduros y complejos — no organizaciones en etapa temprana. El perfil completo parece ser una decisión de arquitectura de equipo, no un estándar de contratación masivo. Este hallazgo fue uno de los más sorprendentes del análisis: el perfil integral es menos frecuente de lo que esperaba, algo que va en tensión directa con el <a href="#marco-mental" className="underline underline-offset-2 text-foreground font-medium hover:opacity-70 transition-opacity">marco mental con el que llegué a estos datos</a>.</li>
-            </ul>
           </NarrativeText>
 
           {/* Radar Charts Grid */}
@@ -52,7 +46,7 @@ export function CompetencyProfilePhase() {
               <ChartWrapper
                 id="chart-radar-macro"
                 title="Comparativa por regiones"
-                helpText="El radar muestra el perfil de skills promedio exigido en cada zona geográfica (LATAM, US, Global). Cuanto más al exterior cae el vértice, más frecuente es ese pilar en las vacantes de esa región. Haz clic en los nombres de la leyenda para aislar una región y ver su perfil puro sin ruido visual."
+                helpText="El radar muestra el perfil de competencias promedio exigido en cada zona geográfica (LATAM, US, Global). Cuanto más al exterior cae el vértice, más frecuente es ese dominio en las vacantes de esa región. Haz clic en los nombres de la leyenda para aislar una región y ver su perfil puro sin ruido visual."
                 className="h-full bg-white/50 dark:bg-slate-950/50 backdrop-blur-sm border-slate-200 dark:border-slate-800 shadow-lg"
               >
                 <CompetencyRegionRadar />
@@ -61,7 +55,7 @@ export function CompetencyProfilePhase() {
               <ChartWrapper
                 id="chart-radar-country"
                 title="Comparativa por países"
-                helpText="Cada país tiene un perfil de demanda distinto — no todos los mercados piden lo mismo ni en la misma proporción. Un vértice más alejado del centro indica que ese skill se menciona con mayor frecuencia en ese país. Haz clic en la leyenda para activar o desactivar países y comparar solo los que te interesan."
+                helpText="Cada país tiene un perfil de demanda distinto — no todos los mercados piden lo mismo ni en la misma proporción. Un vértice más alejado del centro indica que ese dominio se menciona con mayor frecuencia en ese país. Haz clic en la leyenda para activar o desactivar países y comparar solo los que te interesan."
                 className="h-full bg-white/50 dark:bg-slate-950/50 backdrop-blur-sm border-slate-200 dark:border-slate-800 shadow-lg"
               >
                 <CompetencyCountryRadar />
@@ -73,6 +67,14 @@ export function CompetencyProfilePhase() {
             <CompetencyDataTable />
           </AnimatedSection>
 
+          <NarrativeText>
+            <h3 className="text-xl font-bold text-foreground mb-4 mt-16">Lo que solicitan los equipos de reclutamiento en EE. UU. vs. Latinoamérica</h3>
+            <ul className="list-disc pl-5 space-y-4 my-6">
+              <li><strong>La brecha más amplia está en IA y Datos.</strong> Las publicaciones en EE. UU. incluyen requerimientos de IA en el <strong>36.2%</strong> de los casos, frente al <strong>26.1%</strong> en Latinoamérica — 10.1 puntos de diferencia. En Datos, la brecha es de 6.3 puntos (56.2% vs. 49.9%). Esto refleja que los equipos de reclutamiento en EE. UU. ya incorporaron estas competencias como criterio de filtro con mayor frecuencia. Si eso implica que los profesionales allí son más capaces en estas áreas, o simplemente que el mercado las pide más por presión competitiva o tendencia, es una pregunta que esta base de datos no puede responder.</li>
+              <li><strong>La paridad técnica es el dato contraintuitivo — y lo que se pide no es lo mismo.</strong> La diferencia en el eje Técnico entre EE. UU. (39.7%) y Latinoamérica (38.0%) es de apenas 1.7 puntos. Sin embargo, al revisar las habilidades individuales, la naturaleza de la demanda diverge. En EE. UU., las habilidades técnicas más solicitadas son APIs (9.1%), arquitectura de sistemas (1.5%), pipelines de datos (1.2%), cloud (AWS 2.5%, Azure 1.7%, GCP 1.0%) y plataformas de datos como Snowflake o Databricks. En Latinoamérica, SQL lidera con 8.9% frente al 4.6% en EE. UU. Esta diferencia es consistente con una hipótesis razonable: en mercados más maduros, la infraestructura de datos ya está construida —dashboards, plataformas de analítica, equipos de Data Science dedicados— y el PM no necesita consultar bases de datos directamente. En Latinoamérica, donde esa infraestructura aún está en construcción en muchas empresas, el mercado solicita que el propio PM pueda extraer sus propios datos. Los datos de SQL apoyan esta lectura, aunque no la comprueban de forma definitiva.</li>
+              <li><strong>El perfil Unicornio es minoritario — y no lo piden las empresas que uno esperaría.</strong> Solo el <strong>8.8%</strong> de las publicaciones en EE. UU. y el <strong>5.3%</strong> en Latinoamérica solicitan simultáneamente los cinco dominios de conocimiento. En EE. UU., lo piden empresas como Meta, BetterUp, Pinterest, Automation Anywhere o Samba TV. En Latinoamérica, predominan empresas brasileras de escala (Serasa Experian, Creditas, Bees Brasil) y algunas chilenas (Banco Falabella, Global66). Son empresas con productos digitales maduros y complejos — no organizaciones en etapa temprana. El perfil completo parece ser una decisión de arquitectura de equipo, no un estándar de contratación masivo. Este hallazgo fue uno de los más sorprendentes del análisis: el perfil integral es menos frecuente de lo que esperaba, algo que va en tensión directa con el <a href="#marco-mental" className="underline underline-offset-2 text-foreground font-medium hover:opacity-70 transition-opacity">marco mental con el que llegué a estos datos</a>.</li>
+            </ul>
+          </NarrativeText>
 
           <NarrativeText>
             <h3 className="text-xl font-bold text-foreground mb-4 mt-8">Desglose por países: lo que pide cada mercado</h3>
@@ -104,7 +106,7 @@ export function CompetencyProfilePhase() {
           <NarrativeText>
             <h3 className="text-xl font-bold text-foreground mb-4 mt-8">¿Qué pide cada sector?</h3>
             <p className="mb-6">
-              El perfil de habilidades que el mercado exige no es uniforme: cambia radicalmente según la industria en la que operes. Un PM en el sector financiero enfrenta una demanda completamente distinta a uno en entretenimiento o manufactura. Este mapa de calor permite comparar sector por sector el peso relativo de cada grupo de competencias en las vacantes analizadas, revelando dónde existe mayor ventaja competitiva según el perfil individual.
+              El perfil de competencias que el mercado exige no es uniforme: cambia radicalmente según la industria en la que operes. Un PM en el sector financiero enfrenta una demanda completamente distinta a uno en entretenimiento o manufactura. Este mapa de calor permite comparar sector por sector el peso relativo de cada dominio en las vacantes analizadas, revelando dónde existe mayor ventaja competitiva según el perfil individual.
             </p>
           </NarrativeText>
 
@@ -117,7 +119,7 @@ export function CompetencyProfilePhase() {
           <NarrativeText>
             <h3 className="text-xl font-bold text-foreground mb-4 mt-8">Detalle y taxonomía de competencias solicitadas</h3>
             <p className="mb-6">
-              Para quienes toman decisiones de contratación, este gráfico desglosa la taxonomía completa de habilidades que el mercado exige hoy. Como herramienta de desarrollo profesional, esta visualización permite realizar una auditoría de áreas a reforzar. Incorporar conocimientos técnicos (e.g., <em>APIs & Integrations</em>) o analíticos específicos aumenta el valor empírico del perfil en el mercado actual.
+              Para quienes toman decisiones de contratación, este gráfico desglosa la taxonomía completa de dominios, competencias y habilidades específicas que el mercado exige hoy. Como herramienta de desarrollo profesional, esta visualización permite realizar una auditoría de áreas a reforzar. Incorporar conocimientos técnicos (e.g., <em>APIs & Integrations</em>) o analíticos específicos aumenta el valor empírico del perfil en el mercado actual.
             </p>
           </NarrativeText>
 
@@ -126,7 +128,7 @@ export function CompetencyProfilePhase() {
               <ChartWrapper
                 id="chart-taxonomia-competencias"
                 title="Taxonomía de Competencias (Sunburst)"
-                helpText="Usa los controles de abajo para activar o desactivar ejes de competencias. Haz clic en cualquier eje (Business, Datos, IA…) para entrar en detalle: verás todos sus clústeres de habilidades y las habilidades individuales que lo componen. El tamaño de cada clúster refleja su peso relativo dentro del eje — cuanto más grande, más frecuente es ese grupo de skills en las publicaciones analizadas."
+                helpText="Usa los controles de abajo para activar o desactivar dominios. Haz clic en cualquier dominio (Business, Datos, IA…) para entrar en detalle: verás todas sus competencias y las habilidades específicas que lo componen. El tamaño de cada competencia refleja su peso relativo dentro del dominio — cuanto más grande, más frecuente es esa competencia en las publicaciones analizadas."
                 className="w-full bg-white/50 dark:bg-slate-950/50 backdrop-blur-sm border-slate-200 dark:border-slate-800 shadow-lg"
               >
                 <CompetencySunburstChart />
@@ -139,28 +141,28 @@ export function CompetencyProfilePhase() {
               <InfoIcon className="h-4 w-4 text-foreground" />
               <AlertTitle className="text-foreground font-medium">Nota de lectura: Clasificación de habilidades</AlertTitle>
               <AlertDescription className="text-muted-foreground mt-2 space-y-2">
-                <p>Las habilidades en este gráfico están clasificadas en el eje donde tienen mayor presencia, pero algunas aparecen de forma natural en más de un dominio. Esto no es un error de clasificación: refleja que ciertas habilidades son genuinamente transversales.</p>
-                <p>Ejemplos concretos: <strong>SQL</strong> está en el eje de Datos (donde lidera como lenguaje de consulta), pero también aparece en el eje Técnico como habilidad de ingeniería. <strong>Python</strong> figura en Técnico como lenguaje de programación y en Datos como herramienta de análisis. <strong>Machine Learning</strong> vive en IA como disciplina central, en Datos como capacidad predictiva y en Técnico como conocimiento de infraestructura. <strong>Databricks y Snowflake</strong> aparecen tanto en la capa de ingeniería técnica como en los ecosistemas de datos.</p>
-                <p>Para este gráfico, cada habilidad fue asignada al eje donde el contexto de uso era más frecuente en las publicaciones analizadas. Los porcentajes en la tabla comparativa reflejan si la habilidad fue mencionada en alguno de los ejes, no si fue asignada a uno exclusivamente.</p>
-                <div className="pt-3 border-t border-border/40 mt-3">
-                  <div className="flex flex-wrap gap-2">
+                <p>Las habilidades específicas en este gráfico están clasificadas en el dominio donde tienen mayor presencia, pero algunas aparecen de forma natural en más de uno. Esto no es un error de clasificación: refleja que ciertas herramientas son genuinamente transversales.</p>
+                <p>Ejemplos concretos: <strong>SQL</strong> está en el dominio de Datos (donde lidera como lenguaje de consulta), pero también aparece en el dominio Técnico como habilidad de ingeniería. <strong>Python</strong> figura en Técnico como lenguaje de programación y en Datos como herramienta de análisis. <strong>Machine Learning</strong> vive en IA como disciplina central, en Datos como capacidad predictiva y en Técnico como conocimiento de infraestructura. <strong>Databricks y Snowflake</strong> aparecen tanto en la capa de ingeniería técnica como en los ecosistemas de datos.</p>
+                <p>Para este gráfico, cada habilidad específica fue asignada al dominio donde el contexto de uso era más frecuente en las publicaciones analizadas. Los porcentajes en la tabla comparativa reflejan si la habilidad fue mencionada en alguno de los dominios, no si fue asignada a uno exclusivamente.</p>
+                <div className="mt-4 flex flex-col gap-2.5">
+                  <div className="h-px w-full bg-border/50" />
+                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-4 gap-y-2">
                     {[
-                      { label: 'Ver clasificación: Core PM', url: 'https://github.com/GustavoVela/pm-talent-landscape/blob/main/analysis/groupings/core_pm_skills_grouping.md' },
-                      { label: 'Ver clasificación: Datos', url: 'https://github.com/GustavoVela/pm-talent-landscape/blob/main/analysis/groupings/data_skills_grouping.md' },
-                      { label: 'Ver clasificación: IA', url: 'https://github.com/GustavoVela/pm-talent-landscape/blob/main/analysis/groupings/ai_skills_grouping.md' },
-                      { label: 'Ver clasificación: Negocio', url: 'https://github.com/GustavoVela/pm-talent-landscape/blob/main/analysis/groupings/business_skills_grouping.md' },
-                      { label: 'Ver clasificación: Técnico', url: 'https://github.com/GustavoVela/pm-talent-landscape/blob/main/analysis/groupings/technical_skills_grouping.md' },
-                      { label: 'Ver clasificación: UX/UI', url: 'https://github.com/GustavoVela/pm-talent-landscape/blob/main/analysis/groupings/ux_ui_skills_grouping.md' },
+                      { label: 'Diccionario de estandarización de competencias Core PM', url: 'https://github.com/GustavoVela/pm-talent-landscape/blob/main/analysis/groupings/core_pm_skills_grouping.md' },
+                      { label: 'Diccionario de estandarización de competencias de Datos', url: 'https://github.com/GustavoVela/pm-talent-landscape/blob/main/analysis/groupings/data_skills_grouping.md' },
+                      { label: 'Diccionario de estandarización de competencias de IA', url: 'https://github.com/GustavoVela/pm-talent-landscape/blob/main/analysis/groupings/ai_skills_grouping.md' },
+                      { label: 'Diccionario de estandarización de competencias de Negocio', url: 'https://github.com/GustavoVela/pm-talent-landscape/blob/main/analysis/groupings/business_skills_grouping.md' },
+                      { label: 'Diccionario de estandarización de competencias Técnicas', url: 'https://github.com/GustavoVela/pm-talent-landscape/blob/main/analysis/groupings/technical_skills_grouping.md' },
+                      { label: 'Diccionario de estandarización de competencias de UX/UI', url: 'https://github.com/GustavoVela/pm-talent-landscape/blob/main/analysis/groupings/ux_ui_skills_grouping.md' },
                     ].map(({ label, url }) => (
                       <a
                         key={label}
                         href={url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1.5 rounded-md border border-border/60 bg-background px-3 py-1 text-xs font-medium text-foreground hover:border-foreground/40 hover:bg-muted transition-all duration-150"
+                        className="font-medium text-primary hover:underline text-[13px] w-fit"
                       >
-                        <span className="opacity-60">↪</span>
-                        {label}
+                        {label} ↗
                       </a>
                     ))}
                   </div>

@@ -81,16 +81,16 @@ export function MarketIndustryChart({
       axisLabel: {
         formatter: isPercentage ? '{value}%' : '{value}',
         fontSize: 11,
-        color: '#64748b',
+        color: isDark ? "#9ca3af" : '#64748b',
       },
-      splitLine: { lineStyle: { type: 'dashed', color: 'rgba(0,0,0,0.08)' } }
+      splitLine: { lineStyle: { type: 'dashed', color: isDark ? 'rgba(255,255,255,0.08)' : 'rgba(0,0,0,0.08)' } }
     },
     yAxis: {
       type: 'category',
       data: filteredData.map(d => d.label),
       axisLine: { show: false },
       axisTick: { show: false },
-      axisLabel: { fontSize: 10, color: '#374151', interval: 0, width: 220, overflow: 'truncate' }
+      axisLabel: { fontSize: 10, color: isDark ? "#9ca3af" : '#374151', interval: 0, width: 220, overflow: 'truncate' }
     },
     series: [
       {
@@ -112,7 +112,7 @@ export function MarketIndustryChart({
           show: true,
           position: 'right',
           formatter: (p: any) => isPercentage ? `${p.value}%` : p.data.raw.toLocaleString('es-MX'),
-          color: '#374151',
+          color: isDark ? "#9ca3af" : '#374151',
           fontSize: 11,
           fontWeight: 600,
         }

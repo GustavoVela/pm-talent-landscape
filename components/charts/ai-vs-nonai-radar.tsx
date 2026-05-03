@@ -10,6 +10,7 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from '@/components/ui/tooltip';
+import { Alert, AlertDescription } from '@/components/ui/alert';
 
 // ─── Data from BigQuery ────────────────────────────────────────────────────
 // is_pm_role = true | Con IA: ai_skills_list > 0 (N=832) | Sin IA: = 0 (N=2,004)
@@ -40,7 +41,7 @@ const CARDS = [
     gap:      30.0,
     icon:     Cpu,
     iconCls:  'text-foreground',
-    note:     'El doble de exigencia técnica. Roles de Product Management con IA esperan que puedas hablar de APIs, arquitectura de ML e infraestructura. Es el pilar que más diferencia a los dos perfiles y el que más esfuerzo requiere desarrollar.',
+    note:     'El doble de exigencia técnica. Roles de Product Management con IA esperan que puedas hablar de APIs, arquitectura de ML e infraestructura. Es el dominio que más diferencia a los dos perfiles y el que más esfuerzo requiere desarrollar.',
   },
   {
     label:    'Datos',
@@ -172,7 +173,7 @@ export function AiVsNonAiRadar() {
         {/* Title */}
         <div className="mb-5">
           <h3 className="text-xl font-bold text-foreground">
-            Perfil de competencias: Roles de Product Management con IA vs. sin IA
+            ¿En qué se diferencia el perfil de una vacante para un PM tradicional frente a una con requerimiento en IA?
           </h3>
         </div>
 
@@ -180,14 +181,7 @@ export function AiVsNonAiRadar() {
         <div className="mb-5 w-full">
           <div className="text-xs text-muted-foreground leading-relaxed mb-3">
             <span className="font-bold text-foreground">💡 Antes de explorar: </span>
-            <ul className="list-disc list-inside space-y-1 mt-2 ml-1">
-              <li>Cuanto más hacia el exterior cae el vértice, más frecuente es ese pilar en las vacantes de ese perfil.</li>
-              <li>
-                <span style={{ color: COLOR_AI }} className="font-semibold">Azul continuo</span> = Roles de Product Management con IA ·{' '}
-                <span style={{ color: COLOR_NOAI }} className="font-semibold">Verde punteado</span> = Roles sin IA.
-              </li>
-              <li>Pasa el cursor sobre cada card de la derecha para ver la interpretación de esa brecha.</li>
-            </ul>
+            Cuanto más hacia el exterior cae el vértice, más frecuente es ese dominio. La línea <span style={{ color: COLOR_AI }} className="font-semibold">azul continua</span> representa roles con IA, mientras que la <span style={{ color: COLOR_NOAI }} className="font-semibold">verde punteada</span> representa roles tradicionales. Puedes pasar el cursor sobre cada tarjeta a la derecha para ver la interpretación detallada de la brecha.
           </div>
           <div className="w-full h-px bg-border/60" />
         </div>
@@ -264,11 +258,16 @@ export function AiVsNonAiRadar() {
         </div>
 
         {/* Narrative callout */}
-        <div className="mt-5 rounded-lg border border-sky-200 dark:border-sky-900 bg-sky-50/60 dark:bg-sky-950/30 px-4 py-3 text-sm text-sky-900 dark:text-sky-200 leading-relaxed">
-          <strong>📊 El hallazgo clave:</strong> convertirse en Product Manager de IA no cancela lo que ya sabes — lo amplifica.
-          El pilar de <strong>Negocio</strong> pesa prácticamente igual en ambos perfiles (69% vs 70%).
-          El pilar de <strong>Core PM</strong> también. Pero el umbral de <strong>Datos</strong> (+30pp) y <strong>Técnico</strong> (+30pp) prácticamente se duplica.
-          La IA no reemplaza el criterio de producto — eleva el piso de lo que debes saber.
+        <div className="mt-6 w-full">
+          <Alert className="w-full border-border/50 bg-muted/50 shadow-sm grid-cols-[auto_1fr] gap-x-3">
+            <span className="text-base leading-none translate-y-[2px]">🤓</span>
+            <AlertDescription className="text-foreground text-[14px] leading-relaxed w-full">
+              <div className="w-full">
+                Convertirse en Product Manager de IA no cancela lo que ya sabes — lo amplifica.
+                El dominio de <strong>Negocio</strong> pesa prácticamente igual en ambos perfiles (69% vs 70%), al igual que el dominio de <strong>Core PM</strong>. Pero el umbral de <strong>Datos</strong> (+30pp) y <strong>Técnico</strong> (+30pp) prácticamente se duplica. La IA no reemplaza el criterio de producto, simplemente eleva el piso de lo que debes saber.
+              </div>
+            </AlertDescription>
+          </Alert>
         </div>
       </div>
     </TooltipProvider>

@@ -120,56 +120,63 @@ export function AiIndustryChart() {
 
   return (
     <div className="flex flex-col w-full">
-      <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-4 mb-4">
-        <div>
-          <h3 className="text-lg font-bold">Por Sector</h3>
+      <div className="mb-6">
+        <h3 className="text-lg font-bold">¿Qué sectores solicitan más vacantes con conocimientos en IA?</h3>
+      </div>
+
+      {/* 💡 Antes de explorar */}
+      <div className="mb-4 w-full">
+        <div className="text-xs text-muted-foreground leading-relaxed mb-3">
+          <span className="font-bold text-foreground">💡 Antes de explorar: </span>
+          Ajusta los filtros de país y de volumen mínimo para asegurar relevancia estadística. Esto te permite aislar sectores donde la exigencia de IA es una tendencia fuerte a nivel regional o identificar patrones globales específicos en áreas como Fintech o Healthtech.
+        </div>
+        <div className="w-full h-px bg-border/60" />
+      </div>
+
+      <div className="flex flex-wrap items-center gap-3 w-full justify-end mb-0 relative z-10">
+        <div className="w-full sm:w-auto sm:min-w-[140px]">
+          {mounted ? (
+            <Select value={selectedCountry} onValueChange={setSelectedCountry}>
+              <SelectTrigger className="h-9 text-xs bg-background">
+                <SelectValue placeholder="País" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="all">Todos los países</SelectItem>
+                <SelectItem value="US">🇺🇸 Estados Unidos</SelectItem>
+                <SelectItem value="CO">🇨🇴 Colombia</SelectItem>
+                <SelectItem value="BR">🇧🇷 Brasil</SelectItem>
+                <SelectItem value="MX">🇲🇽 México</SelectItem>
+                <SelectItem value="CL">🇨🇱 Chile</SelectItem>
+                <SelectItem value="PE">🇵🇪 Perú</SelectItem>
+              </SelectContent>
+            </Select>
+          ) : (
+            <div className="h-9 w-full border rounded-md" />
+          )}
         </div>
         
-        <div className="flex flex-wrap items-center gap-3 w-full lg:w-auto justify-start lg:justify-end">
-          <div className="w-full sm:w-auto sm:min-w-[140px]">
-            {mounted ? (
-              <Select value={selectedCountry} onValueChange={setSelectedCountry}>
-                <SelectTrigger className="h-9 text-xs bg-background">
-                  <SelectValue placeholder="País" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="all">Todos los países</SelectItem>
-                  <SelectItem value="US">🇺🇸 Estados Unidos</SelectItem>
-                  <SelectItem value="CO">🇨🇴 Colombia</SelectItem>
-                  <SelectItem value="BR">🇧🇷 Brasil</SelectItem>
-                  <SelectItem value="MX">🇲🇽 México</SelectItem>
-                  <SelectItem value="CL">🇨🇱 Chile</SelectItem>
-                  <SelectItem value="PE">🇵🇪 Perú</SelectItem>
-                </SelectContent>
-              </Select>
-            ) : (
-              <div className="h-9 w-full border rounded-md" />
-            )}
-          </div>
-          
-          <div className="w-full sm:w-auto sm:min-w-[150px]">
-            {mounted ? (
-              <Select value={minJobs} onValueChange={setMinJobs}>
-                <SelectTrigger className="h-9 text-xs bg-background">
-                  <SelectValue placeholder="Volumen" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="10">{">"} 10 vacantes</SelectItem>
-                  <SelectItem value="20">{">"} 20 vacantes</SelectItem>
-                  <SelectItem value="30">{">"} 30 vacantes</SelectItem>
-                  <SelectItem value="40">{">"} 40 vacantes</SelectItem>
-                  <SelectItem value="50">{">"} 50 vacantes</SelectItem>
-                </SelectContent>
-              </Select>
-            ) : (
-              <div className="h-9 w-full border rounded-md" />
-            )}
-          </div>
+        <div className="w-full sm:w-auto sm:min-w-[150px]">
+          {mounted ? (
+            <Select value={minJobs} onValueChange={setMinJobs}>
+              <SelectTrigger className="h-9 text-xs bg-background">
+                <SelectValue placeholder="Volumen" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="10">{">"} 10 vacantes</SelectItem>
+                <SelectItem value="20">{">"} 20 vacantes</SelectItem>
+                <SelectItem value="30">{">"} 30 vacantes</SelectItem>
+                <SelectItem value="40">{">"} 40 vacantes</SelectItem>
+                <SelectItem value="50">{">"} 50 vacantes</SelectItem>
+              </SelectContent>
+            </Select>
+          ) : (
+            <div className="h-9 w-full border rounded-md" />
+          )}
         </div>
       </div>
       
       {filteredData.length > 0 ? (
-        <div className="w-full h-[450px] -mt-2 -mb-4">
+        <div className="w-full h-[450px] -mt-6 -mb-4">
           <ReactECharts option={option} notMerge={true} style={{ height: "100%", width: "100%" }} opts={{ renderer: "svg" }} />
         </div>
       ) : (

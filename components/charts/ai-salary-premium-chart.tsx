@@ -7,10 +7,11 @@ import { TrendingUp } from 'lucide-react';
 import {
   TooltipProvider,
 } from '@/components/ui/tooltip';
+import { Alert, AlertDescription } from '@/components/ui/alert';
 
 // Datos controlados SOLO para el mercado de Estados Unidos para evitar sesgos geográficos
 const DATA = [
-  { level: 'Director / VP', total: 308, noAi: { min: 185408, max: 258908, n: 189 }, ai: { min: 208143, max: 279279, n: 119 } },
+  { level: 'Director / VP / CPO', total: 308, noAi: { min: 185408, max: 258908, n: 189 }, ai: { min: 208143, max: 279279, n: 119 } },
   { level: 'Senior / Lead', total: 261, noAi: { min: 138727, max: 200489, n: 133 }, ai: { min: 171968, max: 234010, n: 128 } },
   { level: 'Mid-Level',     total: 169, noAi: { min: 100778, max: 139597, n: 130 }, ai: { min: 115073, max: 158687, n:  39 } },
   { level: 'Junior',        total: 153, noAi: { min:  41021, max:  54918, n: 118 }, ai: { min:  55305, max:  88935, n:  35 } },
@@ -40,6 +41,11 @@ export function AiSalaryPremiumChart() {
     const aiBase    = DATA.map(d => ({ value: d.ai.min }));
     const aiRange   = DATA.map(d => ({ value: d.ai.max - d.ai.min, realMin: d.ai.min, realMax: d.ai.max, vacantes: d.ai.n }));
 
+    const totalNoAi = DATA.reduce((sum, d) => sum + d.noAi.n, 0);
+    const totalAi = DATA.reduce((sum, d) => sum + d.ai.n, 0);
+    const noAiSeriesName = `Roles de PM sin IA (${totalNoAi} vacantes)`;
+    const aiSeriesName = `Roles de PM con IA (${totalAi} vacantes)`;
+
     return {
       backgroundColor: 'transparent',
       grid: { left: '3%', right: '12%', bottom: '18%', top: '8%', containLabel: true },
@@ -52,8 +58,8 @@ export function AiSalaryPremiumChart() {
         formatter: (params: any[]) => {
           // El tooltip interceptará las 4 series (2 bases transparentes, 2 rangos). 
           // Solo extraemos la data de las series de Rango.
-          const rangeNoAi = params.find(p => p.seriesName === 'Roles de PM sin IA');
-          const rangeAi   = params.find(p => p.seriesName === 'Roles de PM con IA');
+          const rangeNoAi = params.find(p => p.seriesName === noAiSeriesName);
+          const rangeAi   = params.find(p => p.seriesName === aiSeriesName);
           const levelName = params[0].name;
 
           if (!rangeNoAi || !rangeAi) return '';
@@ -87,7 +93,7 @@ export function AiSalaryPremiumChart() {
         bottom: 0,
         textStyle: { color: textColor, fontSize: 11, fontWeight: 600 },
         itemWidth: 16, itemHeight: 16, borderRadius: 4,
-        data: ['Roles de PM sin IA', 'Roles de PM con IA']
+        data: [noAiSeriesName, aiSeriesName]
       },
       xAxis: {
         type: 'value',
@@ -100,7 +106,7 @@ export function AiSalaryPremiumChart() {
         nameGap: 30,
         nameTextStyle: { color: textColor, fontSize: 11, fontWeight: 500 },
         splitLine: { lineStyle: { color: gridColor, type: 'dashed' } },
-        min: 'dataMin' // Empieza en el dato más bajo para destacar la barra
+        min: 0 // Empieza en 0 para mostrar la escala completa
       },
       yAxis: {
         type: 'category',
@@ -121,7 +127,7 @@ export function AiSalaryPremiumChart() {
           barGap: '20%' // Separación entre los dos stacks
         },
         {
-          name: 'Roles de PM sin IA',
+          name: noAiSeriesName,
           type: 'bar',
           stack: 'NoAiStack',
           data: noAiRange,
@@ -151,7 +157,7 @@ export function AiSalaryPremiumChart() {
           barWidth: 14
         },
         {
-          name: 'Roles de PM con IA',
+          name: aiSeriesName,
           type: 'bar',
           stack: 'AiStack',
           data: aiRange,
@@ -182,7 +188,7 @@ export function AiSalaryPremiumChart() {
         {/* Header */}
         <div className="mb-5">
           <h3 className="text-xl font-bold text-foreground flex items-center gap-2">
-            El "AI Premium" en Compensación <TrendingUp className="w-5 h-5 text-emerald-500" />
+            ¿Existe un premium salarial al dominar competencias de IA? <TrendingUp className="w-5 h-5 text-emerald-500" />
           </h3>
           <p className="text-sm text-muted-foreground mt-1">
             Distribución de bandas salariales anualizadas (USD) según nivel de seniority.
@@ -193,11 +199,7 @@ export function AiSalaryPremiumChart() {
         <div className="mb-5 w-full">
           <div className="text-xs text-muted-foreground leading-relaxed mb-3">
             <span className="font-bold text-foreground">💡 Antes de explorar: </span>
-            <ul className="list-disc list-inside space-y-1 mt-2 ml-1">
-              <li>Analizamos ~900 vacantes PM que transparentan su banda salarial (Mínimo y Máximo) en Estados Unidos.</li>
-              <li>Dado que Estados Unidos paga salarios superiores y publica más roles de IA, un promedio global generaría una "Paradoja de Simpson". Por eso esta gráfica aísla exclusivamente el mercado de EE.UU. como indicador adelantado.</li>
-              <li><strong>Dato Curioso de Transparencia:</strong> En nuestra muestra, el <strong>67%</strong> de las vacantes de Producto en EE.UU. publican su salario abiertamente, frente a un alarmante <strong>5.3%</strong> en LATAM. Esta disparidad justifica el uso de EE.UU. como benchmark central.</li>
-            </ul>
+            Analizamos ~900 vacantes PM en Estados Unidos que transparentan su banda salarial, aislado como mercado benchmark para evitar sesgos geográficos o la "Paradoja de Simpson". Curiosamente, el <strong>67%</strong> de estas vacantes estadounidenses publican su salario abiertamente, frente a un alarmante <strong>5.3%</strong> en LATAM.
           </div>
           <div className="w-full h-px bg-border/60" />
         </div>
@@ -224,7 +226,7 @@ export function AiSalaryPremiumChart() {
                 <div key={row.level} className="rounded-lg border border-border/60 bg-background px-4 py-3 flex items-center justify-between">
                   <div className="min-w-0">
                     <p className="text-xs font-semibold text-foreground">{row.level}</p>
-                    <p className="text-[10px] text-muted-foreground mt-0.5">N = {row.total}</p>
+                    <p className="text-[10px] text-muted-foreground mt-0.5">{row.total} vacantes</p>
                   </div>
                   <div className="flex flex-col items-end gap-0.5">
                     <div className="flex items-center gap-1">
@@ -240,11 +242,15 @@ export function AiSalaryPremiumChart() {
         </div>
 
         {/* Narrative callout */}
-        <div className="mt-5 rounded-lg border border-emerald-200 dark:border-emerald-900/50 bg-emerald-50/60 dark:bg-emerald-950/20 px-4 py-3 text-sm text-emerald-900 dark:text-emerald-200 leading-relaxed">
-          <strong>📊 El hallazgo clave:</strong> Visualizado como "velas" (rango mínimo a máximo), el efecto es evidente. 
-          El piso salarial de un PM con IA (el inicio de la barra azul) suele estar muy por encima del piso de un rol tradicional. 
-          En niveles iniciales (Junior), adquirir competencias de IA <strong>eleva el piso salarial en un brutal +35%</strong>,
-          demostrando que la IA funciona como un acelerador temprano de carrera.
+        <div className="mt-6 w-full">
+          <Alert className="w-full border-border/50 bg-muted/50 shadow-sm grid-cols-[auto_1fr] gap-x-3">
+            <span className="text-base leading-none translate-y-[2px]">🤓</span>
+            <AlertDescription className="text-foreground text-[14px] leading-relaxed w-full">
+              <div className="w-full">
+                Visualizado como "velas" (rango mínimo a máximo), el efecto es evidente. El piso salarial de un PM con IA (el inicio de la barra azul) suele estar muy por encima del piso de un rol tradicional. En niveles iniciales (Junior), adquirir competencias de IA <strong>eleva el piso salarial en un brutal +35%</strong>, demostrando que la IA funciona como un acelerador temprano de carrera.
+              </div>
+            </AlertDescription>
+          </Alert>
         </div>
       </div>
     </TooltipProvider>

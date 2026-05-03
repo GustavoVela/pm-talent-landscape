@@ -23,7 +23,8 @@ export function SampleQualityChart() {
     legend: {
       bottom: '0%',
       left: 'center',
-      icon: 'circle'
+      icon: 'circle',
+      textStyle: { color: isDark ? '#d1d5db' : '#374151' }
     },
     color: [
       { type: 'linear', x: 0, y: 0, x2: 0, y2: 1, colorStops: [{ offset: 0, color: '#38bdf8' }, { offset: 1, color: '#0ea5e9' }] },
@@ -49,12 +50,12 @@ export function SampleQualityChart() {
             percent: {
               fontSize: 14,
               fontWeight: 'bold',
-              color: '#111827',
+              color: isDark ? '#f3f4f6' : '#111827',
               align: 'center'
             },
             value: {
               fontSize: 11,
-              color: '#374151',
+              color: isDark ? '#9ca3af' : '#374151',
               align: 'center',
               padding: [2, 0, 0, 0]
             }

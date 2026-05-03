@@ -184,7 +184,7 @@ function PhaseZeroCarousel() {
                 title="¿Qué roles de Product Management contemplamos?"
                 interpretation={
                   <div className="flex flex-col gap-2.5">
-                    <span>Dada la extrema variación en los títulos originales de las vacantes, estandarizamos cientos de nomenclaturas en 10 categorías macro. El 47.5% del talento base opera estrictamente bajo la etiqueta 'Product Manager' (1,348 roles), seguido por 'Product Owner' con el 20.6%. Esta consolidación demuestra que, aunque la especialización crece (ej. Product Ops o PMM), casi el 70% de la demanda sigue anclada a los roles tradicionales de ejecución central.</span>
+                    <span>Dada la extrema variación en los títulos originales de las vacantes, estandarizamos cientos de nomenclaturas en 10 categorías macro. El 47.5% del talento base opera estrictamente bajo el título 'Product Manager' (1,348 roles), seguido por 'Product Owner' con el 20.6%. Esta consolidación demuestra que, aunque la especialización crece (ej. Product Ops o PMM), casi el 70% de la demanda sigue anclada a los roles tradicionales de ejecución central.</span>
                     <div className="h-px w-full bg-border/50" />
                     <a href="https://github.com/GustavoVela/pm-talent-landscape/blob/main/analysis/groupings/jobs_grouping.md" target="_blank" rel="noopener noreferrer" className="font-medium text-primary hover:underline text-[13px] w-fit">
                       Diccionario de estandarización de cargos ↗
@@ -276,7 +276,7 @@ function PhaseZeroCarousel() {
                 title="¿En qué industrias están disponibles las vacantes?"
                 interpretation={
                   <div className="flex flex-col gap-2.5">
-                    <span>Mapeamos las 489 etiquetas crudas del ecosistema en 15 macro-sectores estandarizados. La concentración es altísima: el 59.5% del mercado está dominado por Tecnología/Software (1,130 vacantes) y Servicios Financieros/FinTech (558 vacantes). El tercer pilar lo compone Retail & E-Commerce (260 vacantes). Esta tripleta confirma que la digitalización financiera y transaccional sigue siendo el motor absoluto de empleabilidad para los PMs.</span>
+                    <span>Mapeamos las 489 denominaciones crudas del ecosistema en 15 macro-sectores estandarizados. La concentración es altísima: el 59.5% del mercado está dominado por Tecnología/Software (1,130 vacantes) y Servicios Financieros/FinTech (558 vacantes). El tercer sector principal lo compone Retail & E-Commerce (260 vacantes). Esta tripleta confirma que la digitalización financiera y transaccional sigue siendo el motor absoluto de empleabilidad para los PMs.</span>
                     <div className="h-px w-full bg-border/50" />
                     <a href="https://github.com/GustavoVela/pm-talent-landscape/blob/main/analysis/groupings/industry_grouping.md" target="_blank" rel="noopener noreferrer" className="font-medium text-primary hover:underline text-[13px] w-fit">
                       Diccionario de estandarización de industrias ↗
@@ -398,7 +398,7 @@ export function DemographicsPhase() {
                 Este apartado detalla la estructura de la muestra procesada, estableciendo el origen y la segmentación del análisis. Los datos provienen de ofertas de empleo activas en LinkedIn durante las últimas semanas, cubriendo vacantes en Estados Unidos, Brasil, México, Colombia, Chile y Perú. 
               </p>
               <p>
-                Para garantizar una lectura limpia y estadísticamente válida, el procesamiento requirió la estandarización de la información extraída. Esto implicó crear agrupaciones metodológicas para homologar miles de variantes ruidosas en categorías clave como las <strong>ciudades</strong>, los <strong>cargos de Product Management</strong>, las <strong>industrias</strong> y la amplia taxonomía de <strong>habilidades y competencias</strong>. 
+                Para garantizar una lectura limpia y estadísticamente válida, el procesamiento requirió la estandarización de la información extraída. Esto implicó crear agrupaciones metodológicas para homologar miles de variantes ruidosas en categorías clave como las <strong>ciudades</strong>, los <strong>cargos de Product Management</strong>, las <strong>industrias</strong> y la amplia taxonomía de <strong>dominios, competencias y habilidades específicas</strong>. 
               </p>
               <p>
                 En cada gráfica analítica dentro del carrusel, encontrarás un enlace de acceso directo al <em>Diccionario de estandarización</em> correspondiente, permitiéndote auditar cómo se agruparon exactamente los datos originales.

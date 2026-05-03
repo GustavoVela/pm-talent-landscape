@@ -185,9 +185,9 @@ export function AiSkillsRankingChart() {
   return (
     <div className="flex flex-col w-full">
       <div className="mb-5">
-        <h3 className="text-xl font-bold text-foreground">¿Qué skills de IA deberías aprender y dominar?</h3>
+        <h3 className="text-xl font-bold text-foreground">¿Qué competencias de IA deberías aprender y dominar?</h3>
         <p className="text-sm text-muted-foreground mt-1">
-          Skills extraídas de vacantes PM que exigen IA, agrupadas en 5 rutas de aprendizaje progresivo.
+          Competencias extraídas directamente de las ofertas de trabajo para Product Managers, organizadas en 5 rutas de aprendizaje progresivo.
         </p>
       </div>
 
@@ -215,11 +215,7 @@ export function AiSkillsRankingChart() {
       <div className="mb-4 w-full">
         <div className="text-xs text-muted-foreground leading-relaxed mb-3">
           <span className="font-bold text-foreground">💡 Antes de explorar: </span>
-          <ul className="list-disc list-inside space-y-1 mt-2 ml-1">
-            <li>Cada barra indica cuántas vacantes PM mencionan ese skill — qué tan urgente es que lo entiendas.</li>
-            <li>Los encabezados en color marcan el inicio de cada ruta de aprendizaje. Usa los filtros para ver una sola ruta a la vez.</li>
-            <li>Pasa el cursor sobre cualquier skill para ver qué es y por qué el mercado lo pide.</li>
-          </ul>
+          Cada barra indica la frecuencia con la que se demanda una competencia específica en las vacantes, reflejando su prioridad en el mercado. Los encabezados en color marcan el inicio de cada ruta de aprendizaje, las cuales puedes visualizar individualmente usando los filtros superiores. Además, puedes pasar el cursor sobre cualquier barra para leer la descripción detallada de la competencia y entender por qué la industria la exige.
         </div>
         <div className="w-full h-px bg-border/60" />
       </div>
@@ -230,22 +226,24 @@ export function AiSkillsRankingChart() {
       </div>
 
       {/* Ver clasificación link */}
-      <div className="mt-4 pt-3 border-t border-border/40 flex flex-wrap gap-2">
-        {[
-          { label: 'Ver clasificación: Skills de IA (rutas)', url: 'https://github.com/GustavoVela/pm-talent-landscape/blob/main/analysis/groupings/ai_skills_tracks_grouping.md' },
-          { label: 'Ver clasificación: Taxonomía completa', url: 'https://github.com/GustavoVela/pm-talent-landscape/blob/main/analysis/groupings/ai_skills_grouping.md' },
-        ].map(({ label, url }) => (
-          <a
-            key={label}
-            href={url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 rounded-md border border-border/60 bg-background px-3 py-1 text-xs font-medium text-foreground hover:border-foreground/40 hover:bg-muted transition-all duration-150"
-          >
-            <span className="opacity-60">↪</span>
-            {label}
-          </a>
-        ))}
+      <div className="mt-4 flex flex-col gap-2.5">
+        <div className="h-px w-full bg-border/50" />
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-4 gap-y-2">
+          {[
+            { label: 'Diccionario de estandarización de competencias de IA (rutas)', url: 'https://github.com/GustavoVela/pm-talent-landscape/blob/main/analysis/groupings/ai_skills_tracks_grouping.md' },
+            { label: 'Diccionario de estandarización de taxonomía completa de IA', url: 'https://github.com/GustavoVela/pm-talent-landscape/blob/main/analysis/groupings/ai_skills_grouping.md' },
+          ].map(({ label, url }) => (
+            <a
+              key={label}
+              href={url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-medium text-primary hover:underline text-[13px] w-fit"
+            >
+              {label} ↗
+            </a>
+          ))}
+        </div>
       </div>
     </div>
   );

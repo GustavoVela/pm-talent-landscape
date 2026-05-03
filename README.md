@@ -60,6 +60,11 @@ Sube el contenido completo de la carpeta `out/` al directorio `public_html/` de 
   * Refactorización completa de `AiSeniorityChart` para sustituir la leyenda nativa por un sistema de filtrado multi-select custom y etiquetas directas sobre barras (`Lead/Dir/VP+`), mejorando la auto-explicabilidad visual y limpieza del gráfico. Adicionalmente, se estableció un orden duro descendente en los países.
   * Creación e integración de `AiCityChart`, una nueva gráfica paramétrica alimentada por consultas directas a BigQuery. Cuenta con lógica de filtrado cruzado por *País*, *Volumen Base (minJobs)* y *Clasificación de Ciudad (Capital vs Todas)*, empleando un sistema de controles `shadcn` unificados (`gap-3`, `flex-wrap`) que asegura consistencia y legibilidad responsive en el DOM.
   * Reincorporación estratégica de la variable "Otra ciudad" al ecosistema de datos de penetración IA para evitar sesgos estadísticos.
+  * Integración directa de datos desde BigQuery para `AiSeniorityChart`, segmentando la profundidad del mercado en 4 niveles de experiencia exactos (`Junior / Mid-Level`, `Senior`, `Head / Lead`, `Director / VP / CPO`).
+  * Corrección de bloqueos de renderizado y conflictos de capa (`z-index`) en menús desplegables sobre contenedores ECharts (`ai-industry-chart` y `ai-role-chart`).
+  * Estandarización estética y narrativa en todos los componentes de interpretación ("💡 El hallazgo clave") de la Sección 05 empleando el componente global `Alert` de shadcn/ui.
+  * Refinamiento estricto del *copywriting* analítico: transición de nomenclaturas académicas (`N=`) hacia términos humanos (`vacantes`), y enfoque de conclusiones basadas rigurosamente en *tamaños de muestra estadística* para proteger la credibilidad del dashboard.
+  * Optimización de layout CSS Grid (de 1 a 2 columnas responsivas) para la presentación de los diccionarios metodológicos y diccionarios de agrupamiento taxonómico.
 
 ---
 

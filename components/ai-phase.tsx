@@ -27,15 +27,23 @@ export function AiPhase() {
           <AnimatedSection delay={100}>
             <div className="space-y-6 text-lg text-muted-foreground leading-relaxed mb-16">
               <p>
-                El rol del Product Manager está experimentando una transformación radical impulsada por la IA. 
-                Ya no se trata solo de gestionar procesos, sino de convertirse en un "Full-Stack Builder". 
-                Pero, ¿es esto una realidad en el mercado laboral actual o simplemente una tendencia teórica?
+                El rol del Product Manager está experimentando una transformación impulsada por la adopción de Inteligencia Artificial. La industria no deja de hablar de IA, pero, ¿qué tanto de esto es ruido mediático y qué tanto es una realidad exigida en las contrataciones de hoy?
               </p>
               <p>
-                Nuestros datos demuestran que la integración de la IA no es uniforme. La brecha de demanda 
-                entre Estados Unidos y Latinoamérica supera los 10 puntos porcentuales. Un mercado anticipa 
-                lo que el otro requerirá muy pronto: lo que hoy es una ventaja competitiva en LATAM, será 
-                un requisito estándar innegociable en los próximos 18 a 24 meses.
+                Para responder esto, aislamos exclusivamente las vacantes que exigen conocimientos en IA para analizar cómo se comporta esta demanda en el mundo real. Es crucial entender que aquí no medimos la 'adopción de la IA en la industria', sino un factor mucho más pragmático: qué tan frecuente es que las empresas te soliciten saber de IA para contratarte.
+              </p>
+              <p>
+                Nuestros datos demuestran que esta exigencia no se distribuye de manera uniforme, y puede variar acorde con un conjunto de variables. Las gráficas de esta sección están diseñadas para ayudarte a responder preguntas como:
+              </p>
+              <ul className="list-disc list-outside pl-6 space-y-2 mt-4 text-base">
+                <li>¿Qué porcentaje real de las vacantes actuales exige competencias de IA en los diferentes mercados?</li>
+                <li>¿Las empresas exigen IA principalmente a roles directivos, o también se pide a todos los niveles?</li>
+                <li>¿Qué sectores o industrias están liderando la búsqueda de talento con IA?</li>
+                <li>¿Dominar estas competencias te ofrece un diferencial ('premium') en tu compensación salarial?</li>
+                <li>Y lo más importante: ¿en qué se diferencia el perfil de una vacante para un PM tradicional frente a uno que tiene un requerimiento en IA?</li>
+              </ul>
+              <p className="mt-4">
+                A continuación, desglosamos los datos para que saques tus propias conclusiones:
               </p>
             </div>
           </AnimatedSection>
@@ -44,7 +52,7 @@ export function AiPhase() {
             <div className="rounded-xl border border-border/50 bg-background p-6 shadow-sm mb-8">
               <div className="mb-0">
                 <h3 className="text-xl font-semibold text-foreground">
-                  Penetración de IA en Roles de Producto
+                  ¿Qué porcentaje de vacantes exigen competencias de IA en el mercado actual?
                 </h3>
               </div>
               <AiPenetrationChart />
