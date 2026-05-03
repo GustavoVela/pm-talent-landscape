@@ -3,7 +3,7 @@
 
 > Análisis empírico de **2,836 vacantes validadas** de roles de Product Management en **EE. UU., Brasil, México, Colombia y Chile** — extraídas de LinkedIn en abril de 2026.
 
-[![Live Demo](https://img.shields.io/badge/Live-pm--talent--landscape.vercel.app-blue?style=flat-square)](https://pm-talent-landscape.vercel.app)
+[![Live Demo](https://img.shields.io/badge/Live-product--talent--landscape-blue?style=flat-square)](https://www.gustavovela.com/product-talent-landscape)
 [![Next.js](https://img.shields.io/badge/Next.js-16-black?style=flat-square&logo=next.js)](https://nextjs.org)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green?style=flat-square)](LICENSE)
 

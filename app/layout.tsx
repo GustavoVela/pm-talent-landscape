@@ -16,7 +16,7 @@ const manrope = Manrope({
   display: 'swap',
 })
 
-const BASE_URL = 'https://pm-talent-landscape.vercel.app'
+const BASE_URL = 'https://www.gustavovela.com/product-talent-landscape'
 
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
@@ -115,7 +115,7 @@ export default function RootLayout({
     "@type": "Report",
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": "https://pm-talent-landscape.vercel.app/"
+      "@id": "https://www.gustavovela.com/product-talent-landscape/"
     },
     "headline": "El Product Management en la Era de la IA | Datos reales. Menos hype.",
     "description": "Análisis empírico de 2,836 ofertas de trabajo de Product Management en EE. UU., Brasil, México, Colombia y Chile.",
@@ -129,12 +129,12 @@ export default function RootLayout({
       "name": "PM Talent Landscape",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://pm-talent-landscape.vercel.app/icon.svg"
+        "url": "https://www.gustavovela.com/product-talent-landscape/icon.svg"
       }
     },
     "datePublished": "2026-05-02T12:00:00+00:00",
     "dateModified": "2026-05-02T12:00:00+00:00",
-    "image": "https://pm-talent-landscape.vercel.app/images/og.png",
+    "image": "https://www.gustavovela.com/product-talent-landscape/images/og.png",
     "about": [
       {"@type": "Thing", "name": "Product Management"},
       {"@type": "Thing", "name": "Artificial Intelligence"},

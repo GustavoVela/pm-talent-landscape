@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://pm-talent-landscape.vercel.app/sitemap.xml
+Sitemap: https://www.gustavovela.com/product-talent-landscape/sitemap.xml
