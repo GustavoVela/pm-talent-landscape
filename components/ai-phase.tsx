@@ -1,12 +1,30 @@
 "use client"
 
+/**
+ * AiPhase — Sección 05: El Product Management en la Era de la IA
+ *
+ * Presenta el análisis completo de la penetración de Inteligencia Artificial
+ * en los roles de producto de la muestra. Responde 5 preguntas de investigación:
+ *
+ *   1. ¿Qué porcentaje de vacantes incluye requerimientos de IA? (por región)
+ *   2. ¿Qué habilidades específicas de IA son las más demandadas?
+ *   3. ¿Cómo varía la penetración por seniority, ciudad, industria y tipo de rol?
+ *   4. ¿En qué se diferencia el perfil de un rol con IA vs. sin IA?
+ *   5. ¿Existe un diferencial salarial medible al dominar competencias de IA?
+ */
+
+// ─── Primitivos de layout ─────────────────────────────────────────────────────────
 import { AnimatedSection } from "./section-primitives"
+
+// ─── Gráficas de penetración ────────────────────────────────────────────────────────
 import { AiPenetrationChart } from "./charts/ai-penetration-chart"
 import { AiSeniorityChart } from "./charts/ai-seniority-chart"
 import { AiCityChart } from "./charts/ai-city-chart"
 import { AiIndustryChart } from "./charts/ai-industry-chart"
 import { AiRoleChart } from "./charts/ai-role-chart"
 import { AiSkillsRankingChart } from "./charts/ai-skills-ranking-chart"
+
+// ─── Gráficas comparativas: IA vs. no-IA ─────────────────────────────────────────
 import { AiVsNonAiRadar } from "./charts/ai-vs-nonai-radar"
 import { AiSalaryPremiumChart } from "./charts/ai-salary-premium-chart"
 

@@ -1,30 +1,41 @@
 "use client"
 
+/**
+ * DemographicsPhase — Sección 03: Demografía de la Muestra
+ *
+ * Contiene un carrusel de 8 gráficas que describen la composición de las
+ * 2,836 vacantes analizadas: calidad del filtrado, frescura temporal, países,
+ * ciudades, roles, seniority, industrias y tipos de contrato.
+ *
+ * El carrusel usa Embla Carousel (vía shadcn/ui) con una gráfica activa centrada
+ * y las adyacentes ligeramente difuminadas para enfatizar el foco.
+ */
+
 import React from "react"
+
+// ─── Layout & primitivos ───────────────────────────────────────────────────────
 import { ChartWrapper } from "./chart-wrapper"
 import { SectionHeader, NarrativeText, StatCard, AnimatedSection } from "./section-primitives"
+
+// ─── Gráficas de calidad de muestra ─────────────────────────────────────────────
 import { SampleQualityChart } from "./charts/sample-quality-chart"
 import { SampleRecencyChart } from "./charts/sample-recency-chart"
+
+// ─── Gráficas demográficas del mercado ───────────────────────────────────────────
 import { MarketCountryChart } from "./charts/market-country-chart"
 import { MarketCityChart } from "./charts/market-city-chart"
 import { MarketSeniorityChart } from "./charts/market-seniority-chart"
 import { MarketEmploymentChart } from "./charts/market-employment-chart"
 import { MarketIndustryChart } from "./charts/market-industry-chart"
-import { JobTitlesChart } from "./charts/job-titles-chart"
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-  type CarouselApi
-} from "@/components/ui/carousel"
-import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group"
+import { MarketRolesChart } from "./charts/market-roles-chart"
 
+// ─── UI: carrusel, controles y utilidades ──────────────────────────────────────────
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious, type CarouselApi } from "@/components/ui/carousel"
+import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Separator } from "@/components/ui/separator"
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip"
-import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
+import { Alert, AlertDescription } from "@/components/ui/alert"
 import { InfoIcon } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { demographicsCityData, FLAGS } from "@/lib/data"
@@ -222,7 +233,7 @@ function PhaseZeroCarousel() {
                   </div>
                 }
               >
-                <JobTitlesChart selectedCountry={taxonomySelectedCountry} viewMode={taxonomyViewMode} />
+                <MarketRolesChart selectedCountry={taxonomySelectedCountry} viewMode={taxonomyViewMode} />
               </ChartWrapper>
             </div>
           </CarouselItem>

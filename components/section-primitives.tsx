@@ -1,8 +1,33 @@
 "use client"
 
+/**
+ * section-primitives.tsx
+ *
+ * Sistema de primitivos de layout y narrativa compartidos por todas las secciones
+ * del dashboard. Garantiza consistencia tipográfica, de animación y de estructura
+ * a lo largo de todo el artículo.
+ *
+ * Exporta:
+ *   - AnimatedSection  — wrapper con reveal-on-scroll via IntersectionObserver
+ *   - SectionHeader    — encabezado numerado de sección (01, 02, 03...)
+ *   - NarrativeText    — bloque de copy con espaciado y tipografía estándar
+ *   - Blockquote       — cita destacada con borde izquierdo
+ *   - StatCard         — tarjeta de estadística con hover animado
+ *   - ChartPlaceholder — placeholder visual durante desarrollo (no visible en producción)
+ */
+
 import { cn } from "@/lib/utils"
 import { useEffect, useRef, useState } from "react"
 
+// ─── AnimatedSection ──────────────────────────────────────────────────────────
+
+/**
+ * Wrapper que aplica una animación de entrada (fade + slide-up) cuando el
+ * elemento entra en el viewport. Usa IntersectionObserver con threshold 0.1.
+ * La animación se dispara una sola vez (unobserve tras primera intersección).
+ *
+ * @param delay - Retardo en milisegundos antes de iniciar la transición (default: 0)
+ */
 function useInView(options?: IntersectionObserverInit) {
   const ref = useRef<HTMLDivElement>(null)
   const [isInView, setIsInView] = useState(false)
@@ -27,10 +52,18 @@ function AnimatedSection({ children, className, delay = 0 }: { children: React.R
   )
 }
 
-/** Section header matching the style of sections 01/02 in introduction.tsx */
+// ─── SectionHeader ────────────────────────────────────────────────────────────
+
+/**
+ * Encabezado de sección con número, título y subtítulo.
+ * Usado al inicio de cada sección principal (03 Demografía, 04 Competencias, etc.)
+ */
 interface SectionHeaderProps {
+  /** Número de sección como string ("03", "04"...) */
   number: string
+  /** Título principal de la sección */
   title: string
+  /** Pregunta o subtítulo que define el foco analítico de la sección */
   subtitle: string
 }
 
@@ -50,7 +83,12 @@ export function SectionHeader({ number, title, subtitle }: SectionHeaderProps) {
   )
 }
 
-/** Blockquote matching the style from section 01 */
+// ─── Blockquote ───────────────────────────────────────────────────────────────
+
+/**
+ * Cita destacada con borde izquierdo. Usada para afirmaciones clave
+ * o reflexiones del autor que merecen énfasis visual.
+ */
 interface BlockquoteProps {
   children: React.ReactNode
 }
@@ -67,10 +105,18 @@ export function Blockquote({ children }: BlockquoteProps) {
   )
 }
 
-/** Simple stat display — no colored borders, matches card style from section 02 */
+// ─── StatCard ─────────────────────────────────────────────────────────────────
+
+/**
+ * Tarjeta de estadística con animación hover. Usada en la sección de
+ * Introducción para mostrar métricas clave de la muestra.
+ */
 interface StatCardProps {
+  /** El número o valor principal a destacar (ej. "2,836", "31%") */
   value: string
+  /** Etiqueta descriptiva del valor */
   label: React.ReactNode | string
+  /** Contexto adicional en texto más pequeño (opcional) */
   sublabel?: React.ReactNode | string
 }
 
@@ -88,9 +134,16 @@ export function StatCard({ value, label, sublabel }: StatCardProps) {
   )
 }
 
-/** Narrative text block matching the body copy style */
+// ─── NarrativeText ────────────────────────────────────────────────────────────
+
+/**
+ * Contenedor de bloques de copy narrativo. Aplica la tipografía, espaciado
+ * y animación de entrada estándar del artículo.
+ * Usar para párrafos de análisis, listas y contenido textual de cada sección.
+ */
 interface NarrativeTextProps {
   children: React.ReactNode
+  /** Retardo de animación de entrada en ms (default: 0) */
   delay?: number
 }
 
@@ -104,15 +157,20 @@ export function NarrativeText({ children, delay = 0 }: NarrativeTextProps) {
   )
 }
 
-/** Chart placeholder — dashed border, minimal */
-export function ChartPlaceholder({ 
-  title, 
+// ─── ChartPlaceholder ─────────────────────────────────────────────────────────
+
+/**
+ * Placeholder visual para gráficas en desarrollo.
+ * No debería aparecer en producción; es una ayuda durante el proceso de build.
+ */
+export function ChartPlaceholder({
+  title,
   height = "400px",
-  description 
-}: { 
+  description
+}: {
   title: string
   height?: string
-  description?: string 
+  description?: string
 }) {
   return (
     <div className="rounded-xl border-2 border-dashed border-border/50 bg-muted/20 flex flex-col items-center justify-center text-center p-12" style={{ minHeight: height }}>

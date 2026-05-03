@@ -58,7 +58,7 @@ const rawRolesData = [
   {"country": "United States", "rol": "Chief Product Officer", "cantidad": 24}
 ];
 
-export function JobTitlesChart({ 
+export function MarketRolesChart({ 
   selectedCountry = 'all',
   viewMode = 'absolute'
 }: { 

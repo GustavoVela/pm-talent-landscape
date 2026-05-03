@@ -1,5 +1,22 @@
 "use client"
 
+/**
+ * CompetencyProfilePhase — Sección 04: Perfil de Competencias
+ *
+ * Analiza qué dominios y competencias exige el mercado laboral a los roles de
+ * Product Management, y cómo difieren entre EE. UU. y Latinoamérica.
+ *
+ * Estructura interna:
+ *   1. Texto introductorio: metodología y taxonomía de 3 niveles
+ *   2. Radares comparativos (por región y por país)
+ *   3. Tabla de datos detallada por dominio y país
+ *   4. Análisis narrativo EE.UU. vs. LATAM
+ *   5. Desglose por país
+ *   6. Mapa de calor: dominios por industria
+ *   7. Sunburst: taxonomía completa Dominios > Competencias > Habilidades
+ *   8. Hallazgos analíticos: divergencia estructural EE.UU./LATAM (AiMarketShift)
+ */
+
 // ─── React & primitives ───────────────────────────────────────────────────────
 import { SectionHeader, NarrativeText, AnimatedSection } from "./section-primitives"
 

@@ -67,7 +67,7 @@ export const metadata: Metadata = {
     url: BASE_URL,
     title: 'El Product Management en la Era de la IA — Datos reales. Menos hype. Habilidades. Futuro.',
     description: 'Análisis empírico de 2,836 vacantes en EE. UU. y Latinoamérica. Dominios, competencias, brechas de IA, perfiles Unicornio y diferencial salarial. Datos reales de LinkedIn, 2026.',
-    siteName: 'PM Talent Landscape',
+    siteName: 'Product Management Talent Landscape',
     locale: 'es_ES',
     images: [
       {
@@ -112,9 +112,9 @@ export default function RootLayout({
   return (
     <html lang="es" suppressHydrationWarning>
       <body className={`${nunitoSans.variable} ${manrope.variable} min-h-screen bg-background font-sans antialiased`}>
-        <Script 
-          src="https://www.googletagmanager.com/gtag/js?id=G-P7KP48X6NK" 
-          strategy="afterInteractive" 
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-P7KP48X6NK"
+          strategy="afterInteractive"
         />
         <Script id="google-analytics" strategy="afterInteractive">
           {`

@@ -1,6 +1,18 @@
 "use client"
 
+/**
+ * ClosingPhase — Sección 06: Algunas ideas para cerrar
+ *
+ * Reflexión ejecutiva del autor sobre los hallazgos del análisis.
+ * Escrita en primera persona con tono analítico y pragmático.
+ *
+ * Aborda: el perfil integral (6.45%), el hype vs. realidad en LATAM,
+ * la dirección del cambio, la auditoría de carrera con la Taxonomía,
+ * la IA como amplificador de dominios y el diferencial salarial.
+ */
+
 import { AnimatedSection } from "./section-primitives"
+
 
 export function ClosingPhase() {
   return (
