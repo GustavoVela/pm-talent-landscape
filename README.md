@@ -1,93 +1,201 @@
-# 📊 PM Talent Landscape
+# El Product Management en la Era de la IA
+### Datos reales. Menos hype. Habilidades. Futuro.
 
-> **Análisis interactivo del panorama de talento en Product Management.**
-> Explora tendencias, habilidades, datos salariales y la evolución del rol del PM en la era de la IA — con datos reales extraídos de miles de ofertas de empleo en las Américas.
+> Análisis empírico de **2,836 vacantes validadas** de roles de Product Management en **EE. UU., Brasil, México, Colombia y Chile** — extraídas de LinkedIn en abril de 2026.
 
-[![Next.js](https://img.shields.io/badge/Next.js-16-black?logo=next.js)](https://nextjs.org/)
-[![React](https://img.shields.io/badge/React-19-61dafb?logo=react)](https://react.dev/)
-[![TypeScript](https://img.shields.io/badge/TypeScript-5.7-3178c6?logo=typescript)](https://www.typescriptlang.org/)
-[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4-06b6d4?logo=tailwindcss)](https://tailwindcss.com/)
+[![Live Demo](https://img.shields.io/badge/Live-pm--talent--landscape.vercel.app-blue?style=flat-square)](https://pm-talent-landscape.vercel.app)
+[![Next.js](https://img.shields.io/badge/Next.js-16-black?style=flat-square&logo=next.js)](https://nextjs.org)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green?style=flat-square)](LICENSE)
 
 ---
 
-## 🎯 ¿Qué es este proyecto?
+## 📖 ¿Qué es esto?
 
-**PM Talent Landscape** es un *long-form article* interactivo que presenta un análisis basado en datos del mercado laboral para Product Managers. Compara la demanda de habilidades entre EE.UU. y Latinoamérica, con enfoque en cómo la Inteligencia Artificial redefine el perfil moderno.
+Este proyecto es un **dashboard analítico de acceso público** construido para responder una pregunta concreta: ¿qué exige realmente el mercado laboral de los profesionales de Product Management en 2026?
 
-## 🛠️ Stack Tecnológico
+No es un estudio de percepciones. Es un análisis directo de **señales de demanda de contratación**: las habilidades, dominios y competencias que los equipos de reclutamiento incluyeron en sus vacantes publicadas. La muestra abarca EE. UU. como mercado de referencia y los cinco principales mercados de Latinoamérica.
 
-- **Framework:** Next.js 16 (App Router) + React 19 + TypeScript
-- **Estilos:** Tailwind CSS 4 + shadcn/ui + next-themes
-- **Gráficas:** Apache ECharts 6
+---
 
-## 🚀 Instalación y Desarrollo
+## 🗂️ Estructura del Proyecto
+
+```
+pm-talent-landscape/
+├── app/
+│   ├── layout.tsx          # Root layout: fuentes, metadata SEO, Google Analytics, ThemeProvider
+│   └── page.tsx            # Página principal — ensambla todas las secciones en orden
+│
+├── components/
+│   ├── introduction.tsx            # Sección 01-02: Hero, marco mental, contexto del análisis
+│   ├── demographics-phase.tsx      # Sección 03: Demografía de la muestra (carrusel de 8 gráficas)
+│   ├── competency-profile-phase.tsx # Sección 04: Perfil de competencias por dominio y región
+│   ├── ai-phase.tsx                # Sección 05: Penetración de IA en roles de producto
+│   ├── closing-phase.tsx           # Sección 06: Reflexión de cierre
+│   │
+│   ├── ai-market-shift.tsx         # Bloque analítico: 3 hallazgos sobre la divergencia EE.UU./LATAM
+│   ├── competency-data-table.tsx   # Tabla comparativa de dominios por región y país
+│   ├── chart-wrapper.tsx           # HOC: envuelve cualquier gráfica con título, ayuda e interpretación
+│   ├── section-primitives.tsx      # Componentes base reutilizables: SectionHeader, NarrativeText, etc.
+│   ├── floating-nav.tsx            # Navegación flotante lateral con indicador de sección activa
+│   ├── header.tsx                  # Barra superior con logo y toggle de tema
+│   ├── footer.tsx                  # Pie de página con créditos y links
+│   ├── theme-provider.tsx          # Wrapper de next-themes para modo claro/oscuro
+│   ├── theme-toggle.tsx            # Botón de alternancia de tema
+│   │
+│   ├── charts/                     # Todas las visualizaciones ECharts
+│   │   │
+│   │   ├── — SECCIÓN 03: Demografía —
+│   │   ├── sample-quality-chart.tsx    # Pie: vacantes PM vs. descartadas (filtro de ruido)
+│   │   ├── sample-recency-chart.tsx    # Barras: antigüedad de las vacantes recolectadas
+│   │   ├── market-country-chart.tsx    # Barras horizontales: distribución por país
+│   │   ├── market-city-chart.tsx       # Barras horizontales: top ciudades con filtro por país
+│   │   ├── job-titles-chart.tsx        # Barras: taxonomía de títulos de rol (con estandarización)
+│   │   ├── market-seniority-chart.tsx  # Barras apiladas: niveles de seniority por región
+│   │   ├── market-industry-chart.tsx   # Barras: distribución por industria
+│   │   ├── market-employment-chart.tsx # Barras: tipos de contrato (Full-time, Contract, etc.)
+│   │   │
+│   │   ├── — SECCIÓN 04: Competencias —
+│   │   ├── competency-region-radar.tsx  # Radar: perfil de dominios por región (LATAM / EE.UU. / Global)
+│   │   ├── competency-country-radar.tsx # Radar: perfil de dominios por país individual
+│   │   ├── competency-sunburst-chart.tsx # Sunburst: taxonomía completa Dominios > Competencias > Habilidades
+│   │   ├── skills-industry-heatmap.tsx  # Mapa de calor: qué dominios prioriza cada industria
+│   │   │
+│   │   └── — SECCIÓN 05: IA —
+│   │       ├── ai-penetration-chart.tsx    # Barras apiladas: % de vacantes con requerimiento de IA
+│   │       ├── ai-seniority-chart.tsx      # Barras: penetración de IA por nivel de seniority
+│   │       ├── ai-city-chart.tsx           # Barras: penetración de IA por ciudad/mercado
+│   │       ├── ai-industry-chart.tsx       # Barras: penetración de IA por industria
+│   │       ├── ai-role-chart.tsx           # Barras: penetración de IA por tipo de rol
+│   │       ├── ai-skills-ranking-chart.tsx # Ranking: habilidades de IA más demandadas
+│   │       ├── ai-vs-nonai-radar.tsx       # Radar comparativo: perfil PM con IA vs. sin IA
+│   │       └── ai-salary-premium-chart.tsx # Velas: diferencial salarial por seniority (con/sin IA)
+│   │
+│   └── ui/                         # Componentes shadcn/ui (Alert, Card, Toggle, Tooltip, etc.)
+│
+├── lib/
+│   ├── data.ts             # Datasets hardcodeados: ciudades, países, seniority, industrias
+│   ├── echarts-theme.ts    # Tema visual personalizado para todas las gráficas ECharts
+│   └── utils.ts            # Utilidades: cn() para merge de clases Tailwind
+│
+├── hooks/
+│   ├── use-mobile.ts       # Hook: detecta viewport móvil
+│   └── use-toast.ts        # Hook: sistema de notificaciones toast
+│
+├── public/
+│   ├── images/og.png       # Imagen Open Graph para redes sociales (1200×630)
+│   ├── icon.svg            # Favicon vectorial
+│   ├── icon-light-32x32.png
+│   ├── icon-dark-32x32.png
+│   └── apple-icon.png
+│
+└── analysis/               # Scripts y notebooks de procesamiento de datos
+```
+
+---
+
+## 🧱 Arquitectura y Decisiones de Diseño
+
+### Taxonomía de tres niveles
+Todo el análisis se organiza bajo un modelo jerárquico estricto:
+```
+Dominios → Competencias → Habilidades específicas
+```
+Los seis dominios son: **Core PM**, **Técnico**, **Datos**, **Negocio**, **UX/UI** e **IA**.
+
+### `ChartWrapper` — el componente central de visualización
+Cada gráfica del dashboard está envuelta en `ChartWrapper`, que provee:
+- Título normalizado
+- Texto de ayuda contextual ("💡 Antes de explorar")
+- Controles opcionales (filtros, toggles)
+- Bloque de interpretación analítica con emoji 🤓
+
+### `section-primitives.tsx` — el sistema de diseño narrativo
+Exporta los primitivos de layout que aseguran consistencia tipográfica:
+- `SectionHeader` — encabezado numerado de sección
+- `NarrativeText` — bloque de copy con animación de entrada
+- `AnimatedSection` — wrapper con IntersectionObserver para reveal on scroll
+- `Blockquote` — cita destacada con borde izquierdo
+- `StatCard` — tarjeta de estadística con hover
+
+### Visualizaciones con ECharts
+Todas las gráficas usan `echarts-for-react` con renderer SVG para máxima compatibilidad. Los datos son hardcodeados en `lib/data.ts` y en los propios componentes — no hay llamadas a API en runtime.
+
+---
+
+## 🚀 Cómo ejecutar localmente
 
 ```bash
-# 1. Clonar el repositorio
+# Clonar el repositorio
 git clone https://github.com/GustavoVela/pm-talent-landscape.git
 cd pm-talent-landscape
 
-# 2. Instalar dependencias
-pnpm install
+# Instalar dependencias
+npm install
 
-# 3. Iniciar el servidor de desarrollo
-pnpm dev
-```
+# Iniciar servidor de desarrollo
+npm run dev
+# → http://localhost:3000
 
-La aplicación estará disponible en **[http://localhost:3000](http://localhost:3000)**.
-
-## 🚢 Deploy (Hosting Estático)
-
-El proyecto genera un sitio estático listo para subir a cualquier hosting tradicional (Hostinger, Netlify, GitHub Pages, etc.).
-
-```bash
+# Build de producción
 npm run build
+npm start
 ```
 
-Sube el contenido completo de la carpeta `out/` al directorio `public_html/` de tu hosting.
+**Requisitos:** Node.js 18+ y npm 9+.
 
-## 📝 Registro de Cambios y Evolución de Arquitectura
+---
 
-### Últimos Ajustes de UX/UI y Estructuración de Datos
-* **Navegación Flotante (`Floating Nav`):** Se resolvió un conflicto de superposición (z-index) que bloqueaba la interacción con el carrusel mediante la implementación estricta de `pointer-events`. Además, se sincronizaron las etiquetas del menú con los títulos finales de cada sección (ej. "Perfil de competencias").
-* **Estandarización de Gráficos (ECharts):**
-  * Estandarización de tooltips y métricas utilizando exclusivamente el término "vacantes".
-  * Incremento estratégico de los márgenes inferiores (`grid.bottom = '15%'`) en todos los gráficos de barras para garantizar la legibilidad del título de los ejes sin superposición de layouts.
-  * Uniformidad de alturas de los contenedores (`280px` a `320px`) en los gráficos de la Sección 03 para eliminar "espacios muertos" en las tarjetas del carrusel, logrando un diseño más compacto.
-* **Refactorización de Tabla de Competencias (`CompetencyDataTable`):** La lógica de visualización se dividió en dos componentes de visualización dinámica (`TableView`). Esto permite mostrar separadamente la *Comparativa Regional* y la *Comparativa por Países*, ambas ordenadas automáticamente por volumen (N) de mayor a menor sin mezclar las dimensiones del dataset original.
-* **Módulo de Contexto Metodológico:** Implementación de un bloque modular (basado en `Alert` de *shadcn/ui* estandarizado a colores neutrales) para documentar y justificar técnicamente el procesamiento de lenguaje natural aplicado a la multiplicidad de títulos (inglés, español, portugués) sin afectar la limpieza visual de la sección Demográfica.
-* **Evolución del Módulo de Inteligencia Artificial (Sección 05):**
-  * Refactorización completa de `AiSeniorityChart` para sustituir la leyenda nativa por un sistema de filtrado multi-select custom y etiquetas directas sobre barras (`Lead/Dir/VP+`), mejorando la auto-explicabilidad visual y limpieza del gráfico. Adicionalmente, se estableció un orden duro descendente en los países.
-  * Creación e integración de `AiCityChart`, una nueva gráfica paramétrica alimentada por consultas directas a BigQuery. Cuenta con lógica de filtrado cruzado por *País*, *Volumen Base (minJobs)* y *Clasificación de Ciudad (Capital vs Todas)*, empleando un sistema de controles `shadcn` unificados (`gap-3`, `flex-wrap`) que asegura consistencia y legibilidad responsive en el DOM.
-  * Reincorporación estratégica de la variable "Otra ciudad" al ecosistema de datos de penetración IA para evitar sesgos estadísticos.
-  * Integración directa de datos desde BigQuery para `AiSeniorityChart`, segmentando la profundidad del mercado en 4 niveles de experiencia exactos (`Junior / Mid-Level`, `Senior`, `Head / Lead`, `Director / VP / CPO`).
-  * Corrección de bloqueos de renderizado y conflictos de capa (`z-index`) en menús desplegables sobre contenedores ECharts (`ai-industry-chart` y `ai-role-chart`).
-  * Estandarización estética y narrativa en todos los componentes de interpretación ("💡 El hallazgo clave") de la Sección 05 empleando el componente global `Alert` de shadcn/ui.
-  * Refinamiento estricto del *copywriting* analítico: transición de nomenclaturas académicas (`N=`) hacia términos humanos (`vacantes`), y enfoque de conclusiones basadas rigurosamente en *tamaños de muestra estadística* para proteger la credibilidad del dashboard.
-  * Optimización de layout CSS Grid (de 1 a 2 columnas responsivas) para la presentación de los diccionarios metodológicos y diccionarios de agrupamiento taxonómico.
-* **Estandarización Taxonómica y Narrativa (Secciones 04 y 05):**
-  * Se homologó rigurosamente la jerarquía del modelo a tres niveles estructurales: **Dominios > Competencias > Habilidades específicas**. Se eliminaron referencias ambiguas ("ejes", "skills") para asegurar la coherencia metodológica en todo el dashboard.
-  * Ajuste narrativo en la sección de competencias para reflejar a los profesionales de Producto como la audiencia principal de la visualización (crecimiento de carrera) y al equipo de People como audiencia secundaria.
-  * Incorporación de un componente de insights reestructurado con un diseño limpio de tres columnas y foco en la "Evidencia de Datos" aislada por líneas divisorias, evitando recargar visualmente el DOM.
-  * Migración al componente global `NarrativeText` para los textos explicativos, heredando correctamente la tipografía y estilos base de la aplicación.
-  * Reubicación estructural de controles interactivos (ej. Mapa de Calor), situando los selectores del lado derecho junto a las notas metodológicas para un layout más limpio y profesional.
+## 🗺️ Secciones del artículo
 
-* **QA Editorial y Consistencia Interna del Artículo:**
-  * Corrección de consistencia numérica en `introduction.tsx`: la Sección 01 ahora menciona explícitamente el proceso de depuración de la muestra (3,471 → 2,836 vacantes validadas, -18.2%), resolviendo la ambigüedad para lectores que no llegan a la Sección 03.
-  * Eliminación del desglose `(1,339 EE.UU. | 1,497 LATAM)` en el párrafo introductorio de `ai-market-shift.tsx` para evitar redundancia.
-  * Reformulación del bullet sobre *paridad técnica SQL* en `competency-profile-phase.tsx`: se reconcilió la narrativa de la "máquina del tiempo" con el análisis de brecha de infraestructura. El argumento ahora establece que la competencia analítica no desaparece en mercados maduros, sino que las *habilidades específicas de bajo nivel* que la soportan cambian (SQL → Data Analysis abstracto).
-* **Sección 06 — Reescritura completa como reflexión ejecutiva:**
-  * Nuevo título: "Algunas ideas para cerrar" (antes: "Construye tu foso competitivo").
-  * El cuerpo fue reescrito en voz propia como reflexión analítica sobre los hallazgos, estructurada en 7 párrafos: sorpresa ante el dato del perfil integral (6.45%), hype vs. realidad del mercado LATAM, dirección clara del cambio, auditoría con la Taxonomía, IA como amplificador (no reemplazo) de dominios, diferencial salarial medible, e invitación a colaborar en el repositorio abierto.
-  * Eliminación de la tarjeta de autor (foto, nombre, bio, botones LinkedIn/GitHub) del pie de la sección.
-  * La cita central fue actualizada a: *"No es momento de entrar en caos. Es momento de aprender con foco."*
-* **Inclusión de lenguaje plural en gráficas de IA (Sección 05):**
-  * `ai-vs-nonai-radar.tsx`: callout 🤓 actualizado para referirse a "profesional de producto" en lugar de "Product Manager", haciendo la interpretación inclusiva de todos los roles del dashboard.
-  * `ai-salary-premium-chart.tsx`: referencias a "vacantes PM" y "PM con IA" sustituidas por "vacantes de roles de producto" y "roles de producto con IA", con aclaración explícita de que el premium aplica independientemente del rol específico.
-* **Enriquecimiento narrativo de `closing-phase.tsx`:**
-  * Párrafo de cierre del repositorio expandido con invitación explícita a iterar y construir sobre el dataset para generar mejor data colectiva para la comunidad de profesionales de producto.
-  * Referencias laborales ajustadas de "Head of Products" a "liderando equipos de producto y otro tipo de equipos" para mayor precisión.
-  * El C-Level y líderes de compañía fueron mencionados explícitamente como variable estructural que explica el rezago de adopción de IA en el mercado LATAM.
+| # | Sección | Componente principal | Contenido |
+|---|---------|---------------------|-----------|
+| 01 | Marco Mental | `introduction.tsx` | La hipótesis de partida y el perfil de PM que los datos pondrán a prueba |
+| 02 | El Estudio | `introduction.tsx` | Metodología, fuente de datos y preguntas de investigación |
+| 03 | Demografía de la Muestra | `demographics-phase.tsx` | 8 gráficas sobre composición de la muestra: país, ciudad, industria, seniority, etc. |
+| 04 | Perfil de Competencias | `competency-profile-phase.tsx` | Qué dominios exige el mercado y en qué se diferencian EE. UU. y LATAM |
+| 05 | La Era de la IA | `ai-phase.tsx` | Penetración real de IA en las vacantes, diferencial salarial y perfil comparativo |
+| 06 | Para Cerrar | `closing-phase.tsx` | Reflexión ejecutiva: hype vs. datos, auditoría de carrera, próximos pasos |
+
+---
+
+## 🛠️ Stack tecnológico
+
+| Capa | Tecnología |
+|------|-----------|
+| Framework | Next.js 16 (App Router, static export) |
+| UI | shadcn/ui + Tailwind CSS |
+| Visualizaciones | Apache ECharts via `echarts-for-react` |
+| Tipografía | Nunito Sans (body) + Manrope (headings) vía Google Fonts |
+| Tema | next-themes (light/dark mode) |
+| Iconos | Lucide React + Phosphor Icons |
+| Deploy | Vercel |
+
+---
+
+## 🤝 Contribuciones
+
+El código está abierto para quien quiera:
+- **Auditar la metodología** — todos los datos y la lógica de procesamiento están disponibles
+- **Extender el análisis** — nuevos mercados, nuevas fechas, nuevas competencias
+- **Iterar en el tiempo** — rastrear cómo evolucionan estos requerimientos en próximas ediciones
+
+Si encuentras un error, tienes datos de otro mercado o quieres proponer mejoras, abre un issue o un PR.
+
+---
+
+## 📋 Changelog
+
+### `ef803b7` — editorial: QA de consistencia, reescritura S06 y lenguaje inclusivo de roles
+- Sección 01 aclara explícitamente el proceso de depuración de la muestra (3,471 → 2,836)
+- Reformulación del bullet técnico SQL para reconciliar la narrativa "máquina del tiempo" con la brecha de infraestructura
+- Sección 06 reescrita como reflexión ejecutiva ("Algunas ideas para cerrar")
+- Lenguaje inclusivo de roles en gráficas de IA (Sección 05)
+
+### `04f2a4c` — feat: estandarización taxonómica y refinamiento narrativo S04/S05
+- Homologación de la jerarquía Dominios > Competencias > Habilidades específicas
+- Rediseño de hallazgos analíticos en cajitas 🤓 con separadores de evidencia
+- Título del proyecto: "El Product Management en la Era de la IA"
+- Subtítulo: "Datos reales. Menos hype. Habilidades. Futuro."
 
 ---
 

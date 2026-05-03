@@ -1,9 +1,9 @@
 "use client"
 
-import React from "react"
-import { SectionHeader, NarrativeText, Blockquote, AnimatedSection } from "./section-primitives"
-import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
-import { InfoIcon } from "lucide-react"
+// ─── React & primitives ───────────────────────────────────────────────────────
+import { SectionHeader, NarrativeText, AnimatedSection } from "./section-primitives"
+
+// ─── Chart wrapper & visualizations ──────────────────────────────────────────
 import { ChartWrapper } from "./chart-wrapper"
 import { CompetencyRegionRadar } from "./charts/competency-region-radar"
 import { CompetencyCountryRadar } from "./charts/competency-country-radar"
@@ -11,8 +11,9 @@ import { CompetencySunburstChart } from "./charts/competency-sunburst-chart"
 import { CompetencyDataTable } from "./competency-data-table"
 import { SkillsIndustryHeatmap } from "./charts/skills-industry-heatmap"
 import { AiMarketShift } from "./ai-market-shift"
+
+// ─── UI controls ─────────────────────────────────────────────────────────────
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group"
-import { FLAGS } from "@/lib/data"
 
 export function CompetencyProfilePhase() {
   return (
