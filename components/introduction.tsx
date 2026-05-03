@@ -177,8 +177,10 @@ export function Introduction() {
 
             <AnimatedSection delay={100}>
               <h1 className="text-4xl font-bold tracking-tight text-foreground md:text-5xl lg:text-6xl text-balance leading-[1.1]">
-                El PM en la Era de la IA
-                <span className="block text-muted-foreground">Datos Reales, Menos Hype</span>
+                El Product Management en la Era de la IA
+                <span className="block text-2xl md:text-3xl lg:text-4xl font-semibold text-muted-foreground mt-4 leading-snug">
+                  Datos reales. Menos hype. Habilidades. Futuro.
+                </span>
               </h1>
             </AnimatedSection>
 
@@ -268,7 +270,7 @@ export function Introduction() {
 
               <AnimatedSection delay={250}>
                 <p>
-                  Para sustituir las anécdotas por evidencia, extraje y analicé 3,471 ofertas de trabajo reales de las últimas semanas (todas las que pude conseguir) desde Estados Unidos hasta el sur del continente. Este análisis sirve como un faro basado en datos para anticipar hacia dónde se mueve el estándar de nuestra profesión. Miramos el mercado de Estados Unidos no para medir un &quot;rezago&quot;, sino como una máquina del tiempo que nos permite identificar las competencias que se convertirán en el estándar de nuestros mercados en los próximos 12 a 24 meses. <span className="font-semibold text-foreground">Si sigues leyendo, podrás descubrir los dominios, competencias y habilidades específicas que más están pidiendo actualmente y cómo se están transformando las expectativas del mercado.</span>
+                  Para sustituir las anécdotas por evidencia, extraje y analicé 3,471 ofertas de trabajo reales de las últimas semanas (todas las que pude conseguir) desde Estados Unidos hasta el sur del continente. Tras un proceso de depuración —descartando el 18.2% de vacantes con títulos engañosos ajenas a Producto— el análisis se ejecuta sobre una base purgada de <span className="font-semibold text-foreground">2,836 vacantes validadas</span>. Este análisis sirve como un faro basado en datos para anticipar hacia dónde se mueve el estándar de nuestra profesión. Miramos el mercado de Estados Unidos no para medir un &quot;rezago&quot;, sino como una máquina del tiempo que nos permite identificar las competencias que se convertirán en el estándar de nuestros mercados en los próximos 12 a 24 meses. <span className="font-semibold text-foreground">Si sigues leyendo, podrás descubrir los dominios, competencias y habilidades específicas que más están pidiendo actualmente y cómo se están transformando las expectativas del mercado.</span>
                 </p>
               </AnimatedSection>
             </div>

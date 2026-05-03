@@ -263,8 +263,8 @@ export function AiVsNonAiRadar() {
             <span className="text-base leading-none translate-y-[2px]">🤓</span>
             <AlertDescription className="text-foreground text-[14px] leading-relaxed w-full">
               <div className="w-full">
-                Convertirse en Product Manager de IA no cancela lo que ya sabes — lo amplifica.
-                El dominio de <strong>Negocio</strong> pesa prácticamente igual en ambos perfiles (69% vs 70%), al igual que el dominio de <strong>Core PM</strong>. Pero el umbral de <strong>Datos</strong> (+30pp) y <strong>Técnico</strong> (+30pp) prácticamente se duplica. La IA no reemplaza el criterio de producto, simplemente eleva el piso de lo que debes saber.
+                Adquirir competencias de IA no cancela lo que ya sabe un profesional de producto — lo amplifica.
+                El dominio de <strong>Negocio</strong> pesa prácticamente igual en ambos perfiles (69% vs 70%), al igual que el dominio de <strong>Core PM</strong>. Pero el umbral de <strong>Datos</strong> (+30pp) y <strong>Técnico</strong> (+30pp) prácticamente se duplica en los roles con requerimiento de IA. La IA no reemplaza el criterio de producto ni la visión estratégica del rol; simplemente eleva el piso de lo que se exige dominar.
               </div>
             </AlertDescription>
           </Alert>

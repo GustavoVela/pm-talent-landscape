@@ -199,7 +199,7 @@ export function AiSalaryPremiumChart() {
         <div className="mb-5 w-full">
           <div className="text-xs text-muted-foreground leading-relaxed mb-3">
             <span className="font-bold text-foreground">💡 Antes de explorar: </span>
-            Analizamos ~900 vacantes PM en Estados Unidos que transparentan su banda salarial, aislado como mercado benchmark para evitar sesgos geográficos o la "Paradoja de Simpson". Curiosamente, el <strong>67%</strong> de estas vacantes estadounidenses publican su salario abiertamente, frente a un alarmante <strong>5.3%</strong> en LATAM.
+            Analizamos ~900 vacantes de roles de producto en Estados Unidos que transparentan su banda salarial, aislado como mercado benchmark para evitar sesgos geográficos o la "Paradoja de Simpson". Curiosamente, el <strong>67%</strong> de estas vacantes estadounidenses publican su salario abiertamente, frente a un alarmante <strong>5.3%</strong> en LATAM.
           </div>
           <div className="w-full h-px bg-border/60" />
         </div>
@@ -247,7 +247,7 @@ export function AiSalaryPremiumChart() {
             <span className="text-base leading-none translate-y-[2px]">🤓</span>
             <AlertDescription className="text-foreground text-[14px] leading-relaxed w-full">
               <div className="w-full">
-                Visualizado como "velas" (rango mínimo a máximo), el efecto es evidente. El piso salarial de un PM con IA (el inicio de la barra azul) suele estar muy por encima del piso de un rol tradicional. En niveles iniciales (Junior), adquirir competencias de IA <strong>eleva el piso salarial en un brutal +35%</strong>, demostrando que la IA funciona como un acelerador temprano de carrera.
+                Visualizado como "velas" (rango mínimo a máximo), el efecto es evidente. El piso salarial de los roles de producto con IA (el inicio de la barra azul) suele estar muy por encima del piso de un rol tradicional. En niveles iniciales (Junior), adquirir competencias de IA <strong>eleva el piso salarial en un brutal +35%</strong>, demostrando que la IA funciona como un acelerador temprano de carrera independientemente del rol específico de producto que se ocupe.
               </div>
             </AlertDescription>
           </Alert>

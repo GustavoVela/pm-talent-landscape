@@ -72,6 +72,23 @@ Sube el contenido completo de la carpeta `out/` al directorio `public_html/` de 
   * Migración al componente global `NarrativeText` para los textos explicativos, heredando correctamente la tipografía y estilos base de la aplicación.
   * Reubicación estructural de controles interactivos (ej. Mapa de Calor), situando los selectores del lado derecho junto a las notas metodológicas para un layout más limpio y profesional.
 
+* **QA Editorial y Consistencia Interna del Artículo:**
+  * Corrección de consistencia numérica en `introduction.tsx`: la Sección 01 ahora menciona explícitamente el proceso de depuración de la muestra (3,471 → 2,836 vacantes validadas, -18.2%), resolviendo la ambigüedad para lectores que no llegan a la Sección 03.
+  * Eliminación del desglose `(1,339 EE.UU. | 1,497 LATAM)` en el párrafo introductorio de `ai-market-shift.tsx` para evitar redundancia.
+  * Reformulación del bullet sobre *paridad técnica SQL* en `competency-profile-phase.tsx`: se reconcilió la narrativa de la "máquina del tiempo" con el análisis de brecha de infraestructura. El argumento ahora establece que la competencia analítica no desaparece en mercados maduros, sino que las *habilidades específicas de bajo nivel* que la soportan cambian (SQL → Data Analysis abstracto).
+* **Sección 06 — Reescritura completa como reflexión ejecutiva:**
+  * Nuevo título: "Algunas ideas para cerrar" (antes: "Construye tu foso competitivo").
+  * El cuerpo fue reescrito en voz propia como reflexión analítica sobre los hallazgos, estructurada en 7 párrafos: sorpresa ante el dato del perfil integral (6.45%), hype vs. realidad del mercado LATAM, dirección clara del cambio, auditoría con la Taxonomía, IA como amplificador (no reemplazo) de dominios, diferencial salarial medible, e invitación a colaborar en el repositorio abierto.
+  * Eliminación de la tarjeta de autor (foto, nombre, bio, botones LinkedIn/GitHub) del pie de la sección.
+  * La cita central fue actualizada a: *"No es momento de entrar en caos. Es momento de aprender con foco."*
+* **Inclusión de lenguaje plural en gráficas de IA (Sección 05):**
+  * `ai-vs-nonai-radar.tsx`: callout 🤓 actualizado para referirse a "profesional de producto" en lugar de "Product Manager", haciendo la interpretación inclusiva de todos los roles del dashboard.
+  * `ai-salary-premium-chart.tsx`: referencias a "vacantes PM" y "PM con IA" sustituidas por "vacantes de roles de producto" y "roles de producto con IA", con aclaración explícita de que el premium aplica independientemente del rol específico.
+* **Enriquecimiento narrativo de `closing-phase.tsx`:**
+  * Párrafo de cierre del repositorio expandido con invitación explícita a iterar y construir sobre el dataset para generar mejor data colectiva para la comunidad de profesionales de producto.
+  * Referencias laborales ajustadas de "Head of Products" a "liderando equipos de producto y otro tipo de equipos" para mayor precisión.
+  * El C-Level y líderes de compañía fueron mencionados explícitamente como variable estructural que explica el rezago de adopción de IA en el mercado LATAM.
+
 ---
 
 <p align="center">
