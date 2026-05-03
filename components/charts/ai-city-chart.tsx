@@ -1,5 +1,12 @@
 "use client"
 
+/**
+ * ai-city-chart.tsx
+ *
+ * Barras: penetración de IA por ciudad/mercado.
+ * Filtrable por país y volumen mínimo de vacantes.
+ */
+
 import React, { useState } from 'react';
 import ReactECharts from 'echarts-for-react';
 import { useTheme } from "next-themes";

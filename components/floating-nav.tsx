@@ -1,5 +1,13 @@
 "use client"
 
+/**
+ * FloatingNav
+ *
+ * Navegación lateral flotante (visible en pantallas grandes).
+ * Rastrea la posición del scroll y actualiza visualmente la sección activa.
+ * Permite navegación rápida por el artículo. Envía eventos de analytics.
+ */
+
 import { useEffect, useState } from "react"
 import { cn } from "@/lib/utils"
 

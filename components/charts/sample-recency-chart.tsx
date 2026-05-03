@@ -1,5 +1,12 @@
 "use client"
 
+/**
+ * sample-recency-chart.tsx
+ *
+ * Barras: distribución temporal de vacantes por fecha de publicación.
+ * Verifica la frescura del dataset y ausencia de sesgos por acumulación histórica.
+ */
+
 import React from 'react'
 import { useTheme } from 'next-themes';
 import ReactECharts from 'echarts-for-react'

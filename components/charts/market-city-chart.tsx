@@ -1,5 +1,12 @@
 "use client"
 
+/**
+ * market-city-chart.tsx
+ *
+ * Barras: distribución de vacantes por ciudad.
+ * Filtrable por país; vista absoluta o porcentual.
+ */
+
 import React, { useMemo } from 'react';
 import { useTheme } from 'next-themes';
 import ReactECharts from 'echarts-for-react';

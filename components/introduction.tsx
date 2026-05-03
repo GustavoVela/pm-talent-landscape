@@ -1,5 +1,14 @@
 "use client"
 
+/**
+ * Introduction — Secciones 01 y 02: Marco Mental y El Estudio
+ *
+ * Establece el contexto del dashboard.
+ * - Marco Mental: define el perfil integral del Product Manager y la hipótesis inicial.
+ * - El Estudio: explica la metodología, volumen de datos (2,836 vacantes),
+ *   países analizados y la herramienta de recolección (LinkedIn).
+ */
+
 import { useEffect, useRef, useState } from "react"
 import { Briefcase, Code, ChartBar, PaintBrush, Brain } from "@phosphor-icons/react"
 import { cn } from "@/lib/utils"

@@ -1,5 +1,13 @@
 "use client"
 
+/**
+ * Header
+ *
+ * Barra de navegación superior fija (sticky). Muestra el nombre del proyecto,
+ * fecha de publicación, avatar del autor con enlace a LinkedIn, enlace al
+ * repositorio en GitHub y el toggle de tema claro/oscuro.
+ */
+
 import Image from "next/image"
 import { ThemeToggle } from "./theme-toggle"
 import { GithubLogo } from "@phosphor-icons/react"

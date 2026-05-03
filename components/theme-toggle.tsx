@@ -1,5 +1,12 @@
 "use client"
 
+/**
+ * ThemeToggle
+ *
+ * Botón interactivo para alternar entre modo claro y oscuro.
+ * Utiliza next-themes para inyectar la clase CSS correspondiente en el HTML.
+ */
+
 import { Moon, Sun } from "@phosphor-icons/react"
 import { useTheme } from "next-themes"
 import { Button } from "@/components/ui/button"

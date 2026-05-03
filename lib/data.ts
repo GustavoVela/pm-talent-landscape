@@ -1,3 +1,11 @@
+/**
+ * data.ts
+ *
+ * Contiene los datasets estáticos y la configuración hardcodeada utilizados
+ * a lo largo de todo el dashboard. Incluye la demografía (ciudades, industrias),
+ * el diccionario taxonómico y las constantes de configuración (ej. colores base).
+ */
+
 export const demographicsCityData = [
   { country: "United States", city: "Otra ciudad", pm_count: 536, no_pm_count: 73, total: 609 },
   { country: "Brasil", city: "São Paulo", pm_count: 341, no_pm_count: 27, total: 368 },

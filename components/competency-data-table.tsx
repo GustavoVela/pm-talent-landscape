@@ -1,5 +1,13 @@
 "use client"
 
+/**
+ * CompetencyDataTable
+ *
+ * Tabla de datos detallada construida con @tanstack/react-table.
+ * Muestra el porcentaje de adopción de cada uno de los 6 dominios
+ * de competencias desglosado por país (EE. UU., Brasil, México, Colombia, Chile, Perú).
+ */
+
 import * as React from "react"
 import {
   ColumnDef,

@@ -1,3 +1,10 @@
+/**
+ * AiMarketShift
+ *
+ * Componente narrativo que destaca el hallazgo central sobre la divergencia
+ * entre los mercados de EE. UU. y LATAM respecto a las competencias técnicas
+ * e IA. Presenta tres puntos clave usando íconos de Lucide.
+ */
 import React from 'react';
 import { BarChart3, CloudCog, FlaskConical } from 'lucide-react';
 import { NarrativeText } from './section-primitives';

@@ -1,5 +1,12 @@
 "use client"
 
+/**
+ * market-industry-chart.tsx
+ *
+ * Barras: distribución de vacantes por industria.
+ * Identifica qué sectores concentran la mayor demanda de roles de producto.
+ */
+
 import React, { useMemo } from 'react';
 import { useTheme } from 'next-themes';
 import ReactECharts from 'echarts-for-react';

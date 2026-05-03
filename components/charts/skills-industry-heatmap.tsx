@@ -1,4 +1,12 @@
-"use client";
+"use client"
+
+/**
+ * skills-industry-heatmap.tsx
+ *
+ * Mapa de calor: presencia de cada dominio por industria.
+ * Cruce entre 6 dominios (columnas) e industrias de la muestra (filas).
+ * Identifica qué industrias demandan todos los dominios simultáneamente.
+ */;
 
 import React, { useState, useEffect, useMemo } from 'react';
 import ReactECharts from 'echarts-for-react';

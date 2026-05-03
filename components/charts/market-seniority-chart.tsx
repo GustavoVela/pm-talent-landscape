@@ -1,5 +1,12 @@
 "use client"
 
+/**
+ * market-seniority-chart.tsx
+ *
+ * Barras apiladas: distribución por nivel de seniority.
+ * Filtrable por país; revela si el mercado busca perfiles junior, senior o de liderazgo.
+ */
+
 import React, { useMemo } from 'react';
 import { useTheme } from 'next-themes';
 import ReactECharts from 'echarts-for-react';

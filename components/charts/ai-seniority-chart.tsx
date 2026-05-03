@@ -1,5 +1,12 @@
 "use client"
 
+/**
+ * ai-seniority-chart.tsx
+ *
+ * Barras: penetración de IA por nivel de seniority.
+ * Revela si la IA es requisito transversal o concentrado en ciertos niveles.
+ */
+
 import React, { useState } from 'react';
 import ReactECharts from 'echarts-for-react';
 import { useTheme } from "next-themes";

@@ -1,4 +1,11 @@
-"use client";
+"use client"
+
+/**
+ * competency-region-radar.tsx
+ *
+ * Radar: perfil de dominios por región (LATAM / EE.UU. / Global).
+ * Visualización central para identificar la brecha entre mercados.
+ */;
 
 import React, { useState, useEffect, useMemo } from 'react';
 import ReactECharts from 'echarts-for-react';

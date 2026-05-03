@@ -1,5 +1,12 @@
 "use client"
 
+/**
+ * market-country-chart.tsx
+ *
+ * Barras: distribución de vacantes por país.
+ * Muestra el peso relativo de cada mercado en la muestra (EE.UU., Brasil, México, etc.)
+ */
+
 import React from 'react';
 import { useTheme } from 'next-themes';
 import ReactECharts from 'echarts-for-react';

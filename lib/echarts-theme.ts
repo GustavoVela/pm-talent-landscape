@@ -1,3 +1,10 @@
+/**
+ * echarts-theme.ts
+ *
+ * Define y registra el tema visual global para las gráficas de Apache ECharts.
+ * Importa la configuración base desde un JSON (echarts-theme.json) y se
+ * asegura de registrar el tema una sola vez en el lado del cliente.
+ */
 import * as echarts from 'echarts'
 import themeConfig from '@/styles/echarts-theme.json'
 

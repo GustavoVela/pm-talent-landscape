@@ -1,4 +1,11 @@
-"use client";
+"use client"
+
+/**
+ * ai-vs-nonai-radar.tsx
+ *
+ * Radar comparativo: perfil de dominios de roles con IA vs. sin IA.
+ * Muestra cómo difiere la demanda de Técnico, Datos, Negocio, UX/UI y Core PM.
+ */;
 
 import React, { useState, useEffect, useMemo } from 'react';
 import ReactECharts from 'echarts-for-react';

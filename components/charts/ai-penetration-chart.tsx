@@ -1,5 +1,12 @@
 "use client"
 
+/**
+ * ai-penetration-chart.tsx
+ *
+ * Barras apiladas: % de vacantes con requerimiento de IA por región.
+ * Comparativa directa EE.UU. vs. LATAM.
+ */
+
 import ReactECharts from "echarts-for-react"
 import { useTheme } from "next-themes"
 

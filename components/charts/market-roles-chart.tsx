@@ -1,4 +1,11 @@
-"use client";
+"use client"
+
+/**
+ * market-roles-chart.tsx
+ *
+ * Barras: distribución de vacantes por tipo de rol de Product Management.
+ * Agrupa los títulos originales en categorías canónicas estandarizadas.
+ */;
 
 import React, { useMemo } from 'react';
 import { useTheme } from 'next-themes';

@@ -1,5 +1,12 @@
 "use client"
 
+/**
+ * market-employment-chart.tsx
+ *
+ * Barras apiladas: distribución por tipo de contrato (Full-time, Contract, Part-time...).
+ * Filtrable por país y vista absoluta/porcentual.
+ */
+
 import React, { useMemo } from 'react';
 import { useTheme } from 'next-themes';
 import ReactECharts from 'echarts-for-react';

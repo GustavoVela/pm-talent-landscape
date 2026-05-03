@@ -1,5 +1,12 @@
 "use client"
 
+/**
+ * Footer
+ *
+ * Pie de página del dashboard. Muestra el año actual, el nombre del autor
+ * y un enlace a su perfil de LinkedIn.
+ */
+
 import { LinkedinLogo } from "@phosphor-icons/react"
 
 export function Footer() {

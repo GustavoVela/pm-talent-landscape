@@ -1,4 +1,11 @@
-"use client";
+"use client"
+
+/**
+ * ai-industry-chart.tsx
+ *
+ * Barras: penetración de IA por industria.
+ * Ordenado de mayor a menor; soporta filtrado cruzado.
+ */;
 
 import React, { useState, useEffect, useMemo } from 'react';
 import ReactECharts from 'echarts-for-react';

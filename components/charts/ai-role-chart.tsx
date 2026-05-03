@@ -1,4 +1,11 @@
-"use client";
+"use client"
+
+/**
+ * ai-role-chart.tsx
+ *
+ * Barras: penetración de IA por tipo de rol de producto.
+ * Compara Product Manager, Product Owner, Head of Product, etc.
+ */;
 
 import React, { useState, useEffect, useMemo } from 'react';
 import ReactECharts from 'echarts-for-react';

@@ -1,4 +1,11 @@
-"use client";
+"use client"
+
+/**
+ * competency-country-radar.tsx
+ *
+ * Radar: perfil de dominios de competencias por país individual.
+ * Permite comparar el peso de cada dominio entre países de la muestra.
+ */;
 
 import React, { useState, useEffect, useMemo } from 'react';
 import ReactECharts from 'echarts-for-react';

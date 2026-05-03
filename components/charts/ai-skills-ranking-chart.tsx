@@ -1,4 +1,11 @@
-"use client";
+"use client"
+
+/**
+ * ai-skills-ranking-chart.tsx
+ *
+ * Ranking de barras: habilidades específicas de IA más demandadas.
+ * Ej: LLMs/ChatGPT, Automatización, Análisis con IA, APIs, etc.
+ */;
 
 import React, { useState, useEffect, useMemo } from 'react';
 import ReactECharts from 'echarts-for-react';

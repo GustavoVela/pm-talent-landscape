@@ -1,5 +1,12 @@
 "use client"
 
+/**
+ * sample-quality-chart.tsx
+ *
+ * Donut: proporción de vacantes PM validadas vs. descartadas.
+ * Muestra el filtro de ruido: 2,836 vacantes PM de las 3,471 recolectadas.
+ */
+
 import React from 'react';
 import { useTheme } from 'next-themes';
 import ReactECharts from 'echarts-for-react';

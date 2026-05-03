@@ -1,4 +1,14 @@
-"use client";
+"use client"
+
+/**
+ * competency-sunburst-chart.tsx
+ *
+ * Sunburst: taxonomía completa de competencias en 3 niveles.
+ *   Nivel 1 — Dominios (Core PM, Técnico, Datos, Negocio, UX/UI, IA)
+ *   Nivel 2 — Competencias
+ *   Nivel 3 — Habilidades específicas
+ * Herramienta de auditoría de carrera para identificar brechas de desarrollo.
+ */;
 
 import React, { useMemo } from 'react';
 import { useTheme } from 'next-themes';

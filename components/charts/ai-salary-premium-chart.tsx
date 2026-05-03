@@ -1,4 +1,11 @@
-"use client";
+"use client"
+
+/**
+ * ai-salary-premium-chart.tsx
+ *
+ * Velas (candlestick): diferencial salarial anualizado (USD) con/sin IA por seniority.
+ * Fuente: ~900 vacantes en EE.UU. que transparentan su banda salarial.
+ */;
 
 import React, { useState, useEffect, useMemo } from 'react';
 import ReactECharts from 'echarts-for-react';
