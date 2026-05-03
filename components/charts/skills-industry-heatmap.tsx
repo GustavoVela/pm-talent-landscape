@@ -218,67 +218,64 @@ export function SkillsIndustryHeatmap() {
         <CardHeader className="pb-0">
           <div className="flex flex-col gap-3">
             {/* Title row */}
-            <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-3">
-              <div>
-                <CardTitle className="text-xl font-bold text-foreground">
-                  Mapa de Calor: Competencias por Sector
-                </CardTitle>
-                <CardDescription className="mt-1">
-                  Porcentaje de vacantes PM en cada macro-sector que demandan cada dominio.
-                </CardDescription>
-              </div>
-
-              {/* Controls — same height, outline style as ToggleGroup */}
-              <div className="flex items-center gap-2 flex-wrap">
-                {/* Volume filter — same h-8 height */}
-                {mounted ? (
-                  <Select value={minJobs} onValueChange={setMinJobs}>
-                    <SelectTrigger className="h-9 text-xs bg-background border-border min-w-[150px]">
-                      <SelectValue placeholder="Volumen" />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="0">Todos los sectores</SelectItem>
-                      <SelectItem value="20">{">"} 20 vacantes</SelectItem>
-                      <SelectItem value="50">{">"} 50 vacantes</SelectItem>
-                      <SelectItem value="100">{">"} 100 vacantes</SelectItem>
-                      <SelectItem value="200">{">"} 200 vacantes</SelectItem>
-                      <SelectItem value="500">{">"} 500 vacantes</SelectItem>
-                    </SelectContent>
-                  </Select>
-                ) : (
-                  <div className="h-8 w-[150px] border rounded-md bg-background" />
-                )}
-
-                {/* Color mode toggle — matches ToggleGroup outline style */}
-                {mounted && (
-                  <ToggleGroup
-                    type="single"
-                    variant="outline"
-                    value={colorMode}
-                    onValueChange={(v) => v && setColorMode(v as ColorMode)}
-                  >
-                    <ToggleGroupItem value="absolute" className="text-xs h-9 px-3">
-                      Absoluto
-                    </ToggleGroupItem>
-                    <ToggleGroupItem value="by_skill" className="text-xs h-9 px-3">
-                      Por Dominio
-                    </ToggleGroupItem>
-                  </ToggleGroup>
-                )}
-              </div>
+            <div className="flex flex-col mb-4">
+              <CardTitle className="text-xl font-bold text-foreground">
+                ¿Qué dominios prioriza cada industria?
+              </CardTitle>
+              <CardDescription className="mt-1">
+                Porcentaje de vacantes en cada macro-sector que demandan cada dominio.
+              </CardDescription>
             </div>
 
-            {/* 💡 Tip — full width */}
-            <div className="mb-4 w-full">
-              <div className="text-xs text-muted-foreground leading-relaxed mb-3">
-                <span className="font-bold text-foreground">💡 Antes de explorar: </span>
-                <ul className="list-disc list-inside space-y-1 mt-2 ml-1">
-                  <li><strong>Absoluto:</strong> escala 0–100 % compartida. Responde: <em>¿Qué % de vacantes de este sector piden este dominio?</em></li>
-                  <li><strong>Por Dominio:</strong> cada columna tiene su propio rango de color. Core PM se omite (es &gt;90 % en todos los sectores). Responde: <em>¿En qué sectores destaca relativamente este dominio?</em></li>
-                  <li><strong>Filtro:</strong> ajusta el mínimo de vacantes por sector. Usa <em>&gt; 20</em> para señal estadística sólida; sube a <em>&gt; 200</em> para ver solo los sectores dominantes.</li>
-                </ul>
+            {/* 💡 Tip & Controls */}
+            <div className="mb-2 w-full">
+              <div className="flex flex-col lg:flex-row lg:justify-between lg:items-end gap-4">
+                <div className="text-xs text-muted-foreground leading-relaxed">
+                  <span className="font-bold text-foreground">💡 Notas de lectura: </span>
+                  <ul className="list-disc list-inside space-y-1 mt-2 ml-1">
+                    <li><strong>Absoluto:</strong> escala compartida. Responde: <em>¿Qué % de vacantes del sector piden el dominio?</em></li>
+                    <li><strong>Por Dominio:</strong> escala independiente. Responde: <em>¿En qué sectores destaca este dominio?</em></li>
+                    <li><strong>Filtro:</strong> usa <em>&gt; 20</em> para señal estadística sólida; sube a <em>&gt; 200</em> para ver los sectores dominantes.</li>
+                  </ul>
+                </div>
+                
+                {/* Controls — Right aligned */}
+                <div className="flex items-center justify-end gap-3 flex-wrap">
+                  {mounted ? (
+                    <Select value={minJobs} onValueChange={setMinJobs}>
+                      <SelectTrigger className="h-9 text-xs bg-background border-border min-w-[150px]">
+                        <SelectValue placeholder="Volumen" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        <SelectItem value="0">Todos los sectores</SelectItem>
+                        <SelectItem value="20">{">"} 20 vacantes</SelectItem>
+                        <SelectItem value="50">{">"} 50 vacantes</SelectItem>
+                        <SelectItem value="100">{">"} 100 vacantes</SelectItem>
+                        <SelectItem value="200">{">"} 200 vacantes</SelectItem>
+                        <SelectItem value="500">{">"} 500 vacantes</SelectItem>
+                      </SelectContent>
+                    </Select>
+                  ) : (
+                    <div className="h-8 w-[150px] border rounded-md bg-background" />
+                  )}
+
+                  {mounted && (
+                    <ToggleGroup
+                      type="single"
+                      variant="outline"
+                      value={colorMode}
+                      onValueChange={(v) => v && setColorMode(v as ColorMode)}
+                    >
+                      <ToggleGroupItem value="absolute" className="text-xs h-9 px-3">
+                        Absoluto
+                      </ToggleGroupItem>
+                      <ToggleGroupItem value="by_skill" className="text-xs h-9 px-3">
+                        Por Dominio
+                      </ToggleGroupItem>
+                    </ToggleGroup>
+                  )}
+                </div>
               </div>
-              <div className="w-full h-px bg-border/60" />
             </div>
 
 
@@ -317,6 +314,29 @@ export function SkillsIndustryHeatmap() {
                   {skill.label}
                 </div>
               ))}
+            </div>
+          )}
+
+          {/* Insight Box at the bottom */}
+          {mounted && industries.length > 0 && (
+            <div className="mt-8 flex items-start gap-3 bg-muted/40 p-5 rounded-lg border border-border/40">
+              <span className="text-xl leading-none pt-1">🤓</span>
+              <div className="text-sm text-muted-foreground leading-relaxed space-y-3">
+                <ul className="list-disc list-outside ml-4 space-y-2">
+                  <li>
+                    <strong>La disrupción de GenAI:</strong> <em>Advertising, Marketing & Creative Services</em> tiene la demanda relativa más alta de todo el ecosistema en <strong>Inteligencia Artificial (59.5%)</strong> y UX/UI (48.9%). Esto confirma empíricamente que la personalización masiva y la creación de contenido están siendo asimiladas por flujos impulsados por IA.
+                  </li>
+                  <li>
+                    <strong>La trinchera operativa:</strong> Industrias con alta fricción física o de infraestructura (como <em>Logistics & Transportation</em> y <em>Telecommunications</em>) requieren un perfil inusualmente <strong>Técnico (&gt;50%)</strong>. El PM necesita interactuar íntimamente con sistemas de ruteo, hardware y redes complejas.
+                  </li>
+                  <li>
+                    <strong>El imperio de la retención:</strong> <em>Media, Entertainment & Gaming</em> destaca por su enorme dependencia del dominio de <strong>Datos (72.4%)</strong>, muy superior a la media de software puro. Esto evidencia un sector obsesionado con mecánicas de <em>engagement</em>, bucles de retención y experimentación continua (A/B testing).
+                  </li>
+                  <li>
+                    <strong>Pesadilla regulatoria:</strong> <em>Financial Services & FinTech</em> exhibe el mayor enfoque en el dominio de <strong>Negocio (78.6%)</strong>. Las barreras de cumplimiento legal, el modelado financiero y la mitigación de riesgos pesan mucho más que la destreza técnica pura.
+                  </li>
+                </ul>
+              </div>
             </div>
           )}
         </CardContent>

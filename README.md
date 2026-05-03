@@ -65,6 +65,12 @@ Sube el contenido completo de la carpeta `out/` al directorio `public_html/` de 
   * Estandarización estética y narrativa en todos los componentes de interpretación ("💡 El hallazgo clave") de la Sección 05 empleando el componente global `Alert` de shadcn/ui.
   * Refinamiento estricto del *copywriting* analítico: transición de nomenclaturas académicas (`N=`) hacia términos humanos (`vacantes`), y enfoque de conclusiones basadas rigurosamente en *tamaños de muestra estadística* para proteger la credibilidad del dashboard.
   * Optimización de layout CSS Grid (de 1 a 2 columnas responsivas) para la presentación de los diccionarios metodológicos y diccionarios de agrupamiento taxonómico.
+* **Estandarización Taxonómica y Narrativa (Secciones 04 y 05):**
+  * Se homologó rigurosamente la jerarquía del modelo a tres niveles estructurales: **Dominios > Competencias > Habilidades específicas**. Se eliminaron referencias ambiguas ("ejes", "skills") para asegurar la coherencia metodológica en todo el dashboard.
+  * Ajuste narrativo en la sección de competencias para reflejar a los profesionales de Producto como la audiencia principal de la visualización (crecimiento de carrera) y al equipo de People como audiencia secundaria.
+  * Incorporación de un componente de insights reestructurado con un diseño limpio de tres columnas y foco en la "Evidencia de Datos" aislada por líneas divisorias, evitando recargar visualmente el DOM.
+  * Migración al componente global `NarrativeText` para los textos explicativos, heredando correctamente la tipografía y estilos base de la aplicación.
+  * Reubicación estructural de controles interactivos (ej. Mapa de Calor), situando los selectores del lado derecho junto a las notas metodológicas para un layout más limpio y profesional.
 
 ---
 

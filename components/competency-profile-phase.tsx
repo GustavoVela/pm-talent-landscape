@@ -26,19 +26,15 @@ export function CompetencyProfilePhase() {
           />
 
           <AnimatedSection>
-            <Alert className="bg-background border-border mb-8">
-              <InfoIcon className="h-4 w-4 text-foreground" />
-              <AlertTitle className="text-foreground font-medium">Nota de lectura: Señales de demanda</AlertTitle>
-              <AlertDescription className="text-muted-foreground mt-2">
-                Los datos de esta sección provienen de 2,836 descripciones de empleo publicadas en LinkedIn. Lo que se mide es la frecuencia con la que los anunciantes solicitan una habilidad específica, no el nivel real de destreza de los PMs en cada mercado. Son señales de demanda de contratación, no calificaciones de desempeño.
-              </AlertDescription>
-            </Alert>
+            <NarrativeText>
+              <p>
+                Los datos de esta sección provienen de 2,836 descripciones de empleo. Lo que se mide es la frecuencia con la que las empresas solicitan una habilidad específica —es decir, señales puras de demanda de contratación en el mercado—, y no el nivel de destreza real de los diferentes roles en Product Management.
+              </p>
+              <p className="mt-4">
+                Bajo esta premisa, las competencias del Dominio Core PM —metodologías ágiles, roadmapping, discovery— son el punto de partida definitorio. Todos los registros de la muestra son roles en Product Management; el 92% de adopción base refleja simplemente que un 8% de las vacantes tienen descripciones demasiado genéricas para extraer estas habilidades específicas. Las verdaderas variaciones estratégicas entre mercados se expresan en los conocimientos que se exigen en cinco dominios adicionales: negocio, tecnología, datos, diseño (UX/UI) e Inteligencia Artificial. Es preciso señalar que el dominio de negocio no solo comprende las disciplinas tradicionales que se aprenderían típicamente en un MBA, sino que también involucra activamente todas las habilidades específicas relacionadas con el <em>expertise</em> o conocimiento profundo de una industria en particular.
+              </p>
+            </NarrativeText>
           </AnimatedSection>
-          <NarrativeText>
-            <p>
-              Las competencias del Dominio Core PM —metodologías ágiles, roadmapping, discovery— son el punto de partida definitorio: todos los registros de esta muestra son roles en Product Management. El 92% que aparece en la tabla refleja que el 8% restante corresponde a publicaciones con descripciones demasiado genéricas o incompletas para que el análisis extrajera estas habilidades específicas; no son excepciones al perfil. Las variaciones relevantes entre mercados se expresan en los conocimientos solicitados en cinco dominios adicionales: negocio, tecnología, datos, diseño (UX/UI) e inteligencia artificial.
-            </p>
-          </NarrativeText>
 
           {/* Radar Charts Grid */}
           <AnimatedSection delay={150}>
@@ -89,17 +85,15 @@ export function CompetencyProfilePhase() {
                 <strong>Colombia (N=201)</strong> — La anomalía más llamativa de la tabla: los anunciantes locales incluyen UX/UI en el <strong>38.8%</strong> de sus publicaciones — el valor más alto de toda la tabla, por encima de EE. UU. (36.0%). Al mismo tiempo, es el país hispanohablante donde los avisos solicitan IA con mayor frecuencia (27.9%). La diferencia de <strong>8.4 puntos</strong> entre Colombia y México en UX/UI es la mayor brecha entre países con muestras comparables. Una hipótesis plausible: la composición de industrias que publica en Colombia —con presencia relevante de fintech y empresas de producto digital— puede presionar hacia este perfil, pero los datos de industria no permiten confirmarlo.
               </li>
               <li>
-                <strong>México (N=415)</strong> — El mercado con el perfil de solicitudes más equilibrado: Business (66.3%), Técnico (38.8%), sin anomalías marcadas. El rezago relativo aparece en IA (23.1%) y Datos (43.1%), por debajo de Brasil y Colombia en ambos ejes. Tasa de Unicornio: 2.4% — la segunda más baja de la región.
+                <strong>México (N=415)</strong> — El mercado con el perfil de solicitudes más equilibrado: Business (66.3%), Técnico (38.8%), sin anomalías marcadas. El rezago relativo aparece en IA (23.1%) y Datos (43.1%), por debajo de Brasil y Colombia en ambos dominios. Tasa de Unicornio: 2.4% — la segunda más baja de la región.
               </li>
               <li>
                 <strong>Chile (N=182)</strong> — Los anunciantes chilenos solicitan Business en el <strong>70.9%</strong> de sus publicaciones, el segundo valor más alto de toda la tabla después de EE. UU. (73.6%). Su tasa de Unicornio (6.0%) supera el promedio regional (5.3%) y es comparable a Brasil (6.1%). La muestra de 182 vacantes está en el límite estadístico recomendable; los patrones son descriptivos, no proyectables con alta confianza.
               </li>
               <li>
-                <strong>Perú (N=73)</strong> — ⚠️ Con 73 publicaciones, el margen de error implícito supera los 10 puntos en la mayoría de los ejes. Los valores de Perú se incluyen para completar el mapa regional, pero no se usan como base comparativa en los análisis de esta sección.
+                <strong>Perú (N=73)</strong> — ⚠️ Con 73 publicaciones, el margen de error implícito supera los 10 puntos en la mayoría de los dominios. Los valores de Perú se incluyen para completar el mapa regional, pero no se usan como base comparativa en los análisis de esta sección.
               </li>
             </ul>
-            <p className="mb-6">
-              Los datos de esta sección son señales de demanda, no evaluaciones de talento. Muestran qué están pidiendo las empresas en sus publicaciones, no qué tan buenos son los profesionales en Product Management en cada mercado. Lo que sí es concluyente: no existe un perfil único en las Américas. Los anunciantes en Brasil y EE. UU. solicitan autonomía analítica con mayor frecuencia; los de Colombia incorporan más diseño; los de Chile y EE. UU. son quienes más frecuentemente buscan el perfil completo.</p>
           </NarrativeText>
 
           {/* MOVED: Heatmap goes BEFORE Sunburst */}
@@ -117,59 +111,68 @@ export function CompetencyProfilePhase() {
           </AnimatedSection>
 
           <NarrativeText>
-            <h3 className="text-xl font-bold text-foreground mb-4 mt-8">Detalle y taxonomía de competencias solicitadas</h3>
-            <p className="mb-6">
-              Para quienes toman decisiones de contratación, este gráfico desglosa la taxonomía completa de dominios, competencias y habilidades específicas que el mercado exige hoy. Como herramienta de desarrollo profesional, esta visualización permite realizar una auditoría de áreas a reforzar. Incorporar conocimientos técnicos (e.g., <em>APIs & Integrations</em>) o analíticos específicos aumenta el valor empírico del perfil en el mercado actual.
-            </p>
+            <h3 className="text-xl font-bold text-foreground mb-4 mt-8">¿Qué competencias y habilidades específicas conforman cada dominio?</h3>
+            <div className="space-y-4 mb-8">
+              <p>
+                Esta visualización está diseñada principalmente como una herramienta estratégica para profesionales en diferentes roles de Product Management. Permite auditar el perfil personal para identificar qué competencias y habilidades específicas desarrollar con el fin de avanzar en la carrera, dependiendo del mercado objetivo. De forma secundaria, funciona como un mapa para equipos de People y tomadores de decisiones que buscan alinear sus descripciones de puesto con la taxonomía real que exige la industria.
+              </p>
+              <p>
+                A nivel estructural, los datos siguen una jerarquía estricta: las <strong>habilidades específicas</strong> (herramientas y técnicas puntuales) se agrupan en <strong>competencias</strong> (áreas de conocimiento), las cuales finalmente conforman los grandes <strong>dominios</strong>. Aunque en este gráfico cada habilidad específica fue anidada en la competencia donde su contexto de uso es más frecuente, la realidad es que muchas de ellas son transversales.
+              </p>
+              <p>
+                Por ejemplo: <em>SQL</em> pertenece a la competencia de "Bases de Datos" en el dominio de Datos, pero es igualmente crucial como competencia de "Ingeniería" en el dominio Técnico. <em>Python</em> es un lenguaje de programación (Técnico) y una herramienta analítica (Datos). <em>Machine Learning</em> es la base del dominio de IA, pero en el mercado también se solicita como capacidad predictiva (Datos) o conocimiento de infraestructura (Técnico).
+              </p>
+              <p>
+                Los porcentajes interactivos que observarás al hacer clic en las divisiones de la gráfica reflejan el peso de la habilidad en todo el conjunto de la muestra, independientemente de si la herramienta fue asignada exclusivamente a una sola competencia o dominio visualmente.
+              </p>
+              <p>
+                <strong>¿Cómo usar este mapa para tu carrera?</strong> Si, por ejemplo, decides que necesitas fortalecer tu perfil en el <strong>Dominio Técnico</strong>, al explorar esa sección notarás que las dos competencias con mayor volumen de demanda son <em>APIs & Integrations</em> y <em>Databases & Storage</em>.
+              </p>
+              <p>
+                La conclusión táctica es clara: si un profesional de producto busca adquirir <em>expertise</em> técnico para elevar su competitividad, el punto de partida óptimo no es aprender a programar desde cero, sino comprender a profundidad cómo funcionan las APIs y el intercambio de datos. Dominar esta competencia es la ruta más eficiente para hacer <em>match</em> empírico con un abanico mucho más amplio de ofertas laborales en el mercado actual.
+              </p>
+            </div>
           </NarrativeText>
 
           <AnimatedSection delay={250}>
             <div className="mt-8">
               <ChartWrapper
                 id="chart-taxonomia-competencias"
-                title="Taxonomía de Competencias (Sunburst)"
+                title="Taxonomía de Dominios y Competencias"
                 helpText="Usa los controles de abajo para activar o desactivar dominios. Haz clic en cualquier dominio (Business, Datos, IA…) para entrar en detalle: verás todas sus competencias y las habilidades específicas que lo componen. El tamaño de cada competencia refleja su peso relativo dentro del dominio — cuanto más grande, más frecuente es esa competencia en las publicaciones analizadas."
                 className="w-full bg-white/50 dark:bg-slate-950/50 backdrop-blur-sm border-slate-200 dark:border-slate-800 shadow-lg"
               >
-                <CompetencySunburstChart />
+                <div className="flex flex-col">
+                  <CompetencySunburstChart />
+                  <div className="mt-6 mb-2">
+                    <div className="w-full h-px bg-border/60 mb-5" />
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-x-4 gap-y-3 px-2">
+                      {[
+                        { label: 'Diccionario de estandarización de competencias Core PM', url: 'https://github.com/GustavoVela/pm-talent-landscape/blob/main/analysis/groupings/core_pm_skills_grouping.md' },
+                        { label: 'Diccionario de estandarización de competencias de Datos', url: 'https://github.com/GustavoVela/pm-talent-landscape/blob/main/analysis/groupings/data_skills_grouping.md' },
+                        { label: 'Diccionario de estandarización de competencias de IA', url: 'https://github.com/GustavoVela/pm-talent-landscape/blob/main/analysis/groupings/ai_skills_grouping.md' },
+                        { label: 'Diccionario de estandarización de competencias de Negocio', url: 'https://github.com/GustavoVela/pm-talent-landscape/blob/main/analysis/groupings/business_skills_grouping.md' },
+                        { label: 'Diccionario de estandarización de competencias Técnicas', url: 'https://github.com/GustavoVela/pm-talent-landscape/blob/main/analysis/groupings/technical_skills_grouping.md' },
+                        { label: 'Diccionario de estandarización de competencias de UX/UI', url: 'https://github.com/GustavoVela/pm-talent-landscape/blob/main/analysis/groupings/ux_ui_skills_grouping.md' },
+                      ].map(({ label, url }) => (
+                        <a
+                          key={label}
+                          href={url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="font-medium text-primary hover:underline text-[14px] w-fit flex items-center"
+                        >
+                          {label} <span className="ml-1 text-xs">↗</span>
+                        </a>
+                      ))}
+                    </div>
+                  </div>
+                </div>
               </ChartWrapper>
             </div>
           </AnimatedSection>
 
-          <AnimatedSection delay={300}>
-            <Alert className="bg-background border-border mt-8">
-              <InfoIcon className="h-4 w-4 text-foreground" />
-              <AlertTitle className="text-foreground font-medium">Nota de lectura: Clasificación de habilidades</AlertTitle>
-              <AlertDescription className="text-muted-foreground mt-2 space-y-2">
-                <p>Las habilidades específicas en este gráfico están clasificadas en el dominio donde tienen mayor presencia, pero algunas aparecen de forma natural en más de uno. Esto no es un error de clasificación: refleja que ciertas herramientas son genuinamente transversales.</p>
-                <p>Ejemplos concretos: <strong>SQL</strong> está en el dominio de Datos (donde lidera como lenguaje de consulta), pero también aparece en el dominio Técnico como habilidad de ingeniería. <strong>Python</strong> figura en Técnico como lenguaje de programación y en Datos como herramienta de análisis. <strong>Machine Learning</strong> vive en IA como disciplina central, en Datos como capacidad predictiva y en Técnico como conocimiento de infraestructura. <strong>Databricks y Snowflake</strong> aparecen tanto en la capa de ingeniería técnica como en los ecosistemas de datos.</p>
-                <p>Para este gráfico, cada habilidad específica fue asignada al dominio donde el contexto de uso era más frecuente en las publicaciones analizadas. Los porcentajes en la tabla comparativa reflejan si la habilidad fue mencionada en alguno de los dominios, no si fue asignada a uno exclusivamente.</p>
-                <div className="mt-4 flex flex-col gap-2.5">
-                  <div className="h-px w-full bg-border/50" />
-                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-4 gap-y-2">
-                    {[
-                      { label: 'Diccionario de estandarización de competencias Core PM', url: 'https://github.com/GustavoVela/pm-talent-landscape/blob/main/analysis/groupings/core_pm_skills_grouping.md' },
-                      { label: 'Diccionario de estandarización de competencias de Datos', url: 'https://github.com/GustavoVela/pm-talent-landscape/blob/main/analysis/groupings/data_skills_grouping.md' },
-                      { label: 'Diccionario de estandarización de competencias de IA', url: 'https://github.com/GustavoVela/pm-talent-landscape/blob/main/analysis/groupings/ai_skills_grouping.md' },
-                      { label: 'Diccionario de estandarización de competencias de Negocio', url: 'https://github.com/GustavoVela/pm-talent-landscape/blob/main/analysis/groupings/business_skills_grouping.md' },
-                      { label: 'Diccionario de estandarización de competencias Técnicas', url: 'https://github.com/GustavoVela/pm-talent-landscape/blob/main/analysis/groupings/technical_skills_grouping.md' },
-                      { label: 'Diccionario de estandarización de competencias de UX/UI', url: 'https://github.com/GustavoVela/pm-talent-landscape/blob/main/analysis/groupings/ux_ui_skills_grouping.md' },
-                    ].map(({ label, url }) => (
-                      <a
-                        key={label}
-                        href={url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="font-medium text-primary hover:underline text-[13px] w-fit"
-                      >
-                        {label} ↗
-                      </a>
-                    ))}
-                  </div>
-                </div>
-              </AlertDescription>
-            </Alert>
-          </AnimatedSection>
+
           
           {/* AiMarketShift inserted exactly here as the analytical conclusion to Section 4 */}
           <AnimatedSection delay={350}>

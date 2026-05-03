@@ -414,7 +414,7 @@ export function DemographicsPhase() {
                 value="4,629" 
                 label={
                   <div className="flex items-center justify-center gap-1.5">
-                    Skills únicas
+                    Habilidades específicas únicas
                     <TooltipProvider delayDuration={100}>
                       <Tooltip>
                         <TooltipTrigger type="button" className="cursor-help inline-flex">
